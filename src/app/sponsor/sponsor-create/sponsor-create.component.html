@@ -1,0 +1,109 @@
+<div class="container mt-4">
+  <h2 i18n="@@create_sponsor_title" class="text-center">Create a new Sponsor</h2>
+  <form
+    [formGroup]="sponsorForm"
+    (ngSubmit)="!sponsorForm.invalid && createSponsor(sponsorForm.value)"
+  >
+    <!--Name-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label i18n="@@Name" for="name">Name</label>
+      <input
+        novalidate
+        id="name"
+        class="form-control"
+        formControlName="name"
+        placeholder="Sponsor name"
+      />
+      <div i18n="@@Name_required"
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          sponsorForm.get('name')!.hasError('required') &&
+          sponsorForm.get('name')!.touched
+        "
+      >
+        Name required
+      </div>
+      <div i18n="@@Name_short"
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="sponsorForm.get('name')!.hasError('minlength')"
+      >
+        Name too short
+      </div>
+    </div>
+
+    <!--Description-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label i18n="@@Description" for="description">Description</label>
+      <input
+        novalidate
+        id="description"
+        class="form-control"
+        formControlName="description"
+        placeholder="Sponsor short description"
+      />
+      <div i18n="@@Description_required"
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          sponsorForm.get('description')!.hasError('required') &&
+          sponsorForm.get('description')!.touched
+        "
+      >
+        Description required
+      </div>
+      <div i18n="@@Description_long"
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="sponsorForm.get('description')!.hasError('maxlength')"
+      >
+        Description too long
+      </div>
+    </div>
+
+    <!--WebSite-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label i18n="@@website" for="website">WebSite</label>
+      <input
+        novalidate
+        id="website"
+        class="form-control"
+        formControlName="website"
+        placeholder="Sponsor website"
+      />
+      <div i18n="@@website_required"
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          sponsorForm.get('website')!.hasError('required') &&
+          sponsorForm.get('website')!.touched
+        "
+      >
+        WebSite required
+      </div>
+      <div i18n="@@website_long"
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="sponsorForm.get('website')!.hasError('maxlength')"
+      >
+        WebSite too long
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <button
+        i18n="@@Create"
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!sponsorForm.valid"
+      >
+        Create
+      </button>
+        &nbsp;&nbsp;
+      <button
+        i18n="@@Cancel"
+        type="button"
+        class="btn btn-danger ml-3"
+        (click)="cancelCreation()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+ </div>
+

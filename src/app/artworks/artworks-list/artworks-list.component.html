@@ -1,0 +1,43 @@
+<h1 i18n="@@list_artworks_title">Artwork List</h1>
+<h2 *ngIf="artExhi"> of Exhibition {{nameExhibition}}</h2>
+
+<div *ngIf="artExhi" class="associateArtwork">
+  <button class="btn btn-primary" (click)="pageAddArtwork()" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddArtwork" aria-expanded="false" aria-controls="collapseExample">
+    Associate an artwork
+  </button>
+</div>
+
+<div *ngIf="addArt" class="collapse" id="collapseAddArtwork">
+  <div class="card card-body col-4">
+    <div class="">
+      <select class="addArtwork form-control" name="Artwork" id="addArtwork">
+        <option value="">Select Artwork</option>
+        <option *ngFor="let artworks of artworkssForAdd" value="{{artworks.id}}">{{ artworks.name }}</option>
+      </select>
+    </div>
+    <button class="btn btn-success" (click)="addArtwork()">
+      Associate
+    </button>
+  </div>
+</div>
+
+<hr>
+
+<div class="bg-transparent">
+  <br>
+  <div class="row col-12">
+    <div class="col-4" style="overflow-y: auto;">
+      <div class="list-group" *ngFor="let artworks of artworkss">
+        <a class="list-group-item list-group-item-action" (click)="onSelected(artworks)" style="width: 80%;">
+          {{ artworks.name }}
+        </a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div *ngIf="selected">
+        <app-artwork-detail [artworkDetail]="selectedArtwork"></app-artwork-detail>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

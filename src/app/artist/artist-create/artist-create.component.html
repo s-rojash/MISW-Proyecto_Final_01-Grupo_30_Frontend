@@ -1,0 +1,119 @@
+<div class="container mt-4" >
+ <h2 i18n="@@create_artist_title" class="text-center">Create a new artist</h2>
+ <form
+   [formGroup]="artistForm"
+   (ngSubmit)="!artistForm.invalid && createArtist(artistForm.value)"
+   >   
+ <!--Name-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Name" for="name">Name</label>
+     <input
+       novalidate
+       id="name"
+       class="form-control"
+       formControlName="name"
+       placeholder="Artist's name"
+     />
+     <div i18n="@@Name_required"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         artistForm.get('name')!.hasError('required') &&
+         artistForm.get('name')!.touched"
+     >
+       Name required
+     </div>
+     <div i18n="@@Name_short"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="artistForm.get('name')!.hasError('minlength')"
+     >
+       Name too short(Min 2 characters)
+     </div>
+   </div>
+ 
+ <!--BirthPlace-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Birthplace" for="birthplace">Birthplace</label>
+     <input
+       novalidate
+       id="birthplace"
+       class="form-control"
+       formControlName="birthplace"
+       placeholder="Artist's birthplace"
+     />
+     
+     <div i18n="@@Birthplace_required"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         artistForm.get('birthplace')!.hasError('required') &&
+         artistForm.get('birthplace')!.touched"
+     >
+         Birthplace required
+     </div>
+     <div i18n="@@Birthplace_short"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="artistForm.get('birthplace')!.hasError('minlength')"
+     >
+       Birthplace too short(Min 2 characters)
+     </div>
+   </div>
+ 
+ <!--Birthdate-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Birthdate" for="birthdate">Birthdate</label>
+     <input
+       novalidate
+       id="birthdate"
+       class="form-control"
+       formControlName="birthdate"
+       placeholder="YYYY-MM-DD"
+     />
+     <div i18n="@@Birthdate_required"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         artistForm.get('birthdate')!.hasError('required') &&
+         artistForm.get('birthdate')!.touched"
+     >
+       Birthdate required 
+     </div>
+     <div i18n="@@Birthdate_short"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="artistForm.get('birthdate')!.hasError('minlength')"
+     >
+       Birthdate too short(Min 10 characters)
+     </div>
+   </div>
+ 
+ <!--Image-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Image" for="image">Image</label>
+     <input
+       novalidate
+       id="image"
+       class="form-control"
+       formControlName="image"
+       placeholder="URL with Artist's image"
+     />
+     <div i18n="@@Image_required"
+       class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         artistForm.get('image')!.hasError('required') &&
+         artistForm.get('image')!.touched"
+     >
+       Image required
+     </div>
+   </div>
+ 
+ 
+ <div>
+ <button i18n="@@Create" type="submit" class="btn btn-primary" [disabled]="!artistForm.valid">
+     Create
+   </button>
+     &nbsp;&nbsp;
+   <button i18n="@@Cancel" type="button" class="btn btn-danger ml-3"(click)="cancelCreation()">
+     Cancel
+   </button>
+ </div>
+ </form>
+</div>
+     
+

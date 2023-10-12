@@ -1,0 +1,25 @@
+<div>
+  <h1 i18n="@@list_exhibition_title">Exhibitions List</h1>
+</div>
+<div style="background-color: #ffffff;height: 85vh;">
+  <div class="row col-12">
+    <div class="col-4" style="overflow-y: auto;height: 77vh;">
+      <div class="list-group" *ngFor="let exh of exhibitions">
+        <a class="list-group-item list-group-item-action" (click)="onSelected(exh)" style="width: 80%;">{{ exh.name }} </a>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <br>
+          <br>
+          <a i18n="@@list_create_exhibition" routerLink="/exhibitions/create" class="btn btn-primary">Create Exhibition</a>
+        </div>
+      </div>
+   </div>
+    <div class="col-8">
+      <div *ngIf="selected">
+        <app-exhibitions-details [exhibitionsDetail]="selectedExhibition"></app-exhibitions-details>
+      </div>
+    </div>
+  </div>
+</div>
+

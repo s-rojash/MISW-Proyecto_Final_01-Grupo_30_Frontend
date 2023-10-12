@@ -1,0 +1,21 @@
+* [lang^=en] {
+  color: green;
+}
+
+footer{
+  height: 50px;
+  background-color: #212529;
+  display: flex;
+}
+
+tr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer img{
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}

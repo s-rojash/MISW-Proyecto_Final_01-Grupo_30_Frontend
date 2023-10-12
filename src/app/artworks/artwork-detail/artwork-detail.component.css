@@ -1,0 +1,27 @@
+.collapseButton{
+    margin: 20px 0;
+    padding-left: 16px;
+}
+
+.collapseCard{
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding-left: 16px;
+}
+
+.cardAssociateImage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardAssociateImage input{
+    width: 90%;
+}
+
+.cardAssociateImage button{
+    width: 90%;
+    margin-top: 10px;
+}

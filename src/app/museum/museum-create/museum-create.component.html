@@ -1,0 +1,150 @@
+<div class="container mt-4" >
+ <h2 i18n="@@create_museum_title" class="text-center">Create a new museum</h2>
+ <form
+   [formGroup]="museumForm"
+   (ngSubmit)="!museumForm.invalid && createMuseum(museumForm.value)"
+   >   
+ <!--Name-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Name" for="name">Name</label>
+     <input
+       novalidate
+       id="name"
+       class="form-control"
+       formControlName="name"
+       placeholder="Museum's name"
+     />
+     <div
+       i18n="@@Name_required" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         museumForm.get('name')!.hasError('required') &&
+         museumForm.get('name')!.touched"
+     >
+       Name required
+     </div>
+     <div
+       i18n="@@Name_short" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="museumForm.get('name')!.hasError('minlength')"
+     >
+       Name too short(Min 2 characters)
+     </div>
+   </div>
+ 
+ <!--Description-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Description" for="description">Description</label>
+     <textarea
+       novalidate
+       id="description"
+       class="form-control"
+       formControlName="description"
+       placeholder="Museum's description"
+     >
+     </textarea>
+     <div
+       i18n="@@Description_required" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         museumForm.get('description')!.hasError('required') &&
+         museumForm.get('description')!.touched"
+     >
+       Description required
+     </div>
+     <div
+       i18n="@@Description_short" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="museumForm.get('description')!.hasError('minlength')"
+     >
+       Description too short (Min 5 characters)
+     </div>
+     <div
+       i18n="@@Description_long" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="museumForm.get('description')!.hasError('maxlength')"
+     >
+       Description too long (Max 500 characters)
+     </div>
+   </div>
+ 
+ <!--Address-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Address" for="address">Address</label>
+     <input
+       novalidate
+       id="address"
+       class="form-control"
+       formControlName="address"
+       placeholder="Museum's address"
+     />
+     <div
+       i18n="@@Address_required" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         museumForm.get('address')!.hasError('required') &&
+         museumForm.get('address')!.touched"
+     >
+       Address required
+     </div>
+     <div
+       i18n="@@Address_short" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="museumForm.get('address')!.hasError('minlength')"
+     >
+       Address too short (Min 5 characters)
+     </div> 
+   </div>
+ 
+ <!--City-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@City" for="city">City</label>
+     <input
+       novalidate
+       id="city"
+       class="form-control"
+       formControlName="city"
+       placeholder="Museum's city"
+     />
+     <div
+       i18n="@@City_required" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         museumForm.get('city')!.hasError('required') &&
+         museumForm.get('city')!.touched"
+     >
+       City required
+     </div>
+     <div
+       i18n="@@City_short" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="museumForm.get('city')!.hasError('minlength')"
+     >
+       City too short (Min 2 characters)
+     </div>
+   </div>
+ 
+ <!--Image-->
+   <div class="form-group mx-sm-3 mb-2">
+     <label i18n="@@Image" for="image">Image</label>
+     <input
+       novalidate
+       id="image"
+       class="form-control"
+       formControlName="image"
+       placeholder="URL with Museum's image"
+     />
+     <div
+       i18n="@@Image_required" class="alert alert-danger alert-dismissible fade show"
+       *ngIf="
+         museumForm.get('image')!.hasError('required') &&
+         museumForm.get('image')!.touched"
+     >
+       Image required
+     </div>
+   </div>
+ 
+ 
+ <div>
+ <button i18n="@@Create" type="submit" class="btn btn-primary" [disabled]="!museumForm.valid">
+     Create
+   </button>
+     &nbsp;&nbsp;
+   <button i18n="@@Cancel" type="button" class="btn btn-danger ml-3"(click)="cancelCreation()">
+     Cancel
+   </button>
+ </div>
+ </form>
+</div>
+     
