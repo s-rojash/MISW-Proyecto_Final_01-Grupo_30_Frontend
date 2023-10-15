@@ -19,3 +19,30 @@ footer img{
   width: 40px;
   height: 40px;
 }
+
+.navbar-headerpro{
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  width: auto;
+  height: 63px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: url(../assets/Images/fondogeneral.png), lightgray 50% / cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.navbar-brand-printitle{
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.nav-link-menupri{
+  color: #FFF;
+}

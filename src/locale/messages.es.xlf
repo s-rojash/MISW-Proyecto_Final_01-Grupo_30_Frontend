@@ -4,28 +4,32 @@
     <body>
     <!--Menu ppal-->
        <trans-unit id="logo" datatype="html">
-        <source>Musearch</source>
-        <target>BuscaMuseos</target>
+        <source>ABCJobs</source>
+        <target>ABCTrabajos</target>
       </trans-unit>
-      <trans-unit id="museos_menu" datatype="html">
-        <source>Museums</source>
-        <target>Museos</target>
+      <trans-unit id="proyectos_menu" datatype="html">
+        <source>Projects</source>
+        <target>Proyectos</target>
       </trans-unit>
-      <trans-unit id="obras_menu" datatype="html">
-        <source>Artworks</source>
-        <target>Obras</target>
+      <trans-unit id="bancopre_menu" datatype="html">
+        <source>Question Bank</source>
+        <target>Banco de preguntas</target>
       </trans-unit>
-      <trans-unit id="artistas_menu" datatype="html">
-        <source>Artists</source>
-        <target>Artistas</target>
+      <trans-unit id="candidatos_menu" datatype="html">
+        <source>Applicant</source>
+        <target>Candidatos</target>
       </trans-unit>
-      <trans-unit id="patrocinadores_menu" datatype="html">
-        <source>Sponsors</source>
-        <target>Patrocinadores</target>
+      <trans-unit id="equipos_menu" datatype="html">
+        <source>Teams</source>
+        <target>Equipos</target>
       </trans-unit>
-      <trans-unit id="movimientos_menu" datatype="html">
-        <source>Movements</source>
-        <target>Movimientos</target>
+      <trans-unit id="pruebas_menu" datatype="html">
+        <source>Tests</source>
+        <target>Pruebas</target>
+      </trans-unit>
+      <trans-unit id="entrevistas_menu" datatype="html">
+        <source>Interviews</source>
+        <target>Entrevistas</target>
       </trans-unit>
       <trans-unit id="listar_menu" datatype="html">
         <source>List</source>
