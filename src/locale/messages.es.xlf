@@ -43,6 +43,10 @@
         <source>Edit</source>
         <target>Editar</target>
       </trans-unit>
+      <trans-unit id="logout_menu" datatype="html">
+        <source>Logout</source>
+        <target>Salir</target>
+      </trans-unit>
       <!--Palabras generales-->
       <trans-unit id="artworks" datatype="html">
         <source>Artworks</source>

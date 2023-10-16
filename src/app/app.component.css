@@ -46,3 +46,28 @@ footer img{
 .nav-link-menupri{
   color: #FFF;
 }
+
+.bgimagefab{
+  background-color: transparent;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   margin-right: 5px;
+   width: 40px;
+   height: 40px;
+}
+
+.bgiconlogout{
+  background-color: transparent;
+   background-repeat: no-repeat;
+   background-size: 20px;
+   background-position: 20px center;
+}
+
+.bgiconlanguages{
+  background-color: transparent;
+   background-repeat: no-repeat;
+   background-size: 20px;
+   background-position: 20px center;
+   width: 50%;
+}

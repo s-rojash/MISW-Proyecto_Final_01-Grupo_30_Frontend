@@ -56,9 +56,31 @@
         </li>
       </ul>
 
-      <form class="d-flex">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-      </form>
+      <button mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
+        [style.backgroundImage]="'url(' + '../assets/Images/fabcirclebuttonimg.jpg' + ')'">
+      </button>
+      <mat-menu #menu="matMenu">
+          <!-- <mat-icon>voicemail</mat-icon>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check</span>
+          <span>Check</span> -->
+
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">Above</button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+        </mat-menu>
+
+        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="belowMenu" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">Below</button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+        </mat-menu>
+        <mat-divider></mat-divider>
+        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'">
+          <span i18n="@@logout_menu" style="padding-left: 30px;">Logout</span>
+        </button>
+      </mat-menu>
     </div>
   </div>
 </nav>
