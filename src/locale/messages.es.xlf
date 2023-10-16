@@ -47,6 +47,18 @@
         <source>Logout</source>
         <target>Salir</target>
       </trans-unit>
+      <trans-unit id="lanesp_menu" datatype="html">
+        <source>Spanish</source>
+        <target>Español</target>
+      </trans-unit>
+      <trans-unit id="laneng_menu" datatype="html">
+        <source>English</source>
+        <target>Ingles</target>
+      </trans-unit>
+      <trans-unit id="myprofile_menu" datatype="html">
+        <source>My Profile</source>
+        <target>Mi Perfil</target>
+      </trans-unit>
       <!--Palabras generales-->
       <trans-unit id="artworks" datatype="html">
         <source>Artworks</source>

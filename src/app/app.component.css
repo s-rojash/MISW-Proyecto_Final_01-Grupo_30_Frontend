@@ -71,3 +71,8 @@ footer img{
    background-position: 20px center;
    width: 50%;
 }
+
+::ng-deep .mat-menu-panel {
+  padding: 0 10px!important;
+  width: 500px;
+}

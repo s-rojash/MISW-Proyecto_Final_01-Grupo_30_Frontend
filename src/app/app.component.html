@@ -56,26 +56,28 @@
         </li>
       </ul>
 
+
       <button mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
         [style.backgroundImage]="'url(' + '../assets/Images/fabcirclebuttonimg.jpg' + ')'">
       </button>
-      <mat-menu #menu="matMenu">
-          <!-- <mat-icon>voicemail</mat-icon>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check</span>
-          <span>Check</span> -->
 
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
+      <mat-menu #menu="matMenu" class="mat-menu-panel">
+        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
+          <span i18n="@@myprofile_menu" style="padding-left: 30px;">My Profile</span>
         </button>
-        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">Above</button>
+
+        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
+          <span i18n="@@lanesp_menu" style="padding-left: 30px;">Spanish</span>
+        </button>
         <mat-menu #aboveMenu="matMenu" yPosition="above">
         </mat-menu>
 
-        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="belowMenu" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">Below</button>
+        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="belowMenu" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
+          <span i18n="@@laneng_menu" style="padding-left: 30px;">English</span>
+        </button>
         <mat-menu #belowMenu="matMenu" yPosition="below">
         </mat-menu>
+
         <mat-divider></mat-divider>
         <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'">
           <span i18n="@@logout_menu" style="padding-left: 30px;">Logout</span>
