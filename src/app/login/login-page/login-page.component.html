@@ -1,0 +1,97 @@
+<div class="d-flex align-items-center">
+  <div class="loginContainer">
+    <div class="row" style="width: 100%;">
+      <div class="col-md-6" style="width: 40%;padding-right: 20px;padding-top: 10px;">
+        <mat-card class="login-card-image">
+          <img mat-card-image src="../../../assets/Images/fondogeneral.png" style="height: 90vh;">
+        </mat-card>
+      </div>
+
+      <div class="col-md-6" style="width: 60%;padding-top: 10px;">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title i18n="@@login_header">Login</mat-card-title>
+            <span style="display: -webkit-inline-box;" mat-card-subtitle><label i18n="@@loginsub_header">Don't have an account yet?</label>&nbsp;<a i18n="@@loginsignup_header" mat-card-subtitle routerLink="/exhibitions/create">Sign Up</a></span>
+          </mat-card-header>
+          <mat-card-content>
+            <form
+              [formGroup]="loginForm"
+              (ngSubmit)="!loginForm.invalid && goToApp()"
+            >
+              <!--Email-->
+              <div class="form-group mx-sm-3 mb-2">
+                <label i18n="@@Email" for="email">Email</label>
+                <input
+                  novalidate
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  formControlName="email"
+                  placeholder="Email"
+                />
+                <div i18n="@@Email_required"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="
+                    loginForm.get('email')!.hasError('required') &&
+                    loginForm.get('email')!.touched
+                  "
+                >
+                  Email required
+                </div>
+                <div i18n="@@Email_validmsj"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="loginForm.get('email')!.hasError('email')"
+                >
+                  Please enter a valid email address
+                </div>
+              </div>
+
+              <!--Password-->
+              <div class="form-group mx-sm-3 mb-2">
+                <label i18n="@@Password" for="password">Password</label>
+                <input
+                  novalidate
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  formControlName="password"
+                  placeholder="Password"
+                />
+                <div i18n="@@Password_required"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="
+                    loginForm.get('password')!.hasError('required') &&
+                    loginForm.get('password')!.touched
+                  "
+                >
+                  Password required
+                </div>
+              </div>
+
+              <div style="text-align: center;">
+                <button
+                  i18n="@@login_header"
+                  type="submit"
+                  class="btn btn-primary"
+                  [disabled]="!loginForm.valid"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+          <mat-card-footer>
+            <a i18n="@@loginforgot_pass" mat-card-subtitle routerLink="/exhibitions/create">Forgotten password?</a>
+            <button mat-button extended class="bgiconlanguages" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
+              <span i18n="@@lanesp_menu" style="padding-left: 30px;">Spanish</span>
+            </button>
+
+            <button mat-button extended class="bgiconlanguages" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
+              <span i18n="@@laneng_menu" style="padding-left: 30px;">English</span>
+            </button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
