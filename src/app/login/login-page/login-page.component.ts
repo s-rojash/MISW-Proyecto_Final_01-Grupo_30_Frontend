@@ -9,19 +9,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPageComponent implements OnInit  {
 
   loginForm!: FormGroup;
+  selectedtypeLogin: string = "";
 
   constructor(
     private formBuilder: FormBuilder
   ) { }
 
-  goToApp(){}
+  goToApp(){
+    console.log(this.selectedtypeLogin);
+  }
 
   goToSignUp(){}
 
+  selectChangeHandler (event: any) {
+    this.selectedtypeLogin = event.target.value;
+  }
+
   ngOnInit() {
+    this.selectedtypeLogin = "0";
     this.loginForm = this.formBuilder.group({
       email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required]]
+      password: ["", [Validators.required]],
+      typeLogin: this.formBuilder.group({
+        id: [this.selectedtypeLogin]
+      })
     });
   }
 }

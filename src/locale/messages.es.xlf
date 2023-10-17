@@ -96,6 +96,10 @@
         <source>Forgotten password?</source>
         <target>Olvido su contraseña?</target>
       </trans-unit>
+      <trans-unit id="logojobs" datatype="html">
+        <source>Jobs</source>
+        <target>Trabajos</target>
+      </trans-unit>
       <!--Palabras generales-->
       <trans-unit id="artworks" datatype="html">
         <source>Artworks</source>
