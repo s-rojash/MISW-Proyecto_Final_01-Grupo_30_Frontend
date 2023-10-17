@@ -32,7 +32,7 @@
                   formControlName="email"
                   placeholder="Email"
                 />
-                <div i18n="@@Email_required" style="position: fixed;"
+                <div i18n="@@Email_required" style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
                     loginForm.get('email')!.hasError('required') &&
@@ -41,7 +41,7 @@
                 >
                   Email required
                 </div>
-                <div i18n="@@Email_validmsj" style="position: fixed;"
+                <div i18n="@@Email_validmsj" style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="loginForm.get('email')!.hasError('email')"
                 >
@@ -61,7 +61,7 @@
                   formControlName="password"
                   placeholder="Password"
                 />
-                <div i18n="@@Password_required" style="position: fixed;"
+                <div i18n="@@Password_required" style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
                     loginForm.get('password')!.hasError('required') &&
