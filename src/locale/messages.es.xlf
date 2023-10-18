@@ -59,6 +59,47 @@
         <source>My Profile</source>
         <target>Mi Perfil</target>
       </trans-unit>
+      <!--Login-->
+      <trans-unit id="login_header" datatype="html">
+        <source>Login</source>
+        <target>Ingreso</target>
+      </trans-unit>
+      <trans-unit id="loginsub_header" datatype="html">
+        <source>Don't have an account yet?</source>
+        <target>No tienes una cuenta?</target>
+      </trans-unit>
+      <trans-unit id="loginsignup_header" datatype="html">
+        <source>Sign Up</source>
+        <target>Creala Aqui</target>
+      </trans-unit>
+      <trans-unit id="Email" datatype="html">
+        <source>Email</source>
+        <target>Correo</target>
+      </trans-unit>
+      <trans-unit id="Email_required" datatype="html">
+        <source>Email required</source>
+        <target>Correo Requerido</target>
+      </trans-unit>
+      <trans-unit id="Email_validmsj" datatype="html">
+        <source>Please enter a valid email address</source>
+        <target>Por favor ingrese un correo valido</target>
+      </trans-unit>
+      <trans-unit id="Password" datatype="html">
+        <source>Password</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="Password_required" datatype="html">
+        <source>Password required</source>
+        <target>Contraseña Requerida</target>
+      </trans-unit>
+      <trans-unit id="loginforgot_pass" datatype="html">
+        <source>Forgotten password?</source>
+        <target>Olvido su contraseña?</target>
+      </trans-unit>
+      <trans-unit id="logojobs" datatype="html">
+        <source>Jobs</source>
+        <target>Trabajos</target>
+      </trans-unit>
       <!--Palabras generales-->
       <trans-unit id="artworks" datatype="html">
         <source>Artworks</source>

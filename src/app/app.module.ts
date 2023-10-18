@@ -19,6 +19,8 @@ import { PrincipalModule } from './principal/principal.module';
 import { MuseumRoutingModule } from './museum/museum-routing.module';
 import { ExhibtionRoutingModule } from './exhibitions/exhibition-routing.module';
 import { PrincipalRoutingModule } from './principal/principal-routing.module';
+import { LoginModule } from './login/login.module';
+import { LoginRoutingModule } from './login/login-routing.module';
 import { ArtistRoutingModule } from './artist/artist-routing.module';
 import { ArtworkRoutingModule } from './artworks/artwork-routing.module';
 import { MovementRoutingModule } from './movement/movement-routing-module';
@@ -51,6 +53,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MuseumRoutingModule,
     ExhibtionRoutingModule,
     PrincipalRoutingModule,
+    LoginModule,
+    LoginRoutingModule,
     ArtistRoutingModule,
     ArtworkRoutingModule,
     MovementRoutingModule,
