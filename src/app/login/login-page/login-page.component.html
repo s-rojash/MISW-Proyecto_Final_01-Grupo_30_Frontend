@@ -13,7 +13,7 @@
         <mat-card style="height: 90vh;">
           <mat-card-header style="margin-left: 90px;margin-top: 50px;">
             <mat-card-title i18n="@@login_header">Login</mat-card-title>
-            <span style="display: -webkit-inline-box;" mat-card-subtitle><label i18n="@@loginsub_header">Don't have an account yet?</label>&nbsp;<a i18n="@@loginsignup_header" mat-card-subtitle routerLink="/exhibitions/create">Sign Up</a></span>
+            <span style="display: -webkit-inline-box;" mat-card-subtitle><label i18n="@@loginsub_header">Don't have an account yet?</label>&nbsp;<a style="cursor: pointer;" (click)="openDialog()" i18n="@@loginsignup_header" mat-card-subtitle>Sign Up</a></span>
           </mat-card-header>
           <mat-card-content style="margin-left: 75px;margin-right: 66px;margin-top: 61px;">
             <form

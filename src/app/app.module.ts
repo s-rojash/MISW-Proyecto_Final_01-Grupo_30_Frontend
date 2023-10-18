@@ -21,6 +21,8 @@ import { ExhibtionRoutingModule } from './exhibitions/exhibition-routing.module'
 import { PrincipalRoutingModule } from './principal/principal-routing.module';
 import { LoginModule } from './login/login.module';
 import { LoginRoutingModule } from './login/login-routing.module';
+import { SignupModule } from './signup/signup.module';
+import { SignpuRoutingModule } from './signup/signup-routing.module';
 import { ArtistRoutingModule } from './artist/artist-routing.module';
 import { ArtworkRoutingModule } from './artworks/artwork-routing.module';
 import { MovementRoutingModule } from './movement/movement-routing-module';
@@ -55,6 +57,8 @@ import { MatDividerModule } from '@angular/material/divider';
     PrincipalRoutingModule,
     LoginModule,
     LoginRoutingModule,
+    SignupModule,
+    SignpuRoutingModule,
     ArtistRoutingModule,
     ArtworkRoutingModule,
     MovementRoutingModule,

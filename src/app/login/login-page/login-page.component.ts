@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatDialog } from '@angular/material/dialog';
+import { DialogtypesignupComponent } from '../dialogtypesignup/dialogtypesignup.component';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css'],
+  styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit  {
 
@@ -12,7 +14,8 @@ export class LoginPageComponent implements OnInit  {
   selectedtypeLogin: string = "";
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog
   ) { }
 
   goToApp(){
@@ -23,6 +26,15 @@ export class LoginPageComponent implements OnInit  {
 
   selectChangeHandler (event: any) {
     this.selectedtypeLogin = event.target.value;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogtypesignupComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    console.log("funciono");
   }
 
   ngOnInit() {
