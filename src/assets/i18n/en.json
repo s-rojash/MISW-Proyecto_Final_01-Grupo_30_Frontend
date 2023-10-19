@@ -1,0 +1,35 @@
+{
+  "HEADER":{
+    "LOGO":"ABCJobs",
+    "PROJECTTITLE":"Project",
+    "BANCOPREMENU":"Question Bank",
+    "CANDIDATOSMENU":"Applicant",
+    "EQUIPOSMENU":"Teams",
+    "PRUEBASMENU":"Tests",
+    "ENTREVISTASMENU":"Interviews",
+    "MYPROFILEMENU":"My Profile",
+    "LANESPMENU":"Spanish",
+    "LANENGMENU":"English",
+    "LOGOUTMENU":"Logout"
+  },
+  "LOGIN":{
+    "TITLE":"Login",
+    "LOGOJOBS":"JOBS",
+    "SUBHEADER":"Don't have an account yet?",
+    "SIGNUPHEADER":"Sign Up",
+    "EMAIL":"Email",
+    "EMAILREQUIRED":"Email required",
+    "EMAILVALIDMSJ":"Please enter a valid email address",
+    "PASSWORD":"Password",
+    "PASSWORDREQUIRED":"Password required",
+    "COMPANYSELECT":"Company",
+    "APPLICANTSELECT":"Applicant",
+    "FORGOTPASS":"Forgotten password?",
+    "LANESPMENU":"Spanish",
+    "LANENGMENU":"English",
+    "DIALOGTITLESIGNUP":"Are you trying to create a user like?",
+    "DIALOGEMPSIGNUP":"COMPANY",
+    "DIALOGORSIGNUP":"or",
+    "DIALOGCANDSIGNUP":"APPLICANT"
+  }
+}

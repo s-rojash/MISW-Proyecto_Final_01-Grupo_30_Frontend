@@ -4,7 +4,7 @@
       <div class="col-md-6" style="width: 40%;padding-right: 20px;padding-top: 10px;">
         <mat-card class="login-card-image">
           <label class="col-md-6 loginlogo1">ABC</label>
-          <label i18n="@@logojobs" class="col-md-6 loginlogo2">JOBS</label>
+          <label class="col-md-6 loginlogo2">{{ 'LOGIN.LOGOJOBS' | translate }}</label>
           <img mat-card-image src="../../../assets/Images/fondogeneral.png" style="height: 90vh;">
         </mat-card>
       </div>
@@ -12,8 +12,8 @@
       <div class="col-md-6" style="width: 60%;padding-top: 10px;z-index: 2;">
         <mat-card style="height: 90vh;">
           <mat-card-header style="margin-left: 90px;margin-top: 50px;">
-            <mat-card-title i18n="@@login_header">Login</mat-card-title>
-            <span style="display: -webkit-inline-box;" mat-card-subtitle><label i18n="@@loginsub_header">Don't have an account yet?</label>&nbsp;<a style="cursor: pointer;" (click)="openDialog()" i18n="@@loginsignup_header" mat-card-subtitle>Sign Up</a></span>
+            <mat-card-title>{{ 'LOGIN.TITLE' | translate }}</mat-card-title>
+            <span style="display: -webkit-inline-box;" mat-card-subtitle><label>{{ 'LOGIN.SUBHEADER' | translate }}</label>&nbsp;<a style="cursor: pointer;" (click)="openDialog()" mat-card-subtitle>{{ 'LOGIN.SIGNUPHEADER' | translate }}</a></span>
           </mat-card-header>
           <mat-card-content style="margin-left: 75px;margin-right: 66px;margin-top: 61px;">
             <form
@@ -22,7 +22,7 @@
             >
               <!--Email-->
               <div class="form-group mx-sm-3 mb-2 input-wrapper">
-                <label i18n="@@Email" for="email" class="labeloverinput">Email</label>
+                <label for="email" class="labeloverinput">{{ 'LOGIN.EMAIL' | translate }}</label>
                 <input
                   novalidate
                   type="email"
@@ -32,26 +32,26 @@
                   formControlName="email"
                   placeholder="Email"
                 />
-                <div i18n="@@Email_required" style="position: fixed;z-index: 2;"
+                <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
                     loginForm.get('email')!.hasError('required') &&
                     loginForm.get('email')!.touched
                   "
                 >
-                  Email required
+                  {{ 'LOGIN.EMAILREQUIRED' | translate }}
                 </div>
-                <div i18n="@@Email_validmsj" style="position: fixed;z-index: 2;"
+                <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="loginForm.get('email')!.hasError('email')"
                 >
-                  Please enter a valid email address
+                  {{ 'LOGIN.EMAILVALIDMSJ' | translate }}
                 </div>
               </div>
 
               <!--Password-->
               <div class="form-group mx-sm-3 mb-2">
-                <label i18n="@@Password" for="password" class="labeloverinput">Password</label>
+                <label for="password" class="labeloverinput">{{ 'LOGIN.PASSWORD' | translate }}</label>
                 <input
                   novalidate
                   type="password"
@@ -61,51 +61,50 @@
                   formControlName="password"
                   placeholder="Password"
                 />
-                <div i18n="@@Password_required" style="position: fixed;z-index: 2;"
+                <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
                     loginForm.get('password')!.hasError('required') &&
                     loginForm.get('password')!.touched
                   "
                 >
-                  Password required
+                  {{ 'LOGIN.PASSWORDREQUIRED' | translate }}
                 </div>
               </div>
 
               <div formGroupName="typeLogin" class="form-group mx-sm-3 mb-2">
                 <select formControlName="id" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
                   <option value="0">
-                    Empresa
+                    {{ 'LOGIN.COMPANYSELECT' | translate }}
                   </option>
                   <option value="1">
-                    Candidato
+                    {{ 'LOGIN.APPLICANTSELECT' | translate }}
                   </option>
                 </select>
               </div>
 
               <div style="text-align: center;margin-top: 73px;">
                 <button
-                  i18n="@@login_header"
                   type="submit"
                   class="btn btn-primary"
                   [disabled]="!loginForm.valid"
                   class="button-login"
                 >
-                  Login
+                  {{ 'LOGIN.TITLE' | translate }}
                 </button>
               </div>
             </form>
           </mat-card-content>
           <mat-card-footer style="margin-left: 105px;">
-            <a i18n="@@loginforgot_pass" mat-card-subtitle routerLink="/exhibitions/create">Forgotten password?</a>
+            <a mat-card-subtitle routerLink="/exhibitions/create">{{ 'LOGIN.FORGOTPASS' | translate }}</a>
           </mat-card-footer>
           <mat-card-footer style="margin-left: 35%;margin-top: auto;">
-            <button mat-button extended class="bgiconlanguages" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
-              <span i18n="@@lanesp_menu">Spanish</span>
+            <button mat-button extended class="bgiconlanguages" (click)="changeLang('es')" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
+              <span>{{ 'LOGIN.LANESPMENU' | translate }}</span>
             </button>
 
-            <button mat-button extended class="bgiconlanguages" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
-              <span i18n="@@laneng_menu">English</span>
+            <button mat-button extended class="bgiconlanguages" (click)="changeLang('en')" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
+              <span>{{ 'LOGIN.LANENGMENU' | translate }}</span>
             </button>
           </mat-card-footer>
         </mat-card>
