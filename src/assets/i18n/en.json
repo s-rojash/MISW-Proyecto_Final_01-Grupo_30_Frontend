@@ -31,5 +31,20 @@
     "DIALOGEMPSIGNUP":"COMPANY",
     "DIALOGORSIGNUP":"or",
     "DIALOGCANDSIGNUP":"APPLICANT"
+  },
+  "SIGNUP":{
+    "HEADER":"Sign Up",
+    "COMPANYS":"Companys",
+    "APPLICANTS":"Applicants",
+    "EMAIL":"Email",
+    "NAMES":"Names",
+    "NAMESREQUIRED":"Names required",
+    "LASTNAMES":"Last Names",
+    "LASTNAMESREQUIRED":"Last Names required",
+    "NI":"Identification Number",
+    "NIREQUIRED":"Identification Number required",
+    "DV":"DV",
+    "DVREQUIRED":"DV required",
+    "TITLE":"Sign Up"
   }
 }

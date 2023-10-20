@@ -11,6 +11,7 @@ export class AppComponent {
 
   title = 'frontabc-front';
   showHead: boolean = false;
+  showOptions: boolean = false;
   translate2!: TranslateService;
 
   ngOnInit() {
@@ -48,6 +49,15 @@ export class AppComponent {
         } else {
           // console.log("NU")
           this.showHead = true;
+          console.log("entro true");
+        }
+
+        if (event['url'] == '/signup/company' || event['url'] == '/signup/applicant' || event['url'] == '/signup') {
+          this.showOptions = false;
+          console.log("entro false");
+        } else {
+          // console.log("NU")
+          this.showOptions = true;
           console.log("entro true");
         }
       }

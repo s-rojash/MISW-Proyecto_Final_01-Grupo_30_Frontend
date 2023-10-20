@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{ 'HEADER.PROJECTTITLE' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/museums/list">List</a></li>
@@ -15,7 +15,7 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.BANCOPREMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/obras/create">Create</a></li>
@@ -23,7 +23,7 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.CANDIDATOSMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/artistas/create">Create</a></li>
@@ -33,7 +33,7 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown5" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.EQUIPOSMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/sponsors/create">Create</a></li>
@@ -41,14 +41,14 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.PRUEBASMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/movements/create">Create</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.ENTREVISTASMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/movements/create">Create</a></li>
@@ -57,7 +57,7 @@
       </ul>
 
 
-      <button mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
+      <button *ngIf="showOptions" mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
         [style.backgroundImage]="'url(' + '../assets/Images/fabcirclebuttonimg.jpg' + ')'">
       </button>
 

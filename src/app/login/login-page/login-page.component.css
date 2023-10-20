@@ -15,20 +15,15 @@
 }
 
 .loginlogo1{
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
   color: #E5E5E5;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
   font-family: Zen Dots;
   font-size: 120px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 16.667% */
   letter-spacing: 0.1px;
-  padding-top: 200px;
-  padding-left: 156px;
   z-index: 1;
 }
 
@@ -40,23 +35,17 @@
 }
 
 .loginlogo2{
-  display: flex;
-  position: fixed;
-  width: 502px;
-  height: 93px;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
   color: #000;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white;
   font-family: ABeeZee;
   font-size: 80px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 25% */
   letter-spacing: 0.1px;
-  padding-top: 285px;
-  padding-left: 212px;
   z-index: 1;
+  margin-top: 40px;
 }
 
 .example-form {
