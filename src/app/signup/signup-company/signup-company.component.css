@@ -98,6 +98,7 @@
   background-position: center;
   background-size: cover;
   color: #FFF;
+  margin-top: 64px;
 }
 
 .labeloverinput {
@@ -108,4 +109,8 @@
   background-color: white;
   padding: 0 5px;
   color: #6750A4;
+}
+
+::ng-deep .mat-form-field-wrapper{
+  margin-bottom: -1.25em;
 }

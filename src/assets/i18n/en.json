@@ -45,6 +45,8 @@
     "NIREQUIRED":"Identification Number required",
     "DV":"DV",
     "DVREQUIRED":"DV required",
-    "TITLE":"Sign Up"
+    "TITLE":"Sign Up",
+    "PHONE":"Cell phone number",
+    "PHONEREQUIRED":"Cell phone number required"
   }
 }

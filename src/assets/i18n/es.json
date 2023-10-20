@@ -45,6 +45,8 @@
     "NIREQUIRED":"Número de identificación requerido",
     "DV":"DV",
     "DVREQUIRED":"DV requerido",
-    "TITLE":"Regístrese"
+    "TITLE":"Regístrese",
+    "PHONE":"Número de Celular",
+    "PHONEREQUIRED":"Número de Celular requerido"
   }
 }
