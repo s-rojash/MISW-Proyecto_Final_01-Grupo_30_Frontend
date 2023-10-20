@@ -47,6 +47,11 @@
     "DVREQUIRED":"DV required",
     "TITLE":"Sign Up",
     "PHONE":"Cell phone number",
-    "PHONEREQUIRED":"Cell phone number required"
+    "PHONEREQUIRED":"Cell phone number required",
+    "DIALOGBUTTON":"Continue",
+    "DIALOGMSJSUCCESSCOMPANY":"Company created successfully",
+    "DIALOGMSJFAILEDCOMPANY":"Error: Company could not be created",
+    "DIALOGMSJSUCCESSAPPLICANT":"User created successfully",
+    "DIALOGMSJFAILEDAPPLICANT":"Error: User could not be created"
   }
 }

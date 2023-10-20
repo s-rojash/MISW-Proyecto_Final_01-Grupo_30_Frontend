@@ -15,6 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {NgIf} from '@angular/common';
+import { DialogalertopcompComponent } from '../signup/dialogalertopcomp/dialogalertopcomp.component';
+import { DialogalertopappliComponent } from '../signup/dialogalertopappli/dialogalertopappli.component';
+import { MatDialogModule} from '@angular/material/dialog';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -39,9 +42,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatIconModule,
     MatInputModule,
     FormsModule,
-    NgIf
+    NgIf,
+    MatDialogModule
   ],
-  exports: [SignupApplicantComponent, SignupCompanyComponent],
-  declarations: [SignupApplicantComponent, SignupCompanyComponent]
+  exports: [SignupApplicantComponent, SignupCompanyComponent, DialogalertopcompComponent, DialogalertopappliComponent],
+  declarations: [SignupApplicantComponent, SignupCompanyComponent, DialogalertopcompComponent, DialogalertopappliComponent]
 })
 export class SignupModule { }

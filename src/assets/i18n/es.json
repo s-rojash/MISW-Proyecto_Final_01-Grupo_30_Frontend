@@ -47,6 +47,11 @@
     "DVREQUIRED":"DV requerido",
     "TITLE":"Regístrese",
     "PHONE":"Número de Celular",
-    "PHONEREQUIRED":"Número de Celular requerido"
+    "PHONEREQUIRED":"Número de Celular requerido",
+    "DIALOGBUTTON":"Continuar",
+    "DIALOGMSJSUCCESSCOMPANY":"Empresa creada correctamente",
+    "DIALOGMSJFAILEDCOMPANY":"Error: No se pudo crear la empresa",
+    "DIALOGMSJSUCCESSAPPLICANT":"Usuario creado correctamente",
+    "DIALOGMSJFAILEDAPPLICANT":"Error: No se pudo crear el usuario"
   }
 }
