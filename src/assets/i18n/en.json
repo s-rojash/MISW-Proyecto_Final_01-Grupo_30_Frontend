@@ -52,6 +52,8 @@
     "DIALOGMSJSUCCESSCOMPANY":"Company created successfully",
     "DIALOGMSJFAILEDCOMPANY":"Error: Company could not be created",
     "DIALOGMSJSUCCESSAPPLICANT":"User created successfully",
-    "DIALOGMSJFAILEDAPPLICANT":"Error: User could not be created"
+    "DIALOGMSJFAILEDAPPLICANT":"Error: User could not be created",
+    "PASSWORD":"Password",
+    "PASSWORDREQUIRED":"Password required"
   }
 }

@@ -52,6 +52,8 @@
     "DIALOGMSJSUCCESSCOMPANY":"Empresa creada correctamente",
     "DIALOGMSJFAILEDCOMPANY":"Error: No se pudo crear la empresa",
     "DIALOGMSJSUCCESSAPPLICANT":"Usuario creado correctamente",
-    "DIALOGMSJFAILEDAPPLICANT":"Error: No se pudo crear el usuario"
+    "DIALOGMSJFAILEDAPPLICANT":"Error: No se pudo crear el usuario",
+    "PASSWORD":"Contraseña",
+    "PASSWORDREQUIRED":"Contraseña requerida"
   }
 }

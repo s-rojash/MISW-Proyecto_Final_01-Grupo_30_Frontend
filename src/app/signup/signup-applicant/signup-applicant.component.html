@@ -23,13 +23,13 @@
           <mat-card-content style="margin-left: 75px;margin-right: 66px;margin-top: 20px;">
             <form
             [formGroup]="applicantRForm"
-            (ngSubmit)="!applicantRForm.invalid && registerApplicant()"
+            (ngSubmit)="!applicantRForm.invalid && registerApplicant(applicantRForm.value)"
             >
               <!--Nombres-->
               <div class="form-group mx-sm-3 mb-2">
                 <mat-form-field style="width: 100%;" class="mat-form-field-wrapper">
                   <mat-label>{{ 'SIGNUP.NAMES' | translate }}</mat-label>
-                  <input formControlName="names" matInput type="text" [(ngModel)]="valueNames">
+                  <input formControlName="nombres" matInput type="text" [(ngModel)]="valueNames">
                   <button *ngIf="valueNames" matSuffix mat-icon-button aria-label="Names" (click)="valueNames=''">
                     <mat-icon>close</mat-icon>
                   </button>
@@ -37,8 +37,8 @@
                 <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
-                    applicantRForm.get('names')!.hasError('required') &&
-                    applicantRForm.get('names')!.touched
+                    applicantRForm.get('nombres')!.hasError('required') &&
+                    applicantRForm.get('nombres')!.touched
                   "
                 >
                   {{ 'SIGNUP.NAMESREQUIRED' | translate }}
@@ -49,7 +49,7 @@
               <div class="form-group mx-sm-3 mb-2">
                 <mat-form-field style="width: 100%;" class="mat-form-field-wrapper">
                   <mat-label>{{ 'SIGNUP.LASTNAMES' | translate }}</mat-label>
-                  <input formControlName="lastnames" matInput type="text" [(ngModel)]="valuelastNames">
+                  <input formControlName="apellidos" matInput type="text" [(ngModel)]="valuelastNames">
                   <button *ngIf="valuelastNames" matSuffix mat-icon-button aria-label="LastNames" (click)="valuelastNames=''">
                     <mat-icon>close</mat-icon>
                   </button>
@@ -57,8 +57,8 @@
                 <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
-                    applicantRForm.get('lastnames')!.hasError('required') &&
-                    applicantRForm.get('lastnames')!.touched
+                    applicantRForm.get('apellidos')!.hasError('required') &&
+                    applicantRForm.get('apellidos')!.touched
                   "
                 >
                   {{ 'SIGNUP.LASTNAMESREQUIRED' | translate }}
@@ -67,18 +67,18 @@
 
               <!--Lista numero identificacion-->
               <div formGroupName="typeLogin" class="form-group mx-sm-3 mb-2">
-                <select formControlName="id" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
-                  <option value="0">
+                <select formControlName="tipoDocumento" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
+                  <option value="C.C">
                     CEDULA DE CIUDADANIA
                   </option>
                 </select>
               </div>
 
-              <!--Numero identificacion-->
               <div class="form-group mx-sm-3 mb-2">
-                <mat-form-field style="width: 100%;" class="mat-form-field-wrapper">
+                <!--Numero identificacion-->
+                <mat-form-field style="width: 50%;padding-right: 20px;" class="mat-form-field-wrapper">
                   <mat-label>{{ 'SIGNUP.NI' | translate }}</mat-label>
-                  <input formControlName="ni" matInput type="text" [(ngModel)]="valuelastNI">
+                  <input formControlName="numDocumento" matInput type="text" [(ngModel)]="valuelastNI">
                   <button *ngIf="valuelastNI" matSuffix mat-icon-button aria-label="NI" (click)="valuelastNI=''">
                     <mat-icon>close</mat-icon>
                   </button>
@@ -86,19 +86,17 @@
                 <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
-                    applicantRForm.get('ni')!.hasError('required') &&
-                    applicantRForm.get('ni')!.touched
+                    applicantRForm.get('numDocumento')!.hasError('required') &&
+                    applicantRForm.get('numDocumento')!.touched
                   "
                 >
                   {{ 'SIGNUP.NIREQUIRED' | translate }}
                 </div>
-              </div>
 
-              <!--Numero de celular-->
-              <div class="form-group mx-sm-3 mb-2">
-                <mat-form-field style="width: 100%;" class="mat-form-field-wrapper">
+                <!--Numero de celular-->
+                <mat-form-field style="width: 50%;" class="mat-form-field-wrapper">
                   <mat-label>{{ 'SIGNUP.PHONE' | translate }}</mat-label>
-                  <input formControlName="phone" matInput type="text" [(ngModel)]="valuePhone">
+                  <input formControlName="celular" matInput type="text" [(ngModel)]="valuePhone">
                   <button *ngIf="valuePhone" matSuffix mat-icon-button aria-label="Phone" (click)="valuePhone=''">
                     <mat-icon>close</mat-icon>
                   </button>
@@ -106,8 +104,8 @@
                 <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
-                    applicantRForm.get('phone')!.hasError('required') &&
-                    applicantRForm.get('phone')!.touched
+                    applicantRForm.get('celular')!.hasError('required') &&
+                    applicantRForm.get('celular')!.touched
                   "
                 >
                   {{ 'SIGNUP.PHONEREQUIRED' | translate }}
@@ -137,6 +135,26 @@
                   *ngIf="applicantRForm.get('email')!.hasError('email')"
                 >
                   {{ 'LOGIN.EMAILVALIDMSJ' | translate }}
+                </div>
+              </div>
+
+              <!--Password-->
+              <div class="form-group mx-sm-3 mb-2">
+                <mat-form-field style="width: 100%;" class="mat-form-field-wrapper">
+                  <mat-label>{{ 'SIGNUP.PASSWORD' | translate }}</mat-label>
+                  <input formControlName="password" matInput type="password" [(ngModel)]="valuePassword">
+                  <button *ngIf="valuePassword" matSuffix mat-icon-button aria-label="Password" (click)="valuePassword=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+                <div style="position: fixed;z-index: 2;"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="
+                    applicantRForm.get('password')!.hasError('required') &&
+                    applicantRForm.get('password')!.touched
+                  "
+                >
+                  {{ 'SIGNUP.PASSWORDREQUIRED' | translate }}
                 </div>
               </div>
 

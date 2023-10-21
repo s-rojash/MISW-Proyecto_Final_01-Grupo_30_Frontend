@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog } from '@angular/material/dialog';
 import { DialogalertopappliComponent } from '../dialogalertopappli/dialogalertopappli.component';
+import { Signupapplicant } from '../signupapplicant';
+import { SignupService } from '../signup.service';
 
 @Component({
   selector: 'app-signup-applicant',
@@ -17,17 +19,27 @@ export class SignupApplicantComponent implements OnInit {
   valuelastNames = '';
   valuelastNI = '';
   valuePhone = '';
+  valuePassword = '';
 
   constructor(private formBuilder: FormBuilder,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private signupService: SignupService) { }
 
   selectChangeHandler (event: any) {
     this.selectedtypeLogin = event.target.value;
   }
 
-  registerApplicant(){
-    //Enviar 1 si la operacion fue exitosa y 2 si no tuvo exito
-    this.openDialog('1');
+  registerApplicant(signupapplicant: Signupapplicant):void{
+
+    this.signupService.createApplicant(signupapplicant).subscribe(signupapplicantp=>{
+      console.info("The applicant was created: ", signupapplicantp)
+      this.openDialog('1');
+      this.applicantRForm.reset();
+    },
+    error=>{
+      console.log(error.message);
+      this.openDialog('2');
+    });
   }
 
   openDialog(resultprocess: string) {
@@ -43,16 +55,17 @@ export class SignupApplicantComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.selectedtypeLogin = "0";
+    this.selectedtypeLogin = "C.C";
     this.applicantRForm = this.formBuilder.group({
-      email: ["", [Validators.required, Validators.email]],
-      names: ["", [Validators.required]],
-      lastnames: ["", [Validators.required]],
-      ni: ["", [Validators.required]],
-      phone: ["", [Validators.required]],
+      nombres: ["", [Validators.required]],
+      apellidos: ["", [Validators.required]],
       typeLogin: this.formBuilder.group({
-        id: [this.selectedtypeLogin]
-      })
+        tipoDocumento: [this.selectedtypeLogin]
+      }),
+      numDocumento: ["", [Validators.required]],
+      celular: ["", [Validators.required]],
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required]]
     });
   }
 

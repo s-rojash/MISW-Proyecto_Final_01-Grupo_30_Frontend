@@ -23,7 +23,7 @@ export class AppComponent {
   }
 
   translatelang(translate: TranslateService){
-    if(localStorage.getItem("lang") === undefined){
+    if(localStorage.getItem("lang") === null){
       translate.setDefaultLang('en');
     }
     else if(localStorage.getItem("lang") === 'es'){
