@@ -100,6 +100,22 @@
         <source>Jobs</source>
         <target>Trabajos</target>
       </trans-unit>
+      <trans-unit id="logindialogemp_signup" datatype="html">
+        <source>COMPANY</source>
+        <target>EMPRESA</target>
+      </trans-unit>
+      <trans-unit id="logindialogcand_signup" datatype="html">
+        <source>APPLICANT</source>
+        <target>CANDIDATO</target>
+      </trans-unit>
+      <trans-unit id="logindialogtitle_signup" datatype="html">
+        <source>Are you trying to create a user like?</source>
+        <target>¿Estas intentando crear un usuario como?</target>
+      </trans-unit>
+      <trans-unit id="logindialogor_signup" datatype="html">
+        <source>or</source>
+        <target>ó</target>
+      </trans-unit>
       <!--Palabras generales-->
       <trans-unit id="artworks" datatype="html">
         <source>Artworks</source>

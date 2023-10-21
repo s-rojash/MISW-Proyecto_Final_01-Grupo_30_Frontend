@@ -1,13 +1,13 @@
 <nav *ngIf="showHead" class="navbar navbar-expand-lg navbar-headerpro">
   <div class="container-fluid">
-    <a i18n="@@logo" class="navbar-brand navbar-brand-printitle" href="#">ABCJobs</a>
+    <a class="navbar-brand navbar-brand-printitle" href="#">{{ 'HEADER.LOGO' | translate }}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a i18n="@@proyectos_menu" class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Projects</a>
+        <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{ 'HEADER.PROJECTTITLE' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/museums/list">List</a></li>
             <li><a i18n="@@crear_menu" routerLink="/museums/create" i18n class="dropdown-item" >Create</a></li>
@@ -15,16 +15,16 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a i18n="@@bancopre_menu" class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">Question Bank</a>
+        <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.BANCOPREMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/obras/create">Create</a></li>
             <li><a  i18n="@@listar_menu" class="dropdown-item" routerLink="/obras/list">List</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a i18n="@@candidatos_menu" class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">Applicant</a>
+        <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.CANDIDATOSMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/artistas/create">Create</a></li>
             <li><a i18n="@@editar_menu" class="dropdown-item" href="#">Edit</a></li>
@@ -33,23 +33,23 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a i18n="@@equipos_menu" class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown5" role="button" data-bs-toggle="dropdown" aria-expanded="false">Teams</a>
+        <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown5" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.EQUIPOSMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/sponsors/create">Create</a></li>
             <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/sponsors/list">List</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a i18n="@@pruebas_menu" class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tests</a>
+        <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.PRUEBASMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/movements/create">Create</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a i18n="@@entrevistas_menu" class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">Interviews</a>
+        <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.ENTREVISTASMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
             <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/movements/create">Create</a></li>
           </ul>
@@ -57,30 +57,30 @@
       </ul>
 
 
-      <button mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
+      <button *ngIf="showOptions" mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
         [style.backgroundImage]="'url(' + '../assets/Images/fabcirclebuttonimg.jpg' + ')'">
       </button>
 
       <mat-menu #menu="matMenu" class="mat-menu-panel">
         <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
-          <span i18n="@@myprofile_menu" style="padding-left: 30px;">My Profile</span>
+          <span style="padding-left: 30px;">{{ 'HEADER.MYPROFILEMENU' | translate }}</span>
         </button>
 
-        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
-          <span i18n="@@lanesp_menu" style="padding-left: 30px;">Spanish</span>
+        <button mat-button class="bgiconlanguages" (click)="changeLang('es')" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
+          <span style="padding-left: 30px;">{{ 'HEADER.LANESPMENU' | translate }}</span>
         </button>
         <mat-menu #aboveMenu="matMenu" yPosition="above">
         </mat-menu>
 
-        <button mat-button class="bgiconlanguages" [matMenuTriggerFor]="belowMenu" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
-          <span i18n="@@laneng_menu" style="padding-left: 30px;">English</span>
+        <button mat-button class="bgiconlanguages" (click)="changeLang('en')" [matMenuTriggerFor]="belowMenu" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
+          <span style="padding-left: 30px;">{{ 'HEADER.LANENGMENU' | translate }}</span>
         </button>
         <mat-menu #belowMenu="matMenu" yPosition="below">
         </mat-menu>
 
         <mat-divider></mat-divider>
         <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'">
-          <span i18n="@@logout_menu" style="padding-left: 30px;">Logout</span>
+          <span style="padding-left: 30px;">{{ 'HEADER.LOGOUTMENU' | translate }}</span>
         </button>
       </mat-menu>
     </div>

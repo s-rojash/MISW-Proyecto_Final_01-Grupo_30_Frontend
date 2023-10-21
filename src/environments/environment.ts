@@ -2,7 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const baseUrl = 'https://back-museums-equipo43.herokuapp.com/api';
+const baseUrl = 'https://ms-candidatos.azurewebsites.net';
 const idMuseum = "";
 
 export const environment = {
