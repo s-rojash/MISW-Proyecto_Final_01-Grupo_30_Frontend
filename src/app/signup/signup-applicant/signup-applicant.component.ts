@@ -59,9 +59,7 @@ export class SignupApplicantComponent implements OnInit {
     this.applicantRForm = this.formBuilder.group({
       nombres: ["", [Validators.required]],
       apellidos: ["", [Validators.required]],
-      typeLogin: this.formBuilder.group({
-        tipoDocumento: [this.selectedtypeLogin]
-      }),
+      tipoDocumento: [this.selectedtypeLogin],
       numDocumento: ["", [Validators.required]],
       celular: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],
