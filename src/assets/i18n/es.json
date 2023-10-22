@@ -55,5 +55,15 @@
     "DIALOGMSJFAILEDAPPLICANT":"Error: No se pudo crear el usuario",
     "PASSWORD":"Contraseña",
     "PASSWORDREQUIRED":"Contraseña requerida"
-  }
+  },
+  "PROJECT":{
+    "COMPANYS":"Empresas",
+    "CREATION":"Creación de proyecto",
+    "NAME":"Nombre de proyecto",
+    "DESCRIPTION":"Descripcion de proyecto",
+    "NAMESREQUIRED" :"Nombre requeridos",
+    "DESCRIPTIONREQUIRED" :"Descripcion requerida",
+    "ADD" :"Crear"
+     }
+
 }

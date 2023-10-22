@@ -56,4 +56,16 @@
     "PASSWORD":"Password",
     "PASSWORDREQUIRED":"Password required"
   }
+  ,
+  "PROJECT":{
+    "COMPANYS":"Company",
+    "CREATION":"Project's creation",
+    "NAME":"Project Name",
+    "DESCRIPTION":"Project Description",
+    "NAMESREQUIRED" :"Names required",
+    "DESCRIPTIONREQUIRED" :"Description required",
+    "ADD" :"Add"
+     }
+
+
 }

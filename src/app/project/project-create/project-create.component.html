@@ -1,0 +1,78 @@
+
+
+<div style="padding-bottom: 15px;padding-left: 10px;">
+  <span><label>{{ 'PROJECT.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'PROJECT.CREATION' | translate }}</label></label></span>
+</div>
+
+  <div class="col-md-6" style="width: 50%; z-index: 2;">
+    <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px;">
+      <form [formGroup]="projectForm" (ngSubmit)="!projectForm.invalid && createProject(projectForm.value)">
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <div style="flex: 1; margin-right: 10px;">
+            <!-- nombre -->
+            <div class="form-group mx-sm-3 mb-2" >
+              <label for="nombre" class="labeloverinput">{{ 'PROJECT.NAME' | translate }}</label>
+              <input
+                novalidate
+                type="text"
+                id="nombre"
+                class="form-control"
+                style="border-color: #6750A4;height: 60px; border-width: 3px;"
+                formControlName="nombre"
+                placeholder="nombre"
+                
+              />
+              <div style="position: fixed; z-index: 2;"
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="projectForm.get('nombre')!.hasError('required') && projectForm.get('nombre')!.touched"
+              >
+                {{ 'PROJECT.NAMESREQUIRED' | translate }}
+              </div>
+            </div>
+          
+            <!-- Descripción -->
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="descripcion" class="labeloverinput">{{ 'PROJECT.DESCRIPTION' | translate }}</label>
+              <input
+                novalidate
+                type="text"
+                id="descripcion"
+                class="form-control"
+                style="height: 60px;"
+                style="border-color: #6750A4;height: 60px; border-width: 3px;"
+                formControlName="descripcion"
+                placeholder="Descripción"
+              />
+              <div style="position: fixed; z-index: 2;"
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="projectForm.get('descripcion')!.hasError('required') && projectForm.get('descripcion')!.touched"
+              >
+                {{ 'PROJECT.DESCRIPTIONREQUIRED' | translate }}
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="!projectForm.valid"
+              class="button-signup"
+              mat-fab extended
+            >
+              <mat-icon style="color: black;">add</mat-icon>
+              {{ 'PROJECT.ADD' | translate }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card>
+    
+  </div>
+
+
+  <div>
+  <mat-card class="project-card solid-border-card">
+  <app-project-list></app-project-list>
+  </mat-card>
+  </div>

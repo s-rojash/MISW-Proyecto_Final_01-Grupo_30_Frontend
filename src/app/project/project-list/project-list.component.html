@@ -1,0 +1,17 @@
+<div>
+  <div class="card-container"  style="height: auto; margin: 10px; ">
+    <div class="card" *ngFor="let project of projects">
+      <mat-card  style="height: auto; margin: 1px;  background-color:#FEF7FF">
+        <mat-icon class="check-icon">done</mat-icon>
+        <mat-card-header>
+          <mat-card-title class=".project-card-title">{{ project.nombre }}</mat-card-title>
+          <mat-card-subtitle class="project-card" >{{ project.descripcion }}</mat-card-subtitle>
+        </mat-card-header>
+        <!-- Puedes agregar más contenido a la tarjeta si es necesario -->
+        <mat-card-content>
+          <!-- Contenido adicional del proyecto -->
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

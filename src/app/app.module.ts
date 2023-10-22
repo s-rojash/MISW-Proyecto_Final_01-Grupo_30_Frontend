@@ -26,6 +26,8 @@ import { SignpuRoutingModule } from './signup/signup-routing.module';
 import { ArtistRoutingModule } from './artist/artist-routing.module';
 import { ArtworkRoutingModule } from './artworks/artwork-routing.module';
 import { MovementRoutingModule } from './movement/movement-routing-module';
+import { ProjectRoutingModule } from './project/project-routing.module';
+
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
 import { ToastrModule } from 'ngx-toastr';
@@ -37,15 +39,19 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { ProjectModule } from './project/project.module';
+
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [		
+    AppComponent,
+
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -53,12 +59,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ImageModule,
     HttpClientModule,
     MuseumModule,
+    ProjectModule,
     ArtistModule,
     MovementModule,
     SponsorModule,
     ExhibitionsModule,
     PrincipalModule,
     MuseumRoutingModule,
+    ProjectRoutingModule,
     ExhibtionRoutingModule,
     PrincipalRoutingModule,
     LoginModule,
@@ -68,6 +76,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ArtistRoutingModule,
     ArtworkRoutingModule,
     MovementRoutingModule,
+    ProjectRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',
