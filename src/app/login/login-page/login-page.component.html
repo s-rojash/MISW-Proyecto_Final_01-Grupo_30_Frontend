@@ -20,7 +20,7 @@
           <mat-card-content style="margin-left: 75px;margin-right: 66px;margin-top: 61px;">
             <form
               [formGroup]="loginForm"
-              (ngSubmit)="!loginForm.invalid && goToApp()"
+              (ngSubmit)="!loginForm.invalid && goToApp(loginForm.value)"
             >
               <!--Email-->
               <div class="form-group mx-sm-3 mb-2 input-wrapper">
@@ -74,8 +74,8 @@
                 </div>
               </div>
 
-              <div formGroupName="typeLogin" class="form-group mx-sm-3 mb-2">
-                <select formControlName="id" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
+              <div class="form-group mx-sm-3 mb-2">
+                <select (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
                   <option value="0">
                     {{ 'LOGIN.COMPANYSELECT' | translate }}
                   </option>

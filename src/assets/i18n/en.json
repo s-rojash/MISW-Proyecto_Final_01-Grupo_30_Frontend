@@ -30,7 +30,9 @@
     "DIALOGTITLESIGNUP":"Are you trying to create a user like?",
     "DIALOGEMPSIGNUP":"COMPANY",
     "DIALOGORSIGNUP":"or",
-    "DIALOGCANDSIGNUP":"APPLICANT"
+    "DIALOGCANDSIGNUP":"APPLICANT",
+    "LOGINSUCCESS":"Successful login",
+    "INVALIDCREDENTIALS":"Invalid credentials"
   },
   "SIGNUP":{
     "HEADER":"Sign Up",

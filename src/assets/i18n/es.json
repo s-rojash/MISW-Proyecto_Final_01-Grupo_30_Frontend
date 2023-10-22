@@ -30,7 +30,9 @@
     "DIALOGTITLESIGNUP":"¿Estas intentando crear un usuario como?",
     "DIALOGEMPSIGNUP":"EMPRESA",
     "DIALOGORSIGNUP":"ó",
-    "DIALOGCANDSIGNUP":"CANDIDATO"
+    "DIALOGCANDSIGNUP":"CANDIDATO",
+    "LOGINSUCCESS":"Ingreso exitoso",
+    "INVALIDCREDENTIALS":"Credenciales invalidas"
   },
   "SIGNUP":{
     "HEADER":"Registro",
