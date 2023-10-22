@@ -4,28 +4,32 @@
     <body>
     <!--Menu ppal-->
        <trans-unit id="logo" datatype="html">
-        <source>Musearch</source>
-        <target>BuscaMuseos</target>
+        <source>ABCJobs</source>
+        <target>ABCTrabajos</target>
       </trans-unit>
-      <trans-unit id="museos_menu" datatype="html">
-        <source>Museums</source>
-        <target>Museos</target>
+      <trans-unit id="proyectos_menu" datatype="html">
+        <source>Projects</source>
+        <target>Proyectos</target>
       </trans-unit>
-      <trans-unit id="obras_menu" datatype="html">
-        <source>Artworks</source>
-        <target>Obras</target>
+      <trans-unit id="bancopre_menu" datatype="html">
+        <source>Question Bank</source>
+        <target>Banco de preguntas</target>
       </trans-unit>
-      <trans-unit id="artistas_menu" datatype="html">
-        <source>Artists</source>
-        <target>Artistas</target>
+      <trans-unit id="candidatos_menu" datatype="html">
+        <source>Applicant</source>
+        <target>Candidatos</target>
       </trans-unit>
-      <trans-unit id="patrocinadores_menu" datatype="html">
-        <source>Sponsors</source>
-        <target>Patrocinadores</target>
+      <trans-unit id="equipos_menu" datatype="html">
+        <source>Teams</source>
+        <target>Equipos</target>
       </trans-unit>
-      <trans-unit id="movimientos_menu" datatype="html">
-        <source>Movements</source>
-        <target>Movimientos</target>
+      <trans-unit id="pruebas_menu" datatype="html">
+        <source>Tests</source>
+        <target>Pruebas</target>
+      </trans-unit>
+      <trans-unit id="entrevistas_menu" datatype="html">
+        <source>Interviews</source>
+        <target>Entrevistas</target>
       </trans-unit>
       <trans-unit id="listar_menu" datatype="html">
         <source>List</source>
@@ -38,6 +42,79 @@
       <trans-unit id="editar_menu" datatype="html">
         <source>Edit</source>
         <target>Editar</target>
+      </trans-unit>
+      <trans-unit id="logout_menu" datatype="html">
+        <source>Logout</source>
+        <target>Salir</target>
+      </trans-unit>
+      <trans-unit id="lanesp_menu" datatype="html">
+        <source>Spanish</source>
+        <target>Español</target>
+      </trans-unit>
+      <trans-unit id="laneng_menu" datatype="html">
+        <source>English</source>
+        <target>Ingles</target>
+      </trans-unit>
+      <trans-unit id="myprofile_menu" datatype="html">
+        <source>My Profile</source>
+        <target>Mi Perfil</target>
+      </trans-unit>
+      <!--Login-->
+      <trans-unit id="login_header" datatype="html">
+        <source>Login</source>
+        <target>Ingreso</target>
+      </trans-unit>
+      <trans-unit id="loginsub_header" datatype="html">
+        <source>Don't have an account yet?</source>
+        <target>No tienes una cuenta?</target>
+      </trans-unit>
+      <trans-unit id="loginsignup_header" datatype="html">
+        <source>Sign Up</source>
+        <target>Creala Aqui</target>
+      </trans-unit>
+      <trans-unit id="Email" datatype="html">
+        <source>Email</source>
+        <target>Correo</target>
+      </trans-unit>
+      <trans-unit id="Email_required" datatype="html">
+        <source>Email required</source>
+        <target>Correo Requerido</target>
+      </trans-unit>
+      <trans-unit id="Email_validmsj" datatype="html">
+        <source>Please enter a valid email address</source>
+        <target>Por favor ingrese un correo valido</target>
+      </trans-unit>
+      <trans-unit id="Password" datatype="html">
+        <source>Password</source>
+        <target>Contraseña</target>
+      </trans-unit>
+      <trans-unit id="Password_required" datatype="html">
+        <source>Password required</source>
+        <target>Contraseña Requerida</target>
+      </trans-unit>
+      <trans-unit id="loginforgot_pass" datatype="html">
+        <source>Forgotten password?</source>
+        <target>Olvido su contraseña?</target>
+      </trans-unit>
+      <trans-unit id="logojobs" datatype="html">
+        <source>Jobs</source>
+        <target>Trabajos</target>
+      </trans-unit>
+      <trans-unit id="logindialogemp_signup" datatype="html">
+        <source>COMPANY</source>
+        <target>EMPRESA</target>
+      </trans-unit>
+      <trans-unit id="logindialogcand_signup" datatype="html">
+        <source>APPLICANT</source>
+        <target>CANDIDATO</target>
+      </trans-unit>
+      <trans-unit id="logindialogtitle_signup" datatype="html">
+        <source>Are you trying to create a user like?</source>
+        <target>¿Estas intentando crear un usuario como?</target>
+      </trans-unit>
+      <trans-unit id="logindialogor_signup" datatype="html">
+        <source>or</source>
+        <target>ó</target>
       </trans-unit>
       <!--Palabras generales-->
       <trans-unit id="artworks" datatype="html">

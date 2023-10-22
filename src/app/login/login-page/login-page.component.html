@@ -1,0 +1,116 @@
+<div class="d-flex align-items-center">
+  <div class="loginContainer">
+    <div class="row" style="width: 100%;">
+      <div class="col-md-6" style="width: 40%;padding-right: 20px;padding-top: 10px;">
+        <mat-card class="login-card-image">
+          <div class="d-flex align-items-end flex-column" style="height: 200px;position: fixed;z-index: 2;padding-left: 140px;padding-top: 260px;">
+            <label class="p-2 loginlogo1">ABC</label>
+            <label class="p-2 loginlogo2">{{ 'LOGIN.LOGOJOBS' | translate }}</label>
+          </div>
+          <img mat-card-image src="../../../assets/Images/fondogeneral.png" style="height: 90vh;">
+        </mat-card>
+      </div>
+
+      <div class="col-md-6" style="width: 60%;padding-top: 10px;z-index: 2;">
+        <mat-card style="height: 90vh;">
+          <mat-card-header style="margin-left: 90px;margin-top: 50px;">
+            <mat-card-title>{{ 'LOGIN.TITLE' | translate }}</mat-card-title>
+            <span style="display: -webkit-inline-box;" mat-card-subtitle><label>{{ 'LOGIN.SUBHEADER' | translate }}</label>&nbsp;<a style="cursor: pointer;" (click)="openDialog()" mat-card-subtitle>{{ 'LOGIN.SIGNUPHEADER' | translate }}</a></span>
+          </mat-card-header>
+          <mat-card-content style="margin-left: 75px;margin-right: 66px;margin-top: 61px;">
+            <form
+              [formGroup]="loginForm"
+              (ngSubmit)="!loginForm.invalid && goToApp(loginForm.value)"
+            >
+              <!--Email-->
+              <div class="form-group mx-sm-3 mb-2 input-wrapper">
+                <label for="email" class="labeloverinput">{{ 'LOGIN.EMAIL' | translate }}</label>
+                <input
+                  novalidate
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  style="border-color: #6750A4;height: 60px;"
+                  formControlName="email"
+                  placeholder="Email"
+                />
+                <div style="position: fixed;z-index: 2;"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="
+                    loginForm.get('email')!.hasError('required') &&
+                    loginForm.get('email')!.touched
+                  "
+                >
+                  {{ 'LOGIN.EMAILREQUIRED' | translate }}
+                </div>
+                <div style="position: fixed;z-index: 2;"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="loginForm.get('email')!.hasError('email')"
+                >
+                  {{ 'LOGIN.EMAILVALIDMSJ' | translate }}
+                </div>
+              </div>
+
+              <!--Password-->
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="password" class="labeloverinput">{{ 'LOGIN.PASSWORD' | translate }}</label>
+                <input
+                  novalidate
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  style="border-color: #6750A4;height: 60px;"
+                  formControlName="password"
+                  placeholder="Password"
+                />
+                <div style="position: fixed;z-index: 2;"
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="
+                    loginForm.get('password')!.hasError('required') &&
+                    loginForm.get('password')!.touched
+                  "
+                >
+                  {{ 'LOGIN.PASSWORDREQUIRED' | translate }}
+                </div>
+              </div>
+
+              <div class="form-group mx-sm-3 mb-2">
+                <select (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
+                  <option value="0">
+                    {{ 'LOGIN.COMPANYSELECT' | translate }}
+                  </option>
+                  <option value="1">
+                    {{ 'LOGIN.APPLICANTSELECT' | translate }}
+                  </option>
+                </select>
+              </div>
+
+              <div style="text-align: center;margin-top: 73px;">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  [disabled]="!loginForm.valid"
+                  class="button-login"
+                >
+                  {{ 'LOGIN.TITLE' | translate }}
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+          <mat-card-footer style="margin-left: 105px;">
+            <a mat-card-subtitle routerLink="/exhibitions/create">{{ 'LOGIN.FORGOTPASS' | translate }}</a>
+          </mat-card-footer>
+          <mat-card-footer style="margin-left: 35%;margin-top: auto;">
+            <button mat-button extended class="bgiconlanguages" (click)="changeLang('es')" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
+              <span>{{ 'LOGIN.LANESPMENU' | translate }}</span>
+            </button>
+
+            <button mat-button extended class="bgiconlanguages" (click)="changeLang('en')" [style.backgroundImage]="'url(' + '../assets/Images/english.png' + ')'">
+              <span>{{ 'LOGIN.LANENGMENU' | translate }}</span>
+            </button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
