@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 const baseUrl = 'https://ms-candidatos.azurewebsites.net';
+const baseUrlCom = 'https://ms-empresas.azurewebsites.net';
 
 const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
 const idMuseum = "";
@@ -10,6 +11,7 @@ const idMuseum = "";
 export const environment = {
   production: false,
   baseUrl,
+  baseUrlCom,
   baseUrlProyectos,
   idMuseum
 };

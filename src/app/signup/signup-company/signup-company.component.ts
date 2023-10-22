@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog } from '@angular/material/dialog';
 import { DialogalertopcompComponent } from '../dialogalertopcomp/dialogalertopcomp.component';
+import { Signupcompany } from '../signupcompany';
+import { SignupService } from '../signup.service';
 
 @Component({
   selector: 'app-signup-company',
@@ -11,19 +13,26 @@ import { DialogalertopcompComponent } from '../dialogalertopcomp/dialogalertopco
 export class SignupCompanyComponent implements OnInit {
 
   companyRForm!: FormGroup;
-  selectedtypeLogin: string = "";
+  selectedtypeNIT: string = "NIT";
   valueEmail = '';
   valueNames = '';
-  valuelastNames = '';
   valuelastNI = '';
   valuelastDV = '';
+  valuePassword = '';
 
   constructor(private formBuilder: FormBuilder,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private signupService: SignupService) { }
 
-  registerCompany(){
-    //Enviar 1 si la operacion fue exitosa y 2 si no tuvo exito
-    this.openDialog('1');
+  registerCompany(signupcompany: Signupcompany):void{
+    this.signupService.createCompany(signupcompany).subscribe(signupcompanyp=>{
+      console.info("The company was created: ", signupcompanyp)
+      this.openDialog('1');
+      this.companyRForm.reset();
+    },
+    error=>{
+      this.openDialog('2');
+    });
   }
 
   openDialog(resultprocess: string) {
@@ -39,20 +48,17 @@ export class SignupCompanyComponent implements OnInit {
   }
 
   selectChangeHandler (event: any) {
-    this.selectedtypeLogin = event.target.value;
+    this.selectedtypeNIT = event.target.value;
   }
 
   ngOnInit() {
-    this.selectedtypeLogin = "0";
     this.companyRForm = this.formBuilder.group({
+      razonSocial: ["", [Validators.required]],
+      tipoDocumento: [this.selectedtypeNIT],
+      numDocumento: ["", [Validators.required]],
+      digitoVerificacion: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],
-      names: ["", [Validators.required]],
-      lastnames: ["", [Validators.required]],
-      ni: ["", [Validators.required]],
-      dv: ["", [Validators.required]],
-      typeLogin: this.formBuilder.group({
-        id: [this.selectedtypeLogin]
-      })
+      password: ["", [Validators.required]]
     });
   }
 

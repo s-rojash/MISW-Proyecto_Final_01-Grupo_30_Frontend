@@ -30,7 +30,9 @@
     "DIALOGTITLESIGNUP":"¿Estas intentando crear un usuario como?",
     "DIALOGEMPSIGNUP":"EMPRESA",
     "DIALOGORSIGNUP":"ó",
-    "DIALOGCANDSIGNUP":"CANDIDATO"
+    "DIALOGCANDSIGNUP":"CANDIDATO",
+    "LOGINSUCCESS":"Ingreso exitoso",
+    "INVALIDCREDENTIALS":"Credenciales invalidas"
   },
   "SIGNUP":{
     "HEADER":"Registro",
@@ -54,7 +56,11 @@
     "DIALOGMSJSUCCESSAPPLICANT":"Usuario creado correctamente",
     "DIALOGMSJFAILEDAPPLICANT":"Error: No se pudo crear el usuario",
     "PASSWORD":"Contraseña",
-    "PASSWORDREQUIRED":"Contraseña requerida"
+    "PASSWORDREQUIRED":"Contraseña requerida",
+    "CC":"CEDULA DE CIUDADANIA",
+    "CE":"CEDULA DE EXTRANJERIA",
+    "BUSINESSNAME":"Razón social",
+    "BUSINESSNAMEREQUIRED":"Razón social requerida"
   },
   "PROJECT":{
     "COMPANYS":"Empresas",
@@ -64,6 +70,5 @@
     "NAMESREQUIRED" :"Nombre requeridos",
     "DESCRIPTIONREQUIRED" :"Descripcion requerida",
     "ADD" :"Crear"
-     }
-
+  }
 }
