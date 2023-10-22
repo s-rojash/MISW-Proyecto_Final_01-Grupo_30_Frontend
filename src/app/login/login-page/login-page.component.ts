@@ -79,7 +79,7 @@ export class LoginPageComponent implements OnInit  {
           this.toastr.success(res);
         });
         this.loginForm.reset();
-        this.router.navigate(['/museums']);
+        this.router.navigate(['/principal']);
       },
       error=>{
         this.translate2.get('LOGIN.INVALIDCREDENTIALS').subscribe((res: string) => {
