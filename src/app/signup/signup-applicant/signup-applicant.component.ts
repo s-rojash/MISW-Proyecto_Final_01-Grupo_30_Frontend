@@ -13,7 +13,7 @@ import { SignupService } from '../signup.service';
 export class SignupApplicantComponent implements OnInit {
 
   applicantRForm!: FormGroup;
-  selectedtypeLogin: string = "";
+  selectedtypeNIT: string = "C.C.";
   valueEmail = '';
   valueNames = '';
   valuelastNames = '';
@@ -23,21 +23,20 @@ export class SignupApplicantComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     public dialog: MatDialog,
-    private signupService: SignupService) { }
+    private signupService: SignupService) {
+    }
 
   selectChangeHandler (event: any) {
-    this.selectedtypeLogin = event.target.value;
+    this.selectedtypeNIT = event.target.value;
   }
 
   registerApplicant(signupapplicant: Signupapplicant):void{
-
     this.signupService.createApplicant(signupapplicant).subscribe(signupapplicantp=>{
       console.info("The applicant was created: ", signupapplicantp)
       this.openDialog('1');
       this.applicantRForm.reset();
     },
     error=>{
-      console.log(error.message);
       this.openDialog('2');
     });
   }
@@ -55,11 +54,10 @@ export class SignupApplicantComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.selectedtypeLogin = "C.C";
     this.applicantRForm = this.formBuilder.group({
       nombres: ["", [Validators.required]],
       apellidos: ["", [Validators.required]],
-      tipoDocumento: [this.selectedtypeLogin],
+      tipoDocumento: [this.selectedtypeNIT],
       numDocumento: ["", [Validators.required]],
       celular: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],

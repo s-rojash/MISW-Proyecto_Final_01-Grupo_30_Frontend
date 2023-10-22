@@ -54,6 +54,10 @@
     "DIALOGMSJSUCCESSAPPLICANT":"Usuario creado correctamente",
     "DIALOGMSJFAILEDAPPLICANT":"Error: No se pudo crear el usuario",
     "PASSWORD":"Contraseña",
-    "PASSWORDREQUIRED":"Contraseña requerida"
+    "PASSWORDREQUIRED":"Contraseña requerida",
+    "CC":"CEDULA DE CIUDADANIA",
+    "CE":"CEDULA DE EXTRANJERIA",
+    "BUSINESSNAME":"Razón social",
+    "BUSINESSNAMEREQUIRED":"Razón social requerida"
   }
 }
