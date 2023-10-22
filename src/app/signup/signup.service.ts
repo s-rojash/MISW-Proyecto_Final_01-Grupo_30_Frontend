@@ -11,7 +11,7 @@ import { Signupcompany } from './signupcompany';
 export class SignupService {
 
   private apiUrlApplicant: string = environment.baseUrl + '/candidatos/';
-  private apiUrlCompany: string = environment.baseUrl + '/empresas/';
+  private apiUrlCompany: string = environment.baseUrlCom + '/empresas/';
 
   constructor(private http: HttpClient) { }
 

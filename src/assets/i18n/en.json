@@ -30,7 +30,9 @@
     "DIALOGTITLESIGNUP":"Are you trying to create a user like?",
     "DIALOGEMPSIGNUP":"COMPANY",
     "DIALOGORSIGNUP":"or",
-    "DIALOGCANDSIGNUP":"APPLICANT"
+    "DIALOGCANDSIGNUP":"APPLICANT",
+    "LOGINSUCCESS":"Successful login",
+    "INVALIDCREDENTIALS":"Invalid credentials"
   },
   "SIGNUP":{
     "HEADER":"Sign Up",
@@ -54,6 +56,10 @@
     "DIALOGMSJSUCCESSAPPLICANT":"User created successfully",
     "DIALOGMSJFAILEDAPPLICANT":"Error: User could not be created",
     "PASSWORD":"Password",
-    "PASSWORDREQUIRED":"Password required"
+    "PASSWORDREQUIRED":"Password required",
+    "CC":"CITIZENSHIP CARD",
+    "CE":"FOREIGNER ID",
+    "BUSINESSNAME":"Business name",
+    "BUSINESSNAMEREQUIRED":"Business name required"
   }
 }

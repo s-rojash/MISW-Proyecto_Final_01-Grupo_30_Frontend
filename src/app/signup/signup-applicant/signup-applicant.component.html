@@ -66,10 +66,13 @@
               </div>
 
               <!--Lista numero identificacion-->
-              <div formGroupName="typeLogin" class="form-group mx-sm-3 mb-2">
+              <div class="form-group mx-sm-3 mb-2">
                 <select formControlName="tipoDocumento" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;background-color: #E5E5E5;" ng-required="true">
-                  <option value="C.C">
-                    CEDULA DE CIUDADANIA
+                  <option value="C.C.">
+                    {{ 'SIGNUP.CC' | translate }}
+                  </option>
+                  <option value="C.E.">
+                    {{ 'SIGNUP.CE' | translate }}
                   </option>
                 </select>
               </div>
