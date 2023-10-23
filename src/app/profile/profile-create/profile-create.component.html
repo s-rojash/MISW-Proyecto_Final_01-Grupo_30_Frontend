@@ -1,0 +1,47 @@
+
+<div style="padding-bottom: 15px;padding-left: 10px;">
+  <span><label>Creación de perfiles</label></span>
+</div>
+
+<mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px;">
+  <form [formGroup]="profileForm" (ngSubmit)="!profileForm.invalid && createProfile(profileForm.value)">
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <div style="flex: 1; margin-right: 10px;">
+        <!-- nombre -->
+        <div class="form-group mx-sm-3 mb-2" >
+          <label for="nombre" class="labeloverinput">nombre</label>
+          <input
+            novalidate
+            type="text"
+            id="nombre"
+            class="form-control"
+            style="border-color: #6750A4;height: 60px; border-width: 3px;"
+            formControlName="nombre"
+            placeholder="nombre"
+            
+          />
+          <div style="position: fixed; z-index: 2;"
+            class="alert alert-danger alert-dismissible fade show"
+            *ngIf="profileForm.get('nombre')!.hasError('required') && profileForm.get('nombre')!.touched"
+          >
+            NombreRequerido
+          </div>
+        </div>
+      
+      </div>
+      
+      <div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!profileForm.valid"
+          class="button-signup"
+          mat-fab extended
+        >
+          <mat-icon style="color: black;">add</mat-icon>
+          add
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>

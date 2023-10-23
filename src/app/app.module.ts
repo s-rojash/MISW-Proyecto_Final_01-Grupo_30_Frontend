@@ -40,6 +40,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ProjectModule } from './project/project.module';
+import { ProfileModule } from './profile/profile.module';
+import { ProfileRoutingModule } from './profile/profile-routing.module';
+
 
 
 
@@ -48,9 +51,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [		
-    AppComponent,
-
+  declarations: [			
+    AppComponent
    ],
   imports: [
     BrowserModule,
@@ -60,13 +62,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HttpClientModule,
     MuseumModule,
     ProjectModule,
+    ProfileModule,
+    ProfileRoutingModule,
     ArtistModule,
     MovementModule,
     SponsorModule,
     ExhibitionsModule,
     PrincipalModule,
     MuseumRoutingModule,
-    ProjectRoutingModule,
     ExhibtionRoutingModule,
     PrincipalRoutingModule,
     LoginModule,
