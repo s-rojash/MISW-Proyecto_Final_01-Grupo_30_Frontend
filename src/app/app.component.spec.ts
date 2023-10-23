@@ -1,22 +1,28 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ArtworksListComponent } from './artworks/artworks-list/artworks-list.component';
-import { MuseumListComponent } from 'src/app/museum/museum-list/museum-list.component'
-import { ArtistListComponent } from 'src/app/artist/artist-list/artist-list.component'
-import { ExhibitionsListComponent } from 'src/app/exhibitions/exhibitions-list/exhibitions-list.component';
-import { SponsorListComponent } from 'src/app/sponsor/sponsor-list/sponsor-list.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, HttpClientModule
+        RouterTestingModule, HttpClientModule, TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+          }
+        })
       ],
       declarations: [
-        AppComponent, MuseumListComponent, ArtistListComponent, SponsorListComponent, ExhibitionsListComponent, ArtworksListComponent
+        AppComponent
       ],
     }).compileComponents();
   });
