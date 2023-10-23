@@ -61,5 +61,14 @@
     "CE":"CEDULA DE EXTRANJERIA",
     "BUSINESSNAME":"Razón social",
     "BUSINESSNAMEREQUIRED":"Razón social requerida"
+  },
+  "PROJECT":{
+    "COMPANYS":"Empresas",
+    "CREATION":"Creación de proyecto",
+    "NAME":"Nombre de proyecto",
+    "DESCRIPTION":"Descripcion de proyecto",
+    "NAMESREQUIRED" :"Nombre requeridos",
+    "DESCRIPTIONREQUIRED" :"Descripcion requerida",
+    "ADD" :"Crear"
   }
 }
