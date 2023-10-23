@@ -1,94 +1,51 @@
 <testExecutions version="1">
-  <file path="src/app/movement/movement.service.spec.ts">
-    <testCase name="MovementService should be created" duration="14"/>
+  <file path="src/app/project/project-list/project-list.component.spec.ts">
+    <testCase name="ProjectListComponent should create" duration="50"/>
   </file>
-  <file path="src/app/artworks/artworks.service.spec.ts">
-    <testCase name="ArtworksService should be created" duration="3"/>
+  <file path="src/app/profile/profile-create/profile-create.component.spec.ts">
+    <testCase name="ProfileCreateComponent should create" duration="24"/>
   </file>
-  <file path="src/app/sponsor/sponsor-create/sponsor-create.component.spec.ts">
-    <testCase name="SponsorCreateComponent should create" duration="72"/>
+  <file path="src/app/profile/profile.service.spec.ts">
+    <testCase name="Service: Profile should ..." duration="2"/>
   </file>
-  <file path="src/app/artist/artist-list/artist-list.component.spec.ts">
-    <testCase name="ArtistListComponent Debe tener un div detalle_artista" duration="25"/>
-    <testCase name="ArtistListComponent Debe tener una imagen " duration="11"/>
-    <testCase name="ArtistListComponent should create" duration="10"/>
+  <file path="src/app/login/login.service.spec.ts">
+    <testCase name="Service: Login should ..." duration="2"/>
   </file>
-  <file path="src/app/museum/museum-create/museum-create.component.spec.ts">
-    <testCase name="MuseumCreateComponent Debe tener un campo de imagen" duration="32"/>
-    <testCase name="MuseumCreateComponent should create" duration="9"/>
-    <testCase name="MuseumCreateComponent Debe tener un campo de nombre de museo" duration="9"/>
-    <testCase name="MuseumCreateComponent Debe tener un boton de creacion" duration="9"/>
-    <testCase name="MuseumCreateComponent Debe tener un campo de direccion" duration="9"/>
+  <file path="src/app/signup/signup.service.spec.ts">
+    <testCase name="Service: Signup should ..." duration="2"/>
   </file>
-  <file path="src/app/exhibitions/exhibitions-create/exhibitions-create.component.spec.ts">
-    <testCase name="ExhibitionsCreateComponent should create" duration="26"/>
-  </file>
-  <file path="src/app/artworks/artworks-list/artworks-list.component.spec.ts">
-    <testCase name="ArtworksListComponent Debe tener un div detalle_obra" duration="18"/>
-    <testCase name="ArtworksListComponent should have an link element" duration="6"/>
-    <testCase name="ArtworksListComponent should have an option element" duration="5"/>
-    <testCase name="ArtworksListComponent should create" duration="5"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="33"/>
-    <testCase name="AppComponent should have as title 'museums-front'" duration="5"/>
-  </file>
-  <file path="src/app/exhibitions/exhibitions-details/exhibitions-details.component.spec.ts">
-    <testCase name="ExhibitionsDetailsComponent should have an div element " duration="9"/>
-    <testCase name="ExhibitionsDetailsComponent should create" duration="6"/>
-  </file>
-  <file path="src/app/artist/artist-create/artist-create.component.spec.ts">
-    <testCase name="ArtistCreateComponent Debe tener un campo de imagen" duration="16"/>
-    <testCase name="ArtistCreateComponent Debe tener un boton de creacion" duration="6"/>
-    <testCase name="ArtistCreateComponent Debe tener un boton de cancelacion" duration="5"/>
-    <testCase name="ArtistCreateComponent should create" duration="6"/>
-    <testCase name="ArtistCreateComponent Debe tener un campo de nombre de artista" duration="6"/>
-    <testCase name="ArtistCreateComponent Debe tener un campo de fecha de nacimiento" duration="6"/>
-  </file>
-  <file path="src/app/principal/principal-page/principal-page.component.spec.ts">
-    <testCase name="PrincipalPageComponent should create" duration="8"/>
+  <file path="src/app/project/project.service.spec.ts">
+    <testCase name="Service: Project should ..." duration="2"/>
   </file>
   <file path="src/app/interceptors/interceptor-errors.service.spec.ts">
     <testCase name="InterceptorsServiceService should be created" duration="2"/>
   </file>
-  <file path="src/app/sponsor/sponsor-details/sponsor-details.component.spec.ts">
-    <testCase name="SponsorDetailsComponent should create" duration="6"/>
-    <testCase name="SponsorDetailsComponent should have an div element " duration="4"/>
+  <file path="src/app/signup/signup-company/signup-company.component.spec.ts">
+    <testCase name="SignupCompanyComponent should create" duration="53"/>
   </file>
-  <file path="src/app/artist/artist.service.spec.ts">
-    <testCase name="ArtistService should be created" duration="1"/>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="18"/>
+    <testCase name="AppComponent should have as title 'frontabc-front'" duration="4"/>
   </file>
-  <file path="src/app/museum/museum.service.spec.ts">
-    <testCase name="MuseumService should be created" duration="2"/>
+  <file path="src/app/signup/signup-applicant/signup-applicant.component.spec.ts">
+    <testCase name="SignupApplicantComponent should create" duration="34"/>
   </file>
-  <file path="src/app/movement/movement-create/movement-create.component.spec.ts">
-    <testCase name="MovementCreateComponent Debe tener un boton de cancelacion" duration="16"/>
-    <testCase name="MovementCreateComponent should create" duration="4"/>
-    <testCase name="MovementCreateComponent Debe tener un boton de creacion" duration="5"/>
-    <testCase name="MovementCreateComponent Debe tener un campo de años activo" duration="6"/>
-    <testCase name="MovementCreateComponent Debe tener un campo de descripcion" duration="5"/>
-    <testCase name="MovementCreateComponent Debe tener un campo de nombre de movimiento" duration="5"/>
+  <file path="src/app/signup/dialogalertopcomp/dialogalertopcomp.component.spec.ts">
+    <testCase name="DialogalertopcompComponent should create" duration="4"/>
   </file>
-  <file path="src/app/artworks/artwork-create/artwork-create.component.spec.ts">
-    <testCase name="ArtworkCreateComponent should create" duration="18"/>
+  <file path="src/app/project/project-create/project-create.component.spec.ts">
+    <testCase name="ProjectCreateComponent should create" duration="12"/>
   </file>
-  <file path="src/app/exhibitions/exhibitions.service.spec.ts">
-    <testCase name="Service: Exhibitions should ..." duration="1"/>
+  <file path="src/app/principal/principal-page/principal-page.component.spec.ts">
+    <testCase name="PrincipalPageComponent should create" duration="7"/>
   </file>
-  <file path="src/app/sponsor/sponsor-list/sponsor-list.component.spec.ts">
-    <testCase name="SponsorListComponent should have an link element " duration="6"/>
-    <testCase name="SponsorListComponent should create" duration="6"/>
+  <file path="src/app/signup/dialogalertopappli/dialogalertopappli.component.spec.ts">
+    <testCase name="DialogalertopappliComponent should create" duration="4"/>
   </file>
-  <file path="src/app/sponsor/sponsor.service.spec.ts">
-    <testCase name="Service: Sponsor should ..." duration="1"/>
+  <file path="src/app/login/login-page/login-page.component.spec.ts">
+    <testCase name="LoginPageComponent should create" duration="14"/>
   </file>
-  <file path="src/app/exhibitions/exhibitions-list/exhibitions-list.component.spec.ts">
-    <testCase name="ExhibitionsListComponent should create" duration="6"/>
-    <testCase name="ExhibitionsListComponent should have an link element " duration="6"/>
-  </file>
-  <file path="src/app/museum/museum-list/museum-list.component.spec.ts">
-    <testCase name="MuseumListComponent Debe tener una imagen " duration="7"/>
-    <testCase name="MuseumListComponent Debe tener un div detalle_museo" duration="5"/>
-    <testCase name="MuseumListComponent should create" duration="4"/>
+  <file path="src/app/login/dialogtypesignup/dialogtypesignup.component.spec.ts">
+    <testCase name="DialogtypesignupComponent should create" duration="6"/>
   </file>
 </testExecutions>

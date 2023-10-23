@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PrincipalPageComponent } from './principal-page/principal-page.component';
+import { ProfileCreateComponent } from './profile-create/profile-create.component';
+
+
 
 const routes: Routes = [{
- path: 'principal',
+ path: 'profile',
  children: [
+   
    {
-     path: '',
-     component: PrincipalPageComponent
-   }
+     path: 'create',
+     component: ProfileCreateComponent
+   },
+   
  ]
 }];
 
@@ -16,4 +20,4 @@ const routes: Routes = [{
  imports: [RouterModule.forChild(routes)],
  exports: [RouterModule]
 })
-export class PrincipalRoutingModule { }
+export class ProfileRoutingModule { }

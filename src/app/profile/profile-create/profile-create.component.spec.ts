@@ -13,16 +13,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginPageComponent } from './login-page.component';
+import { ProfileCreateComponent } from './profile-create.component';
 import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('LoginPageComponent', () => {
-  let component: LoginPageComponent;
-  let fixture: ComponentFixture<LoginPageComponent>;
+describe('ProfileCreateComponent', () => {
+  let component: ProfileCreateComponent;
+  let fixture: ComponentFixture<ProfileCreateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -39,14 +39,14 @@ describe('LoginPageComponent', () => {
           timeOut: 10000,
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
-      }),],
-      declarations: [ LoginPageComponent ]
+      })],
+      declarations: [ ProfileCreateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginPageComponent);
+    fixture = TestBed.createComponent(ProfileCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

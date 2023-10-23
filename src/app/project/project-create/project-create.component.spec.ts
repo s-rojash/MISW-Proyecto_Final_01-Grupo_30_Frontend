@@ -13,16 +13,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginPageComponent } from './login-page.component';
+import { ProjectCreateComponent } from './project-create.component';
+import { ProjectListComponent } from '../project-list/project-list.component';
 import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('LoginPageComponent', () => {
-  let component: LoginPageComponent;
-  let fixture: ComponentFixture<LoginPageComponent>;
+describe('ProjectCreateComponent', () => {
+  let component: ProjectCreateComponent;
+  let fixture: ComponentFixture<ProjectCreateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -39,14 +40,14 @@ describe('LoginPageComponent', () => {
           timeOut: 10000,
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
-      }),],
-      declarations: [ LoginPageComponent ]
+      })],
+      declarations: [ ProjectCreateComponent, ProjectListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginPageComponent);
+    fixture = TestBed.createComponent(ProjectCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
