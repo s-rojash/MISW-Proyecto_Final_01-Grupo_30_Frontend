@@ -29,6 +29,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ProjectModule } from './project/project.module';
 import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
+import { TeamRoutingModule } from './team/team-routing.module';
+import { TeamModule } from './team/team.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -53,6 +55,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SignupModule,
     SignpuRoutingModule,
     ProjectRoutingModule,
+    TeamRoutingModule,
+    TeamModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

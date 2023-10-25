@@ -1,0 +1,82 @@
+<div style="padding-bottom: 15px;padding-left: 10px;">
+  <span><label>{{ 'TEAM.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'TEAM.CREATION' | translate }}</label></label></span>
+</div>
+
+<div class="col-md-6" style="width: 50%; z-index: 2;">
+  <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px;">
+    <form [formGroup]="teamForm" (ngSubmit)="!teamForm.invalid && createTeam(teamForm.value)">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="flex: 1; margin-right: 10px;">
+          <!-- nombre -->
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="nombre" class="labeloverinput">{{ 'PROJECT.NAME' | translate }}</label>
+            <input
+              novalidate
+              type="text"
+              id="nombre"
+              class="form-control"
+              style="border-color: #6750A4;height: 60px; border-width: 3px;"
+              formControlName="nombre"
+              placeholder="nombre"
+              
+            />
+            <div style="position: fixed; z-index: 2;"
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="teamForm.get('nombre')!.hasError('required') && teamForm.get('nombre')!.touched"
+            >
+              {{ 'PROJECT.NAMESREQUIRED' | translate }}
+            </div>
+          </div>
+        
+        </div>
+        
+
+      </div>
+    </form>
+  </mat-card>
+  
+</div>
+
+
+<div class="col-md-6" style="width: 50%; z-index: 2;">
+  <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px;">
+ 
+    <mat-label>{{ 'TEAM.SELECT_PROFILE' | translate }}</mat-label>
+    <mat-select formControlName="profile" multiple>
+      <mat-option *ngFor="let profile of profiles" [value]="profile.name">{{ profile.name }}</mat-option>
+    </mat-select>
+         <div class="form-group mx-sm-3 mb-2" >
+            <label for="nombre" class="labeloverinput">{{ 'PROJECT.NAME' | translate }}</label>
+            <input
+              novalidate
+              type="text"
+              id="nombre"
+              class="form-control"
+              style="border-color: #6750A4;height: 60px; border-width: 3px;"
+              formControlName="nombre"
+              placeholder="nombre"
+              
+            />
+            <div style="position: fixed; z-index: 2;"
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="teamForm.get('nombre')!.hasError('required') && teamForm.get('nombre')!.touched"
+            >
+              {{ 'PROJECT.NAMESREQUIRED' | translate }}
+            </div>
+          </div>
+
+    </mat-card>
+</div>
+
+<div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!teamForm.valid"
+    class="button-signup"
+    mat-fab extended
+  >
+    <mat-icon style="color: black;">add</mat-icon>
+    {{ 'PROJECT.ADD' | translate }}
+  </button>
+</div>

@@ -1,0 +1,9 @@
+/* Asegura que el texto en <mat-option> sea visible */
+.mat-option-text {
+    color: black; /* Cambia el color del texto a negro */
+  }
+  
+  /* Cambia el fondo del <mat-option> cuando está seleccionado */
+  .mat-option.mat-selected {
+    background-color: #fff; /* Cambia el fondo a blanco */
+  }

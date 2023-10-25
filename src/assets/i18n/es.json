@@ -70,5 +70,13 @@
     "NAMESREQUIRED" :"Nombre requeridos",
     "DESCRIPTIONREQUIRED" :"Descripcion requerida",
     "ADD" :"Crear"
+  } ,
+  "TEAM":{
+    "COMPANYS":"Empresas",
+    "CREATION":"Creación de equipo",
+    "NAME":"Nombre de equipo",
+    "DESCRIPTION":"Descripcion de equipo",
+    "ADD" :"Crear",
+    "SELECT_PROFILE":"Seleccione un perfil"
   }
 }

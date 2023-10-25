@@ -71,7 +71,14 @@
     "NAMESREQUIRED" :"Names required",
     "DESCRIPTIONREQUIRED" :"Description required",
     "ADD" :"Add"
-     }
+     },
+  "TEAM":{
+    "COMPANYS":"Company",
+    "CREATION":"Team creation",
+    "NAME":"Project Name",
+    "ADD" :"Add",
+    "SELECT_PROFILE":"select a profile"
+  }
 
 
 }
