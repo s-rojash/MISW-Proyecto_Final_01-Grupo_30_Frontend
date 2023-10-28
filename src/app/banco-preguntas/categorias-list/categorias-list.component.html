@@ -1,5 +1,5 @@
 <div class="white-box">
-  <h5>Categorias</h5>
+  <h5>{{ 'QUESTIONS_BANK.CATEGORIAS_LIST' | translate }}</h5>
   <ul>
     <li *ngFor="let categoria of listaCategorias" (click)="seleccionarCategoria(categoria.id, categoria.nombre)" [class.categoria-active]="idCategoriaSeleccionada === categoria.id" >
       {{ categoria.nombre }}

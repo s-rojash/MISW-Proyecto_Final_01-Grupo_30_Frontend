@@ -73,7 +73,14 @@
   },
 
   "QUESTIONS_BANK":{
-    "ADD" :"Crear"
+    "QUESTIONS_BANK" :"Banco de preguntas",
+    "QUESTIONS_BANK_LIST" :"Listado de bancos de preguntas",
+    "ADD" :"Crear",
+    "TIPO_BANCO" :"Tipo de banco de preguntas",
+    "TIPO_BANCO_REQUIRED" :"El tipo de banco de preguntas es obligatorio",
+    "CATEGORIAS_LIST" :"Categorias",
+    "CATEGORIA" :"Categoria",
+    "CATEGORIA_REQUIRED" :"La categoría es obligatoria"
     }
 
 }

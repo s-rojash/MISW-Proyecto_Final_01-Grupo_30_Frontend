@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { BancoPreguntasService } from '../banco-preguntas.service';
 import { BancoPreguntas } from '../banco-preguntas';
+import { Categoria } from '../categoria';
 
 
 
@@ -15,10 +16,10 @@ import { BancoPreguntas } from '../banco-preguntas';
 })
 export class BancoPreguntasCreateComponent implements OnInit {
 
-  projectForm!: FormGroup;
+  bancoPreguntasForm!: FormGroup;
   valueNames = '';
   valueDescription = '';
-  bancoPreguntas:Array<BancoPreguntas>=[];
+  listaCategorias: Array<Categoria> = [];
 
   constructor(private formBuilder: FormBuilder,
     public dialog: MatDialog,
@@ -29,15 +30,21 @@ export class BancoPreguntasCreateComponent implements OnInit {
       this.bancoPreguntasService.createBancoPreguntas(bancoPreguntas).subscribe(response=>{
             this.bancoPreguntasService.bancoPreguntasCreated();
             this.toastr.success("Confirmation", "Project created")
-              this.projectForm.reset();
+              this.bancoPreguntasForm.reset();
       });
     }
-    cancelCreation():void{this.projectForm.reset();}
+    cancelCreation():void{this.bancoPreguntasForm.reset();}
+    getListaCategorias(): void {
+      this.bancoPreguntasService.getCategorias().subscribe((listaCategorias) => {
+        this.listaCategorias = listaCategorias;
+      });
+    }
 
     ngOnInit():void {
-      this.projectForm = this.formBuilder.group({
-        nombre: ["", [Validators.required, Validators.minLength(2)]],
-        descripcion: ["", [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
+      this.getListaCategorias();
+      this.bancoPreguntasForm = this.formBuilder.group({
+        tipoBanco: ["", [Validators.required, Validators.minLength(2)]],
+        categoria: ["", [Validators.required]],
       });
     }
 

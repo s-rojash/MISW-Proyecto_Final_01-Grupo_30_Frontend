@@ -1,15 +1,16 @@
+import { Categoria } from "./categoria";
 
 
 export class BancoPreguntas {
-  idBancoPreguntas: number;
+  id: number;
   idEmpresa: number;
   tipoBanco: string;
-  idCategoria: number;
+  categoria: Categoria;
 
-    constructor(idBancoPreguntas: number, idEmpresa: number, tipoBanco: string, idCategoria: number) {
-      this.idBancoPreguntas = idBancoPreguntas;
+    constructor(id: number, idEmpresa: number, tipoBanco: string, categoria: Categoria) {
+      this.id = id;
       this.idEmpresa = idEmpresa;
       this.tipoBanco = tipoBanco;
-      this.idCategoria = idCategoria;
+      this.categoria = categoria;
     }
    }

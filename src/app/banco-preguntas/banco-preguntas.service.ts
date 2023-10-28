@@ -30,7 +30,7 @@ export class BancoPreguntasService {
   }
   createBancoPreguntas(bancoPreguntas: BancoPreguntas): Observable<BancoPreguntas> {
     bancoPreguntas.idEmpresa =1;
-    return this.http.post<BancoPreguntas>(this.apiUrl + `/banco-peguntas/`, bancoPreguntas);
+    return this.http.post<BancoPreguntas>(this.apiUrl + `/banco-preguntas/`, bancoPreguntas);
   }
   bancoPreguntasCreated() {
     this.projectCreatedSource.next(true);
