@@ -70,5 +70,10 @@
     "NAMESREQUIRED" :"Nombre requeridos",
     "DESCRIPTIONREQUIRED" :"Descripcion requerida",
     "ADD" :"Crear"
-  }
+  },
+
+  "QUESTIONS_BANK":{
+    "ADD" :"Crear"
+    }
+
 }

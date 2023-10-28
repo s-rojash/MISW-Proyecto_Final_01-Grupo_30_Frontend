@@ -13,6 +13,8 @@ import { Respuesta } from './respuesta';
 
 export class BancoPreguntasService {
   private apiUrl: string = environment.baseUrlProyectos;
+  private bancoPreguntasCreatedSource = new BehaviorSubject<boolean>(false);
+  bancoPreguntasCreated$ = this.bancoPreguntasCreatedSource.asObservable();
 
   private projectCreatedSource = new BehaviorSubject<boolean>(false);
   projectCreated$ = this.projectCreatedSource.asObservable();
@@ -21,11 +23,16 @@ export class BancoPreguntasService {
 
   getCategorias(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(this.apiUrl + "/categorias/");
-    }
+  }
 
   getListaBancosPreguntas(idCategoriaSeleccionada: number): Observable<BancoPreguntas[]> {
     return this.http.get<BancoPreguntas[]>(this.apiUrl + `/banco-preguntas/empresa/1/categoria/${idCategoriaSeleccionada}`);
   }
-
-
+  createBancoPreguntas(bancoPreguntas: BancoPreguntas): Observable<BancoPreguntas> {
+    bancoPreguntas.idEmpresa =1;
+    return this.http.post<BancoPreguntas>(this.apiUrl + `/banco-peguntas/`, bancoPreguntas);
+  }
+  bancoPreguntasCreated() {
+    this.projectCreatedSource.next(true);
+  }
 }

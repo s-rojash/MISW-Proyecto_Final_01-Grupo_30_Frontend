@@ -5,16 +5,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatDialogModule} from '@angular/material/dialog';
-import {NgIf} from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgIf } from '@angular/common';
 
 import { BancoPreguntasListComponent } from './banco-preguntas-list/banco-preguntas-list.component';
 import { CategoriasListComponent } from './categorias-list/categorias-list.component';
+import { BancoPreguntasCreateComponent } from './banco-preguntas-create/banco-preguntas-create.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     BancoPreguntasListComponent,
-    CategoriasListComponent,
+    BancoPreguntasCreateComponent,
+    CategoriasListComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +49,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   exports:[
     BancoPreguntasListComponent,
+    BancoPreguntasCreateComponent,
     CategoriasListComponent
   ]
 })
