@@ -1,12 +1,7 @@
-
-
-export class Profile { 
-nombre: string;
-
-    
-    
-    constructor( nombre: string) {
-    this.nombre = nombre;
-
+export class Profile {
+    name: string;
+  
+    constructor(name: string) {
+      this.name = name;
     }
-    }
+  }

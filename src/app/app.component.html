@@ -9,9 +9,8 @@
         <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{ 'HEADER.PROJECTTITLE' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/museums/list">List</a></li>
-            <li><a i18n="@@crear_menu" routerLink="/museums/create" i18n class="dropdown-item" >Create</a></li>
-            <li><a i18n="@@editar_menu" class="dropdown-item" >Edit</a></li>
+            <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/projects/get">List</a></li>
+            <li><a i18n="@@crear_menu" routerLink="/projects/create" i18n class="dropdown-item" >Create</a></li>
           </ul>
         </li>
 
@@ -36,8 +35,8 @@
         <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown5" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.EQUIPOSMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
-            <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/sponsors/create">Create</a></li>
-            <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/sponsors/list">List</a></li>
+            <li><a i18n="@@crear_menu" class="dropdown-item" routerLink="/team/create">Create</a></li>
+            <li><a i18n="@@listar_menu" class="dropdown-item" routerLink="/team/list">List</a></li>
           </ul>
         </li>
 

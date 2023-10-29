@@ -42,6 +42,10 @@ export class ProjectCreateComponent implements OnInit {
       });
       }
       
+      isFormValid(): boolean {
+        return this.projectForm.valid;
+      }
+
       
       cancelCreation():void{this.projectForm.reset();}
 
@@ -53,5 +57,13 @@ export class ProjectCreateComponent implements OnInit {
 
       
   }
-
+  
+  onSubmit(): void {
+    if (this.isFormValid()) {
+        this.createProject(this.projectForm.value);
+    } else {
+       console.error("Formulario no válido. No se puede enviar.");
+    }
+  }
+  
 }

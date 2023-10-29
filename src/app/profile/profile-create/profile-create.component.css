@@ -1,0 +1,25 @@
+.small-width {
+  width: 25%;
+}
+
+/* Cambia el color del texto de las opciones seleccionadas en el mat-select a negro */
+.mat-option-text {
+  color: black;
+}
+
+/* Cambia el fondo de las opciones seleccionadas en el mat-select a blanco */
+.mat-option.mat-selected {
+  background-color: #fff;
+}
+
+.button-signup{
+  width: 204px;
+  height: 40px;
+  border-radius: 5px;
+  background: url(../../../assets/Images/fondogeneral.png), lightgray 50% / cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: #FFF;
+}

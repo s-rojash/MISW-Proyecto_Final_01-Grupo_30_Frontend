@@ -70,7 +70,18 @@
     "DESCRIPTION":"Project Description",
     "NAMESREQUIRED" :"Names required",
     "DESCRIPTIONREQUIRED" :"Description required",
-    "ADD" :"Add"
+    "ADD" :"Add",
+    "LIST" : "project's List"
+     },
+  "TEAM":{
+    "COMPANYS":"Company",
+    "CREATION":"Team creation",
+    "NAME":"Project Name",
+    "ADD" :"Add",
+    "SELECT_PROFILE":"select a profile",
+    "TEAMQTY":"Number of resources requested",
+    "TEAMQTYREQUIRED":"Number of resources requested is required",
+    "TEAMREQUIRED":"name of team required "
      },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Questions Bank",
@@ -82,6 +93,7 @@
     "CATEGORIA" :"Category",
     "CATEGORIA_REQUIRED" :"The category is required"
     }
+
 
 
 }
