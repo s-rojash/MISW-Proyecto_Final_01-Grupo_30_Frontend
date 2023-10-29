@@ -71,7 +71,17 @@
     "NAMESREQUIRED" :"Names required",
     "DESCRIPTIONREQUIRED" :"Description required",
     "ADD" :"Add"
-     }
+     },
+  "QUESTIONS_BANK":{
+    "QUESTIONS_BANK" :"Questions Bank",
+    "QUESTIONS_BANK_LIST" :"Questions Banks list",
+    "ADD" :"Add",
+    "TIPO_BANCO" :"Questions bank type",
+    "TIPO_BANCO_REQUIRED" :"The questions bank type is required",
+    "CATEGORIAS_LIST" :"Categories",
+    "CATEGORIA" :"Category",
+    "CATEGORIA_REQUIRED" :"The category is required"
+    }
 
 
 }
