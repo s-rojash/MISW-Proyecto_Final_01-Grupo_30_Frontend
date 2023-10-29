@@ -36,6 +36,7 @@
               class="form-control"
               style="border-color: #6750A4;height: 60px; border-width: 3px;"
               formControlName="categoria"
+              [(ngModel)]='bancoPreguntas.categoria'
             >
             <option *ngFor="let categoria of listaCategorias" [ngValue]="categoria">
               {{categoria.nombre}}

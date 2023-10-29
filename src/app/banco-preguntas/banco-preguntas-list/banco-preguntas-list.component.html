@@ -17,12 +17,14 @@
               <tr>
                 <th>{{ 'QUESTIONS_BANK.CATEGORIA' | translate }}</th>
                 <th>{{ 'QUESTIONS_BANK.TIPO_BANCO' | translate }}</th>
+                <th></th>
               </tr>
           </thead>
           <tbody>
             <tr *ngFor="let bancoPreguntas of listaBancosPreguntas">
               <td>{{ bancoPreguntas.categoria.nombre }}</td>
               <td>{{ bancoPreguntas.tipoBanco }}</td>
+              <td><a href="/banco-preguntas/create/{{ bancoPreguntas.id }}"><mat-icon>edit</mat-icon></a></td>
             </tr>
           </tbody>
           </table>

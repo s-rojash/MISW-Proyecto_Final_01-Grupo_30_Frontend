@@ -12,10 +12,9 @@ const routes: Routes = [{
     component: BancoPreguntasListComponent
   },
   {
-    path: 'create',
+    path: 'create/:id?',
     component: BancoPreguntasCreateComponent
   },
-
  ]
 }];
 

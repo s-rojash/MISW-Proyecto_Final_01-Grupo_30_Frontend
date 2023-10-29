@@ -2,7 +2,7 @@ import { Categoria } from "./categoria";
 
 
 export class BancoPreguntas {
-  id: number;
+  id: number | null;
   idEmpresa: number;
   tipoBanco: string;
   categoria: Categoria;
