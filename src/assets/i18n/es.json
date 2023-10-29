@@ -70,5 +70,20 @@
     "NAMESREQUIRED" :"Nombre requeridos",
     "DESCRIPTIONREQUIRED" :"Descripcion requerida",
     "ADD" :"Crear"
+  },
+  "EVALUATION":{
+    "HEADER":"Programación de evaluación",
+    "HEADER2":"Agendar Prueba",
+    "SAVE":"Guardar",
+    "SELECTOPTION":"Seleccione un candidato",
+    "SELECTOPTIONCATEGORY":"Seleccione una categoría",
+    "APPLICANT":"Candidato",
+    "CATEGORY":"Categoria",
+    "DATE":"Fecha",
+    "DATEREQUIRED":"Fecha requerida",
+    "TECHNICALTEST":"Prueba Técnica",
+    "PSYCHOLOGICALTEST":"Prueba Psicológica",
+    "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
+    "INVALIDBANK":"Se debe seleccionar un banco de preguntas."
   }
 }

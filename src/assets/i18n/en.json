@@ -71,7 +71,20 @@
     "NAMESREQUIRED" :"Names required",
     "DESCRIPTIONREQUIRED" :"Description required",
     "ADD" :"Add"
-     }
-
-
+  },
+  "EVALUATION":{
+    "HEADER":"Evaluation programming",
+    "HEADER2":"Schedule test",
+    "SAVE":"Save",
+    "SELECTOPTION":"Select an applicant",
+    "SELECTOPTIONCATEGORY":"Select a category",
+    "APPLICANT":"Applicant",
+    "CATEGORY":"Category",
+    "DATE":"Date",
+    "DATEREQUIRED":"Date required",
+    "TECHNICALTEST":"Technical Test",
+    "PSYCHOLOGICALTEST":"Psychological Test",
+    "INVALIDAPPLICANT":"At least one applicant must be selected.",
+    "INVALIDBANK":"A bank of questions must be selected."
+  }
 }
