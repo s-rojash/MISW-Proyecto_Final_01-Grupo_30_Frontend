@@ -26,15 +26,17 @@ export class BancoPreguntasService {
   }
 
   getListaBancosPreguntas(idCategoriaSeleccionada: number): Observable<BancoPreguntas[]> {
-    return this.http.get<BancoPreguntas[]>(this.apiUrl + `/banco-preguntas/empresa/1/categoria/${idCategoriaSeleccionada}`);
+    const idEmpresa = Number(localStorage.getItem("API_EMPRESA_ID"));
+    return this.http.get<BancoPreguntas[]>(this.apiUrl + `/banco-preguntas/empresa/${idEmpresa}/categoria/${idCategoriaSeleccionada}`);
   }
   createBancoPreguntas(bancoPreguntas: BancoPreguntas): Observable<BancoPreguntas> {
-    bancoPreguntas.idEmpresa =1;
+    bancoPreguntas.idEmpresa = Number(localStorage.getItem("API_EMPRESA_ID"));
     return this.http.post<BancoPreguntas>(this.apiUrl + `/banco-preguntas/`, bancoPreguntas);
   }
 
   getBancoPreguntas(id: number): Observable<BancoPreguntas> {
-    return this.http.get<BancoPreguntas>(this.apiUrl + `/banco-preguntas/${id}/empresa/1`);
+    const idEmpresa = Number(localStorage.getItem("API_EMPRESA_ID"));
+    return this.http.get<BancoPreguntas>(this.apiUrl + `/banco-preguntas/${id}/empresa/${idEmpresa}`);
   }
 
 

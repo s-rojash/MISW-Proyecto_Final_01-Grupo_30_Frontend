@@ -56,7 +56,8 @@ export class LoginPageComponent implements OnInit  {
 
       this.loginService.loginCompany(login).subscribe(loginp=>{
         console.info("The login was success: ", loginp)
-
+        localStorage.setItem("API_TOKEN", loginp.token ?? "");
+        localStorage.setItem("API_EMPRESA_ID", loginp.id.toString());
         this.translate2.get('LOGIN.LOGINSUCCESS').subscribe((res: string) => {
           this.toastr.success(res);
         });

@@ -19,6 +19,7 @@ import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-r
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
+import { HttpApiAuthenticationInterceptorService } from './interceptors/interceptor-api-authentication';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -81,6 +82,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpApiAuthenticationInterceptorService,
       multi: true
     }
   ],

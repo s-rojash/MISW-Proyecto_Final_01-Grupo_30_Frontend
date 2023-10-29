@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProjectCreateComponent } from './project-create.component';
+import { ProjectCreateComponent } from './banco-preguntas-create.component';
 import { ProjectListComponent } from '../project-list/project-list.component';
 import { ToastrModule } from 'ngx-toastr';
 

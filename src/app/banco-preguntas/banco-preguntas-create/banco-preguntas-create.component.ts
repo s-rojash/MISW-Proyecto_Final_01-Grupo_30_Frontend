@@ -50,7 +50,7 @@ export class BancoPreguntasCreateComponent implements OnInit {
 
     ngOnInit():void {
       this.routeSub = this.route.params.subscribe(params => {
-        this.bancoPreguntasId = params['id?'];
+        this.bancoPreguntasId = Number(params['id?']);
         if (this.bancoPreguntasId !== null){
           this.bancoPreguntasService.getBancoPreguntas(this.bancoPreguntasId).subscribe((bancoPreguntas) =>{
             this.bancoPreguntas = bancoPreguntas;

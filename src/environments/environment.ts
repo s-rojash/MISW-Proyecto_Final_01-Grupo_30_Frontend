@@ -9,7 +9,7 @@
 // const baseUrlBancoPreguntas = 'https://ms-bancopreguntas.azurewebsites.net';
 
 const baseUrl = 'http://localhost:8080';
-const baseUrlCom = 'http://localhost:8080';
+const baseUrlCom = 'http://localhost:3000';
 
 const baseUrlProyectos = 'http://localhost:8080';
 const baseUrlBancoPreguntas = 'http://localhost:8080';
