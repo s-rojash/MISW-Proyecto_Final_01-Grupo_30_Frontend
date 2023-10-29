@@ -1,17 +1,33 @@
+<div *ngIf="showLabel" style="padding-bottom: 15px; padding-left: 10px;">
+  <span><label>{{ 'PROJECT.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'PROJECT.LIST' | translate }}</label></label></span>
+</div>
+
 <div>
   <div class="card-container"  style="height: auto; margin: 10px; ">
     <div class="card" *ngFor="let project of projects">
       <mat-card  style="height: auto; margin: 1px;  background-color:#FEF7FF">
         <mat-icon class="check-icon">done</mat-icon>
         <mat-card-header>
-          <mat-card-title class=".project-card-title">{{ project.nombre }}</mat-card-title>
-          <mat-card-subtitle class="project-card" >{{ project.descripcion }}</mat-card-subtitle>
+          <mat-card-title *ngIf="!project.editable">{{ project.nombre }}</mat-card-title>
+          <mat-card-subtitle *ngIf="!project.editable">{{ project.descripcion }}</mat-card-subtitle>
+          <mat-form-field *ngIf="project.editable">
+            <input matInput [(ngModel)]="project.nombre" placeholder="Nombre del proyecto">
+          </mat-form-field>
+          <mat-form-field *ngIf="project.editable">
+            <input matInput [(ngModel)]="project.descripcion" placeholder="Descripción del proyecto">
+          </mat-form-field>
+          <button mat-icon-button (click)="toggleEdit(project)">
+            <mat-icon>{{ project.editable ? 'save' : 'edit' }}</mat-icon>
+          </button>
         </mat-card-header>
-        <!-- Puedes agregar más contenido a la tarjeta si es necesario -->
         <mat-card-content>
-          <!-- Contenido adicional del proyecto -->
+
         </mat-card-content>
       </mat-card>
     </div>
   </div>
 </div>
+
+
+
+

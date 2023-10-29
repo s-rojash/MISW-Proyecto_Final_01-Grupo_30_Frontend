@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "start-es",
+            "type": "shell",
+            "command": "ng",
+            "args": [
+                "serve",
+                "--configuration=es"
+            ],
+ 
+        }
+    ]
+}

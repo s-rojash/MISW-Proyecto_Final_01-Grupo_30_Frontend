@@ -16,4 +16,13 @@ export class TeamService {
     return this.http.post<Team>(this.apiUrl, team);
     }
 
+    getTeams(): Observable<Team[]> {
+      return this.http.get<Team[]>(this.apiUrl);
+    }
+
+    deleteTeam(teamId: string): Observable<void> {
+      const url = `${this.apiUrl}/${teamId}`;
+      return this.http.delete<void>(url);
+    }
+    
 }

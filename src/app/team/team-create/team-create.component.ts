@@ -35,9 +35,9 @@ export class TeamCreateComponent implements OnInit {
     
   ngOnInit():void {
     this.teamForm = this.formBuilder.group({
-      nombre: ["", [Validators.required, Validators.minLength(2)]],
-     });
-    
+      nombre: ["", [Validators.required]], 
+      qtyrecursos: ["", [Validators.required]], 
+    });
      
      this.profileService.getProfile().subscribe(profiles => {
       this.profiles = profiles;

@@ -29,4 +29,9 @@ export class ProjectService {
       this.projectCreatedSource.next(true);
     }
 
+  updateProject(project: Project): Observable<Project> {
+    const url = `${this.apiUrl}/${project.id}`;
+    return this.http.put<Project>(url, project);
+  }
+
 }
