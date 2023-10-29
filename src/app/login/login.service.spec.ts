@@ -1,16 +1,12 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import { LoginService } from './login.service';
 import { HttpClientTestingModule, HttpTestingController  } from '@angular/common/http/testing';
-import { HttpClientModule, HttpClient, HttpResponse } from '@angular/common/http';
-import { of } from 'rxjs';
-import { Login } from './login';
 
 describe('Service: Login', () => {
-  let loginService: LoginService;
-  let httpClient: HttpClient;
   let httpMock: HttpTestingController;
+  let loginService: LoginService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,34 +18,73 @@ describe('Service: Login', () => {
   });
 
   beforeEach(() => {
-    httpClient = TestBed.inject(HttpClient);
     httpMock = TestBed.inject(HttpTestingController);
+    loginService = TestBed.inject(LoginService);
   });
 
   afterEach(() => {
-    httpMock.verify();
+    httpMock.verify(); // Ensure that there are no outstanding requests after each test
   });
 
   it('should ...', inject([LoginService], (service: LoginService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('#getData should return expected data', inject([LoginService], (service: LoginService) => {
-    const login: Login = {
-       email: 's.rojash@uniandes.edu.',
-       password: '12345'
-    };
+  it('should handle loginApplicant successful HTTP request (status code 200)', () => {
+    const login = { email: 's.rojash@uniandes.edu.co', password: '12345' };
 
-    // Make an HTTP request with the provided object as a parameter
-    service.loginApplicant(login).subscribe(response => {
-      // Expect the response to be truthy (not null or undefined)
-      expect(response).toBeTruthy();
+    loginService.loginApplicant(login).subscribe(data => {
+      expect(data).toEqual(login); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne('https://ms-candidatos.azurewebsites.net/candidatos/auth');
-    expect(req.request.method).toBe('POST'); // Assuming it's a POST request
+    const req = httpMock.expectOne('https://ms-candidatos.azurewebsites.net/candidatos/auth'); // Expect a single request to this URL
+    expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
-    // Check if the post method of the http client was called with the correct arguments
-    req.flush({}, { status: 200, statusText: 'OK' });
-  }));
+    req.flush(login, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
+  });
+
+  it('should handle loginApplicant failed HTTP request (status code 404)', () => {
+    const login = { email: 's.rojash@uniandes.edu.', password: '12345' };
+
+    loginService.loginApplicant(login).subscribe(
+      data => fail('The request should have failed with 404 error'),
+      error => {
+        expect(error.status).toBe(404); // Assert that the error status is 404
+      }
+    );
+
+    const req = httpMock.expectOne('https://ms-candidatos.azurewebsites.net/candidatos/auth'); // Expect a single request to this URL
+    expect(req.request.method).toBe('POST'); // Assert that the request method is GET
+
+    req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404
+  });
+
+  it('should handle loginCompany successful HTTP request (status code 200)', () => {
+    const company = { email: 's.rojash@uniandes.edu.co', password: '12345' };
+
+    loginService.loginCompany(company).subscribe(data => {
+      expect(data).toEqual(company); // Assert that the response data matches the expected data
+    });
+
+    const req = httpMock.expectOne('https://ms-empresas.azurewebsites.net/empresas/auth'); // Expect a single request to this URL
+    expect(req.request.method).toBe('POST'); // Assert that the request method is GET
+
+    req.flush(company, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
+  });
+
+  it('should handle loginCompany failed HTTP request (status code 404)', () => {
+    const company = { email: 's.rojash@uniandes.edu.', password: '12345' };
+
+    loginService.loginCompany(company).subscribe(
+      data => fail('The request should have failed with 404 error'),
+      error => {
+        expect(error.status).toBe(404); // Assert that the error status is 404
+      }
+    );
+
+    const req = httpMock.expectOne('https://ms-empresas.azurewebsites.net/empresas/auth'); // Expect a single request to this URL
+    expect(req.request.method).toBe('POST'); // Assert that the request method is GET
+
+    req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404
+  });
 });
