@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <app-categorias-list (categoriaSeleccionada)="categoriaSeleccionada($event)"></app-categorias-list>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{nombreCategoriaSeleccionada}} <a href="/banco-preguntas/create" class="btn btn-primary float-end">{{ 'QUESTIONS_BANK.ADD' | translate }}</a></h5>
+        <div class="card-text">
+          <table class="table">
+            <caption>{{ 'QUESTIONS_BANK.QUESTIONS_BANK_LIST' | translate }}</caption>
+            <thead>
+              <tr>
+                <th>{{ 'QUESTIONS_BANK.CATEGORIA' | translate }}</th>
+                <th>{{ 'QUESTIONS_BANK.TIPO_BANCO' | translate }}</th>
+                <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bancoPreguntas of listaBancosPreguntas">
+              <td>{{ bancoPreguntas.categoria.nombre }}</td>
+              <td>{{ bancoPreguntas.tipoBanco }}</td>
+              <td><a href="/banco-preguntas/create/{{ bancoPreguntas.id }}"><mat-icon>edit</mat-icon></a></td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

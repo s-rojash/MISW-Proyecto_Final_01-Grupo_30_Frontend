@@ -14,9 +14,12 @@ import { LoginRoutingModule } from './login/login-routing.module';
 import { SignupModule } from './signup/signup.module';
 import { SignpuRoutingModule } from './signup/signup-routing.module';
 import { ProjectRoutingModule } from './project/project-routing.module';
+import { BancoPreguntasModule } from './banco-preguntas/banco-preguntas.module';
+import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
+import { HttpApiAuthenticationInterceptorService } from './interceptors/interceptor-api-authentication';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -37,7 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent
    ],
   imports: [
@@ -57,6 +60,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProjectRoutingModule,
     TeamRoutingModule,
     TeamModule,
+    BancoPreguntasModule,
+    BancoPreguntasRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',
@@ -81,6 +86,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpApiAuthenticationInterceptorService,
       multi: true
     }
   ],

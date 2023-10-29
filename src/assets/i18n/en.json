@@ -82,7 +82,18 @@
     "TEAMQTY":"Number of resources requested",
     "TEAMQTYREQUIRED":"Number of resources requested is required",
     "TEAMREQUIRED":"name of team required "
-  }
+     },
+  "QUESTIONS_BANK":{
+    "QUESTIONS_BANK" :"Questions Bank",
+    "QUESTIONS_BANK_LIST" :"Questions Banks list",
+    "ADD" :"Add",
+    "TIPO_BANCO" :"Questions bank type",
+    "TIPO_BANCO_REQUIRED" :"The questions bank type is required",
+    "CATEGORIAS_LIST" :"Categories",
+    "CATEGORIA" :"Category",
+    "CATEGORIA_REQUIRED" :"The category is required"
+    }
+
 
 
 }
