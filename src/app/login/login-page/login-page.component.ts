@@ -6,7 +6,7 @@ import {TranslateService} from '@ngx-translate/core';
 import { Login } from '../login';
 import { LoginService } from '../login.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router, NavigationStart } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -56,12 +56,13 @@ export class LoginPageComponent implements OnInit  {
 
       this.loginService.loginCompany(login).subscribe(loginp=>{
         console.info("The login was success: ", loginp)
-
+        localStorage.setItem("API_TOKEN", loginp.token ?? "");
+        localStorage.setItem("API_EMPRESA_ID", loginp.id.toString());
         this.translate2.get('LOGIN.LOGINSUCCESS').subscribe((res: string) => {
           this.toastr.success(res);
         });
         this.loginForm.reset();
-        this.router.navigate(['/museums']);
+        this.router.navigate(['/principal']);
       },
       error=>{
         this.translate2.get('LOGIN.INVALIDCREDENTIALS').subscribe((res: string) => {

@@ -48,4 +48,50 @@ describe('SignupCompanyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return form Valid', () => {
+    component.companyRForm.patchValue({ razonSocial: 'Empresatest', tipoDocumento: 'NIT', numDocumento: 1235, digitoVerificacion: 0,
+      email: 'Empresatest@test.com', password: 'emprtest' });
+    fixture.detectChanges();
+    expect(component.companyRForm.valid).toBeTruthy();
+  });
+
+  it('should return form inValid', () => {
+    component.companyRForm.patchValue({ razonSocial: 'Empresatest', tipoDocumento: 'NIT', numDocumento: 1235, digitoVerificacion: 0,
+    email: 'Empresatesttest.com', password: 'emprtest' });
+    fixture.detectChanges();
+    expect(component.companyRForm.valid).toBeFalsy();
+  });
+
+  it('all fields empty', () => {
+    component.companyRForm.patchValue({ razonSocial: '', tipoDocumento: '', numDocumento: null, digitoVerificacion: null,
+    email: '', password: '' });
+    fixture.detectChanges();
+    expect(component.companyRForm.valid).toBeFalsy();
+  });
+
+  it('email empty', () => {
+    component.companyRForm.patchValue({ razonSocial: 'Empresatest', tipoDocumento: 'NIT', numDocumento: 1235, digitoVerificacion: 0,
+    email: '', password: 'emprtest' });
+    fixture.detectChanges();
+    expect(component.companyRForm.valid).toBeFalsy();
+  });
+
+  it('password empty', () => {
+    component.companyRForm.patchValue({ razonSocial: 'Empresatest', tipoDocumento: 'NIT', numDocumento: 1235, digitoVerificacion: 0,
+    email: 'Empresatesttest.com', password: '' });
+    fixture.detectChanges();
+    expect(component.companyRForm.valid).toBeFalsy();
+  });
+
+  it('registerCompany test', () => {
+    spyOn(component, 'registerCompany');
+    component.companyRForm.patchValue({ razonSocial: 'Empresatest', tipoDocumento: 'NIT', numDocumento: 1235, digitoVerificacion: 0,
+    email: 'Empresatest@test.com', password: 'emprtest' });
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('.button-signup');
+    element.click();
+    fixture.detectChanges();
+    expect(component.registerCompany).toHaveBeenCalled();
+  });
 });

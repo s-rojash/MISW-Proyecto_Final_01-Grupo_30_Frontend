@@ -6,6 +6,14 @@ const baseUrl = 'https://ms-candidatos.azurewebsites.net';
 const baseUrlCom = 'https://ms-empresas.azurewebsites.net';
 
 const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
+const baseUrlBancoPreguntas = 'https://ms-bancopreguntas.azurewebsites.net';
+
+// const baseUrl = 'http://localhost:8080';
+// const baseUrlCom = 'http://localhost:3000';
+
+// const baseUrlProyectos = 'http://localhost:8080';
+// const baseUrlBancoPreguntas = 'http://localhost:8080';
+
 const idMuseum = "";
 
 export const environment = {
