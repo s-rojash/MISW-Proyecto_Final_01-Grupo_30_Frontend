@@ -69,7 +69,8 @@
     "DESCRIPTION":"Descripcion de proyecto",
     "NAMESREQUIRED" :"Nombre requeridos",
     "DESCRIPTIONREQUIRED" :"Descripcion requerida",
-    "ADD" :"Crear"
+    "ADD" :"Crear",
+    "LIST" : "lista de proyectos"
   },
   "EVALUATION":{
     "HEADER":"Programación de evaluación",
@@ -85,5 +86,26 @@
     "PSYCHOLOGICALTEST":"Prueba Psicológica",
     "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
     "INVALIDBANK":"Se debe seleccionar un banco de preguntas."
+  },
+  "TEAM":{
+    "COMPANYS":"Empresas",
+    "CREATION":"Creación de equipo",
+    "NAME":"Nombre de equipo",
+    "DESCRIPTION":"Descripcion de equipo",
+    "ADD" :"Crear",
+    "SELECT_PROFILE":"Seleccione un perfil",
+    "TEAMQTY":"Numero de recursos solicitados",
+    "TEAMQTYREQUIRED":"Numero de recursos solicitados es unn valor requerido",
+    "TEAMREQUIRED":"nombre de equipo requerido "
+  },
+  "QUESTIONS_BANK":{
+    "QUESTIONS_BANK" :"Banco de preguntas",
+    "QUESTIONS_BANK_LIST" :"Listado de bancos de preguntas",
+    "ADD" :"Crear",
+    "TIPO_BANCO" :"Tipo de banco de preguntas",
+    "TIPO_BANCO_REQUIRED" :"El tipo de banco de preguntas es obligatorio",
+    "CATEGORIAS_LIST" :"Categorias",
+    "CATEGORIA" :"Categoria",
+    "CATEGORIA_REQUIRED" :"La categoría es obligatoria"
   }
 }

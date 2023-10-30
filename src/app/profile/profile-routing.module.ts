@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileCreateComponent } from './profile-create/profile-create.component';
 
-
-
 const routes: Routes = [{
  path: 'profile',
  children: [
@@ -12,7 +10,11 @@ const routes: Routes = [{
      path: 'create',
      component: ProfileCreateComponent
    },
-   
+   {
+    path: 'list',
+    component: ProfileCreateComponent
+  },
+
  ]
 }];
 

@@ -21,4 +21,5 @@ constructor(private http: HttpClient) { }
     return this.http.get<Profile[]>(this.apiUrl);
     }
 
+    
 }

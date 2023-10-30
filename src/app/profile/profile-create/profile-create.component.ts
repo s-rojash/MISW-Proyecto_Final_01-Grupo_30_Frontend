@@ -14,6 +14,7 @@ import {MatDialog } from '@angular/material/dialog';
 export class ProfileCreateComponent implements OnInit {
 
   profileForm!: FormGroup;
+  profiles : Array<Profile> = [];
   valueNames = '';
 
   constructor(private formBuilder: FormBuilder,
@@ -30,11 +31,25 @@ export class ProfileCreateComponent implements OnInit {
     });
   }
 
+
+  getProfile ():void{
+    this.profileService.getProfile().subscribe((profile)=> {
+      this.profiles = profile; 
+            
+    });
+  }
+
+  
+
+
+
+
   ngOnInit():void {
     this.profileForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]],
      });
 
+     this.getProfile();
   }
 
 }

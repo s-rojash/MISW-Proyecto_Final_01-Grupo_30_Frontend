@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule} from '@angular/material/dialog';
 import {NgIf} from '@angular/common';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -26,6 +27,7 @@ import {NgIf} from '@angular/common';
     FormsModule,
     MatDialogModule,
     NgIf,
+    MatSelectModule,
   ],
   declarations: [ProfileCreateComponent],
   exports:[ProfileCreateComponent ]

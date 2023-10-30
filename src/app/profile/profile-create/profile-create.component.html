@@ -44,4 +44,11 @@
       </div>
     </div>
   </form>
+    <!-- Agregar el mat-select para la lista de perfiles -->
+    <mat-label>Seleccionar un perfil</mat-label>
+    <mat-select formControlName="selectedProfile">
+      <mat-option *ngFor="let profile of profiles" [value]="profile">{{ profile.name }}</mat-option>
+    </mat-select>
 </mat-card>
+
+
