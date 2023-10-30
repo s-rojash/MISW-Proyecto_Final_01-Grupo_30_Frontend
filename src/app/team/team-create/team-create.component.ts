@@ -26,19 +26,20 @@ export class TeamCreateComponent implements OnInit {
 
     createTeam (team: Team):void{
       this.teamService.createTeam(team).subscribe(author=>{
-            console.info("The Team was created: ", team) 
+            console.info("The Team was created: ", team)
             this.toastr.success("Confirmation", "Team created")
               this.teamForm.reset();
       });
     }
 
-    
+
   ngOnInit():void {
     this.teamForm = this.formBuilder.group({
-      nombre: ["", [Validators.required]], 
-      qtyrecursos: ["", [Validators.required]], 
+      nombre: ["", [Validators.required]],
+      qtyrecursos: ["", [Validators.required]],
+      profile: [this.profiles]
     });
-     
+
      this.profileService.getProfile().subscribe(profiles => {
       this.profiles = profiles;
      });

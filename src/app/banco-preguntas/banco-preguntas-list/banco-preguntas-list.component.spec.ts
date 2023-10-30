@@ -13,16 +13,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProjectListComponent } from './banco-preguntas-list.component';
+import { BancoPreguntasListComponent } from './banco-preguntas-list.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CategoriasListComponent } from '../categorias-list/categorias-list.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('ProjectListComponent', () => {
-  let component: ProjectListComponent;
-  let fixture: ComponentFixture<ProjectListComponent>;
+describe('BancoPreguntasListComponent', () => {
+  let component: BancoPreguntasListComponent;
+  let fixture: ComponentFixture<BancoPreguntasListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -40,13 +41,13 @@ describe('ProjectListComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       }),],
-      declarations: [ ProjectListComponent ]
+      declarations: [ BancoPreguntasListComponent, CategoriasListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectListComponent);
+    fixture = TestBed.createComponent(BancoPreguntasListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

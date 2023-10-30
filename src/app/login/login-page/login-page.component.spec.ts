@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -15,8 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './login-page.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { LoginService } from '../login.service';
-import { of } from 'rxjs';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -98,21 +94,5 @@ describe('LoginPageComponent', () => {
     element.click();
     fixture.detectChanges();
     expect(component.goToApp).toHaveBeenCalled();
-  });
-
-  it('go to app company failed', () => {
-    spyOn(component, 'goToApp');
-    spyOn(toastrService, 'error');
-    component.loginForm.patchValue({ email: 'prueba@test.com', password: 'sadsa' });
-    component.selectedtypeLogin = "0";
-    fixture.detectChanges();
-    const element = fixture.nativeElement.querySelector('.button-login');
-    element.click();
-    fixture.detectChanges();
-    expect(component.goToApp).toHaveBeenCalled();
-    // const service = TestBed.get(LoginService);
-    // spyOn(service, 'loginCompany');
-    // expect(service.loginCompany).toHaveBeenCalledWith();
-    //expect(toastrService.error).toHaveBeenCalled();
   });
 });

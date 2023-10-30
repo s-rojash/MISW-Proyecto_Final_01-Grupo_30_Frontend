@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -13,22 +11,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProjectCreateComponent } from './banco-preguntas-create.component';
-import { ProjectListComponent } from '../project-list/project-list.component';
+import { BancoPreguntasCreateComponent } from './banco-preguntas-create.component';
+import { BancoPreguntasListComponent } from '../banco-preguntas-list/banco-preguntas-list.component';
+import { BancoPreguntasRoutingModule } from '../banco-preguntas-routing.module';
 import { ToastrModule } from 'ngx-toastr';
+import { RouterTestingModule } from "@angular/router/testing";
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('ProjectCreateComponent', () => {
-  let component: ProjectCreateComponent;
-  let fixture: ComponentFixture<ProjectCreateComponent>;
+describe('BancoPreguntasCreateComponent', () => {
+  let component: BancoPreguntasCreateComponent;
+  let fixture: ComponentFixture<BancoPreguntasCreateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -41,13 +41,13 @@ describe('ProjectCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ ProjectCreateComponent, ProjectListComponent ]
+      declarations: [ BancoPreguntasCreateComponent, BancoPreguntasListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectCreateComponent);
+    fixture = TestBed.createComponent(BancoPreguntasCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
