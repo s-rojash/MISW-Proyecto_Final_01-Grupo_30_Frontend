@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -11,18 +11,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BancoPreguntasListComponent } from './banco-preguntas-list.component';
 import { ToastrModule } from 'ngx-toastr';
-import { CategoriasListComponent } from '../categorias-list/categorias-list.component';
-
+import { CategoriasListComponent } from './categorias-list.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('BancoPreguntasListComponent', () => {
-  let component: BancoPreguntasListComponent;
-  let fixture: ComponentFixture<BancoPreguntasListComponent>;
+describe('LoginPageComponent', () => {
+  let component: CategoriasListComponent;
+  let fixture: ComponentFixture<CategoriasListComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -40,13 +38,13 @@ describe('BancoPreguntasListComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       }),],
-      declarations: [ BancoPreguntasListComponent, CategoriasListComponent ]
+      declarations: [ CategoriasListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BancoPreguntasListComponent);
+    fixture = TestBed.createComponent(CategoriasListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
