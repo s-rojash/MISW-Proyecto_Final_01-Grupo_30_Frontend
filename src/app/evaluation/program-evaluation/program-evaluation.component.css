@@ -18,7 +18,7 @@
   color: #E5E5E5;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  font-family: 'Zen Dots';
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 70px;
   font-style: normal;
   font-weight: 400;
@@ -38,7 +38,7 @@
   color: #000;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: white;
-  font-family: ABeeZee;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 45px;
   font-style: normal;
   font-weight: 400;
@@ -59,7 +59,7 @@
   color: #FFF;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  font-family: 'Zen Dots';
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
