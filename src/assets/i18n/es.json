@@ -69,9 +69,24 @@
     "DESCRIPTION":"Descripcion de proyecto",
     "NAMESREQUIRED" :"Nombre requeridos",
     "DESCRIPTIONREQUIRED" :"Descripcion requerida",
-    "ADD" :"Crear" ,
+    "ADD" :"Crear",
     "LIST" : "lista de proyectos"
-  } ,
+  },
+  "EVALUATION":{
+    "HEADER":"Programación de evaluación",
+    "HEADER2":"Agendar Prueba",
+    "SAVE":"Guardar",
+    "SELECTOPTION":"Seleccione un candidato",
+    "SELECTOPTIONCATEGORY":"Seleccione una categoría",
+    "APPLICANT":"Candidato",
+    "CATEGORY":"Categoria",
+    "DATE":"Fecha",
+    "DATEREQUIRED":"Fecha requerida",
+    "TECHNICALTEST":"Prueba Técnica",
+    "PSYCHOLOGICALTEST":"Prueba Psicológica",
+    "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
+    "INVALIDBANK":"Se debe seleccionar un banco de preguntas."
+  },
   "TEAM":{
     "COMPANYS":"Empresas",
     "CREATION":"Creación de equipo",
@@ -83,7 +98,6 @@
     "TEAMQTYREQUIRED":"Numero de recursos solicitados es unn valor requerido",
     "TEAMREQUIRED":"nombre de equipo requerido "
   },
-
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",
     "QUESTIONS_BANK_LIST" :"Listado de bancos de preguntas",
@@ -93,6 +107,5 @@
     "CATEGORIAS_LIST" :"Categorias",
     "CATEGORIA" :"Categoria",
     "CATEGORIA_REQUIRED" :"La categoría es obligatoria"
-    }
-
+  }
 }
