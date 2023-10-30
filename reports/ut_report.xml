@@ -1,32 +1,114 @@
 <testExecutions version="1">
+  <file path="src/app/login/dialogtypesignup/dialogtypesignup.component.spec.ts">
+    <testCase name="DialogtypesignupComponent should create" duration="51"/>
+  </file>
+  <file path="src/app/banco-preguntas/banco-preguntas-create/banco-preguntas-create.component.spec.ts">
+    <testCase name="BancoPreguntasCreateComponent should create" duration="43">
+      <failure message="Error">TypeError: Cannot read properties of undefined (reading 'categoria')
+    at templateFn (ng:///BancoPreguntasCreateComponent.js:117:55)
+    at executeTemplate (node_modules/@angular/core/fesm2022/core.mjs:11981:13)
+    at refreshView (node_modules/@angular/core/fesm2022/core.mjs:13476:13)
+    at detectChangesInView (node_modules/@angular/core/fesm2022/core.mjs:13641:9)
+    at detectChangesInComponent (node_modules/@angular/core/fesm2022/core.mjs:13616:5)
+    at detectChangesInChildComponents (node_modules/@angular/core/fesm2022/core.mjs:13654:9)
+    at refreshView (node_modules/@angular/core/fesm2022/core.mjs:13526:13)
+    at detectChangesInternal (node_modules/@angular/core/fesm2022/core.mjs:13415:9)
+    at RootViewRef.detectChanges (node_modules/@angular/core/fesm2022/core.mjs:13932:9)
+    at ComponentFixture._tick (node_modules/@angular/core/fesm2022/testing.mjs:127:32)
+</failure>
+    </testCase>
+  </file>
+  <file path="src/app/evaluation/program-evaluation/program-evaluation.component.spec.ts">
+    <testCase name="ProgramEvaluationComponent select applicant failed test" duration="55"/>
+    <testCase name="ProgramEvaluationComponent select bank failed test" duration="20"/>
+    <testCase name="ProgramEvaluationComponent should return form Valid" duration="14"/>
+    <testCase name="ProgramEvaluationComponent should return form inValid" duration="12"/>
+    <testCase name="ProgramEvaluationComponent should create" duration="12"/>
+    <testCase name="ProgramEvaluationComponent go to programEvaluation test" duration="12"/>
+  </file>
+  <file path="src/app/project/project-create/project-create.component.spec.ts">
+    <testCase name="ProjectCreateComponent should create" duration="24"/>
+  </file>
+  <file path="src/app/team/team-list/team-list.component.spec.ts">
+    <testCase name="TeamListComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/profile/profile-create/profile-create.component.spec.ts">
+    <testCase name="ProfileCreateComponent should create" duration="11"/>
+  </file>
+  <file path="src/app/banco-preguntas/banco-preguntas-list/banco-preguntas-list.component.spec.ts">
+    <testCase name="BancoPreguntasListComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/signup/dialogalertopcomp/dialogalertopcomp.component.spec.ts">
+    <testCase name="DialogalertopcompComponent should create" duration="4"/>
+  </file>
+  <file path="src/app/login/login-page/login-page.component.spec.ts">
+    <testCase name="LoginPageComponent should return form inValid" duration="16"/>
+    <testCase name="LoginPageComponent should return form Valid" duration="8"/>
+    <testCase name="LoginPageComponent email empty" duration="7"/>
+    <testCase name="LoginPageComponent two fields empty" duration="7"/>
+    <testCase name="LoginPageComponent go to app test" duration="7"/>
+    <testCase name="LoginPageComponent should create" duration="8"/>
+    <testCase name="LoginPageComponent password empty" duration="7"/>
+  </file>
+  <file path="src/app/signup/signup-applicant/signup-applicant.component.spec.ts">
+    <testCase name="SignupApplicantComponent email empty" duration="33"/>
+    <testCase name="SignupApplicantComponent should return form Valid" duration="17"/>
+    <testCase name="SignupApplicantComponent password empty" duration="17"/>
+    <testCase name="SignupApplicantComponent should create" duration="16"/>
+    <testCase name="SignupApplicantComponent registerApplicant test" duration="17"/>
+    <testCase name="SignupApplicantComponent should return form inValid" duration="16"/>
+    <testCase name="SignupApplicantComponent all fields empty" duration="13"/>
+  </file>
+  <file path="src/app/login/login.service.spec.ts">
+    <testCase name="Service: Login should handle loginApplicant successful HTTP request (status code 200)" duration="2"/>
+    <testCase name="Service: Login should handle loginApplicant failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: Login should ..." duration="1"/>
+    <testCase name="Service: Login should handle loginCompany successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: Login should handle loginCompany failed HTTP request (status code 404)" duration="1"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should have as title 'frontabc-front'" duration="15"/>
+    <testCase name="AppComponent should create the app" duration="3"/>
+  </file>
+  <file path="src/app/principal/principal-page/principal-page.component.spec.ts">
+    <testCase name="PrincipalPageComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/project/project-list/project-list.component.spec.ts">
+    <testCase name="ProjectListComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/interceptors/interceptor-errors.service.spec.ts">
+    <testCase name="InterceptorsServiceService should be created" duration="2"/>
   </file>
   <file path="src/app/signup/dialogalertopappli/dialogalertopappli.component.spec.ts">
     <testCase name="DialogalertopappliComponent should create" duration="4"/>
   </file>
-  </file>
-  <file path="src/app/profile/profile-create/profile-create.component.spec.ts">
-    <testCase name="ProfileCreateComponent should create" duration="8"/>
+  <file path="src/app/profile/profile.service.spec.ts">
+    <testCase name="Service: Profile should ..." duration="2"/>
   </file>
   <file path="src/app/signup/signup-company/signup-company.component.spec.ts">
-    <testCase name="SignupCompanyComponent registerCompany test" duration="31"/>
-    <testCase name="SignupCompanyComponent password empty" duration="17"/>
-    <testCase name="SignupCompanyComponent should return form Valid" duration="15"/>
-    <testCase name="SignupCompanyComponent all fields empty" duration="13"/>
-    <testCase name="SignupCompanyComponent should return form inValid" duration="15"/>
-    <testCase name="SignupCompanyComponent email empty" duration="19"/>
-    <testCase name="SignupCompanyComponent should create" duration="24"/>
+    <testCase name="SignupCompanyComponent should return form inValid" duration="25"/>
+    <testCase name="SignupCompanyComponent should create" duration="13"/>
+    <testCase name="SignupCompanyComponent should return form Valid" duration="14"/>
+    <testCase name="SignupCompanyComponent email empty" duration="13"/>
+    <testCase name="SignupCompanyComponent all fields empty" duration="15"/>
+    <testCase name="SignupCompanyComponent registerCompany test" duration="14"/>
+    <testCase name="SignupCompanyComponent password empty" duration="13"/>
   </file>
-  <file path="src/app/principal/principal-page/principal-page.component.spec.ts">
-    <testCase name="PrincipalPageComponent should create" duration="11"/>
+  <file path="src/app/team/team-create/team-create.component.spec.ts">
+    <testCase name="TeamCreateComponent should create" duration="14"/>
   </file>
-  <file path="src/app/signup/signup-applicant/signup-applicant.component.spec.ts">
-    <testCase name="SignupApplicantComponent should return form Valid" duration="29"/>
-    <testCase name="SignupApplicantComponent all fields empty" duration="15"/>
-    <testCase name="SignupApplicantComponent email empty" duration="16"/>
-    <testCase name="SignupApplicantComponent should return form inValid" duration="16"/>
-    <testCase name="SignupApplicantComponent registerApplicant test" duration="17"/>
-    <testCase name="SignupApplicantComponent password empty" duration="14"/>
-    <testCase name="SignupApplicantComponent should create" duration="15"/>
+  <file path="src/app/project/project.service.spec.ts">
+    <testCase name="Service: Project should ..." duration="2"/>
+  </file>
+  <file path="src/app/team/team.service.spec.ts">
+    <testCase name="Service: Team should ..." duration="1"/>
+  </file>
+  <file path="src/app/signup/signup.service.spec.ts">
+    <testCase name="Service: Signup should ..." duration="1"/>
+    <testCase name="Service: Signup should handle createApplicant successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: Signup should handle createCompany successful HTTP request (status code 200)" duration="2"/>
+    <testCase name="Service: Signup should handle createApplicant failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: Signup should handle createCompany failed HTTP request (status code 404)" duration="1"/>
   </file>
   <file path="src/app/app.component.spec.ts">
     <testCase name="AppComponent should create the app" duration="14"/>

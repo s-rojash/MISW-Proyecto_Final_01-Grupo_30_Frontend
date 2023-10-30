@@ -11,21 +11,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { BancoPreguntasCreateComponent } from './banco-preguntas-create.component';
 import { BancoPreguntasListComponent } from '../banco-preguntas-list/banco-preguntas-list.component';
+import { BancoPreguntasRoutingModule } from '../banco-preguntas-routing.module';
+import { ToastrModule } from 'ngx-toastr';
+import { RouterTestingModule } from "@angular/router/testing";
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('ProjectCreateComponent', () => {
-  let component: BancoPreguntasListComponent;
-  let fixture: ComponentFixture<BancoPreguntasListComponent>;
+describe('BancoPreguntasCreateComponent', () => {
+  let component: BancoPreguntasCreateComponent;
+  let fixture: ComponentFixture<BancoPreguntasCreateComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -38,13 +41,13 @@ describe('ProjectCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ BancoPreguntasListComponent, BancoPreguntasListComponent ]
+      declarations: [ BancoPreguntasCreateComponent, BancoPreguntasListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BancoPreguntasListComponent);
+    fixture = TestBed.createComponent(BancoPreguntasCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

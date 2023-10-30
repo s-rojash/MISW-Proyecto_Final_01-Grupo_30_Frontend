@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { TeamCreateComponent } from './team-create/team-create.component';
 import { HttpClient } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -12,7 +12,6 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {NgIf} from '@angular/common';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 
