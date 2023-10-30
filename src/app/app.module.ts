@@ -14,6 +14,8 @@ import { LoginRoutingModule } from './login/login-routing.module';
 import { SignupModule } from './signup/signup.module';
 import { SignpuRoutingModule } from './signup/signup-routing.module';
 import { ProjectRoutingModule } from './project/project-routing.module';
+import { EvaluationModule } from './evaluation/evaluation.module';
+import { EvaluationRoutingModule } from './evaluation/evaluation-routing.module';
 import { BancoPreguntasModule } from './banco-preguntas/banco-preguntas.module';
 import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-routing.module';
 
@@ -32,6 +34,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ProjectModule } from './project/project.module';
 import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
+import { TeamRoutingModule } from './team/team-routing.module';
+import { TeamModule } from './team/team.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -56,6 +60,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SignupModule,
     SignpuRoutingModule,
     ProjectRoutingModule,
+    EvaluationModule,
+    EvaluationRoutingModule,
+    TeamRoutingModule,
+    TeamModule,
     BancoPreguntasModule,
     BancoPreguntasRoutingModule,
     ToastrModule.forRoot({

@@ -61,8 +61,7 @@
     "CE":"FOREIGNER ID",
     "BUSINESSNAME":"Business name",
     "BUSINESSNAMEREQUIRED":"Business name required"
-  }
-  ,
+  },
   "PROJECT":{
     "COMPANYS":"Company",
     "CREATION":"Project's creation",
@@ -70,8 +69,34 @@
     "DESCRIPTION":"Project Description",
     "NAMESREQUIRED" :"Names required",
     "DESCRIPTIONREQUIRED" :"Description required",
-    "ADD" :"Add"
-     },
+    "ADD" :"Add",
+    "LIST" : "project's List"
+  },
+  "EVALUATION":{
+    "HEADER":"Evaluation programming",
+    "HEADER2":"Schedule test",
+    "SAVE":"Save",
+    "SELECTOPTION":"Select an applicant",
+    "SELECTOPTIONCATEGORY":"Select a category",
+    "APPLICANT":"Applicant",
+    "CATEGORY":"Category",
+    "DATE":"Date",
+    "DATEREQUIRED":"Date required",
+    "TECHNICALTEST":"Technical Test",
+    "PSYCHOLOGICALTEST":"Psychological Test",
+    "INVALIDAPPLICANT":"At least one applicant must be selected.",
+    "INVALIDBANK":"A bank of questions must be selected."
+  },
+  "TEAM":{
+    "COMPANYS":"Company",
+    "CREATION":"Team creation",
+    "NAME":"Project Name",
+    "ADD" :"Add",
+    "SELECT_PROFILE":"select a profile",
+    "TEAMQTY":"Number of resources requested",
+    "TEAMQTYREQUIRED":"Number of resources requested is required",
+    "TEAMREQUIRED":"name of team required "
+  },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Questions Bank",
     "QUESTIONS_BANK_LIST" :"Questions Banks list",
@@ -81,7 +106,5 @@
     "CATEGORIAS_LIST" :"Categories",
     "CATEGORIA" :"Category",
     "CATEGORIA_REQUIRED" :"The category is required"
-    }
-
-
+  }
 }

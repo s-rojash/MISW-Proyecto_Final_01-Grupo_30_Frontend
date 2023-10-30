@@ -1,0 +1,29 @@
+<!-- team-list.component.html -->
+<h1>Lista de Equipos</h1>
+
+<!-- Dropdown para seleccionar equipos -->
+<select (change)="onTeamSelected($event)">
+  <option [value]="null">Selecciona un equipo</option>
+  <option *ngFor="let team of teams" [value]="team.id">{{ team.nombre }}</option>
+</select>
+
+<div *ngIf="selectedTeam">
+  <!-- Detalles del equipo -->
+  <h2>Detalles del Equipo: {{ selectedTeam ? selectedTeam.nombre : 'Ningún equipo seleccionado' }}</h2>
+
+  <table>
+    <tr>
+      <td>Nombre del Equipo:</td>
+      <td>{{ selectedTeam?.nombre || 'Ningún equipo seleccionado' }}</td>
+
+    </tr>
+    <tr>
+      <td>Cantidad de Recursos:</td>
+      <td>{{ selectedTeam?.qtyrecursos|| 'Ningún cantidad seleccionado' } }</td>
+    </tr>
+    <!-- Agrega más detalles según tus necesidades -->
+  </table>
+
+  <!-- Enlaces para modificar y eliminar el equipo -->
+ 
+</div>
