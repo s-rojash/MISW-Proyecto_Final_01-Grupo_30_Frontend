@@ -19,7 +19,7 @@ import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-r
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
-import { HttpApiAuthenticationInterceptorService } from './interceptors/interceptor-api-authentication';
+import { HttpApiAuthenticationInterceptorService } from './interceptors/interceptor-api-authentication.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
