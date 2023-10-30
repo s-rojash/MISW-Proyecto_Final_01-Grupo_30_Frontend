@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -55,7 +55,4 @@ describe('BancoPreguntasListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-function waitForAsync(arg0: () => void): jasmine.ImplementationCallback {
-  throw new Error('Function not implemented.');
-}
 

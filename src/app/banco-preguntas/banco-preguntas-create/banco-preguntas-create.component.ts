@@ -56,7 +56,7 @@ export class BancoPreguntasCreateComponent implements OnInit {
             this.bancoPreguntas = bancoPreguntas;
             this.bancoPreguntasForm = this.formBuilder.group({
               tipoBanco: [this.bancoPreguntas?.tipoBanco ?? "", [Validators.required, Validators.minLength(2)]],
-              categoria: [this.bancoPreguntas?.categoria ?? "", [Validators.required]],
+              categoria: ["", [Validators.required]],
             });
           })
         }
