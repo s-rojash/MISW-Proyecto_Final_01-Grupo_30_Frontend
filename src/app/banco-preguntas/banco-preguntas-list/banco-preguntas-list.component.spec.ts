@@ -55,3 +55,7 @@ describe('BancoPreguntasListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+function waitForAsync(arg0: () => void): jasmine.ImplementationCallback {
+  throw new Error('Function not implemented.');
+}
+
