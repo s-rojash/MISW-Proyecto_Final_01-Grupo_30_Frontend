@@ -7,6 +7,7 @@ import { HttpClientTestingModule, HttpTestingController  } from '@angular/common
 describe('Service: Login', () => {
   let httpMock: HttpTestingController;
   let loginService: LoginService;
+  let pass = '12345';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -31,7 +32,7 @@ describe('Service: Login', () => {
   }));
 
   it('should handle loginApplicant successful HTTP request (status code 200)', () => {
-    const login = { id: 1, email: 's.rojash@uniandes.edu.co', password: '12345', token: "" };
+    const login = { id: 1, email: 's.rojash@uniandes.edu.co', password: pass, token: "" };
 
     loginService.loginApplicant(login).subscribe(data => {
       expect(data).toEqual(login); // Assert that the response data matches the expected data
@@ -44,7 +45,7 @@ describe('Service: Login', () => {
   });
 
   it('should handle loginApplicant failed HTTP request (status code 404)', () => {
-    const login = { id: 1, email: 's.rojash@uniandes.edu.co', password: '12345', token: "" };
+    const login = { id: 1, email: 's.rojash@uniandes.edu.co', password: pass, token: "" };
 
     loginService.loginApplicant(login).subscribe(
       data => fail('The request should have failed with 404 error'),
@@ -60,7 +61,7 @@ describe('Service: Login', () => {
   });
 
   it('should handle loginCompany successful HTTP request (status code 200)', () => {
-    const company = { id: 1, email: 's.rojash@uniandes.edu.co', password: '12345', token: "" };
+    const company = { id: 1, email: 's.rojash@uniandes.edu.co', password: pass, token: "" };
 
     loginService.loginCompany(company).subscribe(data => {
       expect(data).toEqual(company); // Assert that the response data matches the expected data
@@ -73,7 +74,7 @@ describe('Service: Login', () => {
   });
 
   it('should handle loginCompany failed HTTP request (status code 404)', () => {
-    const company = { id: 1, email: 's.rojash@uniandes.edu.co', password: '12345', token: "" };
+    const company = { id: 1, email: 's.rojash@uniandes.edu.co', password: pass, token: "" };
 
     loginService.loginCompany(company).subscribe(
       data => fail('The request should have failed with 404 error'),
