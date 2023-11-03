@@ -10,7 +10,8 @@
     "MYPROFILEMENU":"Mi Perfil",
     "LANESPMENU":"Español",
     "LANENGMENU":"Ingles",
-    "LOGOUTMENU":"Salir"
+    "LOGOUTMENU":"Salir",
+    "PROFILE":"Perfíl"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -96,7 +97,10 @@
     "SELECT_PROFILE":"Seleccione un perfil",
     "TEAMQTY":"Numero de recursos solicitados",
     "TEAMQTYREQUIRED":"Numero de recursos solicitados es unn valor requerido",
-    "TEAMREQUIRED":"nombre de equipo requerido "
+    "TEAMREQUIRED":"nombre de equipo requerido ",
+    "SELECT_PROJECT":"seleccione un proyecto",
+    "TEAMLIST" : "listado de proyectos",
+    "SELECT_TEAM":"Selecciona un equipo"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",
