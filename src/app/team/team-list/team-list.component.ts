@@ -1,6 +1,12 @@
+// team-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '../team.service';
 import { Team } from '../team';
+import { Project } from 'src/app/project/project';
+import { ProjectService } from 'src/app/project/project.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-team-list',
@@ -8,28 +14,70 @@ import { Team } from '../team';
   styleUrls: ['./team-list.component.css']
 })
 export class TeamListComponent implements OnInit {
+  teamForm!: FormGroup;
+  teamDetails: any = null;
   teams: Team[] = [];
-  selectedTeam: Team | null = null; 
+  projects: Project[] = [];
+  isEditing = false;
 
-  constructor(private teamService: TeamService) {}
+  constructor(private formBuilder: FormBuilder,
+    public dialog: MatDialog,
+    private toastr: ToastrService,
+    private teamService: TeamService,
+    private projectService :ProjectService) { }
 
   ngOnInit(): void {
-    this.teamService.getTeams().subscribe((teams) => {
+    this.teamService.getTeams().subscribe(teams => {
       this.teams = teams;
     });
+
+    this.projectService.getProjects().subscribe(projects => {
+      this.projects = projects;
+      console.log('Proyectos obtenidos:', this.projects);
+     });
+  
+     this.teamForm = this.formBuilder.group({
+      project: [null, Validators.required], 
+      team: [null, Validators.required] ,
+      profile: [null], 
+      cantidad: [null], 
+    });
+     
+    this.onProjectSelectionChange();
+     
   }
 
-  onTeamSelected(event: Event): void {
-    const selectedValue = (event.target as HTMLSelectElement).value;
-    const numericTeamId = parseInt(selectedValue, 10);
+  onTeamSelectionChange() {
+    const selectedTeamControl = this.teamForm.get('team');
+    if (selectedTeamControl) {
+      const selectedTeamId = selectedTeamControl.value;
     
-    if (!isNaN(numericTeamId)) {
-      this.selectedTeam = this.teams.find((team) => team.id === numericTeamId) || null;
-    } else {
-      this.selectedTeam = null;
+        this.teamService.getTeamsById(selectedTeamId).subscribe((teamData) => {
+      
+        });
+
     }
   }
-  clearSelection(): void {
-    this.selectedTeam = null; 
+  
+
+
+  onProjectSelectionChange() {
+    const selectedProjectControl = this.teamForm.get('project');
+    console.log("selectedProjectControl",selectedProjectControl);
+    if (selectedProjectControl) {
+      const selectedProjectId = selectedProjectControl.value;
+      console.log("selectedProjectId",selectedProjectId);
+      if (selectedProjectId) {
+         this.teamService.getTeamsByProject(selectedProjectId).subscribe(teams => {
+          this.teams = teams;
+          console.log("teams",teams);
+        });
+      } else {
+        // Si no se selecciona ningún proyecto, borra la lista de equipos
+        this.teams = [];
+      }
+    }
   }
+  
+  
 }

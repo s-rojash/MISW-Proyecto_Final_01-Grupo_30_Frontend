@@ -28,16 +28,13 @@ export class ProjectCreateComponent implements OnInit {
     private projectService: ProjectService) { }
 
 
-
   
- 
-
     createProject(project: Project):void{
-      this.projectService.createProject(project).subscribe(author=>{
+      this.projectService.createProject(project).subscribe(response=>{
             console.info("The project was created: ", project)
             this.projectService.projectCreated();  
             this.toastr.success("Confirmation", "Project created")
-              this.projectForm.reset();
+            this.projectForm.reset();
              
       });
       }

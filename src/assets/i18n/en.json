@@ -10,7 +10,8 @@
     "MYPROFILEMENU":"My Profile",
     "LANESPMENU":"Spanish",
     "LANENGMENU":"English",
-    "LOGOUTMENU":"Logout"
+    "LOGOUTMENU":"Logout",
+    "PROFILE":"Profile"
   },
   "LOGIN":{
     "TITLE":"Login",
@@ -95,7 +96,11 @@
     "SELECT_PROFILE":"select a profile",
     "TEAMQTY":"Number of resources requested",
     "TEAMQTYREQUIRED":"Number of resources requested is required",
-    "TEAMREQUIRED":"name of team required "
+    "TEAMREQUIRED":"name of team required ",
+    "SELECT_PROJECT":"select a project",
+    "TEAMLIST" : "list of projects",
+    "SELECT_TEAM":"select a Team"
+
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Questions Bank",
