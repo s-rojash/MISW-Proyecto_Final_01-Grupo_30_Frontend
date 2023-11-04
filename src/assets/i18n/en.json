@@ -75,6 +75,8 @@
   "EVALUATION":{
     "HEADER":"Evaluation programming",
     "HEADER2":"Schedule test",
+    "HEADERLIST":"List of technical tests",
+    "HEADERLIST2":"Technical tests",
     "SAVE":"Save",
     "SELECTOPTION":"Select an applicant",
     "SELECTOPTIONCATEGORY":"Select a category",

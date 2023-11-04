@@ -75,6 +75,8 @@
   "EVALUATION":{
     "HEADER":"Programación de evaluación",
     "HEADER2":"Agendar Prueba",
+    "HEADERLIST":"Listado de pruebas técnicas",
+    "HEADERLIST2":"Pruebas Técnicas",
     "SAVE":"Guardar",
     "SELECTOPTION":"Seleccione un candidato",
     "SELECTOPTIONCATEGORY":"Seleccione una categoría",
