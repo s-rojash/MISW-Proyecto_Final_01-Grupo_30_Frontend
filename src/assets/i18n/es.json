@@ -75,8 +75,8 @@
   "EVALUATION":{
     "HEADER":"Programación de evaluación",
     "HEADER2":"Agendar Prueba",
-    "HEADERLIST":"Listado de pruebas técnicas",
-    "HEADERLIST2":"Pruebas Técnicas",
+    "HEADERLIST":"Listado de pruebas",
+    "HEADERLIST2":"Pruebas",
     "SAVE":"Guardar",
     "SELECTOPTION":"Seleccione un candidato",
     "SELECTOPTIONCATEGORY":"Seleccione una categoría",
@@ -87,7 +87,8 @@
     "TECHNICALTEST":"Prueba Técnica",
     "PSYCHOLOGICALTEST":"Prueba Psicológica",
     "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
-    "INVALIDBANK":"Se debe seleccionar un banco de preguntas."
+    "INVALIDBANK":"Se debe seleccionar un banco de preguntas.",
+    "BUTTONADD":"Agendar Prueba"
   },
   "TEAM":{
     "COMPANYS":"Empresas",
