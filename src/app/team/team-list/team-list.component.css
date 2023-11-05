@@ -1,0 +1,38 @@
+/* Agrega este estilo a tu archivo CSS (por ejemplo, styles.css) */
+.mat-option-text {
+    color: black; /* Cambia el color del texto a negro */
+  }
+  
+.labeloverinput {
+  position: relative;
+  top: 0.7em;
+  z-index: 1;
+  left: 2em;
+  background-color: white;
+  padding: 0 5px;
+  color: #6750A4;
+}
+
+
+.borde {
+  border: 1px solid #ccc; /* Agrega un borde de 1 píxel de ancho con color gris claro */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
+  padding: 10px; /* Añade un espacio interno para que el contenido no toque el borde */
+}
+
+
+.small-width {
+  width: 35%;
+}
+
+.button-signup{
+  width: 204px;
+  height: 40px;
+  border-radius: 5px;
+  background: url(../../../assets/Images/fondogeneral.png), lightgray 50% / cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: #FFF;
+}
