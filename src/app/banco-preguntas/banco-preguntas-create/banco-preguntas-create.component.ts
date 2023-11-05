@@ -51,7 +51,7 @@ export class BancoPreguntasCreateComponent implements OnInit {
     ngOnInit():void {
       this.routeSub = this.route.params.subscribe(params => {
         this.bancoPreguntasId = Number(params['id?']);
-        if (this.bancoPreguntasId !== null){
+        if (this.bancoPreguntasId !== null && !isNaN(this.bancoPreguntasId)){
           this.bancoPreguntasService.getBancoPreguntas(this.bancoPreguntasId).subscribe((bancoPreguntas) =>{
             this.bancoPreguntas = bancoPreguntas;
             this.bancoPreguntasForm = this.formBuilder.group({

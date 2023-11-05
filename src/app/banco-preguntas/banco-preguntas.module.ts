@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 import { NgIf } from '@angular/common';
 
 import { BancoPreguntasListComponent } from './banco-preguntas-list/banco-preguntas-list.component';
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatSelectModule,
     FormsModule,
     MatDialogModule,
     NgIf,
