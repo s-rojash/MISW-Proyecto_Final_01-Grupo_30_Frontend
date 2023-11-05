@@ -76,6 +76,8 @@
   "EVALUATION":{
     "HEADER":"Evaluation programming",
     "HEADER2":"Schedule test",
+    "HEADERLIST":"List of tests",
+    "HEADERLIST2":"Tests",
     "SAVE":"Save",
     "SELECTOPTION":"Select an applicant",
     "SELECTOPTIONCATEGORY":"Select a category",
@@ -86,7 +88,8 @@
     "TECHNICALTEST":"Technical Test",
     "PSYCHOLOGICALTEST":"Psychological Test",
     "INVALIDAPPLICANT":"At least one applicant must be selected.",
-    "INVALIDBANK":"A bank of questions must be selected."
+    "INVALIDBANK":"A bank of questions must be selected.",
+    "BUTTONADD":"Schedule test"
   },
   "TEAM":{
     "COMPANYS":"Company",
