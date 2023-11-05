@@ -29,6 +29,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
+
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ProjectModule } from './project/project.module';
@@ -77,6 +80,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatIconModule,
     MatMenuModule,
     MatDividerModule,
+    MatSlideToggleModule,
+    MatBadgeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

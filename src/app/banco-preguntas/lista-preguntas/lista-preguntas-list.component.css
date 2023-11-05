@@ -1,0 +1,38 @@
+/* Definición del CSS */
+
+button.btn-primary{
+  float: right;
+  margin: 24px;
+}
+
+.boton-agregar-pregunta{
+  float: right;
+}
+
+li.lista-respuestas{
+  list-style: none;
+}
+.label-puntaje{
+  margin-right: 8px;
+  background-color: gray;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+  min-width: 32px;
+  text-align: center;
+}
+.label-puntaje-inactivo{
+  text-decoration: line-through black;
+  margin-right: 8px;
+  background-color: gray;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+  min-width: 32px;
+  text-align: center;
+}
+
+.estado-inactivo{
+  text-decoration: line-through black;
+  color: gray;
+}

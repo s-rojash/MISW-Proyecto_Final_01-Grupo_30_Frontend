@@ -1,15 +1,18 @@
+import { Pregunta } from "./pregunta";
 
 
 export class Respuesta {
   idRespuesta: number;
   respuesta: string;
   estado: string;
-  idPregunta: number;
+  puntos: Number;
+  pregunta: Pregunta;
 
-    constructor(idRespuesta: number,respuesta: string,estado: string, idPregunta: number) {
+    constructor(idRespuesta: number,respuesta: string,estado: string, pregunta: Pregunta, puntos: number) {
       this.idRespuesta = idRespuesta;
       this.respuesta = respuesta;
+      this.puntos = puntos;
       this.estado = estado;
-      this.idPregunta = idPregunta;
+      this.pregunta = pregunta;
     }
    }

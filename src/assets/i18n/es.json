@@ -101,11 +101,27 @@
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",
     "QUESTIONS_BANK_LIST" :"Listado de bancos de preguntas",
-    "ADD" :"Crear",
+    "ADD" :"Guardar banco de preguntas",
     "TIPO_BANCO" :"Tipo de banco de preguntas",
     "TIPO_BANCO_REQUIRED" :"El tipo de banco de preguntas es obligatorio",
     "CATEGORIAS_LIST" :"Categorias",
     "CATEGORIA" :"Categoria",
-    "CATEGORIA_REQUIRED" :"La categoría es obligatoria"
+    "CATEGORIA_REQUIRED" :"La categoría es obligatoria",
+    "QUESTIONS_LIST_TITLE": "Preguntas del banco",
+    "QUESTIONS_LIST_ID": "ID",
+    "QUESTIONS_LIST_QUESTION": "Pregunta",
+    "QUESTIONS_LIST_QUESTION_REQUIRED": "El texto de la pregunta es obligatorio",
+    "QUESTIONS_LIST_ADD_QUESTION": "Agregar Pregunta",
+    "QUESTIONS_SAVE_TITLE": "Guardar Pregunta",
+    "QUESTIONS_SAVE_QUESTION": "Pregunta",
+    "QUESTIONS_SAVE_QUESTION_SAVE": "Guardar Pregunta",
+    "QUESTIONS_SAVE_QUESTION_CANCEL": "Cancelar",
+    "RESPONSES_RESPONSE": "Respuesta",
+    "RESPONSES_POINTS": "Puntos",
+    "RESPONSES_STATUS": "Estado",
+    "RESPONSES_SAVE_TITLE": "Guardar respuesta",
+    "RESPONSES_RESPONSE_REQUIRED": "El texto de la respuesta es obligatorio",
+    "RESPONSES_POINTS_REQUIRED": "El puntaje de la respuesta es obligatorio",
+    "RESPONSES_STATUS_ACTIVE": "Inactivo/Activo"
   }
 }

@@ -37,8 +37,19 @@ export class BancoPreguntasService {
     return this.http.get<BancoPreguntas>(this.apiUrl + `/banco-preguntas/${id}`);
   }
 
+  createPregunta(pregunta: Pregunta): Observable<Pregunta> {
+    return this.http.post<Pregunta>(this.apiUrl + `/preguntas/`, pregunta);
+  }
 
   bancoPreguntasCreated() {
     this.projectCreatedSource.next(true);
+  }
+
+  getListaPreguntasBanco(idBancoPreguntas: number): Observable<Pregunta[]> {
+    return this.http.get<Pregunta[]>(this.apiUrl + `/preguntas/banco-preguntas/${idBancoPreguntas}`);
+  }
+
+  createRespuesta(respuesta: Respuesta): Observable<Respuesta> {
+    return this.http.post<Respuesta>(this.apiUrl + `/respuestas/`, respuesta);
   }
 }
