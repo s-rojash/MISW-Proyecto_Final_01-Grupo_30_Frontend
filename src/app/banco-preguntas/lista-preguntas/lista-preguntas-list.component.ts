@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 import { ModalPreguntasSaveComponent } from '../modal-preguntas-save/modal-preguntas-save.component';
 import { BancoPreguntasService } from '../banco-preguntas.service';
