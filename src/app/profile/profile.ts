@@ -1,7 +1,9 @@
 export class Profile {
-    name: string;
+    id: number;
+    nombre: string;
   
-    constructor(name: string) {
-      this.name = name;
+    constructor(id:number, nombre: string) {
+      this.id = id;
+      this.nombre = nombre;
     }
   }

@@ -14,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { TeamListComponent } from './team-list/team-list.component';
+import { MatOptionModule } from '@angular/material/core';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -29,6 +31,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatButtonModule,
     TeamRoutingModule,
     MatSelectModule,
+    MatOptionModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -42,7 +45,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NgIf,
     MatDialogModule
   ],
-  declarations: [TeamCreateComponent],
-  exports:[TeamCreateComponent]
+  declarations: [TeamCreateComponent,TeamListComponent],
+  exports:[TeamCreateComponent,TeamListComponent]
 })
 export class TeamModule { }

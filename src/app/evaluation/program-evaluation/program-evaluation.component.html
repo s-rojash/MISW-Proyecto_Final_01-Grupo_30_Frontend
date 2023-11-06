@@ -16,34 +16,36 @@
             >
               <!--Lista candidatos-->
               <div class="form-group mx-sm-3 mb-2">
-                <label for="candidatos" class="labeloverinput">{{ 'EVALUATION.APPLICANT' | translate }}</label>
-                <select formControlName="candidatos" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;border-color: #6750A4;" ng-required="true">
+                <label for="idCandidato" class="labeloverinput">{{ 'EVALUATION.APPLICANT' | translate }}</label>
+                <select formControlName="idCandidato" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px;border-color: #6750A4;" ng-required="true">
                   <option value="0" hidden>
                     {{ 'EVALUATION.SELECTOPTION' | translate }}
+                  </option>
+                  <option *ngFor="let applicants of applicantsForAdd" value="{{applicants.id}}">
+                    {{ applicants.nombres + " " + applicants.apellidos }}
                   </option>
                 </select>
               </div>
 
               <!--Lista pruebas-->
               <div class="form-group mx-sm-3 mb-2">
-                <label for="tipopruebas" class="labeloverinput">{{ 'EVALUATION.CATEGORY' | translate }}</label>
-                <select formControlName="tipopruebas" (change)="selectChangeHandler2($event)" class="form-control form-select" style="height: 60px;border-color: #6750A4;" ng-required="true">
-                  <option value="0" hidden>
-                    {{ 'EVALUATION.SELECTOPTIONCATEGORY' | translate }}
-                  </option>
-                  <option value="1">
-                    {{ 'EVALUATION.TECHNICALTEST' | translate }}
-                  </option>
-                  <option value="2">
-                    {{ 'EVALUATION.PSYCHOLOGICALTEST' | translate }}
-                  </option>
-                </select>
+                <div formGroupName="prueba">
+                  <label for="prueba" class="labeloverinput">{{ 'EVALUATION.CATEGORY' | translate }}</label>
+                  <select formControlName="id" (change)="selectChangeHandler2($event)" class="form-control form-select" style="height: 60px;border-color: #6750A4;" ng-required="true">
+                    <option value="0" hidden>
+                      {{ 'EVALUATION.SELECTOPTIONCATEGORY' | translate }}
+                    </option>
+                    <option *ngFor="let tests of testsForAdd" value="{{tests.id}}">
+                      {{ tests.nombre }}
+                    </option>
+                  </select>
+                </div>
               </div>
 
               <div class="form-group mx-sm-3 mb-2">
-                <label for="fechaprueba" class="labeloverinput">{{ 'EVALUATION.DATE' | translate }}</label>
+                <label for="fecha" class="labeloverinput">{{ 'EVALUATION.DATE' | translate }}</label>
                 <mat-form-field color="accent" style="width: 100%;" class="mat-form-field-wrapper">
-                  <input matInput [matDatepicker]="picker1" id="pickerInput" formControlName="fechaprueba">
+                  <input matInput [matDatepicker]="picker1" id="pickerInput" formControlName="fecha">
                   <mat-hint>MM/DD/YYYY</mat-hint>
                   <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
                   <mat-datepicker #picker1></mat-datepicker>
@@ -51,8 +53,8 @@
                 <div style="position: fixed;z-index: 2;"
                   class="alert alert-danger alert-dismissible fade show"
                   *ngIf="
-                    programEForm.get('fechaprueba')!.hasError('required') &&
-                    programEForm.get('fechaprueba')!.touched
+                    programEForm.get('fecha')!.hasError('required') &&
+                    programEForm.get('fecha')!.touched
                   "
                 >
                   {{ 'EVALUATION.DATEREQUIRED' | translate }}

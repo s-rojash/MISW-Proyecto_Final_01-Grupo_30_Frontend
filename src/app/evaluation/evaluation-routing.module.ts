@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProgramEvaluationComponent } from './program-evaluation/program-evaluation.component';
+import { ListEvaluationComponent } from './list-evaluation/list-evaluation.component';
 
 const routes: Routes = [{
  path: 'evaluation',
@@ -8,6 +9,10 @@ const routes: Routes = [{
   {
     path: 'program',
     component: ProgramEvaluationComponent
+  },
+  {
+    path: 'list',
+    component: ListEvaluationComponent
   }
  ]
 }];

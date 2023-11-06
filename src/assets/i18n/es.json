@@ -10,7 +10,8 @@
     "MYPROFILEMENU":"Mi Perfil",
     "LANESPMENU":"Español",
     "LANENGMENU":"Ingles",
-    "LOGOUTMENU":"Salir"
+    "LOGOUTMENU":"Salir",
+    "PROFILE":"Perfíl"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -75,6 +76,8 @@
   "EVALUATION":{
     "HEADER":"Programación de evaluación",
     "HEADER2":"Agendar Prueba",
+    "HEADERLIST":"Listado de pruebas",
+    "HEADERLIST2":"Pruebas",
     "SAVE":"Guardar",
     "SELECTOPTION":"Seleccione un candidato",
     "SELECTOPTIONCATEGORY":"Seleccione una categoría",
@@ -85,7 +88,17 @@
     "TECHNICALTEST":"Prueba Técnica",
     "PSYCHOLOGICALTEST":"Prueba Psicológica",
     "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
-    "INVALIDBANK":"Se debe seleccionar un banco de preguntas."
+    "INVALIDBANK":"Se debe seleccionar un banco de preguntas.",
+    "BUTTONADD":"Agendar Prueba",
+    "ERRORLOADLISTAPPLICANTS":"No se pudieron cargar los candidatos.",
+    "ERRORLOADLISTTESTS":"No se pudieron cargar las pruebas.",
+    "SUCCESSSCHEDULE":"La prueba se agendo con éxito.",
+    "SCHEDULEFAILED":"Se produjo un error durante el agendamiento.",
+    "ERRORGETAPPLICANT":"El candidato no fue encontrado.",
+    "HEADERAPPLICANT":"Candidato",
+    "HEADERSCORE":"Puntaje",
+    "HEADERDATE":"Fecha prueba técnica",
+    "HEADERSTATUS":"Estado"
   },
   "TEAM":{
     "COMPANYS":"Empresas",
@@ -96,7 +109,10 @@
     "SELECT_PROFILE":"Seleccione un perfil",
     "TEAMQTY":"Numero de recursos solicitados",
     "TEAMQTYREQUIRED":"Numero de recursos solicitados es unn valor requerido",
-    "TEAMREQUIRED":"nombre de equipo requerido "
+    "TEAMREQUIRED":"nombre de equipo requerido ",
+    "SELECT_PROJECT":"seleccione un proyecto",
+    "TEAMLIST" : "listado de proyectos",
+    "SELECT_TEAM":"Selecciona un equipo"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",
@@ -123,5 +139,8 @@
     "RESPONSES_RESPONSE_REQUIRED": "El texto de la respuesta es obligatorio",
     "RESPONSES_POINTS_REQUIRED": "El puntaje de la respuesta es obligatorio",
     "RESPONSES_STATUS_ACTIVE": "Inactivo/Activo"
+  },
+  "PRINCIPAL":{
+    "HEADER":"Inicio"
   }
 }
