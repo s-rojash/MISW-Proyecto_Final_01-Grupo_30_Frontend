@@ -122,5 +122,18 @@
     "RESPONSES_RESPONSE_REQUIRED": "Response text is required",
     "RESPONSES_POINTS_REQUIRED": "Score Points is required",
     "RESPONSES_STATUS_ACTIVE": "Inactive/Active"
-  }
+  },
+  "INTERVIEWS":{
+    "TEST_SCHEDULE": "Test Schedules",
+    "TEST_SCHEDULE_ADD": "Add test schedule",
+    "TEST_SCHEDULE_MODIFY": "Modify test schedule",
+    "TEST_SCHEDULE_SAVE": "Save test schedule",
+    "TEST_SCHEDULE_TEST": "Test to apply",
+    "TEST_SCHEDULE_TEST_REQUIRED": "Test to apply is required",
+    "TEST_SCHEDULE_CANDIDATE": "Candidate",
+    "TEST_SCHEDULE_CANDIDATE_REQUIRED": "Candidate is required",
+    "TEST_SCHEDULE_DATE": "Date",
+    "TEST_SCHEDULE_DATE_REQUIRED": "Date is required",
+    "TEST_SCHEDULE_LIST": "Test Appointments"
+    }
 }

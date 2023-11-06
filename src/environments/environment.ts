@@ -8,10 +8,11 @@
 // const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
 // const baseUrlBancoPreguntas = 'https://ms-bancopreguntas.azurewebsites.net';
 
-const baseUrl = 'http://localhost:8080';
-const baseUrlCom = 'http://localhost:3001';
+const baseUrlCom = 'http://localhost:3000';
+const baseUrl = 'http://localhost:3001';
 
-const baseUrlProyectos = 'http://localhost:8080';
+const baseUrlProyectos = 'http://localhost:3002';
+const baseUrlEntrevistas = 'http://localhost:3003';
 const baseUrlBancoPreguntas = 'http://localhost:3004';
 
 const idMuseum = "";
@@ -21,6 +22,7 @@ export const environment = {
   baseUrl,
   baseUrlCom,
   baseUrlProyectos,
+  baseUrlEntrevistas,
   baseUrlBancoPreguntas,
   idMuseum
 };

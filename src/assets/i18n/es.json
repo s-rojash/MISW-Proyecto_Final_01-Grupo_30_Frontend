@@ -123,5 +123,18 @@
     "RESPONSES_RESPONSE_REQUIRED": "El texto de la respuesta es obligatorio",
     "RESPONSES_POINTS_REQUIRED": "El puntaje de la respuesta es obligatorio",
     "RESPONSES_STATUS_ACTIVE": "Inactivo/Activo"
-  }
+  },
+  "INTERVIEWS":{
+    "TEST_SCHEDULE": "Agenda de pruebas",
+    "TEST_SCHEDULE_ADD": "Agregar agenda de prueba",
+    "TEST_SCHEDULE_MODIFY": "Modificar agenda de prueba",
+    "TEST_SCHEDULE_SAVE": "Guardar agenda",
+    "TEST_SCHEDULE_TEST": "Prueba a aplicar",
+    "TEST_SCHEDULE_TEST_REQUIRED": "La prueba a aplicar es obligatoria",
+    "TEST_SCHEDULE_CANDIDATE": "Candidato",
+    "TEST_SCHEDULE_CANDIDATE_REQUIRED": "El candidato es obligatorio",
+    "TEST_SCHEDULE_DATE": "Fecha",
+    "TEST_SCHEDULE_DATE_REQUIRED": "La fecha es obligatoria",
+    "TEST_SCHEDULE_LIST": "Agenda de pruebas"
+    }
 }

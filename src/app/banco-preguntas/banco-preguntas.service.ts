@@ -6,6 +6,7 @@ import { Categoria } from './categoria';
 import { BancoPreguntas } from './banco-preguntas';
 import { Pregunta } from './pregunta';
 import { Respuesta } from './respuesta';
+import { Prueba } from './prueba';
 
 @Injectable({
   providedIn: 'root'
@@ -52,4 +53,9 @@ export class BancoPreguntasService {
   createRespuesta(respuesta: Respuesta): Observable<Respuesta> {
     return this.http.post<Respuesta>(this.apiUrl + `/respuestas/`, respuesta);
   }
+
+  getListaPruebas(): Observable<Prueba[]> {
+    return this.http.get<Prueba[]>(this.apiUrl + `/pruebas/`);
+  }
+
 }
