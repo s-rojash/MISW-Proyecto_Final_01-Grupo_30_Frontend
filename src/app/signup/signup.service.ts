@@ -13,7 +13,7 @@ export class SignupService {
   private apiUrlApplicant: string = environment.baseUrl + '/candidatos/';
   private apiUrlCompany: string = environment.baseUrlCom + '/empresas/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   createApplicant(signupapplicant: Signupapplicant): Observable<Signupapplicant> {
     return this.http.post<Signupapplicant>(this.apiUrlApplicant, signupapplicant);
@@ -21,5 +21,9 @@ export class SignupService {
 
   createCompany(signupcompany: Signupcompany): Observable<Signupcompany> {
     return this.http.post<Signupcompany>(this.apiUrlCompany, signupcompany);
+  }
+
+  getApplicant(): Observable<Signupapplicant[]> {
+    return this.http.get<Signupapplicant[]>(this.apiUrlApplicant);
   }
 }

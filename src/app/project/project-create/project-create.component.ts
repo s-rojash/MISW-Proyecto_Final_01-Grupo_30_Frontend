@@ -29,15 +29,19 @@ export class ProjectCreateComponent implements OnInit {
 
 
   
-    createProject(project: Project):void{
-      this.projectService.createProject(project).subscribe(response=>{
-            console.info("The project was created: ", project)
-            this.projectService.projectCreated();  
-            this.toastr.success("Confirmation", "Project created")
-            this.projectForm.reset();
-             
-      });
-      }
+    createProject(project: Project): void {
+      this.projectService.createProject(project).subscribe(
+        (createdProject: Project) => {
+          console.info("The project was created: ", createdProject);
+          this.projectService.projectCreated();
+          this.toastr.success("Confirmation", "Project created");
+          this.projectForm.reset();
+        },
+        (error) => {
+          console.error("Error creating the project: ", error);
+        }
+      );
+    }
       
       isFormValid(): boolean {
         return this.projectForm.valid;

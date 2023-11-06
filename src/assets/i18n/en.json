@@ -126,5 +126,13 @@
   },
   "PRINCIPAL":{
     "HEADER":"Home"
+  },
+  "APPLICANT_SEARCH":{
+    "TECH_SKILL" :"Technical Skills",
+    "SOFT_SKILL" :"Soft Skills",
+    "PROFILE" :"Professional Profile",
+    "NAME" :"Applicant search",
+    "SEARCH_APPLICANT":"Search",
+    "INFO": "Applicant Information"
   }
 }

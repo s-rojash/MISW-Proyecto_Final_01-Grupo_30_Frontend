@@ -37,15 +37,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
+import { ApplicantSearchModule } from './applicant-search/applicant-search.module';
+import { ApplicationSearchRoutingModule } from './applicant-search/applicant-search.routing.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [			
+    AppComponent,
+
    ],
   imports: [
     BrowserModule,
@@ -68,6 +70,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     TeamModule,
     BancoPreguntasModule,
     BancoPreguntasRoutingModule,
+    ApplicantSearchModule,
+    ApplicationSearchRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

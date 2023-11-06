@@ -1,19 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ProfileService } from './profile.service';
+import { ApplicantSeachService } from './applicant-seach.service';
 import { HttpClientModule } from '@angular/common/http';
 
-
-describe('Service: Profile', () => {
+describe('Service: ApplicantSeach', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[HttpClientModule],
-      providers: [ProfileService]
+      providers: [ApplicantSeachService]
     });
   });
 
-  it('should ...', inject([ProfileService], (service: ProfileService) => {
+  it('should ...', inject([ApplicantSeachService], (service: ApplicantSeachService) => {
     expect(service).toBeTruthy();
   }));
 });
