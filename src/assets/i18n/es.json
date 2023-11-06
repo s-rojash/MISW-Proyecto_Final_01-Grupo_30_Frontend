@@ -142,5 +142,14 @@
   },
   "PRINCIPAL":{
     "HEADER":"Inicio"
+  },
+  "APPLICANT_SEARCH":{
+    "TECH_SKILL" :"Habilidades tecnicas",
+    "SOFT_SKILL" :"Habilidades blandas",
+    "PROFILE" :"Perfil profesional",
+    "NAME" :"Busqueda de candidato",
+    "SEARCH_APPLICANT":"Buscar",
+    "INFO": "Información del candidato"
+
   }
 }

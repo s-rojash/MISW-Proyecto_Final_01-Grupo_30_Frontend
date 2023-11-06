@@ -1,0 +1,21 @@
+
+  mat-selection-list {
+    column-count: 3;
+   }
+   mat-list-option {
+    break-inside: avoid;
+   }
+
+   .button-search{
+    width: 20%;
+    height: 60px;
+    margin-left: 10%;
+    border-radius: 5px;
+    background: url(../../../assets/Images/fondogeneral.png), lightgray 50% / cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: #FFF;
+  }
+  

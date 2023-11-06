@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { TeamListComponent } from './team-list/team-list.component';
 import { MatOptionModule } from '@angular/material/core';
 
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
