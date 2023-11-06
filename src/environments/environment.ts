@@ -4,24 +4,20 @@
 
 const baseUrl = 'https://ms-candidatos.azurewebsites.net';
 const baseUrlCom = 'https://ms-empresas.azurewebsites.net';
-
 const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
-const baseUrlBancoPreguntas = 'https://ms-bancopreguntas.azurewebsites.net';
+const baseUrlBancoPreguntas = 'https://ms-banco-preguntas.azurewebsites.net';
 
-// const baseUrl = 'http://localhost:8080';
-// const baseUrlCom = 'http://localhost:3000';
-
+// const baseUrl = 'http://localhost:8090';
+// const baseUrlCom = 'http://localhost:3001';
 // const baseUrlProyectos = 'http://localhost:8080';
 // const baseUrlBancoPreguntas = 'http://localhost:8080';
-
-const idMuseum = "";
 
 export const environment = {
   production: false,
   baseUrl,
   baseUrlCom,
   baseUrlProyectos,
-  idMuseum
+  baseUrlBancoPreguntas
 };
 
 /*
@@ -31,4 +27,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+

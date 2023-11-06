@@ -89,7 +89,16 @@
     "PSYCHOLOGICALTEST":"Prueba Psicológica",
     "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
     "INVALIDBANK":"Se debe seleccionar un banco de preguntas.",
-    "BUTTONADD":"Agendar Prueba"
+    "BUTTONADD":"Agendar Prueba",
+    "ERRORLOADLISTAPPLICANTS":"No se pudieron cargar los candidatos.",
+    "ERRORLOADLISTTESTS":"No se pudieron cargar las pruebas.",
+    "SUCCESSSCHEDULE":"La prueba se agendo con éxito.",
+    "SCHEDULEFAILED":"Se produjo un error durante el agendamiento.",
+    "ERRORGETAPPLICANT":"El candidato no fue encontrado.",
+    "HEADERAPPLICANT":"Candidato",
+    "HEADERSCORE":"Puntaje",
+    "HEADERDATE":"Fecha prueba técnica",
+    "HEADERSTATUS":"Estado"
   },
   "TEAM":{
     "COMPANYS":"Empresas",
@@ -114,5 +123,8 @@
     "CATEGORIAS_LIST" :"Categorias",
     "CATEGORIA" :"Categoria",
     "CATEGORIA_REQUIRED" :"La categoría es obligatoria"
+  },
+  "PRINCIPAL":{
+    "HEADER":"Inicio"
   }
 }
