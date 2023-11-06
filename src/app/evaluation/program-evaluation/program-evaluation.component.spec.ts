@@ -61,21 +61,26 @@ describe('ProgramEvaluationComponent', () => {
 
   it('should return form Valid', () => {
     const date = new Date('10/28/2023');
-    component.programEForm.patchValue({ candidatos: '0', tipopruebas: '0', fechaprueba: date });
+    const prueba = { id: '1' };
+
+    component.programEForm.patchValue({ idCandidato: '1', prueba: prueba, fecha: date, puntos: 0, estado: "pendiente" });
     fixture.detectChanges();
     expect(component.programEForm.valid).toBeTruthy();
   });
 
   it('should return form inValid', () => {
-    component.programEForm.patchValue({ candidatos: '1', tipopruebas: '1', fechaprueba: '' });
+    const prueba = { id: '1' };
+    component.programEForm.patchValue({ idCandidato: '1', prueba: prueba, fecha: '', puntos: 0, estado: "pendiente" });
     fixture.detectChanges();
     expect(component.programEForm.valid).toBeFalsy();
   });
 
   it('go to programEvaluation test', () => {
-    spyOn(component, 'programEvaluation');
     const date = new Date('10/28/2023');
-    component.programEForm.patchValue({ candidatos: '0', tipopruebas: '0', fechaprueba: date });
+    const prueba = { id: '1' };
+
+    spyOn(component, 'programEvaluation');
+    component.programEForm.patchValue({ idCandidato: '1', prueba: prueba, fecha: date, puntos: 0, estado: "pendiente" });
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.button-signup');
     element.click();
@@ -84,9 +89,11 @@ describe('ProgramEvaluationComponent', () => {
   });
 
   it('select applicant failed test', () => {
-    spyOn(toastrService, 'error');
     const date = new Date('10/28/2023');
-    component.programEForm.patchValue({ candidatos: '0', tipopruebas: '1', fechaprueba: date });
+    const prueba = { id: '1' };
+
+    spyOn(toastrService, 'error');
+    component.programEForm.patchValue({ idCandidato: '0', prueba: prueba, fecha: date, puntos: 0, estado: "pendiente" });
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.button-signup');
     element.click();
@@ -95,9 +102,11 @@ describe('ProgramEvaluationComponent', () => {
   });
 
   it('select bank failed test', () => {
-    spyOn(toastrService, 'error');
     const date = new Date('10/28/2023');
-    component.programEForm.patchValue({ candidatos: '1', tipopruebas: '0', fechaprueba: date });
+    const prueba = { id: '0' };
+
+    spyOn(toastrService, 'error');
+    component.programEForm.patchValue({ idCandidato: '1', prueba: prueba, fecha: date, puntos: 0, estado: "pendiente" });
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.button-signup');
     element.click();

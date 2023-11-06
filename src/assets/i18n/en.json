@@ -89,7 +89,16 @@
     "PSYCHOLOGICALTEST":"Psychological Test",
     "INVALIDAPPLICANT":"At least one applicant must be selected.",
     "INVALIDBANK":"A bank of questions must be selected.",
-    "BUTTONADD":"Schedule test"
+    "BUTTONADD":"Schedule test",
+    "ERRORLOADLISTAPPLICANTS":"The applicants could not be loaded.",
+    "ERRORLOADLISTTESTS":"Tests could not be loaded.",
+    "SUCCESSSCHEDULE":"The test was scheduled successfully.",
+    "SCHEDULEFAILED":"An error occurred during scheduling.",
+    "ERRORGETAPPLICANT":"The applicant was not found.",
+    "HEADERAPPLICANT":"Applicant",
+    "HEADERSCORE":"Score",
+    "HEADERDATE":"Technical test date",
+    "HEADERSTATUS":"Status"
   },
   "TEAM":{
     "COMPANYS":"Company",
@@ -114,5 +123,8 @@
     "CATEGORIAS_LIST" :"Categories",
     "CATEGORIA" :"Category",
     "CATEGORIA_REQUIRED" :"The category is required"
+  },
+  "PRINCIPAL":{
+    "HEADER":"Home"
   }
 }
