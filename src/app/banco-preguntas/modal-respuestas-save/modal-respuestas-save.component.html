@@ -1,0 +1,75 @@
+<h1 mat-dialog-title>{{ 'QUESTIONS_BANK.RESPONSES_SAVE_TITLE' | translate }}</h1>
+<div mat-dialog-content>
+  <div class="modal-body">
+    <div class="col-md-12">
+      <mat-card class="solid-border-card">
+        <form [formGroup]="respuestaForm" (ngSubmit)="!respuestaForm.invalid">
+          <div>
+            <div>
+              <!-- nombre -->
+              <div class="form-group mx-sm-3 mb-2" >
+                <label for="respuesta" class="labeloverinput">{{ 'QUESTIONS_BANK.RESPONSES_RESPONSE' | translate }}</label>
+                <input
+                  required
+                  type="text"
+                  id="respuesta"
+                  class="form-control"
+                  formControlName="respuesta"
+                  placeholder="{{ 'QUESTIONS_BANK.RESPONSES_RESPONSE' | translate}}"
+                />
+                <div
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="respuestaForm.get('respuesta')!.hasError('required') && respuestaForm.get('respuesta')!.touched"
+                >
+                  {{ 'QUESTIONS_BANK.RESPONSES_RESPONSE_REQUIRED' | translate }}
+                </div>
+              </div>
+              <div class="form-group mx-sm-3 mb-2" >
+                <label for="puntos" class="labeloverinput">{{ 'QUESTIONS_BANK.RESPONSES_POINTS' | translate }}</label>
+                <input
+                  required
+                  type="number"
+                  id="puntos"
+                  class="form-control"
+                  formControlName="puntos"
+                  placeholder="{{ 'QUESTIONS_BANK.RESPONSES_POINTS' | translate}}"
+                />
+                <div
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="respuestaForm.get('puntos')!.hasError('required') && respuestaForm.get('puntos')!.touched"
+                >
+                  {{ 'QUESTIONS_BANK.RESPONSES_POINTS_REQUIRED' | translate }}
+                </div>
+              </div>
+              <div class="form-group mx-sm-3 mb-2" >
+                <mat-slide-toggle
+                  formControlName="estado"
+                  ngModel
+                  > {{ 'QUESTIONS_BANK.RESPONSES_STATUS_ACTIVE' | translate }}
+                </mat-slide-toggle>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card>
+
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button
+  type="button" (click)="onNoClick()"
+  class="btn btn-secondary"
+  >
+    <mat-icon>cancel</mat-icon>
+    {{ 'QUESTIONS_BANK.QUESTIONS_SAVE_QUESTION_CANCEL' | translate }}
+  </button>
+  <button
+  type="submit"
+  class="btn btn-primary"
+  [disabled]="!respuestaForm.valid"
+  (click)="retornarRespuesta()"
+  >
+    <mat-icon>add</mat-icon>
+    {{ 'QUESTIONS_BANK.QUESTIONS_SAVE_QUESTION_SAVE' | translate }}
+  </button>
+</div>

@@ -21,10 +21,10 @@ export class BancoPreguntasListComponent implements OnInit {
   categoriaSeleccionada(datosCategoria: {idCategoriaSeleccionada: number, nombreCategoriaSeleccionada: string}){
     this.idCategoriaSeleccionada = datosCategoria.idCategoriaSeleccionada;
     this.nombreCategoriaSeleccionada = datosCategoria.nombreCategoriaSeleccionada;
-    this.getListaBancoPreguntas();
+    this.getListaPreguntas();
   }
 
-  getListaBancoPreguntas(): void {
+  getListaPreguntas(): void {
     if (this.idCategoriaSeleccionada !== null){
       this.bancoPreguntasService.getListaBancosPreguntas(this.idCategoriaSeleccionada).subscribe((listaBancosPreguntas): void => {
         this.listaBancosPreguntas = listaBancosPreguntas;
@@ -34,12 +34,7 @@ export class BancoPreguntasListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getListaBancoPreguntas();
-    // this.bancoPreguntasService.projectCreated$.subscribe(() => {
-    //   // Actualizar la lista de cuando se crea un banco de preguntas nuevo
-    //   this.getListaBancoPreguntas();
-    // });
-
+    this.getListaPreguntas();
   }
 
 }

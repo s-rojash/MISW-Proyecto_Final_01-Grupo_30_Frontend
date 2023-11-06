@@ -1,3 +1,17 @@
 .categoria-active {
-  background-color: red;
+  background-color: #E8DEF8;
+}
+
+ul.lista-categorias{
+  background-color: #F7F2FA;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border-radius: 12px;
+}
+
+ul.lista-categorias li{
+  border-radius: 12px;
+  padding: 8px;
+  margin: 4px;
 }
