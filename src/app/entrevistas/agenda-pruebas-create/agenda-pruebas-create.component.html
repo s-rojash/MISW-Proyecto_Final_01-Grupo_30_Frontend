@@ -9,17 +9,16 @@
         <div>
           <div class="form-group mx-sm-3 mb-2" >
             <label for="idPrueba" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</label>
-            <mat-select
+            <select
               required
               id="idPrueba"
               class="form-control"
               formControlName="idPrueba"
-              [value]="agendaPruebas!.idPrueba"
             >
             <mat-option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
               {{prueba.nombre}}
             </mat-option>
-            </mat-select>
+            </select>
             <div
               class="alert alert-danger alert-dismissible fade show"
               *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
@@ -31,7 +30,7 @@
         <div>
           <div class="form-group mx-sm-3 mb-2" >
             <label for="idCandidato" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE' | translate }}</label>
-            <mat-select
+            <select
               required
               id="idCandidato"
               class="form-control"
@@ -40,7 +39,7 @@
             <mat-option *ngFor="let candidato of listaCandidatos" [value]="candidato.id">
               {{candidato.nombres}} {{ candidato.apellidos }}
             </mat-option>
-            </mat-select>
+            </select>
             <div
               class="alert alert-danger alert-dismissible fade show"
               *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"

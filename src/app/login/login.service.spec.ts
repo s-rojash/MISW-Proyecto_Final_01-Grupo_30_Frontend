@@ -3,11 +3,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { LoginService } from './login.service';
 import { HttpClientTestingModule, HttpTestingController  } from '@angular/common/http/testing';
+import { environment } from 'src/environments/environment';
 
 describe('Service: Login', () => {
   let httpMock: HttpTestingController;
   let loginService: LoginService;
   let pass = '12345';
+  let Urlcandidatos: string = environment.baseUrl;
+  let Urlempresas: string = environment.baseUrlCom;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -38,7 +41,7 @@ describe('Service: Login', () => {
       expect(data).toEqual(login); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne('https://ms-candidatos.azurewebsites.net/candidatos/auth'); // Expect a single request to this URL
+    const req = httpMock.expectOne(Urlcandidatos + '/candidatos/auth'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush(login, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
@@ -47,14 +50,14 @@ describe('Service: Login', () => {
   it('should handle loginApplicant failed HTTP request (status code 404)', () => {
     const login = { id: 1, email: 's.rojash@uniandes.edu.co', password: pass, token: "" };
 
-    loginService.loginApplicant(login).subscribe(
-      data => fail('The request should have failed with 404 error'),
-      error => {
+    loginService.loginApplicant(login).subscribe({
+      next:() => fail('The request should have failed with 404 error'),
+      error:(error) => {
         expect(error.status).toBe(404); // Assert that the error status is 404
       }
-    );
+    });
 
-    const req = httpMock.expectOne('https://ms-candidatos.azurewebsites.net/candidatos/auth'); // Expect a single request to this URL
+    const req = httpMock.expectOne(Urlcandidatos + '/candidatos/auth'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404
@@ -67,7 +70,7 @@ describe('Service: Login', () => {
       expect(data).toEqual(company); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne('https://ms-empresas.azurewebsites.net/empresas/auth'); // Expect a single request to this URL
+    const req = httpMock.expectOne(Urlempresas + '/empresas/auth'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush(company, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
@@ -76,14 +79,14 @@ describe('Service: Login', () => {
   it('should handle loginCompany failed HTTP request (status code 404)', () => {
     const company = { id: 1, email: 's.rojash@uniandes.edu.co', password: pass, token: "" };
 
-    loginService.loginCompany(company).subscribe(
-      data => fail('The request should have failed with 404 error'),
-      error => {
+    loginService.loginCompany(company).subscribe({
+      next:() => fail('The request should have failed with 404 error'),
+      error:(error) => {
         expect(error.status).toBe(404); // Assert that the error status is 404
       }
-    );
+    });
 
-    const req = httpMock.expectOne('https://ms-empresas.azurewebsites.net/empresas/auth'); // Expect a single request to this URL
+    const req = httpMock.expectOne(Urlempresas + '/empresas/auth'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404

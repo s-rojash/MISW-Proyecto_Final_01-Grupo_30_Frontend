@@ -11,18 +11,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BancoPreguntasListComponent } from './agenda-pruebas-list.component';
+import { AgendaPruebasListComponent } from './agenda-pruebas-list.component';
 import { ToastrModule } from 'ngx-toastr';
-import { CategoriasListComponent } from '../categorias-list/categorias-list.component';
+import { CategoriasListComponent } from '../../banco-preguntas/categorias-list/categorias-list.component';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('BancoPreguntasListComponent', () => {
-  let component: BancoPreguntasListComponent;
-  let fixture: ComponentFixture<BancoPreguntasListComponent>;
+describe('AgendaPruebasListComponent', () => {
+  let component: AgendaPruebasListComponent;
+  let fixture: ComponentFixture<AgendaPruebasListComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -40,13 +40,13 @@ describe('BancoPreguntasListComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       }),],
-      declarations: [ BancoPreguntasListComponent, CategoriasListComponent ]
+      declarations: [ AgendaPruebasListComponent, CategoriasListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BancoPreguntasListComponent);
+    fixture = TestBed.createComponent(AgendaPruebasListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

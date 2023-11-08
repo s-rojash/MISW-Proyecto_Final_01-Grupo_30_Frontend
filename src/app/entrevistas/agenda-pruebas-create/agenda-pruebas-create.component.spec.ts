@@ -9,11 +9,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BancoPreguntasCreateComponent } from './banco-preguntas-create.component';
-import { BancoPreguntasListComponent } from '../banco-preguntas-list/banco-preguntas-list.component';
-import { BancoPreguntasRoutingModule } from '../banco-preguntas-routing.module';
+import { AgendaPruebasCreateComponent } from './agenda-pruebas-create.component';
+import { AgendaPruebasListComponent } from '../agenda-pruebas-list/agenda-pruebas-list.component';
+import { AgendaPruebaRoutingModule } from '../agenda-prueba-routing.module';
 import { ToastrModule } from 'ngx-toastr';
 import { RouterTestingModule } from "@angular/router/testing";
 
@@ -21,14 +23,15 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('BancoPreguntasCreateComponent', () => {
-  let component: BancoPreguntasCreateComponent;
-  let fixture: ComponentFixture<BancoPreguntasCreateComponent>;
+describe('AgendaPruebasCreateComponent', () => {
+  let component: AgendaPruebasCreateComponent;
+  let fixture: ComponentFixture<AgendaPruebasCreateComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, AgendaPruebaRoutingModule, RouterTestingModule,
+        MatDatepickerModule, MatNativeDateModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -41,13 +44,13 @@ describe('BancoPreguntasCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ BancoPreguntasCreateComponent, BancoPreguntasListComponent ]
+      declarations: [ AgendaPruebasCreateComponent, AgendaPruebasListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BancoPreguntasCreateComponent);
+    fixture = TestBed.createComponent(AgendaPruebasCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
