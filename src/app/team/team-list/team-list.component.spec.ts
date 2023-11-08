@@ -15,6 +15,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TeamListComponent } from './team-list.component';
+import { MatSelectModule } from '@angular/material/select';
+
+// ... otras importaciones
+
+TestBed.configureTestingModule({
+  imports: [
+    MatSelectModule, 
+  ],
+  declarations: [TeamListComponent],
+}).compileComponents();
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -27,7 +38,7 @@ describe('TeamListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule,MatSelectModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,

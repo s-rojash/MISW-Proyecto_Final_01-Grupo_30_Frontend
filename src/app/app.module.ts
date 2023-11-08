@@ -13,6 +13,7 @@ import { LoginModule } from './login/login.module';
 import { LoginRoutingModule } from './login/login-routing.module';
 import { SignupModule } from './signup/signup.module';
 import { SignpuRoutingModule } from './signup/signup-routing.module';
+import { ProjectModule } from './project/project.module';
 import { ProjectRoutingModule } from './project/project-routing.module';
 import { EvaluationModule } from './evaluation/evaluation.module';
 import { EvaluationRoutingModule } from './evaluation/evaluation-routing.module';
@@ -20,6 +21,10 @@ import { BancoPreguntasModule } from './banco-preguntas/banco-preguntas.module';
 import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-routing.module';
 import { AgendaPruebaModule } from './entrevistas/agenda-prueba.module';
 import { AgendaPruebaRoutingModule } from './entrevistas/agenda-prueba-routing.module';
+import { ProfileModule } from './profile/profile.module'; 
+import { ProfileRoutingModule } from './profile/profile-routing.module';
+import { TeamModule } from './team/team.module';
+import { TeamRoutingModule } from './team/team-routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -38,19 +43,17 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { ProjectModule } from './project/project.module';
-import { ProfileModule } from './profile/profile.module';
-import { ProfileRoutingModule } from './profile/profile-routing.module';
-import { TeamRoutingModule } from './team/team-routing.module';
-import { TeamModule } from './team/team.module';
+import { ApplicantSearchModule } from './applicant-search/applicant-search.module';
+import { ApplicationSearchRoutingModule } from './applicant-search/applicant-search.routing.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [			
+    AppComponent,
+
    ],
   imports: [
     BrowserModule,
@@ -75,6 +78,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BancoPreguntasRoutingModule,
     AgendaPruebaModule,
     AgendaPruebaRoutingModule,
+    ApplicantSearchModule,
+    ApplicationSearchRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProgramEvaluationComponent } from './program-evaluation/program-evaluation.component';
+import { ListEvaluationComponent } from './list-evaluation/list-evaluation.component';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { EvaluationRoutingModule } from './evaluation-routing.module';
@@ -14,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -39,9 +42,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatInputModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatDividerModule
   ],
-  exports: [ProgramEvaluationComponent],
-  declarations: [ProgramEvaluationComponent]
+  exports: [ProgramEvaluationComponent, ListEvaluationComponent],
+  declarations: [ProgramEvaluationComponent, ListEvaluationComponent]
 })
 export class EvaluationModule { }

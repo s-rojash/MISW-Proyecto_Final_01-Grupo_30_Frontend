@@ -10,7 +10,8 @@
     "MYPROFILEMENU":"My Profile",
     "LANESPMENU":"Spanish",
     "LANENGMENU":"English",
-    "LOGOUTMENU":"Logout"
+    "LOGOUTMENU":"Logout",
+    "PROFILE":"Profile"
   },
   "LOGIN":{
     "TITLE":"Login",
@@ -75,6 +76,8 @@
   "EVALUATION":{
     "HEADER":"Evaluation programming",
     "HEADER2":"Schedule test",
+    "HEADERLIST":"List of tests",
+    "HEADERLIST2":"Tests",
     "SAVE":"Save",
     "SELECTOPTION":"Select an applicant",
     "SELECTOPTIONCATEGORY":"Select a category",
@@ -85,7 +88,17 @@
     "TECHNICALTEST":"Technical Test",
     "PSYCHOLOGICALTEST":"Psychological Test",
     "INVALIDAPPLICANT":"At least one applicant must be selected.",
-    "INVALIDBANK":"A bank of questions must be selected."
+    "INVALIDBANK":"A bank of questions must be selected.",
+    "BUTTONADD":"Schedule test",
+    "ERRORLOADLISTAPPLICANTS":"The applicants could not be loaded.",
+    "ERRORLOADLISTTESTS":"Tests could not be loaded.",
+    "SUCCESSSCHEDULE":"The test was scheduled successfully.",
+    "SCHEDULEFAILED":"An error occurred during scheduling.",
+    "ERRORGETAPPLICANT":"The applicant was not found.",
+    "HEADERAPPLICANT":"Applicant",
+    "HEADERSCORE":"Score",
+    "HEADERDATE":"Technical test date",
+    "HEADERSTATUS":"Status"
   },
   "TEAM":{
     "COMPANYS":"Company",
@@ -95,7 +108,11 @@
     "SELECT_PROFILE":"select a profile",
     "TEAMQTY":"Number of resources requested",
     "TEAMQTYREQUIRED":"Number of resources requested is required",
-    "TEAMREQUIRED":"name of team required "
+    "TEAMREQUIRED":"name of team required ",
+    "SELECT_PROJECT":"select a project",
+    "TEAMLIST" : "list of projects",
+    "SELECT_TEAM":"select a Team"
+
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Questions Bank",
@@ -135,5 +152,16 @@
     "TEST_SCHEDULE_DATE": "Date",
     "TEST_SCHEDULE_DATE_REQUIRED": "Date is required",
     "TEST_SCHEDULE_LIST": "Test Appointments"
-    }
+  },
+  "PRINCIPAL":{
+    "HEADER":"Home"
+  },
+  "APPLICANT_SEARCH":{
+    "TECH_SKILL" :"Technical Skills",
+    "SOFT_SKILL" :"Soft Skills",
+    "PROFILE" :"Professional Profile",
+    "NAME" :"Applicant search",
+    "SEARCH_APPLICANT":"Search",
+    "INFO": "Applicant Information"
+  }
 }

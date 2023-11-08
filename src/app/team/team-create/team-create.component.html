@@ -1,6 +1,15 @@
 <div class="col-md-6" style="width: 100%; z-index: 2;">
   <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px;">
     <form [formGroup]="teamForm" (ngSubmit)="!teamForm.invalid && createTeam(teamForm.value)">
+     
+      <div class="borde" style="height: 58px; padding: 20px; width: 34%;margin-left: 15px; ">
+        <mat-select formControlName="project" placeholder="{{ 'TEAM.SELECT_PROJECT' | translate }}" style="height: 35px;">
+          <mat-option *ngFor="let project of projects" [value]="project.id"> {{ project.nombre }} </mat-option>
+        </mat-select>
+      </div>
+
+
+
       <div style="display: flex; justify-content: center; align-items: center;">
         <div style="flex: 1; margin-right: 10px;">
           <div class="form-group mx-sm-3 mb-2 input-wrapper">
@@ -14,6 +23,7 @@
               formControlName="nombre" 
               required 
               minlength=""
+
             />
             <div style="position: fixed; z-index: 2;"
               class="alert alert-danger alert-dismissible fade show"
@@ -31,7 +41,7 @@
               <div class="form-group" style="padding: 25px">
                  <div class="borde" style="height: 58px; padding: 20px">
                   <mat-select formControlName="profile" placeholder="{{ 'TEAM.SELECT_PROFILE' | translate }}" style="height: 35px;">
-                    <mat-option *ngFor="let profile of profiles" [value]="profile.name">{{ profile.name }}</mat-option>
+                    <mat-option *ngFor="let profile of profiles" [value]="profile.id"> {{ profile.nombre }} </mat-option>
                   </mat-select>
                 </div>
               </div>

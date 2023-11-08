@@ -1,0 +1,56 @@
+<div style="padding-bottom: 15px;padding-left: 10px;">
+  <span><label>{{ 'SIGNUP.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'EVALUATION.HEADERLIST' | translate }}</label></label></span>
+</div>
+<div class="d-flex align-items-center">
+  <div class="programEContainer">
+    <div class="row" style="width: 100%;">
+      <div class="col-md-12" style="width: 97%;z-index: 2;position: absolute;left: 0;right: 0;margin: auto;padding-top: 10px;">
+        <mat-card style="height: 70vh;">
+          <mat-card-header>
+            <span mat-card-subtitle><label>{{ 'EVALUATION.HEADERLIST2' | translate }}</label></span>
+          </mat-card-header>
+          <mat-card-content style="margin-left: 95px;margin-right: 125px;margin-top: 20px;overflow-y: scroll;">
+
+            <table mat-table style="margin-top: 10px;margin-bottom: 10px;" [dataSource]="dataSource" class="mat-elevation-z8" aria-label="table-ap">
+              <ng-container matColumnDef="ret">
+                <th mat-header-cell *matHeaderCellDef>{{ 'EVALUATION.HEADERAPPLICANT' | translate }}</th>
+                <td mat-cell *matCellDef="let evaluation"> {{evaluation.idCandidato}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>{{ 'EVALUATION.HEADERSCORE' | translate }}</th>
+                <td mat-cell *matCellDef="let evaluation"> {{evaluation.puntos}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef>{{ 'EVALUATION.HEADERDATE' | translate }}</th>
+                <td mat-cell *matCellDef="let evaluation"> {{evaluation.fecha}} </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef>{{ 'EVALUATION.HEADERSTATUS' | translate }}</th>
+                <td mat-cell *matCellDef="let evaluation"> {{evaluation.estado}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </mat-card-content>
+          <mat-divider style="margin-top: 40px;"></mat-divider>
+          <mat-card-content align="right">
+            <button routerLink="/evaluation/program"
+              class="button-add"
+              style="color: #FFF;"
+              mat-fab extended>
+              <mat-icon style="color: black;">add</mat-icon>
+              {{ 'EVALUATION.BUTTONADD' | translate }}
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

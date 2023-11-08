@@ -37,7 +37,7 @@ export class LoginPageComponent implements OnInit  {
   }
 
   translatelang(translate: TranslateService){
-    if(localStorage.getItem("lang") === undefined){
+    if(localStorage.getItem("lang") === null){
       translate.setDefaultLang('en');
     }
     else if(localStorage.getItem("lang") === 'es'){
@@ -55,9 +55,10 @@ export class LoginPageComponent implements OnInit  {
       console.log("empresa");
 
       this.loginService.loginCompany(login).subscribe(loginp=>{
-        console.info("The login was success: ", loginp)
+        console.info("The login was success: ", loginp);
         localStorage.setItem("API_TOKEN", loginp.token ?? "");
         localStorage.setItem("API_EMPRESA_ID", loginp.id.toString());
+
         this.translate2.get('LOGIN.LOGINSUCCESS').subscribe((res: string) => {
           this.toastr.success(res);
         });
@@ -74,7 +75,9 @@ export class LoginPageComponent implements OnInit  {
       console.log("candidato");
 
       this.loginService.loginApplicant(login).subscribe(loginp=>{
-        console.info("The login was success: ", loginp)
+        console.info("The login was success: ", loginp);
+        localStorage.setItem("API_TOKEN", loginp.token ?? "");
+        localStorage.setItem("API_CANDIDATO_ID", loginp.id.toString());
 
         this.translate2.get('LOGIN.LOGINSUCCESS').subscribe((res: string) => {
           this.toastr.success(res);

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
@@ -11,13 +11,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-
   projects: Array<Project> = [];
   @Input() showLabel: boolean = true;
+  @Output() saveProject = new EventEmitter<Project>();
 
-  constructor(private  projectService: ProjectService, private router: Router, private toastr: ToastrService ) { }
+  constructor(private projectService: ProjectService, private router: Router, private toastr: ToastrService) { }
 
-  
   getProjects(): void {
     this.projectService.getProjects().subscribe((projects) => {
       this.projects = projects;
@@ -25,25 +24,32 @@ export class ProjectListComponent implements OnInit {
     });
   }
 
-  
   toggleEdit(project: Project): void {
-    project.editable = !project.editable;
+    if (project.editable) {
+      // Lógica para guardar los cambios
+      this.onSaveProject(project);
+    } else {
+      // Habilita la edición
+      project.editable = true;
+    }
   }
 
-  saveChanges(project: Project): void {
-    this.projectService.updateProject(project).subscribe(() => {
-      this.toastr.success('Cambios guardados correctamente.');
-      project.editable = false;
-    });
+  onSave(project: Project): void {
+    this.saveProject.emit(project);
   }
-  
+
+  onSaveProject(project: Project): void {
+  this.projectService.updateProject(project).subscribe((response) => {
+    console.log('Project updated successfully!');
+    this.toastr.success("Confirmation", "Project modified")
+    this.getProjects(); // Actualiza la lista de proyectos
+  });
+}
+
   ngOnInit(): void {
     this.getProjects();
     this.projectService.projectCreated$.subscribe(() => {
-      // Actualizar la lista de proyectos cuando se crea un nuevo proyecto
       this.getProjects();
     });
-
   }
-
 }

@@ -7,6 +7,7 @@ import { HttpClientTestingModule, HttpTestingController  } from '@angular/common
 describe('Service: Signup', () => {
   let httpMock: HttpTestingController;
   let signupService: SignupService;
+  let pass = '12345';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -27,7 +28,7 @@ describe('Service: Signup', () => {
 
   it('should handle createApplicant successful HTTP request (status code 200)', () => {
     const signupapplicant = { id: 1, nombres: 'Steve', apellidos : 'Rojas', tipoDocumento: 'C.C.', numDocumento: 1234,
-          celular: '3183104480', email: 's.rojash@uniandes.edu.co', password: '12345' };
+          celular: '3183104480', email: 's.rojash@uniandes.edu.co', password: pass };
 
     signupService.createApplicant(signupapplicant).subscribe(data => {
       expect(data).toEqual(signupapplicant); // Assert that the response data matches the expected data
@@ -41,7 +42,7 @@ describe('Service: Signup', () => {
 
   it('should handle createApplicant failed HTTP request (status code 404)', () => {
     const signupapplicant = { id: 1, nombres: 'Steve', apellidos : 'Rojas', tipoDocumento: 'C.C.', numDocumento: 1234,
-          celular: '3183104480', email: 's.rojash@uniandes.edu.co', password: '12345' };
+          celular: '3183104480', email: 's.rojash@uniandes.edu.co', password: pass };
 
       signupService.createApplicant(signupapplicant).subscribe(
       data => fail('The request should have failed with 404 error'),
@@ -58,7 +59,7 @@ describe('Service: Signup', () => {
 
   it('should handle createCompany successful HTTP request (status code 200)', () => {
     const signupcompany = { razonSocial: 'Empresa de prueba', tipoDocumento: 'NIT', numDocumento: 1234, digitoVerificacion: 0,
-          email: 's.rojash@uniandes.edu.co', password: '12345' };
+          email: 's.rojash@uniandes.edu.co', password: pass };
 
       signupService.createCompany(signupcompany).subscribe(data => {
       expect(data).toEqual(signupcompany); // Assert that the response data matches the expected data
@@ -72,7 +73,7 @@ describe('Service: Signup', () => {
 
   it('should handle createCompany failed HTTP request (status code 404)', () => {
     const signupcompany = { razonSocial: 'Empresa de prueba', tipoDocumento: 'NIT', numDocumento: 1234, digitoVerificacion: 0,
-          email: 's.rojash@uniandes.edu.co', password: '12345' };
+          email: 's.rojash@uniandes.edu.co', password: pass };
 
       signupService.createCompany(signupcompany).subscribe(
       data => fail('The request should have failed with 404 error'),
