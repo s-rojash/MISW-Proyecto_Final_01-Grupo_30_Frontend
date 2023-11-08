@@ -11,12 +11,14 @@ const baseUrlBancoPreguntas = 'https://ms-banco-preguntas.azurewebsites.net';
 // const baseUrlCom = 'http://localhost:3001';
 // const baseUrlProyectos = 'http://localhost:8080';
 // const baseUrlBancoPreguntas = 'http://localhost:8080';
+ const baseUrlEntrevistas = 'http://localhost:3003';
 
 export const environment = {
   production: false,
   baseUrl,
   baseUrlCom,
   baseUrlProyectos,
+  baseUrlEntrevistas,
   baseUrlBancoPreguntas
 };
 

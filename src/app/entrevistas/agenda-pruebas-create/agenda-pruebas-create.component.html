@@ -1,0 +1,91 @@
+<div>
+  <span><label><a class="breadcumb-link" href="/agenda-pruebas/get">{{ 'INTERVIEWS.TEST_SCHEDULE' | translate }}</a> / <label class="breadcumb-active">
+    {{ 'INTERVIEWS.TEST_SCHEDULE_SAVE' | translate }}</label></label></span>
+</div>
+<div class="col-md-12">
+  <mat-card class="solid-border-card">
+    <form [formGroup]="agendaPruebaForm" (ngSubmit)="!agendaPruebaForm.invalid && createAgendaPrueba(agendaPruebaForm.value)">
+      <div>
+        <div>
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="idPrueba" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</label>
+            <mat-select
+              required
+              id="idPrueba"
+              class="form-control"
+              formControlName="idPrueba"
+              [value]="agendaPruebas!.idPrueba"
+            >
+            <mat-option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
+              {{prueba.nombre}}
+            </mat-option>
+            </mat-select>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
+            >
+              {{ 'INTERVIEWS.TEST_SCHEDULE_TEST_REQUIRED' | translate }}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="idCandidato" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE' | translate }}</label>
+            <mat-select
+              required
+              id="idCandidato"
+              class="form-control"
+              formControlName="idCandidato"
+            >
+            <mat-option *ngFor="let candidato of listaCandidatos" [value]="candidato.id">
+              {{candidato.nombres}} {{ candidato.apellidos }}
+            </mat-option>
+            </mat-select>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
+            >
+              {{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE_REQUIRED' | translate }}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-group mx-sm-3 mb-2" >
+            <mat-form-field>
+            <label>{{ 'INTERVIEWS.TEST_SCHEDULE_DATE' | translate }}</label>
+            <input
+              required
+              type="text"
+              id="tipoBanco"
+              class="form-control"
+              formControlName="fecha"
+              matInput
+              [matDatepicker]="picker"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
+            >
+              {{ 'INTERVIEWS.TEST_SCHEDULE_DATE_REQUIRED' | translate }}
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!agendaPruebaForm.valid"
+          >
+            <mat-icon>add</mat-icon>
+            {{ 'INTERVIEWS.TEST_SCHEDULE_SAVE' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+
+</div>
