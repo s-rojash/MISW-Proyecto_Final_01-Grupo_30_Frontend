@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BancoPreguntasCreateComponent } from './banco-preguntas-create.component';
@@ -29,6 +30,7 @@ describe('BancoPreguntasCreateComponent', () => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
         MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
+        MatSelectModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,

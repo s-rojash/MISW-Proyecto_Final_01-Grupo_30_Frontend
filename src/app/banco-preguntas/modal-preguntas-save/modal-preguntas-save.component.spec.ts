@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BancoPreguntasCreateComponent } from './modal-preguntas-save.component';
+import { ModalPreguntasSaveComponent } from './modal-preguntas-save.component';
 import { BancoPreguntasListComponent } from '../banco-preguntas-list/banco-preguntas-list.component';
 import { BancoPreguntasRoutingModule } from '../banco-preguntas-routing.module';
 import { ToastrModule } from 'ngx-toastr';
@@ -21,9 +21,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('BancoPreguntasCreateComponent', () => {
-  let component: BancoPreguntasCreateComponent;
-  let fixture: ComponentFixture<BancoPreguntasCreateComponent>;
+describe('ModalPreguntasSaveComponent', () => {
+  let component: ModalPreguntasSaveComponent;
+  let fixture: ComponentFixture<ModalPreguntasSaveComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -41,13 +41,14 @@ describe('BancoPreguntasCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ BancoPreguntasCreateComponent, BancoPreguntasListComponent ]
+      declarations: [ ModalPreguntasSaveComponent, BancoPreguntasListComponent ],
+      providers: [{ provide: MatDialogRef, useValue: {}  }]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BancoPreguntasCreateComponent);
+    fixture = TestBed.createComponent(ModalPreguntasSaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

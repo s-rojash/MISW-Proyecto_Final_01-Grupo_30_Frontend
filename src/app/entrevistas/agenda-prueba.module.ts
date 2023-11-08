@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,8 +16,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { NgIf } from '@angular/common';
-
 import { AgendaPruebasListComponent } from './agenda-pruebas-list/agenda-pruebas-list.component';
 import { AgendaPruebasCreateComponent } from './agenda-pruebas-create/agenda-pruebas-create.component';
 

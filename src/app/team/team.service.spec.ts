@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixture, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { TeamService } from './team.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { Team } from './team';
@@ -9,7 +9,7 @@ import { Profile } from '../profile/profile';
 describe('Service: TeamService', () => {
   let service: TeamService;
   let httpTestingController: HttpTestingController;
-  const apiUrl = "https://ms-proyectos.azurewebsites.net/equipos/";
+  const apiUrl = environment.baseUrlProyectos + '/equipos/';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -138,7 +138,7 @@ describe('Service: TeamService', () => {
       cantidad: 0,
     };
 
- 
+
 
     const req = httpTestingController.expectOne(`${apiUrl}${teamId}`);
     expect(req.request.method).toBe('GET');

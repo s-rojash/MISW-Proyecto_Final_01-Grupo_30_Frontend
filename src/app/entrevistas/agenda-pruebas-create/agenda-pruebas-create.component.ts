@@ -2,19 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
-import { MatNativeDateModule } from '@angular/material/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { AgendaPrueba } from '../agenda-prueba';
 import { AgendaPruebaService } from '../agenda-prueba.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Candidato } from '../candidato';
 import { Subscription } from 'rxjs';
-
-
-
 
 @Component({
   selector: 'app-agenda-pruebas-create',
@@ -65,12 +59,14 @@ export class AgendaPruebasCreateComponent implements OnInit {
         if (this.agendaPruebasId !== null && !isNaN(this.agendaPruebasId)){
           this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas) =>{
             this.agendaPruebas = agendaPruebas;
+            if (agendaPruebas) {
             this.agendaPruebaForm = this.formBuilder.group({
               idPrueba: [agendaPruebas.idPrueba, [Validators.required, Validators.minLength(2)]],
               idCandidato: [agendaPruebas.idCandidato, [Validators.required, Validators.minLength(2)]],
               fecha: [agendaPruebas.fecha, [Validators.required]],
             });
-                })
+            }
+          })
         }
       });
 

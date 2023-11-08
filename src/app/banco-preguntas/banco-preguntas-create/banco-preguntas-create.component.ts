@@ -2,16 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { BancoPreguntasService } from '../banco-preguntas.service';
 import { BancoPreguntas } from '../banco-preguntas';
 import { Categoria } from '../categoria';
 import { Subscription } from 'rxjs';
-
-
-
 
 @Component({
   selector: 'app-banco-preguntas-create',
