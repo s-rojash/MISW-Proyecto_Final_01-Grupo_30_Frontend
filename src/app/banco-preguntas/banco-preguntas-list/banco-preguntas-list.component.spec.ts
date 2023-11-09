@@ -3,7 +3,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule  } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +16,7 @@ import { BancoPreguntasListComponent } from './banco-preguntas-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CategoriasListComponent } from '../categorias-list/categorias-list.component';
 import { BancoPreguntasService } from '../banco-preguntas.service';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs';
 import { BancoPreguntas } from '../banco-preguntas';
 
 
@@ -31,7 +32,7 @@ describe('BancoPreguntasListComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientTestingModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
