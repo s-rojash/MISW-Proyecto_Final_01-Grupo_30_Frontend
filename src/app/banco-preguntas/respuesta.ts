@@ -5,8 +5,8 @@ export class Respuesta {
   idRespuesta: number;
   respuesta: string;
   estado: string;
-  puntos: Number;
-  pregunta: Pregunta;
+  puntos: number;
+  pregunta: Pregunta | null;
 
     constructor(idRespuesta: number,respuesta: string,estado: string, pregunta: Pregunta, puntos: number) {
       this.idRespuesta = idRespuesta;
