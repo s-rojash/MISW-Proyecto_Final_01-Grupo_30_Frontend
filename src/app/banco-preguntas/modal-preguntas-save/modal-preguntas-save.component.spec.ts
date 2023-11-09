@@ -56,4 +56,16 @@ describe('ModalPreguntasSaveComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return form Valid', () => {
+    component.preguntaForm.patchValue({ pregunta: 'pregunta numero 1' });
+    fixture.detectChanges();
+    expect(component.preguntaForm.valid).toBeTruthy();
+  });
+
+  it('should return form inValid', () => {
+    component.preguntaForm.patchValue({ pregunta: '' });
+    fixture.detectChanges();
+    expect(component.preguntaForm.valid).toBeFalsy();
+  });
 });
