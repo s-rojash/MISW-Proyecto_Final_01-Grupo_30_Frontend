@@ -17,6 +17,7 @@ import { BancoPreguntasRoutingModule } from '../banco-preguntas-routing.module';
 import { ModalRespuestasSaveComponent } from './modal-respuestas-save.component';
 import { ToastrModule } from 'ngx-toastr';
 import { RouterTestingModule } from "@angular/router/testing";
+import { Respuesta } from '../respuesta';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -25,8 +26,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 describe('ModalRespuestasSaveComponent', () => {
   let component: ModalRespuestasSaveComponent;
   let fixture: ComponentFixture<ModalRespuestasSaveComponent>;
+  let dialogRef: jasmine.SpyObj<MatDialogRef<ModalRespuestasSaveComponent>>;
 
   beforeEach(waitForAsync(() => {
+    const dialogRefSpy = jasmine.createSpyObj('MatDialogRef', ['close']);
+
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
         MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
@@ -44,7 +48,7 @@ describe('ModalRespuestasSaveComponent', () => {
         preventDuplicates: true,
       })],
       declarations: [ ModalRespuestasSaveComponent, BancoPreguntasListComponent ],
-      providers: [{ provide: MatDialogRef, useValue: {}  }, { provide: MAT_DIALOG_DATA, useValue: {} }]
+      providers: [{ provide: MatDialogRef, useValue: dialogRefSpy  }, { provide: MAT_DIALOG_DATA, useValue: {} }]
     })
     .compileComponents();
   }));
@@ -52,6 +56,7 @@ describe('ModalRespuestasSaveComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ModalRespuestasSaveComponent);
     component = fixture.componentInstance;
+    dialogRef = TestBed.inject(MatDialogRef) as jasmine.SpyObj<MatDialogRef<ModalRespuestasSaveComponent>>;
     fixture.detectChanges();
   });
 
@@ -81,5 +86,27 @@ describe('ModalRespuestasSaveComponent', () => {
     component.respuestaForm.patchValue({ respuesta: null, puntos: null, estado: 'pendiente' });
     fixture.detectChanges();
     expect(component.respuestaForm.valid).toBeFalsy();
+  });
+
+  it('should close the dialog when onNoClick() is called', () => {
+    component.onNoClick();
+    expect(dialogRef.close).toHaveBeenCalled();
+  });
+
+  it("should call retornarRespuesta respuesta undefined", () => {
+    component.respuestaForm.patchValue({ respuesta: 'A', puntos: 5, estado: 'pendiente' });
+    component.retornarRespuesta();
+    fixture.detectChanges();
+    expect(component.respuesta.respuesta).toEqual('A');
+  });
+
+  it("should call retornarRespuesta respuesta not undefined", () => {
+    let respuesta: Respuesta = { idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
+
+    component.respuesta = respuesta;
+    component.respuestaForm.patchValue({ respuesta: 'A', puntos: 5, estado: 'pendiente' });
+    component.retornarRespuesta();
+    fixture.detectChanges();
+    expect(component.respuesta.respuesta).toEqual('A');
   });
 });
