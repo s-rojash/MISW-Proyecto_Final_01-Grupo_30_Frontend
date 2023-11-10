@@ -15,8 +15,6 @@ import { SignupModule } from './signup/signup.module';
 import { SignpuRoutingModule } from './signup/signup-routing.module';
 import { ProjectModule } from './project/project.module';
 import { ProjectRoutingModule } from './project/project-routing.module';
-import { EvaluationModule } from './evaluation/evaluation.module';
-import { EvaluationRoutingModule } from './evaluation/evaluation-routing.module';
 import { BancoPreguntasModule } from './banco-preguntas/banco-preguntas.module';
 import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-routing.module';
 import { AgendaPruebaModule } from './agendapruebas/agenda-prueba.module';
@@ -70,8 +68,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SignupModule,
     SignpuRoutingModule,
     ProjectRoutingModule,
-    EvaluationModule,
-    EvaluationRoutingModule,
     TeamRoutingModule,
     TeamModule,
     BancoPreguntasModule,
