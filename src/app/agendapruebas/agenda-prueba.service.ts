@@ -10,7 +10,7 @@ import { Candidato } from './candidato';
 })
 
 export class AgendaPruebaService {
-  private apiUrl: string = environment.baseUrlEntrevistas;
+  private apiUrl: string = environment.baseUrlBancoPreguntas;
   private apiUrlCandidatos: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }

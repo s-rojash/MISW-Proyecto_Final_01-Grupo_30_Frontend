@@ -1,18 +1,8 @@
 import { Component, Input, OnInit, Inject} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
-
-import { BancoPreguntasService } from '../banco-preguntas.service';
-import { BancoPreguntas } from '../banco-preguntas';
-import { Categoria } from '../categoria';
-import { Subscription } from 'rxjs';
 import { Pregunta } from '../pregunta';
 import { Respuesta } from '../respuesta';
-
 
 @Component({
   selector: 'app-modal-respuestas-save',

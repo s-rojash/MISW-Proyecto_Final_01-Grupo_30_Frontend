@@ -15,13 +15,11 @@ import { SignupModule } from './signup/signup.module';
 import { SignpuRoutingModule } from './signup/signup-routing.module';
 import { ProjectModule } from './project/project.module';
 import { ProjectRoutingModule } from './project/project-routing.module';
-import { EvaluationModule } from './evaluation/evaluation.module';
-import { EvaluationRoutingModule } from './evaluation/evaluation-routing.module';
 import { BancoPreguntasModule } from './banco-preguntas/banco-preguntas.module';
 import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-routing.module';
-import { AgendaPruebaModule } from './entrevistas/agenda-prueba.module';
-import { AgendaPruebaRoutingModule } from './entrevistas/agenda-prueba-routing.module';
-import { ProfileModule } from './profile/profile.module'; 
+import { AgendaPruebaModule } from './agendapruebas/agenda-prueba.module';
+import { AgendaPruebaRoutingModule } from './agendapruebas/agenda-prueba-routing.module';
+import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
 import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
@@ -51,7 +49,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
 
    ],
@@ -70,8 +68,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SignupModule,
     SignpuRoutingModule,
     ProjectRoutingModule,
-    EvaluationModule,
-    EvaluationRoutingModule,
     TeamRoutingModule,
     TeamModule,
     BancoPreguntasModule,

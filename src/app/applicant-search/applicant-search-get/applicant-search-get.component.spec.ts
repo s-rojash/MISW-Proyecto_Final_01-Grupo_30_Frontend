@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatListModule } from '@angular/material/list'; 
+import { MatListModule } from '@angular/material/list';
 import { By } from '@angular/platform-browser';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -69,10 +69,8 @@ describe('ApplicantSearchGetComponent', () => {
     expect(component.selectedApplicants).toEqual([]);
   });
 
-  
+
   it('should toggle selection of an applicant', () => {
-  
-  
     component.toggleSelection(applicant);
     expect(component.isSelected(applicant)).toBe(true);
     component.toggleSelection(applicant);
@@ -85,14 +83,13 @@ describe('ApplicantSearchGetComponent', () => {
     button.triggerEventHandler('click', null);
     expect(showApplicantDetailsSpy).toHaveBeenCalled();
   });
-  
+
   it('should load applicants and set showApplicantInfo to true', () => {
     const applicants = [applicant];
     spyOn(signupService, 'getApplicant').and.returnValue(of(applicants));
-  
+
     component.showApplicantDetails();
     expect(component.applicants).toEqual(applicants);
     expect(component.showApplicantInfo).toBe(true);
   });
-  
 });
