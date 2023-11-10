@@ -28,10 +28,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 describe('BancoPreguntasCreateComponent', () => {
-  let component: BancoPreguntasCreateComponent;
-  let fixture: ComponentFixture<BancoPreguntasCreateComponent>;
-  let bancoPreguntasService: BancoPreguntasService;
-  let toastrSpy: jasmine.SpyObj<ToastrService>;
+  let component: BancoPreguntasCreateComponent,
+  fixture: ComponentFixture<BancoPreguntasCreateComponent>,
+  bancoPreguntasService: BancoPreguntasService,
+  toastrSpy: jasmine.SpyObj<ToastrService>;
 
   beforeEach(waitForAsync(() => {
     const spy = jasmine.createSpyObj('ToastrService', ['success']);
