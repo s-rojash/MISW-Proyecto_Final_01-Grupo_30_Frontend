@@ -1,0 +1,26 @@
+/* Definición del CSS */
+
+.breadcumb-active{
+    text-decoration: underline;
+  }
+  .breadcumb-link:visited{
+    color: black;
+  }
+  .form-control{
+    border-color: #6750A4;
+    height: 60px;
+    border-width: 3px;
+  }
+  
+  mat-icon{
+    color: white;
+    float: left;
+  }
+  button.btn-primary{
+    float: right;
+    margin: 24px;
+  }
+  .solid-border-card{
+    margin-top: 8px;
+  }
+  

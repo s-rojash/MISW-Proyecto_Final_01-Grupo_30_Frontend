@@ -1,0 +1,72 @@
+
+<div class="col-md-12">
+  <mat-card class="solid-border-card">
+    <form [formGroup]="conjuntoPruebasForm" (ngSubmit)="!conjuntoPruebasForm.invalid && createConjuntoPruebas(conjuntoPruebasForm.value)">
+      <div>
+        <div>
+          <!-- nombre -->
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="nombreConjunto" class="labeloverinput">{{ 'TEST_GROUP.NAME' | translate }}</label>
+            <input
+              required
+              type="text"
+              id="nombreConjunto"
+              class="form-control"
+              formControlName="nombreConjunto"
+              placeholder="{{ 'TEST_GROUP.NAME' | translate}}"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="conjuntoPruebasForm.get('nombreConjunto')!.hasError('required') && conjuntoPruebasForm.get('nombreConjunto')!.touched"
+            >
+              {{ 'TEST_GROUP.NAME_REQUIRED' | translate }}
+            </div>
+          </div>
+
+           <!-- Descripción -->
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="descripción conjunto" class="labeloverinput">{{ 'TEST_GROUP.DESCRIPTION' | translate }}</label>
+            <input
+              required
+              type="text"
+              id="descripcionConjunto"
+              class="form-control"
+              formControlName="descripcionConjunto"
+              placeholder="{{ 'TEST_GROUP.NAME' | translate}}"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="conjuntoPruebasForm.get('descripcionConjunto')!.hasError('required') && conjuntoPruebasForm.get('descripcionConjunto')!.touched"
+            >
+              {{ 'TEST_GROUP.DESCRIPTION_REQUIRED' | translate }}
+            </div>
+          </div>
+
+          <div>
+            <label for="bancosPreguntas">Selecciona un banco de preguntas:</label>
+            <select id="bancosPreguntas">
+              <option *ngFor="let banco of listaBancosPreguntas" [value]="banco.id">{{ banco.tipoBanco }}</option>
+            </select>
+          </div>
+  
+
+
+
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!conjuntoPruebasForm.valid"
+          >
+            <mat-icon>add</mat-icon>
+            {{ 'TEST_GROUP.ADD' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+
+</div>
+
