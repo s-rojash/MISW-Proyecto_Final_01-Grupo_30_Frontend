@@ -23,6 +23,8 @@ import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
 import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
+import { EntrevistasModule } from './entrevistas/entrevistas.module';
+import { EntrevistasRoutingModule } from './entrevistas/entrevistas-routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -76,6 +78,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AgendaPruebaRoutingModule,
     ApplicantSearchModule,
     ApplicationSearchRoutingModule,
+    EntrevistasModule,
+    EntrevistasRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

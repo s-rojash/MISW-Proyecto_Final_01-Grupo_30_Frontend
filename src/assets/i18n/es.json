@@ -11,7 +11,10 @@
     "LANESPMENU":"Español",
     "LANENGMENU":"Ingles",
     "LOGOUTMENU":"Salir",
-    "PROFILE":"Perfíl"
+    "PROFILE":"Perfíl",
+    "BUTTONCREATE":"Crear",
+    "BUTTONLIST":"Listar",
+    "BUTTONSEARCH":"Buscar"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
