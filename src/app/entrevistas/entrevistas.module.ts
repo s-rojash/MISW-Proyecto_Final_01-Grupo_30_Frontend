@@ -5,6 +5,10 @@ import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 import { EntrevistasRoutingModule } from './entrevistas-routing.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -16,6 +20,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     CommonModule,
     RouterModule,
     EntrevistasRoutingModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

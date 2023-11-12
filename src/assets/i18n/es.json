@@ -166,5 +166,12 @@
     "NAME" :"Busqueda de candidato",
     "SEARCH_APPLICANT":"Buscar",
     "INFO": "Información del candidato"
+  },
+  "INTERVIEWS2":{
+    "INPUTSEARCH":"Buscar",
+    "LISTHCATEGORY":"Categoria",
+    "LISTHINTERVIEW":"Entrevista con",
+    "LISTHDATE":"Fecha Prueba",
+    "INTERVIEWSLIST":"Listado de entrevistas"
   }
 }

@@ -166,5 +166,12 @@
     "NAME" :"Applicant search",
     "SEARCH_APPLICANT":"Search",
     "INFO": "Applicant Information"
+  },
+  "INTERVIEWS2":{
+    "INPUTSEARCH":"Search",
+    "LISTHCATEGORY":"Category",
+    "LISTHINTERVIEW":"Interview with",
+    "LISTHDATE":"Test Date",
+    "INTERVIEWSLIST":"List of interviews"
   }
 }
