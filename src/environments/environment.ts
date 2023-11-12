@@ -9,7 +9,7 @@
 
 const baseUrl = 'http://localhost:8090';
 const baseUrlCom = 'http://localhost:3001';
-const baseUrlProyectos = 'http://localhost:8080';
+const baseUrlProyectos = 'http://localhost:3000';
 const baseUrlBancoPreguntas = 'http://localhost:8080';
 const baseUrlEntrevistas = 'http://localhost:3003';
 

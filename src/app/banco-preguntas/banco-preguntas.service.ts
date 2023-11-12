@@ -55,6 +55,7 @@ export class BancoPreguntasService {
   }
 
   getListaPruebas(): Observable<Prueba[]> {
+    console.log(localStorage.getItem("API_TOKEN")?.toString());
     return this.http.get<Prueba[]>(this.apiUrl + `/pruebas/`);
   }
 
