@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <label for="search" class="labeloverinput">{{ 'INTERVIEWS2.INPUTSEARCH' | translate }}</label>
+        <input
+          novalidate
+          type="text"
+          id="search"
+          class="form-control"
+          style="border-color: #6750A4;height: 60px;"
+        />
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+        <p>Selected date: {{selected}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: end;">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            class="button-signup"
+            mat-fab extended
+          >
+          <mat-icon style="color: #FFF;">add</mat-icon>
+            {{ 'SIGNUP.TITLE' | translate }}
+          </button>
+        </h5>
+        <div class="card-text">
+          <table class="table">
+            <caption>{{ 'INTERVIEWS2.INTERVIEWSLIST' | translate }}</caption>
+            <thead>
+              <tr>
+                <th>{{ 'INTERVIEWS2.LISTHCATEGORY' | translate }}</th>
+                <th>{{ 'INTERVIEWS2.LISTHINTERVIEW' | translate }}</th>
+                <th>{{ 'INTERVIEWS2.LISTHDATE' | translate }}</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entrevista of listaEntrevistas">
+              <td>{{ entrevista.categoria.nombre }}</td>
+              <td>{{ entrevista.entrevistador }}</td>
+              <td>{{ entrevista.fecha }}</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

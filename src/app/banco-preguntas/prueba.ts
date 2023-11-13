@@ -1,3 +1,4 @@
+import { BancoPreguntas } from "./banco-preguntas";
 
 export class Prueba {
   id: number;
