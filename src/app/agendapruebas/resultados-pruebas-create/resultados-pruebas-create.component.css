@@ -1,0 +1,23 @@
+/* Definición del CSS */
+
+mat-icon{
+  color: #ccc;
+  margin-left: 16px;
+}
+
+mat-card{
+  margin-top: 4px;
+}
+
+li.lista-respuestas{
+  list-style: none;
+}
+
+.lista-respuestas input{
+  margin-right: 8px;
+  margin-top: 4px;
+}
+button.btn{
+  float: right;
+  margin: 8px;
+}

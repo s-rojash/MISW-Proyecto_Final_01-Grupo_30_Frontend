@@ -58,4 +58,9 @@ export class BancoPreguntasService {
     return this.http.get<Prueba[]>(this.apiUrl + `/pruebas/`);
   }
 
+  getPrueba(idPrueba: number): Observable<Prueba> {
+    return this.http.get<Prueba>(this.apiUrl + `/pruebas/${idPrueba}`);
+  }
+
+
 }

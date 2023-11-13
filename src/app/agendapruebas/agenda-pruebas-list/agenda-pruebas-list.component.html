@@ -11,7 +11,7 @@
                 <th>{{ 'INTERVIEWS.TEST_SCHEDULE_DATE' | translate }}</th>
                 <th>{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</th>
                 <th>{{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE' | translate }}</th>
-                <th></th>
+                <th colspan="2"></th>
               </tr>
           </thead>
           <tbody>
@@ -20,6 +20,7 @@
               <td>{{ agendaPrueba.idPrueba }}</td>
               <td>{{ agendaPrueba.idCandidato }}</td>
               <td><a href="/agenda-pruebas/save/{{ agendaPrueba.id }}"><mat-icon>edit</mat-icon></a></td>
+              <td><a href="/agenda-pruebas/resultados-create/{{ agendaPrueba.id }}"><mat-icon>assessment</mat-icon></a></td>
             </tr>
           </tbody>
           </table>

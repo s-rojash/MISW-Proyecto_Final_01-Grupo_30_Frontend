@@ -15,9 +15,9 @@
               class="form-control"
               formControlName="idPrueba"
             >
-            <mat-option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
+            <option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
               {{prueba.nombre}}
-            </mat-option>
+            </option>
             </select>
             <div
               class="alert alert-danger alert-dismissible fade show"
@@ -36,9 +36,9 @@
               class="form-control"
               formControlName="idCandidato"
             >
-            <mat-option *ngFor="let candidato of listaCandidatos" [value]="candidato.id">
+            <option *ngFor="let candidato of listaCandidatos" [value]="candidato.id">
               {{candidato.nombres}} {{ candidato.apellidos }}
-            </mat-option>
+            </option>
             </select>
             <div
               class="alert alert-danger alert-dismissible fade show"
@@ -77,7 +77,7 @@
           <button
             type="submit"
             class="btn btn-primary"
-            [disabled]="!agendaPruebaForm.valid"
+
           >
             <mat-icon>add</mat-icon>
             {{ 'INTERVIEWS.TEST_SCHEDULE_SAVE' | translate }}
