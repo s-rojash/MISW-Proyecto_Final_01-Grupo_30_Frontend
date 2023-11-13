@@ -2,26 +2,24 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const baseUrl = 'https://ms-candidatos.azurewebsites.net';
-const baseUrlCom = 'https://ms-empresas.azurewebsites.net';
+// const baseUrl = 'https://ms-candidatos.azurewebsites.net';
+// const baseUrlCom = 'https://ms-empresas.azurewebsites.net';
+// const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
+// const baseUrlBancoPreguntas = 'https://ms-banco-preguntas.azurewebsites.net';
 
-const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
-const baseUrlBancoPreguntas = 'https://ms-bancopreguntas.azurewebsites.net';
-
-// const baseUrl = 'http://localhost:8080';
-// const baseUrlCom = 'http://localhost:3000';
-
-// const baseUrlProyectos = 'http://localhost:8080';
-// const baseUrlBancoPreguntas = 'http://localhost:8080';
-
-const idMuseum = "";
+const baseUrl = 'http://localhost:8090';
+const baseUrlCom = 'http://localhost:3001';
+const baseUrlProyectos = 'http://localhost:3000';
+const baseUrlBancoPreguntas = 'http://localhost:8080';
+const baseUrlEntrevistas = 'http://localhost:3003';
 
 export const environment = {
   production: false,
   baseUrl,
   baseUrlCom,
   baseUrlProyectos,
-  idMuseum
+  baseUrlEntrevistas,
+  baseUrlBancoPreguntas
 };
 
 /*
@@ -31,4 +29,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+

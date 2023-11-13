@@ -1,0 +1,49 @@
+<div style="padding-bottom: 15px; padding-left: 10px; margin-left: 15px;">
+  <span>
+    <label>{{ 'PROJECT.COMPANYS' | translate }} / 
+      <label style="text-decoration: underline;">{{ 'APPLICANT_SEARCH.NAME' | translate }}</label>
+    </label>
+  </span>
+</div>
+
+<div class="col-md-6 grid-container" style="width: 70%; z-index: 2;">
+  <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px; margin-left: 15%;">
+    <mat-card-title>{{ 'APPLICANT_SEARCH.TECH_SKILL' | translate }}</mat-card-title>
+    <mat-selection-list>
+      <mat-list-option *ngFor="let tech of tehnicalskills">{{ tech }}</mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+</div>
+
+<div class="col-md-6 grid-container" style="width: 70%; z-index: 2;">
+  <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px; margin-left: 15%;">
+    <mat-card-title>{{ 'APPLICANT_SEARCH.SOFT_SKILL' | translate }}</mat-card-title>
+    <mat-selection-list>
+      <mat-list-option *ngFor="let softab of softability">{{ softab }}</mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+</div>
+
+<div class="col-md-6 grid-container" style="width: 70%; z-index: 2;">
+  <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px; margin-left: 15%;">
+    <mat-card-title>{{ 'APPLICANT_SEARCH.PROFILE' | translate }}</mat-card-title>
+    <mat-selection-list>
+      <mat-list-option *ngFor="let spefification of spefifications">{{ spefification }}</mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+
+  <div style="text-align: center; margin-top: 73px;">
+    <button type="submit" class="button-search" (click)="showApplicantDetails()">
+      {{ 'APPLICANT_SEARCH.SEARCH_APPLICANT' | translate }}
+    </button>
+  </div>
+
+  <div *ngIf="showApplicantInfo" class="applicant-info col-md-6 grid-container" style="width: 70%; z-index: 2; margin-left: 25%;" >
+    {{ 'APPLICANT_SEARCH.INFO' | translate }}
+    <mat-card *ngFor="let applicant of applicants" class="applicant-card">
+      <mat-checkbox (change)="toggleSelection(applicant)">seleccion</mat-checkbox>
+      <mat-card-title>Nombre: {{ applicant.nombres }}</mat-card-title>
+      <mat-card-content>Apellidos: {{ applicant.apellidos }}</mat-card-content>
+    </mat-card>
+  </div>
+</div>

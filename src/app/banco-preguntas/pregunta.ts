@@ -1,13 +1,18 @@
+import { BancoPreguntas } from "./banco-preguntas";
+import { Respuesta } from "./respuesta";
 
 
 export class Pregunta {
-  idPregunta: number;
+  id: number | null;
   pregunta: string;
-  idBancoPreguntas: number;
+  bancoPreguntas: BancoPreguntas;
+  respuestas: Respuesta[];
 
-    constructor(idPregunta: number, pregunta: string, idBancoPreguntas: number) {
-      this.idPregunta = idPregunta;
+
+    constructor(id: number| null, pregunta: string, bancoPreguntas: BancoPreguntas, respuestas: Respuesta[]) {
+      this.id = id;
       this.pregunta = pregunta;
-      this.idBancoPreguntas = idBancoPreguntas;
+      this.bancoPreguntas = bancoPreguntas;
+      this.respuestas = respuestas;
     }
    }

@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>{{ 'QUESTIONS_BANK.QUESTIONS_SAVE_TITLE' | translate }}</h1>
+<div mat-dialog-content>
+  <div class="modal-body">
+    <div class="col-md-12">
+      <mat-card class="solid-border-card">
+        <form [formGroup]="preguntaForm" (ngSubmit)="!preguntaForm.invalid && createPregunta(preguntaForm.value)">
+          <div>
+            <div>
+              <!-- nombre -->
+              <div class="form-group mx-sm-3 mb-2" >
+                <label for="tipoBanco" class="labeloverinput">{{ 'QUESTIONS_BANK.QUESTIONS_SAVE_QUESTION' | translate }}</label>
+                <input
+                  required
+                  type="text"
+                  id="pregunta"
+                  class="form-control"
+                  formControlName="pregunta"
+                  placeholder="{{ 'QUESTIONS_BANK.QUESTIONS_SAVE_QUESTION' | translate}}"
+                />
+                <div
+                  class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="preguntaForm.get('pregunta')!.hasError('required') && preguntaForm.get('pregunta')!.touched"
+                >
+                  {{ 'QUESTIONS_BANK.QUESTIONS_LIST_QUESTION_REQUIRED' | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card>
+
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button
+  type="button" (click)="onNoClick()"
+  class="btn btn-secondary"
+  >
+    <mat-icon>cancel</mat-icon>
+    {{ 'QUESTIONS_BANK.QUESTIONS_SAVE_QUESTION_CANCEL' | translate }}
+  </button>
+  <button
+  type="submit"
+  class="btn btn-primary"
+  [disabled]="!preguntaForm.valid"
+  [mat-dialog-close]="preguntaForm.get('pregunta')!.value"
+  >
+    <mat-icon>add</mat-icon>
+    {{ 'QUESTIONS_BANK.QUESTIONS_SAVE_QUESTION_SAVE' | translate }}
+  </button>
+</div>

@@ -1,29 +1,37 @@
-<!-- team-list.component.html -->
-<h1>Lista de Equipos</h1>
+<div style="padding-bottom: 15px; padding-left: 10px;margin-left: 15px;">
+  <span><label>{{ 'PROJECT.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'TEAM.TEAMLIST' | translate }}</label></label></span>
+</div>
 
-<!-- Dropdown para seleccionar equipos -->
-<select (change)="onTeamSelected($event)">
-  <option [value]="null">Selecciona un equipo</option>
-  <option *ngFor="let team of teams" [value]="team.id">{{ team.nombre }}</option>
-</select>
+<div class="col-md-6" style="width: 100%; z-index: 2;">
+  <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px;">
+    <form [formGroup]="teamForm">
+     
+    <div class="borde" style="height: 58px; padding: 20px; width: 34%;margin-left: 15px; ">
+      <mat-select formControlName="project" placeholder="{{ 'TEAM.SELECT_PROJECT' | translate }}" style="height: 35px;" (selectionChange)="onProjectSelectionChange()">
+        <mat-option *ngFor="let project of projects" [value]="project.id">{{ project.nombre }}</mat-option>
+      </mat-select>
+    </div>
 
-<div *ngIf="selectedTeam">
-  <!-- Detalles del equipo -->
-  <h2>Detalles del Equipo: {{ selectedTeam ? selectedTeam.nombre : 'Ningún equipo seleccionado' }}</h2>
 
-  <table>
-    <tr>
-      <td>Nombre del Equipo:</td>
-      <td>{{ selectedTeam?.nombre || 'Ningún equipo seleccionado' }}</td>
+      <div class="borde" style="height: 58px; padding: 20px; width: 34%;margin-left: 15px;margin-top: 20px; ">
+        <mat-select formControlName="team" placeholder="{{ 'TEAM.SELECT_TEAM' | translate }}" style="height: 35px;"  (selectionChange)="onTeamSelectionChange()">
+          <mat-option *ngFor="let team of teams" [value]="team.id">{{ team.nombre }}</mat-option>
+        </mat-select>
+      </div>
 
-    </tr>
-    <tr>
-      <td>Cantidad de Recursos:</td>
-      <td>{{ selectedTeam?.qtyrecursos|| 'Ningún cantidad seleccionado' } }</td>
-    </tr>
-    <!-- Agrega más detalles según tus necesidades -->
-  </table>
 
-  <!-- Enlaces para modificar y eliminar el equipo -->
- 
+      <div *ngIf="teamDetails">
+        <div class="borde" style="height: 58px; padding: 20px; width: 34%; margin-left: 15px;">
+          <label for="profile">{{ 'TEAM.PROFILE' | translate }}</label>
+          <input type="text" id="profile" formControlName="profile" [(ngModel)]="teamDetails.profile">
+        </div>
+
+        <div class="borde" style="height: 58px; padding: 20px; width: 34%; margin-left: 15px;">
+          <label for="cantidad">{{ 'TEAM.CANTIDAD' | translate }}</label>
+          <input type="number" id="cantidad" formControlName="cantidad" [(ngModel)]="teamDetails.cantidad">
+        </div>
+      </div>
+
+    </form>
+   </mat-card>
 </div>

@@ -3,7 +3,6 @@ import { ToastrService } from 'ngx-toastr';
 import { BancoPreguntasService } from '../banco-preguntas.service';
 import { Router } from '@angular/router';
 import { Categoria } from '../categoria';
-import { th } from '@faker-js/faker';
 
 @Component({
   selector: 'app-categorias-list',

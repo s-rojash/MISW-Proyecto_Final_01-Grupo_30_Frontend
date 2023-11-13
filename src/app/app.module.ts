@@ -13,11 +13,18 @@ import { LoginModule } from './login/login.module';
 import { LoginRoutingModule } from './login/login-routing.module';
 import { SignupModule } from './signup/signup.module';
 import { SignpuRoutingModule } from './signup/signup-routing.module';
+import { ProjectModule } from './project/project.module';
 import { ProjectRoutingModule } from './project/project-routing.module';
-import { EvaluationModule } from './evaluation/evaluation.module';
-import { EvaluationRoutingModule } from './evaluation/evaluation-routing.module';
 import { BancoPreguntasModule } from './banco-preguntas/banco-preguntas.module';
 import { BancoPreguntasRoutingModule } from './banco-preguntas/banco-preguntas-routing.module';
+import { AgendaPruebaModule } from './agendapruebas/agenda-prueba.module';
+import { AgendaPruebaRoutingModule } from './agendapruebas/agenda-prueba-routing.module';
+import { ProfileModule } from './profile/profile.module';
+import { ProfileRoutingModule } from './profile/profile-routing.module';
+import { TeamModule } from './team/team.module';
+import { TeamRoutingModule } from './team/team-routing.module';
+import { EntrevistasModule } from './entrevistas/entrevistas.module';
+import { EntrevistasRoutingModule } from './entrevistas/entrevistas-routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -29,13 +36,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { ProjectModule } from './project/project.module';
-import { ProfileModule } from './profile/profile.module';
-import { ProfileRoutingModule } from './profile/profile-routing.module';
-import { TeamRoutingModule } from './team/team-routing.module';
-import { TeamModule } from './team/team.module';
+import { ApplicantSearchModule } from './applicant-search/applicant-search.module';
+import { ApplicationSearchRoutingModule } from './applicant-search/applicant-search.routing.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -43,7 +52,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
    ],
   imports: [
     BrowserModule,
@@ -60,12 +70,16 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SignupModule,
     SignpuRoutingModule,
     ProjectRoutingModule,
-    EvaluationModule,
-    EvaluationRoutingModule,
     TeamRoutingModule,
     TeamModule,
     BancoPreguntasModule,
     BancoPreguntasRoutingModule,
+    AgendaPruebaModule,
+    AgendaPruebaRoutingModule,
+    ApplicantSearchModule,
+    ApplicationSearchRoutingModule,
+    EntrevistasModule,
+    EntrevistasRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',
@@ -77,6 +91,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatIconModule,
     MatMenuModule,
     MatDividerModule,
+    MatSlideToggleModule,
+    MatBadgeModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
