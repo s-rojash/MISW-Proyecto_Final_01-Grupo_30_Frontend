@@ -117,7 +117,7 @@ describe('AgendaPruebasCreateComponent', () => {
   });
 
   it("should call getListaPruebas getListaPruebas and return response success", () => {
-    let response: Prueba[] = [{id: 1, nombre: 'Prueba1', descripcion: 'Prueba1'}];
+    let response: Prueba[] = [{id: 1, nombre: 'Prueba1', descripcion: 'Prueba1', bancosPreguntas: []}];
 
     spyOn(bancoPreguntasService, 'getListaPruebas').and.returnValue(of(response));
 

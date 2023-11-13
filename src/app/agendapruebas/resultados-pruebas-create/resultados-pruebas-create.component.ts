@@ -20,7 +20,6 @@ import { ResultadoPrueba } from '../resultado-prueba';
 })
 export class ResultadosPruebasCreateComponent implements OnInit {
 
-  evaluacionForm!: FormGroup;
   private routeSub: Subscription | undefined;
   private agendaPruebasId!: number | null;
   agendaPruebas!: AgendaPrueba;
@@ -53,7 +52,6 @@ export class ResultadosPruebasCreateComponent implements OnInit {
     setRespuesta(idPregunta: number| null, idRespuesta :number | null){
       if (idPregunta != null && idRespuesta != null){
         this.respuestasSeleccionadas[idPregunta]  = idRespuesta;
-        console.log(idPregunta, idRespuesta);
       }
     }
     getCandidato(idCandidato: number): void {
@@ -63,9 +61,7 @@ export class ResultadosPruebasCreateComponent implements OnInit {
     }
 
     saveResultados(): void{
-      let isValid = false;
       let resultadoPrueba = new ResultadoPrueba(0, this.agendaPruebasId ?? 0, this.respuestasSeleccionadas);
-      console.log(resultadoPrueba);
       this.agendaPruebaService.saveResultadoPrueba(resultadoPrueba).subscribe(response=>{
         this.toastr.success("Confirmation", "Results saved");
       });

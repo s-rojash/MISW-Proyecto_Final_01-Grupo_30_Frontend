@@ -76,7 +76,7 @@ describe('ListaPreguntasListComponent', () => {
   it("should call getListaPreguntasBanco getListaPreguntasBanco and return response success", () => {
     const categoria = { id: 1, nombre: 'sojash' };
     let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
-    let respuestas: Respuesta[] = [{ idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 5, pregunta: null }];
+    let respuestas: Respuesta[] = [{ id: 1, respuesta: 'A', estado: 'pendiente', puntos: 5, pregunta: null }];
     let response: Pregunta[] = [{ id: 1, pregunta: '', bancoPreguntas: bancopregunta, respuestas:respuestas }];
 
     spyOn(bancoPreguntasService, 'getListaPreguntasBanco').and.returnValue(of(response));
@@ -144,7 +144,7 @@ describe('ListaPreguntasListComponent', () => {
   });
 
   it("should call agregarRespuesta respuesta is not undefined", () => {
-    let respuesta: Respuesta = { idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
+    let respuesta: Respuesta = { id: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
     dialogRefSpyObj.respuesta = respuesta;
     const categoria = { id: 1, nombre: 'sojash' };
     let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
@@ -158,7 +158,7 @@ describe('ListaPreguntasListComponent', () => {
   });
 
   it("should call modificarRespuesta and open dialog and return a result", () => {
-    let respuesta: Respuesta = { idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
+    let respuesta: Respuesta = { id: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
     const categoria = { id: 1, nombre: 'sojash' };
     let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
     let pregunta: Pregunta = { id: 1, pregunta: 'Pregunta1', bancoPreguntas: bancopregunta, respuestas: [] };
@@ -170,7 +170,7 @@ describe('ListaPreguntasListComponent', () => {
   });
 
   it("should call modificarRespuesta respuesta is undefined", () => {
-    let respuesta: Respuesta = { idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
+    let respuesta: Respuesta = { id: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
     const categoria = { id: 1, nombre: 'sojash' };
     let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
     let pregunta: Pregunta = { id: 1, pregunta: 'Pregunta1', bancoPreguntas: bancopregunta, respuestas: [] };
@@ -182,7 +182,7 @@ describe('ListaPreguntasListComponent', () => {
   });
 
   it("should call modificarRespuesta respuesta is not undefined", () => {
-    let respuesta: Respuesta = { idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
+    let respuesta: Respuesta = { id: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
     dialogRefSpyObj.respuesta = respuesta;
     const categoria = { id: 1, nombre: 'sojash' };
     let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };

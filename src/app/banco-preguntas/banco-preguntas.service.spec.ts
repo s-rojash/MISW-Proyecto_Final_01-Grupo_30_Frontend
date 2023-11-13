@@ -152,7 +152,7 @@ describe('Service: BancoPreguntas', () => {
   it('should handle createPregunta successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
     const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
-    const respuestas: Array<Respuesta> = [{ idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
+    const respuestas: Array<Respuesta> = [{ id: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
     const pregunta: Pregunta = { id: 1, pregunta: 'pregunta1', bancoPreguntas: bancopreguntas, respuestas: respuestas };
 
     bancoPreguntasService.createPregunta(pregunta).subscribe(data => {
@@ -168,7 +168,7 @@ describe('Service: BancoPreguntas', () => {
   it('should handle createPregunta failed HTTP request (status code 404)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
     const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
-    const respuestas: Array<Respuesta> = [{ idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
+    const respuestas: Array<Respuesta> = [{ id: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
     const pregunta: Pregunta = { id: 1, pregunta: 'pregunta1', bancoPreguntas: bancopreguntas, respuestas: respuestas };
 
     bancoPreguntasService.createPregunta(pregunta).subscribe({
@@ -195,7 +195,7 @@ describe('Service: BancoPreguntas', () => {
   it('should handle getListaPreguntasBanco successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
     const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
-    const respuestas: Array<Respuesta> = [{ idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
+    const respuestas: Array<Respuesta> = [{ id: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
     const preguntas: Pregunta[] = [{ id: 1, pregunta: 'pregunta1', bancoPreguntas: bancopreguntas, respuestas: respuestas }];
 
     bancoPreguntasService.getListaPreguntasBanco(1).subscribe(data => {
@@ -223,7 +223,7 @@ describe('Service: BancoPreguntas', () => {
   });
 
   it('should handle createRespuesta successful HTTP request (status code 200)', () => {
-    const respuesta: Respuesta = { idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null };
+    const respuesta: Respuesta = { id: 1, respuesta: '', estado: '', puntos: 15, pregunta: null };
 
     bancoPreguntasService.createRespuesta(respuesta).subscribe(data => {
       expect(data).toEqual(respuesta); // Assert that the response data matches the expected data
@@ -236,7 +236,7 @@ describe('Service: BancoPreguntas', () => {
   });
 
   it('should handle createRespuesta failed HTTP request (status code 404)', () => {
-    const respuesta: Respuesta = { idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null };
+    const respuesta: Respuesta = { id: 1, respuesta: '', estado: '', puntos: 15, pregunta: null };
 
     bancoPreguntasService.createRespuesta(respuesta).subscribe({
       next:() => fail('The request should have failed with 404 error'),
@@ -252,7 +252,7 @@ describe('Service: BancoPreguntas', () => {
   });
 
   it('should handle getListaPruebas successful HTTP request (status code 200)', () => {
-    const pruebas: Prueba[] = [{ id: 1, nombre: 'sojash', descripcion: 'pruebas' }];
+    const pruebas: Prueba[] = [{ id: 1, nombre: 'sojash', descripcion: 'pruebas', bancosPreguntas: [] }];
 
     bancoPreguntasService.getListaPruebas().subscribe(data => {
       expect(data).toEqual(pruebas); // Assert that the response data matches the expected data
