@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { LogoutPageComponent } from './logout-page/logout-page.component';
 import { DialogtypesignupComponent } from './dialogtypesignup/dialogtypesignup.component';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
@@ -35,7 +36,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     })
   ],
-  exports: [LoginPageComponent, DialogtypesignupComponent],
-  declarations:[LoginPageComponent, DialogtypesignupComponent]
+  exports: [
+    LoginPageComponent,
+    LogoutPageComponent,
+    DialogtypesignupComponent],
+  declarations:[
+    LoginPageComponent,
+    LogoutPageComponent,
+    DialogtypesignupComponent]
 })
 export class LoginModule { }
