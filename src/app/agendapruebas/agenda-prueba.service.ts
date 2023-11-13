@@ -16,16 +16,16 @@ export class AgendaPruebaService {
   constructor(private http: HttpClient) { }
 
   getListaAgendaPrueba(): Observable<AgendaPrueba[]> {
-    return this.http.get<AgendaPrueba[]>(this.apiUrl + "/agenda-pruebas/");
+    return this.http.get<AgendaPrueba[]>(this.apiUrl + "/agendar-pruebas/");
   }
 
   getAgendaPrueba(idAgendaPrueba: number): Observable<AgendaPrueba> {
-    return this.http.get<AgendaPrueba>(this.apiUrl + "/agenda-pruebas/" + idAgendaPrueba);
+    return this.http.get<AgendaPrueba>(this.apiUrl + "/agendar-pruebas/" + idAgendaPrueba);
   }
 
   saveListaAgendaPrueba(agendaPrueba: AgendaPrueba): Observable<AgendaPrueba> {
 
-    return this.http.post<AgendaPrueba>(this.apiUrl + `/agenda-pruebas/`, agendaPrueba);
+    return this.http.post<AgendaPrueba>(this.apiUrl + `/agendar-pruebas/`, agendaPrueba);
   }
 
   getListaCandidatos(): Observable<Candidato[]> {

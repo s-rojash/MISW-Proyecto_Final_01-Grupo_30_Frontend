@@ -59,13 +59,11 @@ export class AgendaPruebasCreateComponent implements OnInit {
         if (this.agendaPruebasId !== null && !isNaN(this.agendaPruebasId)){
           this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas) =>{
             this.agendaPruebas = agendaPruebas;
-            if (agendaPruebas) {
             this.agendaPruebaForm = this.formBuilder.group({
               idPrueba: [agendaPruebas.idPrueba, [Validators.required, Validators.minLength(2)]],
               idCandidato: [agendaPruebas.idCandidato, [Validators.required, Validators.minLength(2)]],
               fecha: [agendaPruebas.fecha, [Validators.required]],
             });
-            }
           })
         }
       });
