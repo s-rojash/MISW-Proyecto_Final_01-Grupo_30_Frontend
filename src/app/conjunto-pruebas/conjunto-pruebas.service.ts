@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import {  Observable } from 'rxjs';
+import {  Observable, catchError, map, tap } from 'rxjs';
 import { Conjuntoprueba } from './conjuntoprueba';
+import { BancoPreguntas } from '../banco-preguntas/banco-preguntas';
 
 
 @Injectable({
@@ -15,9 +16,36 @@ export class ConjuntoPruebasService {
 
 constructor(private http: HttpClient) { }
 
-createConjuntoPruebas(conjuntoprueba: Conjuntoprueba): Observable<Conjuntoprueba> {
-  return this.http.post<Conjuntoprueba>(this.apiUrl + `/banco-preguntas/`, conjuntoprueba);
+private getHttpOptions() {
+  const token = localStorage.getItem('API_TOKEN'); 
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  });
+  return { headers };
 }
 
+
+createConjuntoPruebas(conjuntoprueba: Conjuntoprueba): Observable<Conjuntoprueba> {
+  const httpOptions = this.getHttpOptions();
+  console.log('Objeto enviado:', conjuntoprueba);
+  
+  return this.http.post<Conjuntoprueba>(this.apiUrl + `/pruebas/`, conjuntoprueba, httpOptions)
+  .pipe(
+    tap(response => {
+      console.log('Respuesta recibida:' , response);
+  
+    }),
+    catchError(error => {
+
+      console.error('Error en la petición:', error);
+      throw error;
+    })
+  );
+}
+
+getAllBancoPreguntas(): Observable<BancoPreguntas[]> {
+  const httpOptions = this.getHttpOptions();
+  return this.http.get<BancoPreguntas[]>(this.apiUrl + `/banco-preguntas/`, httpOptions)
+}
 
 }
