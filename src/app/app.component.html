@@ -89,7 +89,7 @@
         </mat-menu>
 
         <mat-divider></mat-divider>
-        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'">
+        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'" (click)="logout()">
           <span style="padding-left: 30px;">{{ 'HEADER.LOGOUTMENU' | translate }}</span>
         </button>
       </mat-menu>

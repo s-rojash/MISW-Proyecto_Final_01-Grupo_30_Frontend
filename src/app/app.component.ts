@@ -34,6 +34,9 @@ export class AppComponent {
     }
   }
 
+  logout(){
+    this.router.navigate(['/logout']);
+  }
   constructor(private router: Router, public translate: TranslateService) {
     translate.addLangs(['en', 'es']);
     this.translatelang(translate);
