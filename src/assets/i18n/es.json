@@ -115,7 +115,14 @@
     "TEAMREQUIRED":"nombre de equipo requerido ",
     "SELECT_PROJECT":"seleccione un proyecto",
     "TEAMLIST" : "listado de proyectos",
-    "SELECT_TEAM":"Selecciona un equipo"
+    "SELECT_TEAM":"Selecciona un equipo",
+    "SELECT_APPLICANT":"Selecciona un candidato",
+    "BUTTON_ASSIGN":"Asignar",
+    "PROFILE":"Perfil",
+    "CANTIDAD":"Cantidad",
+    "ADDTOTABLE":"Agregar",
+    "SUCCESSASSIGNAPPLICANTS":"Los candidatos fueron asignados correctamente.",
+    "ERRORDELETEAPPLICANTS":"Debe haber al menos un candidato asignado"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",

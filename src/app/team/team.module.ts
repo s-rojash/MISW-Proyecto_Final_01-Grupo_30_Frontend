@@ -14,9 +14,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 import { TeamListComponent } from './team-list/team-list.component';
 import { MatOptionModule } from '@angular/material/core';
-
+import { TeamAssignComponent } from './team-assign/team-assign.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -44,9 +45,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatInputModule,
     FormsModule,
     NgIf,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
-  declarations: [TeamCreateComponent,TeamListComponent],
-  exports:[TeamCreateComponent,TeamListComponent]
+  declarations: [TeamCreateComponent,TeamListComponent, TeamAssignComponent],
+  exports:[TeamCreateComponent,TeamListComponent, TeamAssignComponent]
 })
 export class TeamModule { }

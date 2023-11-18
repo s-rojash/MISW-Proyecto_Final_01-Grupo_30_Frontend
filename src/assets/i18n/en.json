@@ -114,8 +114,14 @@
     "TEAMREQUIRED":"name of team required ",
     "SELECT_PROJECT":"select a project",
     "TEAMLIST" : "list of projects",
-    "SELECT_TEAM":"select a Team"
-
+    "SELECT_TEAM":"select a Team",
+    "SELECT_APPLICANT":"Select an applicant",
+    "BUTTON_ASSIGN":"Assign",
+    "PROFILE":"Profile",
+    "CANTIDAD":"Quantity",
+    "ADDTOTABLE":"Aggregate",
+    "SUCCESSASSIGNAPPLICANTS":"The applicants were assigned correctly.",
+    "ERRORDELETEAPPLICANTS":"There must be at least one applicant assigned"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Questions Bank",
