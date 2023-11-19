@@ -173,5 +173,10 @@
     "LISTHINTERVIEW":"Interview with",
     "LISTHDATE":"Test Date",
     "INTERVIEWSLIST":"List of interviews"
+  },
+  "CANDIDATE_TESTS_SCHEDULE":{
+    "TITLE": "Your tests schedule",
+    "TEST_STATUS": "Status",
+    "GOTO_TEST": "Go to test"
   }
 }

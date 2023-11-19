@@ -2,14 +2,14 @@
 
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { PruebaAgendadaService } from './pruebas-agendadas.service';
+import { PruebasAgendadasService } from './pruebas-agendadas.service';
 import { environment } from 'src/environments/environment';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('Service: PruebaAgendadaService', () => {
+describe('Service: PruebasAgendadasService', () => {
   let UrlEntrevistas: string = environment.baseUrlEntrevistas;
   let httpMock: HttpTestingController;
-  let pruebaAgendadaService: PruebaAgendadaService;
+  let pruebaAgendadaService: PruebasAgendadasService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -20,14 +20,14 @@ describe('Service: PruebaAgendadaService', () => {
 
   beforeEach(() => {
     httpMock = TestBed.inject(HttpTestingController);
-    pruebaAgendadaService = TestBed.inject(PruebaAgendadaService);
+    pruebaAgendadaService = TestBed.inject(PruebasAgendadasService);
   });
 
   afterEach(() => {
     httpMock.verify(); // Ensure that there are no outstanding requests after each test
   });
 
-  it('should ...', inject([PruebaAgendadaService], (service: PruebaAgendadaService) => {
+  it('should ...', inject([PruebasAgendadasService], (service: PruebasAgendadasService) => {
     expect(service).toBeTruthy();
   }));
 

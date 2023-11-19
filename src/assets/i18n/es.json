@@ -173,5 +173,10 @@
     "LISTHINTERVIEW":"Entrevista con",
     "LISTHDATE":"Fecha Prueba",
     "INTERVIEWSLIST":"Listado de entrevistas"
+  },
+  "CANDIDATE_TESTS_SCHEDULE":{
+    "TITLE": "Sus pruebas agendadas",
+    "TEST_STATUS": "Estado",
+    "GOTO_TEST": "Ir a la prueba"
   }
 }

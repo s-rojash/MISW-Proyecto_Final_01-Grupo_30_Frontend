@@ -1,0 +1,15 @@
+<div class="white-box">
+  <h5>{{ 'CANDIDATE_TESTS_SCHEDULE.TITLE' | translate }}</h5>
+  <ul>
+    <mat-card class="solid-border-card" *ngFor="let prueba of listaPruebas">
+      <mat-card-title>{{ prueba.nombrePrueba }}</mat-card-title>
+      <mat-card-content>
+        {{ prueba.fecha }}
+      </mat-card-content>
+      <mat-card-footer>
+        {{ 'CANDIDATE_TESTS_SCHEDULE.TEST_STATUS' | translate }}: <strong>{{ prueba.estado }}</strong>
+        <button *ngIf="prueba.estado == 'Agendada'" class="btn btn-primary">{{ 'CANDIDATE_TESTS_SCHEDULE.GOTO_TEST' | translate }}</button>
+      </mat-card-footer>
+    </mat-card>
+  </ul>
+</div>

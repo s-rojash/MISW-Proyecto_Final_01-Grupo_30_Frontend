@@ -25,6 +25,8 @@ import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
 import { EntrevistasModule } from './entrevistas/entrevistas.module';
 import { EntrevistasRoutingModule } from './entrevistas/entrevistas-routing.module';
+import { PruebasAgendadasModule } from './pruebas-agendadas-candidato/pruebas-agendadas.module';
+import { PruebasAgendadasRoutingModule } from './pruebas-agendadas-candidato/pruebas-agendadas-routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -80,6 +82,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ApplicationSearchRoutingModule,
     EntrevistasModule,
     EntrevistasRoutingModule,
+    PruebasAgendadasModule,
+    PruebasAgendadasRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

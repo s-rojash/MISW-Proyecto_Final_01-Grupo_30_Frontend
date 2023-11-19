@@ -1,0 +1,10 @@
+mat-card{
+  padding: 8px;
+}
+mat-card-footer{
+  text-align: end;
+}
+
+button.btn-primary{
+  margin: 16px;
+}

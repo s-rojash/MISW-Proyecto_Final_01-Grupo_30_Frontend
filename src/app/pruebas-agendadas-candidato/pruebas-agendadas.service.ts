@@ -7,7 +7,7 @@ import { PruebaAgendada } from './prueba-agendada';
 @Injectable({
   providedIn: 'root'
 })
-export class PruebaAgendadaService {
+export class PruebasAgendadasService {
 
   private apiUrlEntrevistas: string = environment.baseUrlEntrevistas;
 
