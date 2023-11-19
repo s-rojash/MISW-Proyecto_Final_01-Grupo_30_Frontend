@@ -1,275 +1,285 @@
 <testExecutions version="1">
-  <file path="src/app/agendapruebas/agenda-pruebas-create/agenda-pruebas-create.component.spec.ts">
-    <testCase name="AgendaPruebasCreateComponent should call getListaCandidatos getListaCandidatos and return response success" duration="68"/>
-    <testCase name="AgendaPruebasCreateComponent all fields empty" duration="20"/>
-    <testCase name="AgendaPruebasCreateComponent should return form inValid min lenght value" duration="22"/>
-    <testCase name="AgendaPruebasCreateComponent should return form inValid" duration="13"/>
-    <testCase name="AgendaPruebasCreateComponent should call createAgendaPrueba saveListaAgendaPrueba and return response success" duration="13"/>
-    <testCase name="AgendaPruebasCreateComponent should call getListaPruebas getListaPruebas and return response success" duration="12"/>
-    <testCase name="AgendaPruebasCreateComponent should call createAgendaPrueba agendaPruebaForm is null" duration="11"/>
-    <testCase name="AgendaPruebasCreateComponent should create" duration="9"/>
-    <testCase name="AgendaPruebasCreateComponent should return form Valid" duration="11"/>
-  </file>
-  <file path="src/app/banco-preguntas/lista-preguntas/lista-preguntas-list.component.spec.ts">
-    <testCase name="ListaPreguntasListComponent should call agregarRespuesta and open dialog and return a result" duration="12"/>
-    <testCase name="ListaPreguntasListComponent should call agregarRespuesta respuesta is undefined" duration="3"/>
-    <testCase name="ListaPreguntasListComponent should create" duration="4"/>
-    <testCase name="ListaPreguntasListComponent should call agregarRespuesta respuesta is not undefined" duration="3"/>
-    <testCase name="ListaPreguntasListComponent test button add" duration="3"/>
-    <testCase name="ListaPreguntasListComponent should call modificarRespuesta and open dialog and return a result" duration="3"/>
-    <testCase name="ListaPreguntasListComponent should call getListaPreguntasBanco getListaPreguntasBanco and return response success" duration="6"/>
-    <testCase name="ListaPreguntasListComponent should call getListaPreguntasBanco with bancoPreguntas null or empty" duration="3"/>
-    <testCase name="ListaPreguntasListComponent should call modificarRespuesta respuesta is undefined" duration="4"/>
-    <testCase name="ListaPreguntasListComponent should call agregarPregunta and open dialog and return a result" duration="3"/>
-    <testCase name="ListaPreguntasListComponent should call modificarRespuesta respuesta is not undefined" duration="6"/>
-    <testCase name="ListaPreguntasListComponent should call agregarPregunta textoPregunta is undefined" duration="4"/>
-    <testCase name="ListaPreguntasListComponent should call agregarPregunta textoPregunta is not undefined" duration="4"/>
-  </file>
-  <file path="src/app/team/team.service.spec.ts">
-    <testCase name="Service: TeamService should create a team" duration="2"/>
-    <testCase name="Service: TeamService should get teams by project" duration="1"/>
-    <testCase name="Service: TeamService should be created" duration="1"/>
-    <testCase name="Service: TeamService should get a list of teams" duration="1"/>
-    <testCase name="Service: TeamService should delete a team" duration="1"/>
-    <testCase name="Service: TeamService should update a team" duration="1"/>
-  </file>
-  <file path="src/app/signup/signup.service.spec.ts">
-    <testCase name="Service: Signup should handle createCompany failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: Signup should ..." duration="1"/>
-    <testCase name="Service: Signup should handle createApplicant successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: Signup should handle createApplicant failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: Signup should handle createCompany successful HTTP request (status code 200)" duration="1"/>
-  </file>
-  <file path="src/app/applicant-search/applicant-seach.service.spec.ts">
-    <testCase name="Service: ApplicantSeach should ..." duration="1"/>
-  </file>
-  <file path="src/app/login/logout-page/logout-page.component.spec.ts">
-    <testCase name="LogoutPageComponent should create" duration="8"/>
-  </file>
-  <file path="src/app/signup/signup-company/signup-company.component.spec.ts">
-    <testCase name="SignupCompanyComponent should open dialog success and return response" duration="30"/>
-    <testCase name="SignupCompanyComponent go to open dialog failed" duration="14"/>
-    <testCase name="SignupCompanyComponent should call registerCompany createCompany and return response success" duration="39"/>
-    <testCase name="SignupCompanyComponent should open dialog failed and return response" duration="12"/>
-    <testCase name="SignupCompanyComponent registerCompany test" duration="18"/>
-    <testCase name="SignupCompanyComponent should create" duration="11"/>
-    <testCase name="SignupCompanyComponent password empty" duration="12"/>
-    <testCase name="SignupCompanyComponent should call registerCompany createCompany and return response failed" duration="16"/>
-    <testCase name="SignupCompanyComponent go to open dialog success" duration="10"/>
-    <testCase name="SignupCompanyComponent should call selectChangeHandler and change value of select NIT" duration="11"/>
-    <testCase name="SignupCompanyComponent email empty" duration="13"/>
-    <testCase name="SignupCompanyComponent all fields empty" duration="12"/>
-    <testCase name="SignupCompanyComponent should return form inValid" duration="14"/>
-    <testCase name="SignupCompanyComponent should return form Valid" duration="16"/>
-  </file>
-  <file path="src/app/project/project.service.spec.ts">
-    <testCase name="Service: Project should be created" duration="1"/>
-    <testCase name="Service: Project should update a project" duration="1"/>
-    <testCase name="Service: Project should create a project" duration="1"/>
-    <testCase name="Service: Project should handle HTTP errors when creating a project" duration="1"/>
-    <testCase name="Service: Project should ..." duration="1"/>
-    <testCase name="Service: Project should get all projects" duration="1"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent navigate to login page" duration="14"/>
-    <testCase name="AppComponent navigate to root" duration="3"/>
-    <testCase name="AppComponent navigate to principal page" duration="13"/>
-    <testCase name="AppComponent should contain router-outlet" duration="4"/>
-    <testCase name="AppComponent should have as title 'frontabc-front'" duration="3"/>
-    <testCase name="AppComponent test spanish button" duration="28"/>
-    <testCase name="AppComponent change spanish language" duration="3"/>
-    <testCase name="AppComponent change not language" duration="3"/>
-    <testCase name="AppComponent should create the app" duration="4"/>
-    <testCase name="AppComponent change english language" duration="3"/>
-    <testCase name="AppComponent test english button" duration="17"/>
-    <testCase name="AppComponent navigate to signup company page" duration="9"/>
-    <testCase name="AppComponent navigate to signup applicant page" duration="10"/>
-  </file>
-  <file path="src/app/banco-preguntas/banco-preguntas-list/banco-preguntas-list.component.spec.ts">
-    <testCase name="BancoPreguntasListComponent should create" duration="8"/>
-    <testCase name="BancoPreguntasListComponent should call getListaPreguntas getListaBancosPreguntas and return response success html" duration="8"/>
-    <testCase name="BancoPreguntasListComponent should call categoriaSeleccionada and fill the value nombreCategoriaSeleccionada html" duration="3"/>
-    <testCase name="BancoPreguntasListComponent should call categoriaSeleccionada and fill the value nombreCategoriaSeleccionada" duration="4"/>
-    <testCase name="BancoPreguntasListComponent should call getListaPreguntas getListaBancosPreguntas with idCategoriaSeleccionada null" duration="3"/>
-    <testCase name="BancoPreguntasListComponent should call getListaPreguntas getListaBancosPreguntas and return response success" duration="3"/>
-  </file>
-  <file path="src/app/banco-preguntas/modal-respuestas-save/modal-respuestas-save.component.spec.ts">
-    <testCase name="ModalRespuestasSaveComponent should call retornarRespuesta respuesta undefined" duration="10"/>
-    <testCase name="ModalRespuestasSaveComponent should close the dialog when onNoClick() is called" duration="5"/>
-    <testCase name="ModalRespuestasSaveComponent all fields empty" duration="5"/>
-    <testCase name="ModalRespuestasSaveComponent should return form inValid null values" duration="6"/>
-    <testCase name="ModalRespuestasSaveComponent should call retornarRespuesta respuesta not undefined" duration="7"/>
-    <testCase name="ModalRespuestasSaveComponent should create" duration="5"/>
-    <testCase name="ModalRespuestasSaveComponent should return form Valid" duration="6"/>
-    <testCase name="ModalRespuestasSaveComponent should return form inValid" duration="4"/>
+  <file path="src/app/profile/profile-create/profile-create.component.spec.ts">
+    <testCase name="ProfileCreateComponent should create" duration="38"/>
   </file>
   <file path="src/app/banco-preguntas/banco-preguntas-create/banco-preguntas-create.component.spec.ts">
-    <testCase name="BancoPreguntasCreateComponent should return form inValid min lenght value" duration="10"/>
-    <testCase name="BancoPreguntasCreateComponent all fields empty" duration="7"/>
-    <testCase name="BancoPreguntasCreateComponent createBancoPreguntas test" duration="6"/>
-    <testCase name="BancoPreguntasCreateComponent should create" duration="5"/>
-    <testCase name="BancoPreguntasCreateComponent should return form Valid" duration="6"/>
+    <testCase name="BancoPreguntasCreateComponent should call createBancoPreguntas createBancoPreguntas and return response success" duration="29"/>
+    <testCase name="BancoPreguntasCreateComponent should call cancelCreation and reset the form" duration="12"/>
+    <testCase name="BancoPreguntasCreateComponent createBancoPreguntas test" duration="13"/>
     <testCase name="BancoPreguntasCreateComponent should return form inValid" duration="8"/>
-    <testCase name="BancoPreguntasCreateComponent should call getListaCategorias getCategorias and return response success" duration="7"/>
-    <testCase name="BancoPreguntasCreateComponent should call cancelCreation and reset the form" duration="9"/>
-    <testCase name="BancoPreguntasCreateComponent should call createBancoPreguntas createBancoPreguntas and return response success" duration="10"/>
-  </file>
-  <file path="src/app/agendapruebas/agenda-prueba.service.spec.ts">
-    <testCase name="Service: AgendaPrueba should handle getListaAgendaPrueba failed HTTP request (status code 404)" duration="2"/>
-    <testCase name="Service: AgendaPrueba should handle getAgendaPrueba successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: AgendaPrueba should ..." duration="1"/>
-    <testCase name="Service: AgendaPrueba should handle getListaAgendaPrueba successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: AgendaPrueba should handle saveListaAgendaPrueba failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: AgendaPrueba should handle getAgendaPrueba failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: AgendaPrueba should handle saveListaAgendaPrueba successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: AgendaPrueba should handle getListaCandidatos successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: AgendaPrueba should handle getListaCandidatos failed HTTP request (status code 404)" duration="1"/>
-  </file>
-  <file path="src/app/applicant-search/applicant-search-get/applicant-search-get.component.spec.ts">
-    <testCase name="ApplicantSearchGetComponent should load applicants and set showApplicantInfo to true" duration="7"/>
-    <testCase name="ApplicantSearchGetComponent should initialize with empty selectedApplicants array" duration="3"/>
-    <testCase name="ApplicantSearchGetComponent should toggle selection of an applicant" duration="4"/>
-    <testCase name="ApplicantSearchGetComponent should call showApplicantDetails() when the &quot;Search Applicant&quot; button is clicked" duration="4"/>
-    <testCase name="ApplicantSearchGetComponent should create" duration="3"/>
-  </file>
-  <file path="src/app/project/project-list/project-list.component.spec.ts">
-    <testCase name="ProjectListComponent should create" duration="4"/>
-  </file>
-  <file path="src/app/agendapruebas/agenda-pruebas-list/agenda-pruebas-list.component.spec.ts">
-    <testCase name="AgendaPruebasListComponent should create" duration="4"/>
-    <testCase name="AgendaPruebasListComponent should call getListaPreguntas getListaAgendaPrueba and return response success" duration="5"/>
+    <testCase name="BancoPreguntasCreateComponent should return form inValid min lenght value" duration="10"/>
+    <testCase name="BancoPreguntasCreateComponent should call getListaCategorias getCategorias and return response success" duration="11"/>
+    <testCase name="BancoPreguntasCreateComponent all fields empty" duration="8"/>
+    <testCase name="BancoPreguntasCreateComponent should return form Valid" duration="11"/>
+    <testCase name="BancoPreguntasCreateComponent should create" duration="10"/>
   </file>
   <file path="src/app/profile/profile.service.spec.ts">
-    <testCase name="Service: Profile should ..." duration="1"/>
+    <testCase name="Service: Profile should ..." duration="2"/>
   </file>
-  <file path="src/app/login/login-page/login-page.component.spec.ts">
-    <testCase name="LoginPageComponent test spanish button" duration="12"/>
-    <testCase name="LoginPageComponent test english button" duration="6"/>
-    <testCase name="LoginPageComponent go to open dialog" duration="8"/>
-    <testCase name="LoginPageComponent change english language" duration="6"/>
-    <testCase name="LoginPageComponent should call open dialog and return a result" duration="7"/>
-    <testCase name="LoginPageComponent should call gotoApp loginCompany and return response success" duration="14"/>
-    <testCase name="LoginPageComponent should return form Valid" duration="8"/>
-    <testCase name="LoginPageComponent should call gotoApp loginApplicant and return response success" duration="12"/>
-    <testCase name="LoginPageComponent go to app test" duration="7"/>
-    <testCase name="LoginPageComponent should create" duration="7"/>
-    <testCase name="LoginPageComponent should call gotoApp loginCompany and return response failed" duration="10"/>
-    <testCase name="LoginPageComponent should call selectChangeHandler and change value of select 2" duration="11"/>
-    <testCase name="LoginPageComponent should return form inValid" duration="10"/>
-    <testCase name="LoginPageComponent password empty" duration="5"/>
-    <testCase name="LoginPageComponent should call gotoApp loginApplicant and return response failed" duration="9"/>
-    <testCase name="LoginPageComponent two fields empty" duration="5"/>
-    <testCase name="LoginPageComponent email empty" duration="7"/>
-    <testCase name="LoginPageComponent should call selectChangeHandler and change value of select 1" duration="7"/>
-    <testCase name="LoginPageComponent change not language" duration="6"/>
-    <testCase name="LoginPageComponent change spanish language" duration="6"/>
-  </file>
-  <file path="src/app/principal/principal-page/principal-page.component.spec.ts">
-    <testCase name="PrincipalPageComponent should create" duration="2"/>
-  </file>
-  <file path="src/app/login/login.service.spec.ts">
-    <testCase name="Service: Login should handle loginCompany successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: Login should handle loginApplicant failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: Login should ..." duration="3"/>
-    <testCase name="Service: Login should handle loginCompany failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: Login should handle loginApplicant successful HTTP request (status code 200)" duration="1"/>
+  <file path="src/app/banco-preguntas/lista-preguntas/lista-preguntas-list.component.spec.ts">
+    <testCase name="ListaPreguntasListComponent should call agregarRespuesta respuesta is undefined" duration="8"/>
+    <testCase name="ListaPreguntasListComponent should call agregarRespuesta and open dialog and return a result" duration="8"/>
+    <testCase name="ListaPreguntasListComponent should call modificarRespuesta and open dialog and return a result" duration="3"/>
+    <testCase name="ListaPreguntasListComponent should create" duration="3"/>
+    <testCase name="ListaPreguntasListComponent test button add" duration="6"/>
+    <testCase name="ListaPreguntasListComponent should call getListaPreguntasBanco getListaPreguntasBanco and return response success" duration="5"/>
+    <testCase name="ListaPreguntasListComponent should call agregarRespuesta respuesta is not undefined" duration="5"/>
+    <testCase name="ListaPreguntasListComponent should call getListaPreguntasBanco with bancoPreguntas null or empty" duration="6"/>
+    <testCase name="ListaPreguntasListComponent should call modificarRespuesta respuesta is not undefined" duration="4"/>
+    <testCase name="ListaPreguntasListComponent should call agregarPregunta and open dialog and return a result" duration="3"/>
+    <testCase name="ListaPreguntasListComponent should call agregarPregunta textoPregunta is undefined" duration="4"/>
+    <testCase name="ListaPreguntasListComponent should call agregarPregunta textoPregunta is not undefined" duration="6"/>
+    <testCase name="ListaPreguntasListComponent should call modificarRespuesta respuesta is undefined" duration="3"/>
   </file>
   <file path="src/app/login/dialogtypesignup/dialogtypesignup.component.spec.ts">
-    <testCase name="DialogtypesignupComponent navigate to signup applicant page" duration="13"/>
-    <testCase name="DialogtypesignupComponent navigate to signup company page" duration="5"/>
-    <testCase name="DialogtypesignupComponent should create" duration="3"/>
+    <testCase name="DialogtypesignupComponent should create" duration="21"/>
+    <testCase name="DialogtypesignupComponent navigate to signup company page" duration="7"/>
+    <testCase name="DialogtypesignupComponent navigate to signup applicant page" duration="4"/>
   </file>
-  <file path="src/app/signup/signup-applicant/signup-applicant.component.spec.ts">
-    <testCase name="SignupApplicantComponent password empty" duration="16"/>
-    <testCase name="SignupApplicantComponent should open dialog failed and return response" duration="12"/>
-    <testCase name="SignupApplicantComponent email empty" duration="12"/>
-    <testCase name="SignupApplicantComponent should call registerApplicant createApplicant and return response success" duration="21"/>
-    <testCase name="SignupApplicantComponent go to open dialog success" duration="12"/>
-    <testCase name="SignupApplicantComponent should call selectChangeHandler and change value of select C.C." duration="16"/>
-    <testCase name="SignupApplicantComponent should return form Valid" duration="15"/>
-    <testCase name="SignupApplicantComponent should call registerApplicant createApplicant and return response failed" duration="16"/>
-    <testCase name="SignupApplicantComponent should create" duration="10"/>
-    <testCase name="SignupApplicantComponent registerApplicant test" duration="12"/>
-    <testCase name="SignupApplicantComponent should call selectChangeHandler and change value of select C.E." duration="9"/>
-    <testCase name="SignupApplicantComponent all fields empty" duration="11"/>
-    <testCase name="SignupApplicantComponent should open dialog success and return response" duration="10"/>
-    <testCase name="SignupApplicantComponent should return form inValid" duration="12"/>
-    <testCase name="SignupApplicantComponent go to open dialog failed" duration="10"/>
+  <file path="src/app/applicant-search/applicant-search-get/applicant-search-get.component.spec.ts">
+    <testCase name="ApplicantSearchGetComponent should toggle selection of an applicant" duration="10"/>
+    <testCase name="ApplicantSearchGetComponent should call showApplicantDetails() when the &quot;Search Applicant&quot; button is clicked" duration="4"/>
+    <testCase name="ApplicantSearchGetComponent should create" duration="6"/>
+    <testCase name="ApplicantSearchGetComponent should initialize with empty selectedApplicants array" duration="4"/>
+    <testCase name="ApplicantSearchGetComponent should load applicants and set showApplicantInfo to true" duration="3"/>
   </file>
-  <file path="src/app/team/team-list/team-list.component.spec.ts">
-    <testCase name="TeamListComponent should create" duration="7"/>
+  <file path="src/app/team/team.service.spec.ts">
+    <testCase name="Service: TeamService should delete a team" duration="2"/>
+    <testCase name="Service: TeamService should be created" duration="1"/>
+    <testCase name="Service: TeamService should get teams by project" duration="2"/>
+    <testCase name="Service: TeamService should get a list of teams" duration="3"/>
+    <testCase name="Service: TeamService should create a team" duration="2"/>
+    <testCase name="Service: TeamService should update a team" duration="1"/>
   </file>
-  <file path="src/app/entrevistas/lista-entrevistas/lista-entrevistas.component.spec.ts">
-    <testCase name="ListaEntrevistasComponent should create" duration="22"/>
+  <file path="src/app/login/login.service.spec.ts">
+    <testCase name="Service: Login should ..." duration="2"/>
+    <testCase name="Service: Login should handle loginApplicant successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: Login should handle loginApplicant failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: Login should handle loginCompany successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: Login should handle loginCompany failed HTTP request (status code 404)" duration="2"/>
   </file>
-  <file path="src/app/signup/dialogalertopcomp/dialogalertopcomp.component.spec.ts">
-    <testCase name="DialogalertopcompComponent should create" duration="4"/>
-    <testCase name="DialogalertopcompComponent navigate to login page dialog 2 failed" duration="5"/>
-    <testCase name="DialogalertopcompComponent navigate to login page dialog 1 success" duration="6"/>
+  <file path="src/app/project/project.service.spec.ts">
+    <testCase name="Service: Project should create a project" duration="2"/>
+    <testCase name="Service: Project should be created" duration="4"/>
+    <testCase name="Service: Project should ..." duration="1"/>
+    <testCase name="Service: Project should handle HTTP errors when creating a project" duration="1"/>
+    <testCase name="Service: Project should update a project" duration="1"/>
+    <testCase name="Service: Project should get all projects" duration="1"/>
   </file>
-  <file path="src/app/banco-preguntas/modal-preguntas-save/modal-preguntas-save.component.spec.ts">
-    <testCase name="ModalPreguntasSaveComponent should call createPregunta createPregunta and return response success" duration="10"/>
-    <testCase name="ModalPreguntasSaveComponent should close the dialog when onNoClick() is called" duration="4"/>
-    <testCase name="ModalPreguntasSaveComponent should create" duration="4"/>
-    <testCase name="ModalPreguntasSaveComponent should return form Valid" duration="5"/>
-    <testCase name="ModalPreguntasSaveComponent should return form inValid" duration="4"/>
-    <testCase name="ModalPreguntasSaveComponent test call cancel button" duration="3"/>
+  <file path="src/app/principal/principal-page/principal-page.component.spec.ts">
+    <testCase name="PrincipalPageComponent should create" duration="4"/>
   </file>
-  <file path="src/app/interceptors/interceptor-errors.service.spec.ts">
-    <testCase name="InterceptorsServiceService should be created" duration="1"/>
-    <testCase name="InterceptorsServiceService should intercept and handle client-side error" duration="3"/>
-    <testCase name="InterceptorsServiceService should intercept and handle server-side error" duration="4"/>
+  <file path="src/app/login/login-page/login-page.component.spec.ts">
+    <testCase name="LoginPageComponent should call gotoApp loginApplicant and return response failed" duration="31"/>
+    <testCase name="LoginPageComponent should create" duration="10"/>
+    <testCase name="LoginPageComponent two fields empty" duration="6"/>
+    <testCase name="LoginPageComponent should call selectChangeHandler and change value of select 2" duration="12"/>
+    <testCase name="LoginPageComponent email empty" duration="7"/>
+    <testCase name="LoginPageComponent should call selectChangeHandler and change value of select 1" duration="10"/>
+    <testCase name="LoginPageComponent should call open dialog and return a result" duration="13"/>
+    <testCase name="LoginPageComponent should return form Valid" duration="8"/>
+    <testCase name="LoginPageComponent should return form inValid" duration="7"/>
+    <testCase name="LoginPageComponent go to open dialog" duration="9"/>
+    <testCase name="LoginPageComponent change spanish language" duration="5"/>
+    <testCase name="LoginPageComponent should call gotoApp loginCompany and return response success" duration="13"/>
+    <testCase name="LoginPageComponent change not language" duration="6"/>
+    <testCase name="LoginPageComponent password empty" duration="7"/>
+    <testCase name="LoginPageComponent test english button" duration="5"/>
+    <testCase name="LoginPageComponent go to app test" duration="11"/>
+    <testCase name="LoginPageComponent test spanish button" duration="13"/>
+    <testCase name="LoginPageComponent change english language" duration="10"/>
+    <testCase name="LoginPageComponent should call gotoApp loginCompany and return response failed" duration="15"/>
+    <testCase name="LoginPageComponent should call gotoApp loginApplicant and return response success" duration="11"/>
+  </file>
+  <file path="src/app/banco-preguntas/banco-preguntas-list/banco-preguntas-list.component.spec.ts">
+    <testCase name="BancoPreguntasListComponent should call getListaPreguntas getListaBancosPreguntas and return response success" duration="5"/>
+    <testCase name="BancoPreguntasListComponent should create" duration="3"/>
+    <testCase name="BancoPreguntasListComponent should call categoriaSeleccionada and fill the value nombreCategoriaSeleccionada html" duration="5"/>
+    <testCase name="BancoPreguntasListComponent should call getListaPreguntas getListaBancosPreguntas and return response success html" duration="4"/>
+    <testCase name="BancoPreguntasListComponent should call getListaPreguntas getListaBancosPreguntas with idCategoriaSeleccionada null" duration="3"/>
+    <testCase name="BancoPreguntasListComponent should call categoriaSeleccionada and fill the value nombreCategoriaSeleccionada" duration="3"/>
+  </file>
+  <file path="src/app/company/company-edit/company-edit.component.spec.ts">
+    <testCase name="CompanyEditComponent should set selectedtypeNIT on selectChangeHandler" duration="13"/>
+    <testCase name="CompanyEditComponent go to open dialog success" duration="8"/>
+    <testCase name="CompanyEditComponent go to open dialog failed" duration="5"/>
+    <testCase name="CompanyEditComponent should create" duration="4"/>
   </file>
   <file path="src/app/project/project-create/project-create.component.spec.ts">
-    <testCase name="ProjectCreateComponent should create" duration="6"/>
-    <testCase name="ProjectCreateComponent should not call createProject when form is invalid" duration="5"/>
-    <testCase name="ProjectCreateComponent should check if form is valid" duration="6"/>
-    <testCase name="ProjectCreateComponent should initialize the projectForm" duration="4"/>
-    <testCase name="ProjectCreateComponent should check if form is invalid" duration="7"/>
+    <testCase name="ProjectCreateComponent should check if form is valid" duration="9"/>
+    <testCase name="ProjectCreateComponent should check if form is invalid" duration="5"/>
+    <testCase name="ProjectCreateComponent should not call createProject when form is invalid" duration="8"/>
+    <testCase name="ProjectCreateComponent should create" duration="5"/>
+    <testCase name="ProjectCreateComponent should initialize the projectForm" duration="7"/>
   </file>
-  <file path="src/app/signup/dialogalertopappli/dialogalertopappli.component.spec.ts">
-    <testCase name="DialogalertopappliComponent navigate to login page dialog 1 success" duration="4"/>
-    <testCase name="DialogalertopappliComponent should create" duration="2"/>
-    <testCase name="DialogalertopappliComponent navigate to login page dialog 2 failed" duration="3"/>
+  <file path="src/app/applicant-search/applicant-seach.service.spec.ts">
+    <testCase name="Service: ApplicantSeach should ..." duration="2"/>
   </file>
-  <file path="src/app/banco-preguntas/categorias-list/categorias-list.component.spec.ts">
-    <testCase name="CategoriasListComponent should call getListaCategorias getCategorias and return response success" duration="5"/>
-    <testCase name="CategoriasListComponent should create" duration="3"/>
-    <testCase name="CategoriasListComponent should set idCategoriaSeleccionada and emit categoriaSeleccionada event" duration="3"/>
-    <testCase name="CategoriasListComponent should call getListaCategorias getCategorias and return response success html" duration="4"/>
-  </file>
-  <file path="src/app/interceptors/interceptor-errors.service.spec.ts">
-    <testCase name="InterceptorsServiceService should be created" duration="1"/>
-    <testCase name="InterceptorsServiceService should not add Authorization header if API_TOKEN is not present" duration="1"/>
-    <testCase name="InterceptorsServiceService should add Authorization header with token if API_TOKEN is present" duration="1"/>
-  </file>
-  <file path="src/app/profile/profile-create/profile-create.component.spec.ts">
-    <testCase name="ProfileCreateComponent should create" duration="7"/>
-  </file>
-  <file path="src/app/team/team-create/team-create.component.spec.ts">
-    <testCase name="TeamCreateComponent should create" duration="10"/>
+  <file path="src/app/agendapruebas/agenda-pruebas-list/agenda-pruebas-list.component.spec.ts">
+    <testCase name="AgendaPruebasListComponent should create" duration="5"/>
+    <testCase name="AgendaPruebasListComponent should call getListaPreguntas getListaAgendaPrueba and return response success" duration="8"/>
   </file>
   <file path="src/app/conjunto-pruebas/conjunto-pruebas.service.spec.ts">
     <testCase name="ConjuntoPruebasService should be created" duration="1"/>
   </file>
+  <file path="src/app/signup/dialogalertopappli/dialogalertopappli.component.spec.ts">
+    <testCase name="DialogalertopappliComponent navigate to login page dialog 1 success" duration="5"/>
+    <testCase name="DialogalertopappliComponent navigate to login page dialog 2 failed" duration="4"/>
+    <testCase name="DialogalertopappliComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/banco-preguntas/categorias-list/categorias-list.component.spec.ts">
+    <testCase name="CategoriasListComponent should call getListaCategorias getCategorias and return response success html" duration="4"/>
+    <testCase name="CategoriasListComponent should call getListaCategorias getCategorias and return response success" duration="3"/>
+    <testCase name="CategoriasListComponent should set idCategoriaSeleccionada and emit categoriaSeleccionada event" duration="2"/>
+    <testCase name="CategoriasListComponent should create" duration="2"/>
+  </file>
+  <file path="src/app/interceptors/interceptor-errors.service.spec.ts">
+    <testCase name="InterceptorsServiceService should intercept and handle client-side error" duration="3"/>
+    <testCase name="InterceptorsServiceService should intercept and handle server-side error" duration="3"/>
+    <testCase name="InterceptorsServiceService should be created" duration="1"/>
+  </file>
+  <file path="src/app/signup/signup.service.spec.ts">
+    <testCase name="Service: Signup should handle createApplicant failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: Signup should handle createCompany successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: Signup should handle createCompany failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: Signup should ..." duration="1"/>
+    <testCase name="Service: Signup should handle createApplicant successful HTTP request (status code 200)" duration="1"/>
+  </file>
+  <file path="src/app/interceptors/interceptor-errors.service.spec.ts">
+    <testCase name="InterceptorsServiceService should add Authorization header with token if API_TOKEN is present" duration="2"/>
+    <testCase name="InterceptorsServiceService should not add Authorization header if API_TOKEN is not present" duration="2"/>
+    <testCase name="InterceptorsServiceService should be created" duration="1"/>
+  </file>
+  <file path="src/app/agendapruebas/agenda-pruebas-create/agenda-pruebas-create.component.spec.ts">
+    <testCase name="AgendaPruebasCreateComponent should return form Valid" duration="33"/>
+    <testCase name="AgendaPruebasCreateComponent should return form inValid" duration="8"/>
+    <testCase name="AgendaPruebasCreateComponent should return form inValid min lenght value" duration="11"/>
+    <testCase name="AgendaPruebasCreateComponent should create" duration="11"/>
+    <testCase name="AgendaPruebasCreateComponent all fields empty" duration="10"/>
+    <testCase name="AgendaPruebasCreateComponent should call createAgendaPrueba saveListaAgendaPrueba and return response success" duration="12"/>
+    <testCase name="AgendaPruebasCreateComponent should call createAgendaPrueba agendaPruebaForm is null" duration="11"/>
+    <testCase name="AgendaPruebasCreateComponent should call getListaPruebas getListaPruebas and return response success" duration="11"/>
+    <testCase name="AgendaPruebasCreateComponent should call getListaCandidatos getListaCandidatos and return response success" duration="9"/>
+  </file>
+  <file path="src/app/login/logout-page/logout-page.component.spec.ts">
+    <testCase name="LogoutPageComponent should create" duration="7"/>
+  </file>
+  <file path="src/app/agendapruebas/agenda-prueba.service.spec.ts">
+    <testCase name="Service: AgendaPrueba should handle getListaCandidatos failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: AgendaPrueba should handle getListaCandidatos successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: AgendaPrueba should handle getListaAgendaPrueba failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: AgendaPrueba should handle getListaAgendaPrueba successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: AgendaPrueba should handle saveListaAgendaPrueba failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: AgendaPrueba should handle getAgendaPrueba successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: AgendaPrueba should ..." duration="1"/>
+    <testCase name="Service: AgendaPrueba should handle saveListaAgendaPrueba successful HTTP request (status code 200)" duration="2"/>
+    <testCase name="Service: AgendaPrueba should handle getAgendaPrueba failed HTTP request (status code 404)" duration="3"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent navigate to principal page" duration="18"/>
+    <testCase name="AppComponent should create the app" duration="3"/>
+    <testCase name="AppComponent navigate to signup company page" duration="9"/>
+    <testCase name="AppComponent should have as title 'frontabc-front'" duration="3"/>
+    <testCase name="AppComponent should contain router-outlet" duration="4"/>
+    <testCase name="AppComponent navigate to signup applicant page" duration="8"/>
+    <testCase name="AppComponent test spanish button" duration="28"/>
+    <testCase name="AppComponent navigate to root" duration="3"/>
+    <testCase name="AppComponent navigate to login page" duration="7"/>
+    <testCase name="AppComponent test english button" duration="16"/>
+    <testCase name="AppComponent change not language" duration="3"/>
+    <testCase name="AppComponent change spanish language" duration="2"/>
+    <testCase name="AppComponent change english language" duration="4"/>
+  </file>
+  <file path="src/app/company/company.service.spec.ts">
+    <testCase name="CompanyService should be created" duration="1"/>
+    <testCase name="CompanyService should send a POST request to edit the company" duration="1"/>
+  </file>
+  <file path="src/app/project/project-list/project-list.component.spec.ts">
+    <testCase name="ProjectListComponent should create" duration="4"/>
+  </file>
   <file path="src/app/banco-preguntas/banco-preguntas.service.spec.ts">
-    <testCase name="Service: BancoPreguntas should handle createRespuesta failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle createRespuesta successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle createPregunta successful HTTP request (status code 200)" duration="5"/>
     <testCase name="Service: BancoPreguntas should handle getBancoPreguntas failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle createBancoPreguntas successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should ..." duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getListaPreguntasBanco successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getListaBancosPreguntas successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getCategorias failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getListaPruebas successful HTTP request (status code 200)" duration="1"/>
     <testCase name="Service: BancoPreguntas should handle getListaBancosPreguntas failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getListaPreguntasBanco failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should have bancoPreguntasCreated status true" duration="1"/>
     <testCase name="Service: BancoPreguntas should handle getBancoPreguntas successful HTTP request (status code 200)" duration="1"/>
     <testCase name="Service: BancoPreguntas should handle createBancoPreguntas failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getListaPreguntasBanco successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getCategorias successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should ..." duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle createPregunta successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getListaBancosPreguntas successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getListaPruebas failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getListaPruebas successful HTTP request (status code 200)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should handle getCategorias failed HTTP request (status code 404)" duration="1"/>
-    <testCase name="Service: BancoPreguntas should have bancoPreguntasCreated status true" duration="1"/>
     <testCase name="Service: BancoPreguntas should handle createPregunta failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getCategorias successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getListaPreguntasBanco failed HTTP request (status code 404)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle createRespuesta failed HTTP request (status code 404)" duration="2"/>
+    <testCase name="Service: BancoPreguntas should handle createRespuesta successful HTTP request (status code 200)" duration="2"/>
+    <testCase name="Service: BancoPreguntas should handle createBancoPreguntas successful HTTP request (status code 200)" duration="1"/>
+    <testCase name="Service: BancoPreguntas should handle getListaPruebas failed HTTP request (status code 404)" duration="1"/>
+  </file>
+  <file path="src/app/signup/dialogalertopcomp/dialogalertopcomp.component.spec.ts">
+    <testCase name="DialogalertopcompComponent should create" duration="4"/>
+    <testCase name="DialogalertopcompComponent navigate to login page dialog 1 success" duration="4"/>
+    <testCase name="DialogalertopcompComponent navigate to login page dialog 2 failed" duration="7"/>
+  </file>
+  <file path="src/app/signup/signup-applicant/signup-applicant.component.spec.ts">
+    <testCase name="SignupApplicantComponent should return form inValid" duration="19"/>
+    <testCase name="SignupApplicantComponent should call selectChangeHandler and change value of select C.E." duration="28"/>
+    <testCase name="SignupApplicantComponent all fields empty" duration="13"/>
+    <testCase name="SignupApplicantComponent email empty" duration="10"/>
+    <testCase name="SignupApplicantComponent password empty" duration="13"/>
+    <testCase name="SignupApplicantComponent should call registerApplicant createApplicant and return response success" duration="22"/>
+    <testCase name="SignupApplicantComponent should call registerApplicant createApplicant and return response failed" duration="16"/>
+    <testCase name="SignupApplicantComponent go to open dialog failed" duration="10"/>
+    <testCase name="SignupApplicantComponent registerApplicant test" duration="12"/>
+    <testCase name="SignupApplicantComponent should call selectChangeHandler and change value of select C.C." duration="16"/>
+    <testCase name="SignupApplicantComponent should create" duration="14"/>
+    <testCase name="SignupApplicantComponent should return form Valid" duration="12"/>
+    <testCase name="SignupApplicantComponent should open dialog success and return response" duration="11"/>
+    <testCase name="SignupApplicantComponent should open dialog failed and return response" duration="8"/>
+    <testCase name="SignupApplicantComponent go to open dialog success" duration="10"/>
+  </file>
+  <file path="src/app/entrevistas/lista-entrevistas/lista-entrevistas.component.spec.ts">
+    <testCase name="ListaEntrevistasComponent should create" duration="19"/>
+  </file>
+  <file path="src/app/signup/signup-company/signup-company.component.spec.ts">
+    <testCase name="SignupCompanyComponent should call selectChangeHandler and change value of select NIT" duration="19"/>
+    <testCase name="SignupCompanyComponent go to open dialog failed" duration="10"/>
+    <testCase name="SignupCompanyComponent go to open dialog success" duration="12"/>
+    <testCase name="SignupCompanyComponent should open dialog failed and return response" duration="12"/>
+    <testCase name="SignupCompanyComponent should open dialog success and return response" duration="10"/>
+    <testCase name="SignupCompanyComponent should return form inValid" duration="12"/>
+    <testCase name="SignupCompanyComponent email empty" duration="9"/>
+    <testCase name="SignupCompanyComponent should create" duration="11"/>
+    <testCase name="SignupCompanyComponent all fields empty" duration="12"/>
+    <testCase name="SignupCompanyComponent should return form Valid" duration="10"/>
+    <testCase name="SignupCompanyComponent should call registerCompany createCompany and return response success" duration="18"/>
+    <testCase name="SignupCompanyComponent registerCompany test" duration="11"/>
+    <testCase name="SignupCompanyComponent should call registerCompany createCompany and return response failed" duration="15"/>
+    <testCase name="SignupCompanyComponent password empty" duration="12"/>
+  </file>
+  <file path="src/app/team/team-list/team-list.component.spec.ts">
+    <testCase name="TeamListComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/banco-preguntas/modal-preguntas-save/modal-preguntas-save.component.spec.ts">
+    <testCase name="ModalPreguntasSaveComponent should close the dialog when onNoClick() is called" duration="6"/>
+    <testCase name="ModalPreguntasSaveComponent should call createPregunta createPregunta and return response success" duration="5"/>
+    <testCase name="ModalPreguntasSaveComponent should return form Valid" duration="4"/>
+    <testCase name="ModalPreguntasSaveComponent should create" duration="4"/>
+    <testCase name="ModalPreguntasSaveComponent test call cancel button" duration="5"/>
+    <testCase name="ModalPreguntasSaveComponent should return form inValid" duration="3"/>
+  </file>
+  <file path="src/app/team/team-create/team-create.component.spec.ts">
+    <testCase name="TeamCreateComponent should create" duration="12"/>
+  </file>
+  <file path="src/app/banco-preguntas/modal-respuestas-save/modal-respuestas-save.component.spec.ts">
+    <testCase name="ModalRespuestasSaveComponent should call retornarRespuesta respuesta not undefined" duration="8"/>
+    <testCase name="ModalRespuestasSaveComponent should return form inValid null values" duration="9"/>
+    <testCase name="ModalRespuestasSaveComponent should call retornarRespuesta respuesta undefined" duration="5"/>
+    <testCase name="ModalRespuestasSaveComponent should close the dialog when onNoClick() is called" duration="7"/>
+    <testCase name="ModalRespuestasSaveComponent should return form Valid" duration="5"/>
+    <testCase name="ModalRespuestasSaveComponent should create" duration="5"/>
+    <testCase name="ModalRespuestasSaveComponent all fields empty" duration="9"/>
+    <testCase name="ModalRespuestasSaveComponent should return form inValid" duration="5"/>
   </file>
 </testExecutions>
