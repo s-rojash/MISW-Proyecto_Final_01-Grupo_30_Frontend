@@ -13,6 +13,7 @@ const baseUrlProyectos = 'http://localhost:3002';
 const baseUrlBancoPreguntas = 'http://localhost:3004';
 const baseUrlEntrevistas = 'http://localhost:3003';
 
+
 export const environment = {
   production: false,
   baseUrl,

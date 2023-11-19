@@ -14,9 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EvaluacionDesempenoListComponent } from './evaluacion-desempeno-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CategoriasListComponent } from '../../banco-preguntas/categorias-list/categorias-list.component';
-import { AgendaPruebaService } from '../evaluacion-desempeno.service';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { of } from 'rxjs';
-import { AgendaPrueba } from '../resultado-evaluacion-desempeno';
+import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);

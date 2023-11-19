@@ -16,17 +16,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResultadosPruebasCreateComponent } from './resultados-pruebas-create.component';
-import { AgendaPruebasListComponent } from '../agenda-pruebas-list/agenda-pruebas-list.component';
-import { AgendaPruebaRoutingModule } from '../evaluacion-desempeno.module';
+import { AgendaPruebasListComponent } from 'src/app/agendapruebas/agenda-pruebas-list/agenda-pruebas-list.component';
+import { AgendaPruebaRoutingModule } from 'src/app/agendapruebas/agenda-prueba-routing.module';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { RouterTestingModule } from "@angular/router/testing";
-import { AgendaPruebaService } from '../evaluacion-desempeno.service';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { of } from 'rxjs';
 import { Candidato } from '../candidato';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
-import { AgendaPrueba } from '../resultado-evaluacion-desempeno';
-import { ResultadoPrueba } from '../resultado-prueba';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);

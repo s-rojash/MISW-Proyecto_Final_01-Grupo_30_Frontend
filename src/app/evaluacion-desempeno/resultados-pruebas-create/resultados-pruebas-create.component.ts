@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AgendaPrueba } from '../resultado-evaluacion-desempeno';
-import { AgendaPruebaService } from '../evaluacion-desempeno.service';
+import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Candidato } from '../candidato';
 import { Subscription } from 'rxjs';
-import { BancoPreguntas } from 'src/app/banco-preguntas/banco-preguntas';
 import { Pregunta } from 'src/app/banco-preguntas/pregunta';
-import { ResultadoPrueba } from '../resultado-prueba';
+import { ResultadoPrueba } from 'src/app/agendapruebas/resultado-prueba';
 
 @Component({
   selector: 'app-resultados-pruebas-create',
@@ -55,14 +54,14 @@ export class ResultadosPruebasCreateComponent implements OnInit {
       }
     }
     getCandidato(idCandidato: number): void {
-      this.agendaPruebaService.getCandidato(idCandidato).subscribe((candidato) => {
+      this.agendaPruebaService.getCandidato(idCandidato).subscribe((candidato: Candidato) => {
         this.candidato = candidato;
       });
     }
 
     saveResultados(): void{
       let resultadoPrueba = new ResultadoPrueba(0, this.agendaPruebasId ?? 0, this.respuestasSeleccionadas);
-      this.agendaPruebaService.saveResultadoPrueba(resultadoPrueba).subscribe(response=>{
+      this.agendaPruebaService.saveResultadoPrueba(resultadoPrueba).subscribe(()=>{
         this.toastr.success("Confirmation", "Results saved");
       });
 
@@ -71,7 +70,7 @@ export class ResultadosPruebasCreateComponent implements OnInit {
       this.routeSub = this.route.params.subscribe(params => {
         this.agendaPruebasId = Number(params['id?']);
         if (this.agendaPruebasId !== null && !isNaN(this.agendaPruebasId)){
-          this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas) =>{
+          this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas: AgendaPrueba) =>{
             this.agendaPruebas = agendaPruebas;
             if (agendaPruebas) {
               this.getPrueba(agendaPruebas.idPrueba);

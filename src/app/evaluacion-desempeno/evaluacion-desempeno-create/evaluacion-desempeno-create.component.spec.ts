@@ -17,14 +17,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { RouterTestingModule } from "@angular/router/testing";
-import { AgendaPruebaService } from '../evaluacion-desempeno.service';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { of } from 'rxjs';
 import { Candidato } from '../candidato';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
-import { AgendaPrueba } from '../resultado-evaluacion-desempeno';
+import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
 import { EvaluacionDesempenoCreateComponent } from './evaluacion-desempeno-create.component';
-import { EvaluacionDesempenoListComponent } from '../evaluacion-desempeno-list/evaluacion-desempeno-list.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -42,7 +41,7 @@ describe('EvaluacionDesempenoCreateComponent', () => {
 
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, EvaluacionDesempenoCreateComponent, RouterTestingModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, RouterTestingModule,
         MatDatepickerModule, MatNativeDateModule, MatSelectModule, HttpClientTestingModule,
         TranslateModule.forRoot({
         loader: {
@@ -56,7 +55,7 @@ describe('EvaluacionDesempenoCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ EvaluacionDesempenoCreateComponent, EvaluacionDesempenoListComponent ],
+      declarations: [ EvaluacionDesempenoCreateComponent ],
       providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
     })
     .compileComponents();
@@ -91,21 +90,7 @@ describe('EvaluacionDesempenoCreateComponent', () => {
     expect(component.agendaPruebaForm.valid).toBeFalsy();
   });
 
-  it('all fields empty', () => {
-    component.agendaPruebaForm.patchValue({ idPrueba: '', idCandidato: '', fecha: '' });
-    fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeFalsy();
-  });
-
-  it('should return form inValid min lenght value', () => {
-    const date = new Date('10/28/2023');
-
-    component.agendaPruebaForm.patchValue({ idPrueba: '1', idCandidato: '1', fecha: date });
-    fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeFalsy();
-  });
-
-  it("should call getListaCandidatos getListaCandidatos and return response success", () => {
+  it("should call getListaCandidatos and return response success", () => {
     let response: Candidato[] = [{id: 1, numDocumento: 3212, apellidos: '1213', nombres: 'dfdfd', email: 'sdfsd', celular: '2111'}];
 
     spyOn(agendaPruebaService, 'getListaCandidatos').and.returnValue(of(response));

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { AgendaPrueba } from '../resultado-evaluacion-desempeno';
-import { AgendaPruebaService } from '../evaluacion-desempeno.service';
+import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 
 @Component({
   selector: 'app-evaluacion-desempeno-list',

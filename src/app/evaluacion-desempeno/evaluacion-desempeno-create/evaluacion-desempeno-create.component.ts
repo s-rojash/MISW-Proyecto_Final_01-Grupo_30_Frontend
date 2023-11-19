@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AgendaPrueba } from '../resultado-evaluacion-desempeno';
-import { AgendaPruebaService } from '../evaluacion-desempeno.service';
+import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Candidato } from '../candidato';
@@ -49,7 +49,7 @@ export class EvaluacionDesempenoCreateComponent implements OnInit {
     }
 
     getListaCandidatos(): void {
-      this.agendaPruebaService.getListaCandidatos().subscribe((listaCandidatos) => {
+      this.agendaPruebaService.getListaCandidatos().subscribe((listaCandidatos: Candidato[]) => {
         this.listaCandidatos = listaCandidatos;
       });
     }
@@ -58,7 +58,7 @@ export class EvaluacionDesempenoCreateComponent implements OnInit {
       this.routeSub = this.route.params.subscribe(params => {
         this.agendaPruebasId = Number(params['id?']);
         if (this.agendaPruebasId !== null && !isNaN(this.agendaPruebasId)){
-          this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas) =>{
+          this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas: AgendaPrueba) =>{
             this.agendaPruebas = agendaPruebas;
             this.agendaPruebaForm = this.formBuilder.group({
               idPrueba: [agendaPruebas.idPrueba, [Validators.required, Validators.minLength(2)]],
