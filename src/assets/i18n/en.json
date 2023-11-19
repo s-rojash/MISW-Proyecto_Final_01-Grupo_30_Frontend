@@ -61,7 +61,9 @@
     "CC":"CITIZENSHIP CARD",
     "CE":"FOREIGNER ID",
     "BUSINESSNAME":"Business name",
-    "BUSINESSNAMEREQUIRED":"Business name required"
+    "BUSINESSNAMEREQUIRED":"Business name required",
+    "DIALOGMSJSUCCESSEDITCOMPANY":"Company modified successfully",
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Company could not be modified"
   },
   "PROJECT":{
     "COMPANYS":"Company",

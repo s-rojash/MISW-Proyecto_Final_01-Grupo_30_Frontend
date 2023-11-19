@@ -1,4 +1,5 @@
 export class Signupcompany {
+  id: number | undefined ;
   razonSocial: string;
   tipoDocumento: string;
   numDocumento: number;
@@ -11,7 +12,9 @@ export class Signupcompany {
     numDocumento: number,
     digitoVerificacion: number,
     email: string,
+    id:number,
     password: string){
+      this.id = id; 
       this.razonSocial = razonSocial;
       this.tipoDocumento = tipoDocumento;
       this.numDocumento = numDocumento;

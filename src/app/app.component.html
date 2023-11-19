@@ -65,15 +65,15 @@
       </ul>
 
 
-
-
       <button *ngIf="showOptions" mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
         [style.backgroundImage]="'url(' + '../assets/Images/fabcirclebuttonimg.jpg' + ')'">
       </button>
 
       <mat-menu #menu="matMenu" class="mat-menu-panel">
         <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
-          <span style="padding-left: 30px;">{{ 'HEADER.MYPROFILEMENU' | translate }}</span>
+          <span style="padding-left: 30px;">
+            <a routerLink="/company/edit">{{ 'HEADER.MYPROFILEMENU' | translate }}</a>
+          </span>
         </button>
 
         <button mat-button class="bgiconlanguages" (click)="changeLang('es')" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
