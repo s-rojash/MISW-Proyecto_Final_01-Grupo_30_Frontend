@@ -44,6 +44,7 @@ export class BancoPreguntasCreateComponent implements OnInit {
     getListaCategorias(): void {
       this.bancoPreguntasService.getCategorias().subscribe((listaCategorias) => {
         this.listaCategorias = listaCategorias;
+        console.table(this.listaCategorias);
       });
     }
 
@@ -56,7 +57,7 @@ export class BancoPreguntasCreateComponent implements OnInit {
             this.listaPreguntasVisible = true;
             this.bancoPreguntasForm = this.formBuilder.group({
               tipoBanco: [this.bancoPreguntas?.tipoBanco ?? "", [Validators.required, Validators.minLength(2)]],
-              categoria: ["", [Validators.required]],
+              categoria: [this.bancoPreguntas?.categoria ?? "", [Validators.required]],
             });
           })
         } else {

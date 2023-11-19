@@ -6,7 +6,25 @@
     <form [formGroup]="bancoPreguntasForm" (ngSubmit)="!bancoPreguntasForm.invalid && createBancoPreguntas(bancoPreguntasForm.value)">
       <div>
         <div>
-          <!-- nombre -->
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="categoria" class="labeloverinput">{{ 'QUESTIONS_BANK.CATEGORIA' | translate }}</label>
+            <select
+              required
+              id="categoria"
+              class="form-control"
+              formControlName="categoria"
+            >
+            <option *ngFor="let categoria of listaCategorias" [ngValue]="categoria">
+              {{categoria?.nombre}}
+            </option>
+            </select>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="bancoPreguntasForm.get('categoria')!.hasError('required') && bancoPreguntasForm.get('categoria')!.touched"
+            >
+              {{ 'QUESTIONS_BANK.CATEGORIA_REQUIRED' | translate }}
+            </div>
+          </div>
           <div class="form-group mx-sm-3 mb-2" >
             <label for="tipoBanco" class="labeloverinput">{{ 'QUESTIONS_BANK.TIPO_BANCO' | translate }}</label>
             <input
@@ -22,25 +40,6 @@
               *ngIf="bancoPreguntasForm.get('tipoBanco')!.hasError('required') && bancoPreguntasForm.get('tipoBanco')!.touched"
             >
               {{ 'QUESTIONS_BANK.TIPO_BANCO_REQUIRED' | translate }}
-            </div>
-          </div>
-          <div class="form-group mx-sm-3 mb-2" >
-            <label for="categoria" class="labeloverinput">{{ 'QUESTIONS_BANK.CATEGORIA' | translate }}</label>
-            <mat-select
-              required
-              id="categoria"
-              class="form-control"
-              formControlName="categoria"
-            >
-            <mat-option *ngFor="let categoria of listaCategorias" [value]="categoria">
-              {{categoria?.nombre}}
-            </mat-option>
-            </mat-select>
-            <div
-              class="alert alert-danger alert-dismissible fade show"
-              *ngIf="bancoPreguntasForm.get('categoria')!.hasError('required') && bancoPreguntasForm.get('categoria')!.touched"
-            >
-              {{ 'QUESTIONS_BANK.CATEGORIA_REQUIRED' | translate }}
             </div>
           </div>
         </div>

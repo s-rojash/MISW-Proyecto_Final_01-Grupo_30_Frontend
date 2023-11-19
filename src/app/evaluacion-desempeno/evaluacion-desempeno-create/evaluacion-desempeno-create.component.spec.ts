@@ -15,25 +15,23 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AgendaPruebasCreateComponent } from './agenda-pruebas-create.component';
-import { AgendaPruebasListComponent } from '../agenda-pruebas-list/agenda-pruebas-list.component';
-import { AgendaPruebaRoutingModule } from '../agenda-prueba-routing.module';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { RouterTestingModule } from "@angular/router/testing";
-import { AgendaPruebaService } from '../agenda-prueba.service';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { of } from 'rxjs';
 import { Candidato } from '../candidato';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
-import { AgendaPrueba } from '../agenda-prueba';
+import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
+import { EvaluacionDesempenoCreateComponent } from './evaluacion-desempeno-create.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('AgendaPruebasCreateComponent', () => {
-  let component: AgendaPruebasCreateComponent;
-  let fixture: ComponentFixture<AgendaPruebasCreateComponent>;
+describe('EvaluacionDesempenoCreateComponent', () => {
+  let component: EvaluacionDesempenoCreateComponent;
+  let fixture: ComponentFixture<EvaluacionDesempenoCreateComponent>;
   let agendaPruebaService: AgendaPruebaService;
   let bancoPreguntasService: BancoPreguntasService;
   let toastrSpy: jasmine.SpyObj<ToastrService>;
@@ -43,7 +41,7 @@ describe('AgendaPruebasCreateComponent', () => {
 
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
-        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, AgendaPruebaRoutingModule, RouterTestingModule,
+        MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, RouterTestingModule,
         MatDatepickerModule, MatNativeDateModule, MatSelectModule, HttpClientTestingModule,
         TranslateModule.forRoot({
         loader: {
@@ -57,14 +55,14 @@ describe('AgendaPruebasCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ AgendaPruebasCreateComponent, AgendaPruebasListComponent ],
+      declarations: [ EvaluacionDesempenoCreateComponent ],
       providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgendaPruebasCreateComponent);
+    fixture = TestBed.createComponent(EvaluacionDesempenoCreateComponent);
     component = fixture.componentInstance;
     agendaPruebaService = TestBed.inject(AgendaPruebaService);
     bancoPreguntasService = TestBed.inject(BancoPreguntasService);
@@ -92,14 +90,7 @@ describe('AgendaPruebasCreateComponent', () => {
     expect(component.agendaPruebaForm.valid).toBeFalsy();
   });
 
-  it('all fields empty', () => {
-    component.agendaPruebaForm.patchValue({ idPrueba: '', idCandidato: '', fecha: '' });
-    fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeFalsy();
-  });
-
-
-  it("should call getListaCandidatos getListaCandidatos and return response success", () => {
+  it("should call getListaCandidatos and return response success", () => {
     let response: Candidato[] = [{id: 1, numDocumento: 3212, apellidos: '1213', nombres: 'dfdfd', email: 'sdfsd', celular: '2111'}];
 
     spyOn(agendaPruebaService, 'getListaCandidatos').and.returnValue(of(response));

@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AgendaPruebasListComponent } from './agenda-pruebas-list/agenda-pruebas-list.component';
-import { AgendaPruebasCreateComponent } from './agenda-pruebas-create/agenda-pruebas-create.component';
 import { ResultadosPruebasCreateComponent } from './resultados-pruebas-create/resultados-pruebas-create.component';
+import { EvaluacionDesempenoListComponent } from './evaluacion-desempeno-list/evaluacion-desempeno-list.component';
+import { EvaluacionDesempenoCreateComponent } from './evaluacion-desempeno-create/evaluacion-desempeno-create.component';
 
 const routes: Routes = [{
- path: 'agenda-pruebas',
+ path: 'evaluacion-desempeno',
  children: [
   {
     path: 'get',
-    component: AgendaPruebasListComponent
+    component: EvaluacionDesempenoListComponent
   },
   {
     path: 'save',
-    component: AgendaPruebasCreateComponent
+    component: EvaluacionDesempenoCreateComponent
   },
   {
     path: 'save/:id?',
-    component: AgendaPruebasCreateComponent
+    component: EvaluacionDesempenoCreateComponent
   },
   {
     path: 'resultados-create/:id?',
@@ -31,4 +31,4 @@ const routes: Routes = [{
  imports: [RouterModule.forChild(routes)],
  exports: [RouterModule]
 })
-export class AgendaPruebaRoutingModule { }
+export class EvaluacionDesempenoRoutingModule { }
