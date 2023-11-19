@@ -106,8 +106,8 @@ describe('BancoPreguntasCreateComponent', () => {
 
   it("should call createBancoPreguntas createBancoPreguntas and return response success", () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
-    let response: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
+    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected:false};
+    let response: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false };
 
     spyOn(bancoPreguntasService, 'createBancoPreguntas').and.returnValue(of(response));
 

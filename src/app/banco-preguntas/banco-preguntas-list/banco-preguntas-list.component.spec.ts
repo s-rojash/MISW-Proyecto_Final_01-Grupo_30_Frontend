@@ -64,7 +64,7 @@ describe('BancoPreguntasListComponent', () => {
 
   it("should call getListaPreguntas getListaBancosPreguntas and return response success", () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    let response: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria }];
+    let response: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false }];
 
     spyOn(bancoPreguntasService, 'getListaBancosPreguntas').and.returnValue(of(response));
     component.idCategoriaSeleccionada = 1;
@@ -76,7 +76,7 @@ describe('BancoPreguntasListComponent', () => {
 
   it("should call getListaPreguntas getListaBancosPreguntas with idCategoriaSeleccionada null", () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    let response: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria }];
+    let response: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false }];
 
     spyOn(bancoPreguntasService, 'getListaBancosPreguntas').and.returnValue(of(response));
 
@@ -108,7 +108,7 @@ describe('BancoPreguntasListComponent', () => {
   it("should call getListaPreguntas getListaBancosPreguntas and return response success html", () => {
     const categoria = { id: 1, nombre: 'java' };
     const categoria2 = { id: 2, nombre: 'c' };
-    let response: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria:categoria }, { id: 2, idEmpresa: 2, tipoBanco: '', categoria:categoria2 }];
+    let response: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria:categoria, selected: false }, { id: 2, idEmpresa: 2, tipoBanco: '', categoria:categoria2, selected: false }];
 
     const datoscategoria = { idCategoriaSeleccionada: 2, nombreCategoriaSeleccionada: 'c' };
     component.categoriaSeleccionada(datoscategoria);

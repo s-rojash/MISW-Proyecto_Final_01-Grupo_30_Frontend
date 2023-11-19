@@ -167,7 +167,14 @@
     "SEARCH_APPLICANT":"Buscar",
     "INFO": "Información del candidato"
   },
-  "INTERVIEWS2":{
+  "TEST_GROUP":{
+    "NAME": "Nombre del conjunto de pruebas",
+    "NAME_REQUIRED" :"El nombre del conjunto de pruebas es requerido",
+    "DESCRIPTION":" descripción del conjunto de pruebas",
+    "DESCRIPTION_REQUIRED" : "El conjunto de pruebas es requerido",
+    "ADD":"Adicionar"
+  },
+   "INTERVIEWS2":{
     "INPUTSEARCH":"Buscar",
     "LISTHCATEGORY":"Categoria",
     "LISTHINTERVIEW":"Entrevista con",
