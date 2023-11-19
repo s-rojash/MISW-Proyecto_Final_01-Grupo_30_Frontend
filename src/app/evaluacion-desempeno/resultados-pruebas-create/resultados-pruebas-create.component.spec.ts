@@ -15,25 +15,24 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AgendaPruebasCreateComponent } from './agenda-pruebas-create.component';
-import { AgendaPruebasListComponent } from '../agenda-pruebas-list/agenda-pruebas-list.component';
-import { AgendaPruebaRoutingModule } from '../agenda-prueba-routing.module';
+import { ResultadosPruebasCreateComponent } from './resultados-pruebas-create.component';
+import { AgendaPruebasListComponent } from 'src/app/agendapruebas/agenda-pruebas-list/agenda-pruebas-list.component';
+import { AgendaPruebaRoutingModule } from 'src/app/agendapruebas/agenda-prueba-routing.module';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { RouterTestingModule } from "@angular/router/testing";
-import { AgendaPruebaService } from '../agenda-prueba.service';
+import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { of } from 'rxjs';
 import { Candidato } from '../candidato';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
-import { AgendaPrueba } from '../agenda-prueba';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
-describe('AgendaPruebasCreateComponent', () => {
-  let component: AgendaPruebasCreateComponent;
-  let fixture: ComponentFixture<AgendaPruebasCreateComponent>;
+describe('ResultadosPruebasCreateComponent', () => {
+  let component: ResultadosPruebasCreateComponent;
+  let fixture: ComponentFixture<ResultadosPruebasCreateComponent>;
   let agendaPruebaService: AgendaPruebaService;
   let bancoPreguntasService: BancoPreguntasService;
   let toastrSpy: jasmine.SpyObj<ToastrService>;
@@ -57,14 +56,14 @@ describe('AgendaPruebasCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ AgendaPruebasCreateComponent, AgendaPruebasListComponent ],
+      declarations: [ ResultadosPruebasCreateComponent, AgendaPruebasListComponent ],
       providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgendaPruebasCreateComponent);
+    fixture = TestBed.createComponent(ResultadosPruebasCreateComponent);
     component = fixture.componentInstance;
     agendaPruebaService = TestBed.inject(AgendaPruebaService);
     bancoPreguntasService = TestBed.inject(BancoPreguntasService);
@@ -76,66 +75,46 @@ describe('AgendaPruebasCreateComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return form Valid', () => {
-    const date = new Date('10/28/2023');
+  it("should call getPrueba and return response success", () => {
+    let response: Prueba = {
+      id: 1, nombre: "Test",
+      descripcion: "Prueba",
+      bancosPreguntas: []
+    };
 
-    component.agendaPruebaForm.patchValue({ idPrueba: '11', idCandidato: '11', fecha: date });
+    spyOn(bancoPreguntasService, 'getPrueba').and.returnValue(of(response));
+
+    component.getPrueba(1);
     fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeTruthy();
+    expect(component.prueba).toEqual(response);
   });
 
-  it('should return form inValid', () => {
-    const date = new Date('10/28/2023');
-
-    component.agendaPruebaForm.patchValue({ idPrueba: '', idCandidato: '', fecha: date });
+  it("should call getCandidato and return response success", () => {
+    let response: Candidato = {
+      id: 1,
+      nombres: "Test",
+      apellidos: "Prueba",
+      email: "test@test.com",
+      numDocumento : 123456,
+      celular: "3000000000"
+    };
+    spyOn(agendaPruebaService, 'getCandidato').and.returnValue(of(response));
+    component.getCandidato(1);
     fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeFalsy();
+    expect(component.candidato).toEqual(response);
   });
 
-  it('all fields empty', () => {
-    component.agendaPruebaForm.patchValue({ idPrueba: '', idCandidato: '', fecha: '' });
-    fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeFalsy();
+  it("should call setRespuesta and return response success", () => {
+    let response: any = {idPregunta: 1, idRespuesta: 2};
+
+    component.setRespuesta(2,3);
+    expect(component.respuestasSeleccionadas[2]).toEqual(3);
   });
 
+  it("should call saveResultados and return response success", () => {
 
-  it("should call getListaCandidatos getListaCandidatos and return response success", () => {
-    let response: Candidato[] = [{id: 1, numDocumento: 3212, apellidos: '1213', nombres: 'dfdfd', email: 'sdfsd', celular: '2111'}];
-
-    spyOn(agendaPruebaService, 'getListaCandidatos').and.returnValue(of(response));
-
-    component.getListaCandidatos();
+    component.saveResultados();
     fixture.detectChanges();
-    expect(component.listaCandidatos).toEqual(response);
   });
 
-  it("should call getListaPruebas getListaPruebas and return response success", () => {
-    let response: Prueba[] = [{id: 1, nombre: 'Prueba1', descripcion: 'Prueba1', bancosPreguntas: []}];
-
-    spyOn(bancoPreguntasService, 'getListaPruebas').and.returnValue(of(response));
-
-    component.getListaPruebas();
-    fixture.detectChanges();
-    expect(component.listaPruebas).toEqual(response);
-  });
-
-  it("should call createAgendaPrueba agendaPruebaForm is null", () => {
-    const date = new Date('10/28/2023');
-    let agenda: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
-
-    component.createAgendaPrueba(agenda);
-    fixture.detectChanges();
-    expect(agenda.id).toBeNaN();
-  });
-
-  it("should call createAgendaPrueba saveListaAgendaPrueba and return response success", () => {
-    const date = new Date('10/28/2023');
-    let response: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
-
-    spyOn(agendaPruebaService, 'saveListaAgendaPrueba').and.returnValue(of(response));
-
-    component.createAgendaPrueba(response);
-    fixture.detectChanges();
-    expect(toastrSpy.success).toHaveBeenCalled();
-  });
 });
