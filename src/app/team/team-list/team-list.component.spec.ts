@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -21,7 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 TestBed.configureTestingModule({
   imports: [
-    MatSelectModule, 
+    MatSelectModule,
   ],
   declarations: [TeamListComponent],
 }).compileComponents();
@@ -35,7 +33,7 @@ describe('TeamListComponent', () => {
   let component: TeamListComponent;
   let fixture: ComponentFixture<TeamListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
         MatInputModule, ReactiveFormsModule, BrowserAnimationsModule,MatSelectModule,
