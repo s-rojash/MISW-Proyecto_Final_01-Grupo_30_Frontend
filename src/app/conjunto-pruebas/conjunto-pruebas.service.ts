@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import {  Observable, catchError, map, tap } from 'rxjs';
+import {  Observable, catchError, tap } from 'rxjs';
 import { Conjuntoprueba } from './conjuntoprueba';
 import { BancoPreguntas } from '../banco-preguntas/banco-preguntas';
 
@@ -17,7 +17,7 @@ export class ConjuntoPruebasService {
 constructor(private http: HttpClient) { }
 
 private getHttpOptions() {
-  const token = localStorage.getItem('API_TOKEN'); 
+  const token = localStorage.getItem('API_TOKEN');
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`
   });
@@ -28,12 +28,12 @@ private getHttpOptions() {
 createConjuntoPruebas(conjuntoprueba: Conjuntoprueba): Observable<Conjuntoprueba> {
   const httpOptions = this.getHttpOptions();
   console.log('Objeto enviado:', conjuntoprueba);
-  
+
   return this.http.post<Conjuntoprueba>(this.apiUrl + `/pruebas/`, conjuntoprueba, httpOptions)
   .pipe(
     tap(response => {
       console.log('Respuesta recibida:' , response);
-  
+
     }),
     catchError(error => {
 
