@@ -98,13 +98,6 @@ describe('AgendaPruebasCreateComponent', () => {
     expect(component.agendaPruebaForm.valid).toBeFalsy();
   });
 
-  it('should return form inValid min lenght value', () => {
-    const date = new Date('10/28/2023');
-
-    component.agendaPruebaForm.patchValue({ idPrueba: '1', idCandidato: '1', fecha: date });
-    fixture.detectChanges();
-    expect(component.agendaPruebaForm.valid).toBeFalsy();
-  });
 
   it("should call getListaCandidatos getListaCandidatos and return response success", () => {
     let response: Candidato[] = [{id: 1, numDocumento: 3212, apellidos: '1213', nombres: 'dfdfd', email: 'sdfsd', celular: '2111'}];
@@ -117,7 +110,7 @@ describe('AgendaPruebasCreateComponent', () => {
   });
 
   it("should call getListaPruebas getListaPruebas and return response success", () => {
-    let response: Prueba[] = [{id: 1, nombre: 'Prueba1', descripcion: 'Prueba1'}];
+    let response: Prueba[] = [{id: 1, nombre: 'Prueba1', descripcion: 'Prueba1', bancosPreguntas: []}];
 
     spyOn(bancoPreguntasService, 'getListaPruebas').and.returnValue(of(response));
 

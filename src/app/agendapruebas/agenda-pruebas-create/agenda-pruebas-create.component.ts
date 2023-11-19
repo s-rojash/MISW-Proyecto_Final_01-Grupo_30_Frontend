@@ -37,6 +37,7 @@ export class AgendaPruebasCreateComponent implements OnInit {
       if (this.agendaPruebasId !== undefined && this.agendaPruebaForm !== null){
         agendaPrueba.id = this.agendaPruebasId!;
       }
+      console.log("Guardando");
       this.agendaPruebaService.saveListaAgendaPrueba(agendaPrueba).subscribe(response=>{
         this.toastr.success("Confirmation", "Test schedule created");
       });
@@ -71,8 +72,8 @@ export class AgendaPruebasCreateComponent implements OnInit {
       this.getListaPruebas();
       this.getListaCandidatos();
       this.agendaPruebaForm = this.formBuilder.group({
-        idPrueba: ["", [Validators.required, Validators.minLength(2)]],
-        idCandidato: ["", [Validators.required, Validators.minLength(2)]],
+        idPrueba: ["", [Validators.required]],
+        idCandidato: ["", [Validators.required]],
         fecha: ["", [Validators.required]],
       });
     }

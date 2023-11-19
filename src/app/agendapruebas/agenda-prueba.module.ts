@@ -18,6 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AgendaPruebasListComponent } from './agenda-pruebas-list/agenda-pruebas-list.component';
 import { AgendaPruebasCreateComponent } from './agenda-pruebas-create/agenda-pruebas-create.component';
+import { ResultadosPruebasCreateComponent } from './resultados-pruebas-create/resultados-pruebas-create.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AgendaPruebasCreateComponent,
-    AgendaPruebasListComponent
+    AgendaPruebasListComponent,
+    ResultadosPruebasCreateComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   exports:[
     AgendaPruebasCreateComponent,
-    AgendaPruebasListComponent
+    AgendaPruebasListComponent,
+    ResultadosPruebasCreateComponent
     ]
 })
 export class AgendaPruebaModule { }

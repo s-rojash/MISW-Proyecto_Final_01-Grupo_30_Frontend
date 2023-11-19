@@ -101,7 +101,7 @@ describe('ModalRespuestasSaveComponent', () => {
   });
 
   it("should call retornarRespuesta respuesta not undefined", () => {
-    let respuesta: Respuesta = { idRespuesta: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
+    let respuesta: Respuesta = { id: 1, respuesta: 'A', estado: 'pendiente', puntos: 10, pregunta: null };
 
     component.respuesta = respuesta;
     component.respuestaForm.patchValue({ respuesta: 'A', puntos: 5, estado: 'pendiente' });

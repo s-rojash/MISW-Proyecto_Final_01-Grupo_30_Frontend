@@ -45,6 +45,8 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ApplicantSearchModule } from './applicant-search/applicant-search.module';
 import { ApplicationSearchRoutingModule } from './applicant-search/applicant-search.routing.module';
+import { ConjuntoPruebasRoutingModule } from './conjunto-pruebas/conjunto-pruebas.routing';
+import { ConjuntoPruebasModule } from './conjunto-pruebas/conjunto-pruebas.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -78,6 +80,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AgendaPruebaRoutingModule,
     ApplicantSearchModule,
     ApplicationSearchRoutingModule,
+    ConjuntoPruebasRoutingModule,
+    ConjuntoPruebasModule,
     EntrevistasModule,
     EntrevistasRoutingModule,
     ToastrModule.forRoot({
