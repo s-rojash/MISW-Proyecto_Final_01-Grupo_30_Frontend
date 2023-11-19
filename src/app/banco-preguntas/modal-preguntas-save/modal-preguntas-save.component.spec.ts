@@ -97,7 +97,7 @@ describe('ModalPreguntasSaveComponent', () => {
 
   it("should call createPregunta createPregunta and return response success", () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
+    let bancopregunta: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false };
     let pregunta = new Pregunta(1, 'Pregunta1', bancopregunta, []);
     let response = new Pregunta(1, 'Pregunta1', bancopregunta, []);
 
