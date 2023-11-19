@@ -64,7 +64,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle getListaBancosPreguntas successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria}];
+    const bancopreguntas = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false}];
 
     bancoPreguntasService.getListaBancosPreguntas(1).subscribe(data => {
       expect(data).toEqual(bancopreguntas); // Assert that the response data matches the expected data
@@ -92,7 +92,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle createBancoPreguntas successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
+    const bancopreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false};
 
     bancoPreguntasService.createBancoPreguntas(bancopreguntas).subscribe(data => {
       expect(data).toEqual(bancopreguntas); // Assert that the response data matches the expected data
@@ -106,7 +106,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle createBancoPreguntas failed HTTP request (status code 404)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
+    const bancopreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false};
 
     bancoPreguntasService.createBancoPreguntas(bancopreguntas).subscribe({
       next:() => fail('The request should have failed with 404 error'),
@@ -123,7 +123,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle getBancoPreguntas successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
+    const bancopreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false};
 
     bancoPreguntasService.getBancoPreguntas(1).subscribe(data => {
       expect(data).toEqual(bancopreguntas); // Assert that the response data matches the expected data
@@ -151,7 +151,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle createPregunta successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
+    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false};
     const respuestas: Array<Respuesta> = [{ idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
     const pregunta: Pregunta = { id: 1, pregunta: 'pregunta1', bancoPreguntas: bancopreguntas, respuestas: respuestas };
 
@@ -167,7 +167,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle createPregunta failed HTTP request (status code 404)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
+    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false};
     const respuestas: Array<Respuesta> = [{ idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
     const pregunta: Pregunta = { id: 1, pregunta: 'pregunta1', bancoPreguntas: bancopreguntas, respuestas: respuestas };
 
@@ -194,7 +194,7 @@ describe('Service: BancoPreguntas', () => {
 
   it('should handle getListaPreguntasBanco successful HTTP request (status code 200)', () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
+    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false};
     const respuestas: Array<Respuesta> = [{ idRespuesta: 1, respuesta: '', estado: '', puntos: 15, pregunta: null }]
     const preguntas: Pregunta[] = [{ id: 1, pregunta: 'pregunta1', bancoPreguntas: bancopreguntas, respuestas: respuestas }];
 
