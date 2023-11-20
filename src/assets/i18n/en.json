@@ -178,7 +178,9 @@
     "DESCRIPTION":" Test group description",
     "DESCRIPTION_REQUIRED" : "the description  its necesary",
     "ADD":"ADD"
-
-
+  },
+  "EVALUACION_DESEMPENO":{
+    "SELECCIONAR_CANDIDATO": "Select team member",
+    "SELECCIONAR_PRUEBA": "Select test to apply"
   }
 }

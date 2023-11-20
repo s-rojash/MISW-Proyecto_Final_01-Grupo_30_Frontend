@@ -3,88 +3,28 @@
     {{ 'INTERVIEWS.TEST_SCHEDULE_SAVE' | translate }}</label></label></span>
 </div>
 <div class="col-md-12">
-  <mat-card class="solid-border-card">
-    <form [formGroup]="agendaPruebaForm" (ngSubmit)="!agendaPruebaForm.invalid && createAgendaPrueba(agendaPruebaForm.value)">
-      <div>
-        <div>
-          <div class="form-group mx-sm-3 mb-2" >
-            <label for="idPrueba" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</label>
-            <select
-              required
-              id="idPrueba"
-              class="form-control"
-              formControlName="idPrueba"
-            >
-            <option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
-              {{prueba.nombre}}
-            </option>
-            </select>
-            <div
-              class="alert alert-danger alert-dismissible fade show"
-              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
-            >
-              {{ 'INTERVIEWS.TEST_SCHEDULE_TEST_REQUIRED' | translate }}
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="form-group mx-sm-3 mb-2" >
-            <label for="idCandidato" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE' | translate }}</label>
-            <select
-              required
-              id="idCandidato"
-              class="form-control"
-              formControlName="idCandidato"
-            >
-            <option *ngFor="let candidato of listaCandidatos" [value]="candidato.id">
-              {{candidato.nombres}} {{ candidato.apellidos }}
-            </option>
-            </select>
-            <div
-              class="alert alert-danger alert-dismissible fade show"
-              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
-            >
-              {{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE_REQUIRED' | translate }}
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="form-group mx-sm-3 mb-2" >
-            <mat-form-field>
-            <label>{{ 'INTERVIEWS.TEST_SCHEDULE_DATE' | translate }}</label>
-            <input
-              required
-              type="text"
-              id="tipoBanco"
-              class="form-control"
-              formControlName="fecha"
-              matInput
-              [matDatepicker]="picker"
-            />
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-            <div
-              class="alert alert-danger alert-dismissible fade show"
-              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
-            >
-              {{ 'INTERVIEWS.TEST_SCHEDULE_DATE_REQUIRED' | translate }}
-            </div>
-          </div>
-        </div>
-        <div>
-          <button
-            type="submit"
-            class="btn btn-primary"
-
-          >
-            <mat-icon>add</mat-icon>
-            {{ 'INTERVIEWS.TEST_SCHEDULE_SAVE' | translate }}
-          </button>
-        </div>
+  <mat-card class="project-card solid-border-card col-md-12">
+    <form [formGroup]="teamForm" class="row">
+      <div class="borde col-md-6" >
+        <mat-select formControlName="project" placeholder="{{ 'TEAM.SELECT_PROJECT' | translate }}" style="height: 35px;" (selectionChange)="onProjectSelectionChange()">
+          <mat-option *ngFor="let project of projects" [value]="project.id">{{ project.nombre }}</mat-option>
+        </mat-select>
+      </div>
+      <div class="borde col-md-6">
+        <mat-select formControlName="team" placeholder="{{ 'TEAM.SELECT_TEAM' | translate }}" style="height: 35px;"  (selectionChange)="onTeamSelectionChange()">
+          <mat-option *ngFor="let team of teams" [value]="team.id">{{ team.nombre }}</mat-option>
+        </mat-select>
+      </div>
+      <div class="borde col-md-6">
+        <mat-select formControlName="candidate" placeholder="{{ 'EVALUACION_DESEMPENO.SELECCIONAR_CANDIDATO' | translate }}" style="height: 35px;"  (selectionChange)="onCandidateSelectionChange()">
+          <mat-option *ngFor="let candidato of listaCandidatos" [value]="candidato.id">[{{ candidato.numDocumento }}] {{ candidato.nombres }}  {{ candidato.apellidos }}</mat-option>
+        </mat-select>
+      </div>
+      <div class="borde col-md-6">
+        <mat-select formControlName="team" placeholder="{{ 'EVALUACION_DESEMPENO.SELECCIONAR_PRUEBA' | translate }}" style="height: 35px;"  (selectionChange)="onTeamSelectionChange()">
+          <mat-option *ngFor="let team of teams" [value]="team.id">{{ team.nombre }}</mat-option>
+        </mat-select>
       </div>
     </form>
-  </mat-card>
-
+   </mat-card>
 </div>

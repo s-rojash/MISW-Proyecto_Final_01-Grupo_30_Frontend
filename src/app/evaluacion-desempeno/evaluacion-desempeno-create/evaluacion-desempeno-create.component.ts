@@ -3,12 +3,16 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
 import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Candidato } from '../candidato';
+import { ProjectService } from 'src/app/project/project.service';
+import { TeamService } from 'src/app/team/team.service';
+import { Team } from 'src/app/team/team';
 import { Subscription } from 'rxjs';
+import { Project } from 'src/app/project/project';
+import { EvaluacionDesempenoService } from '../evaluacion-desempeno.service';
 
 @Component({
   selector: 'app-evaluacion-desempeno-create',
@@ -17,65 +21,87 @@ import { Subscription } from 'rxjs';
 })
 export class EvaluacionDesempenoCreateComponent implements OnInit {
 
-  agendaPruebaForm!: FormGroup;
+  teamForm!: FormGroup;
   listaPruebas!: Prueba[];
   listaCandidatos!: Candidato[];
   private routeSub: Subscription | undefined;
-  private agendaPruebasId!: number | null;
-  agendaPruebas!: AgendaPrueba;
+  private equipoId!: number | null;
+  teams: Team[] = [];
+  projects: Project[] = [];
+
 
   constructor(private formBuilder: FormBuilder,
     public dialog: MatDialog,
     private toastr: ToastrService,
     private agendaPruebaService: AgendaPruebaService,
     private bancoPreguntasService: BancoPreguntasService,
+    private teamService: TeamService,
+    private projectService: ProjectService,
+    private evaluacionDesempenoService: EvaluacionDesempenoService,
     private route: ActivatedRoute,
     private router: Router) { }
 
-    createAgendaPrueba(agendaPrueba: AgendaPrueba):void{
-      agendaPrueba.estado = "Agendada";
-      if (this.agendaPruebasId !== undefined && this.agendaPruebaForm !== null){
-        agendaPrueba.id = this.agendaPruebasId!;
-      }
-      console.log("Guardando");
-      this.agendaPruebaService.saveListaAgendaPrueba(agendaPrueba).subscribe(response=>{
-        this.toastr.success("Confirmation", "Test schedule created");
-      });
-    }
     getListaPruebas(): void {
       this.bancoPreguntasService.getListaPruebas().subscribe((listaPruebas) => {
         this.listaPruebas = listaPruebas;
       });
     }
 
-    getListaCandidatos(): void {
+    getListaCandidatosEquipo(): void {
       this.agendaPruebaService.getListaCandidatos().subscribe((listaCandidatos: Candidato[]) => {
         this.listaCandidatos = listaCandidatos;
       });
     }
 
     ngOnInit():void {
-      this.routeSub = this.route.params.subscribe(params => {
-        this.agendaPruebasId = Number(params['id?']);
-        if (this.agendaPruebasId !== null && !isNaN(this.agendaPruebasId)){
-          this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas: AgendaPrueba) =>{
-            this.agendaPruebas = agendaPruebas;
-            this.agendaPruebaForm = this.formBuilder.group({
-              idPrueba: [agendaPruebas.idPrueba, [Validators.required, Validators.minLength(2)]],
-              idCandidato: [agendaPruebas.idCandidato, [Validators.required, Validators.minLength(2)]],
-              fecha: [agendaPruebas.fecha, [Validators.required]],
-            });
-          })
-        }
+      this.teamService.getTeams().subscribe((teams: Team[]) => {
+        this.teams = teams;
       });
 
-      this.getListaPruebas();
-      this.getListaCandidatos();
-      this.agendaPruebaForm = this.formBuilder.group({
-        idPrueba: ["", [Validators.required]],
-        idCandidato: ["", [Validators.required]],
-        fecha: ["", [Validators.required]],
+      this.projectService.getProjects().subscribe(projects => {
+        this.projects = projects;
+        console.log('Proyectos obtenidos:', this.projects);
+       });
+
+       this.teamForm = this.formBuilder.group({
+        project: [null, Validators.required],
+        team: [null, Validators.required] ,
+        profile: [null],
+        cantidad: [null],
       });
+
+      this.onProjectSelectionChange();
     }
 
+
+  onProjectSelectionChange() {
+    const selectedProjectControl = this.teamForm.get('project');
+    console.log("selectedProjectControl",selectedProjectControl);
+    if (selectedProjectControl) {
+      const selectedProjectId = selectedProjectControl.value;
+      console.log("selectedProjectId",selectedProjectId);
+      if (selectedProjectId) {
+         this.teamService.getTeamsByProject(selectedProjectId).subscribe(teams => {
+          this.teams = teams;
+          console.log("teams",teams);
+        });
+      } else {
+        // Si no se selecciona ningún proyecto, borra la lista de equipos
+        this.teams = [];
+      }
+    }
+  }
+  onTeamSelectionChange() {
+    const selectedTeamControl = this.teamForm.get('team');
+    if (selectedTeamControl) {
+      const selectedTeamId = selectedTeamControl.value;
+        this.evaluacionDesempenoService.getListaCandidatos().subscribe((listaCandidatos: Candidato[]) => {
+          this.listaCandidatos = listaCandidatos;
+        });
+    }
+  }
+
+  onCandidateSelectionChange(){
+
+  }
 }

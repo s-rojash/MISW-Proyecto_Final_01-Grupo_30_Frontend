@@ -47,6 +47,8 @@ import { ApplicantSearchModule } from './applicant-search/applicant-search.modul
 import { ApplicationSearchRoutingModule } from './applicant-search/applicant-search.routing.module';
 import { ConjuntoPruebasRoutingModule } from './conjunto-pruebas/conjunto-pruebas.routing';
 import { ConjuntoPruebasModule } from './conjunto-pruebas/conjunto-pruebas.module';
+import { EvaluacionDesempenoModule } from './evaluacion-desempeno/evaluacion-desempeno.module';
+import { EvaluacionDesempenoRoutingModule } from './evaluacion-desempeno/evaluacion-desempeno-routing.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -84,6 +86,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ConjuntoPruebasModule,
     EntrevistasModule,
     EntrevistasRoutingModule,
+    EvaluacionDesempenoModule,
+    EvaluacionDesempenoRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

@@ -180,5 +180,9 @@
     "LISTHINTERVIEW":"Entrevista con",
     "LISTHDATE":"Fecha Prueba",
     "INTERVIEWSLIST":"Listado de entrevistas"
+  },
+  "EVALUACION_DESEMPENO":{
+    "SELECCIONAR_CANDIDATO": "Seleccionar miembro del equipo",
+    "SELECCIONAR_PRUEBA": "Seleccionar prueba a aplicar"
   }
 }

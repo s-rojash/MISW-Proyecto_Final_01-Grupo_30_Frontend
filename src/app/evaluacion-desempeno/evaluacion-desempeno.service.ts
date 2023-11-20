@@ -15,8 +15,8 @@ export class EvaluacionDesempenoService {
 
   constructor(private http: HttpClient) { }
 
-  getCandidato(idCandidato: number): Observable<Candidato> {
-    return this.http.get<Candidato>(this.apiUrlCandidatos + "/candidatos/" + idCandidato);
+  getListaCandidatos(): Observable<Candidato[]> {
+    return this.http.get<Candidato[]>(this.apiUrlCandidatos + "/candidatos/");
   }
 
   saveResultadoEvaluacionDesempeno(resultadoEvaluacionDesempeno: ResultadoEvaluacionDesempeno){

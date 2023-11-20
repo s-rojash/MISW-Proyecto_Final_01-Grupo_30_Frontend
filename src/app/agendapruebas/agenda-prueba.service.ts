@@ -33,6 +33,7 @@ export class AgendaPruebaService {
     return this.http.get<Candidato[]>(this.apiUrlCandidatos + "/candidatos/");
   }
 
+
   getCandidato(idCandidato: number): Observable<Candidato> {
     return this.http.get<Candidato>(this.apiUrlCandidatos + "/candidatos/" + idCandidato);
   }
