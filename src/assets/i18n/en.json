@@ -11,7 +11,8 @@
     "LANESPMENU":"Spanish",
     "LANENGMENU":"English",
     "LOGOUTMENU":"Logout",
-    "PROFILE":"Profile"
+    "PROFILE":"Profile",
+    "GROUPTEST":"Group Test"
   },
   "LOGIN":{
     "TITLE":"Login",

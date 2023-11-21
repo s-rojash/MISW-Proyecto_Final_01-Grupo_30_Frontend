@@ -29,4 +29,5 @@ export class CompanyService {
     return this.http.post<Signupcompany>(this.apiUrlCompany, signupcompany);
   }
 
+  
 }

@@ -30,6 +30,31 @@ describe('CompanyService', () => {
     expect(service).toBeTruthy();
   });
 
+
+   
+   it('should send a POST request to create the company', () => {
+    const signupcompany = new Signupcompany(
+       'Razon Social',
+       'Tipo Documento',
+       123456789,
+       1,
+       'email@example.com',
+       2,
+       'password'
+    );
+   
+    let apiUrlCompany: string = environment.baseUrlCom + '/empresas/';
+   
+    service.createCompany(signupcompany).subscribe();
+   
+    const req = httpTestingController.expectOne(`${apiUrlCompany}`);
+    expect(req.request.method).toBe('POST');
+    expect(req.request.body).toEqual(signupcompany);
+   
+    req.flush(signupcompany);
+   });
+
+
   it('should send a POST request to edit the company', () => {
  
     const signupcompany = new Signupcompany(
@@ -38,7 +63,7 @@ describe('CompanyService', () => {
       123456789,
       1,
       'email@example.com',
-      2,
+      0,
       'password'
     );
 
@@ -53,4 +78,16 @@ describe('CompanyService', () => {
    
     req.flush(signupcompany);
   });
+
+    it('should send a GET request to get the company', () => {
+    const idEmpresa = 0;
+    let apiUrlCompany: string = environment.baseUrlCom + '/empresas/';
+   
+    service.getCompany().subscribe();
+   
+    const req = httpTestingController.expectOne(`${apiUrlCompany}${idEmpresa}`);
+    expect(req.request.method).toBe('GET');
+   
+    req.flush({ data: 'test' });
+   });
 });

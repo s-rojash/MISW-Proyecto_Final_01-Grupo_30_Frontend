@@ -66,7 +66,7 @@ export class CompanyEditComponent implements OnInit {
          this.valuelastDV = data.digitoVerificacion;
          this.valuePassword = data.password;
          this.companyRForm.get('tipoDocumento')?.setValue(data.tipoDocumento);
-        
+         this.companyRForm.get('id')?.setValue(data.id);
        },
        (error) => {
    
@@ -89,6 +89,7 @@ export class CompanyEditComponent implements OnInit {
 
   initForm() {
     this.companyRForm = this.formBuilder.group({
+       id: [null], 
        razonSocial: [null, Validators.required],
        tipoDocumento: [null, Validators.required],
        numDocumento: [null, Validators.required],

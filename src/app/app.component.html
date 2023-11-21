@@ -47,6 +47,15 @@
         </li>
 
         <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.GROUPTEST' | translate }}</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
+            <li><a class="dropdown-item" routerLink="/conjunto-pruebas/list">{{ 'HEADER.BUTTONLIST' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/conjunto-pruebas/create">{{ 'HEADER.BUTTONCREATE' | translate }}</a></li>
+          </ul>
+        </li>
+
+
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.ENTREVISTASMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
             <li><a class="dropdown-item" routerLink="/entrevistas/lista">{{ 'HEADER.BUTTONLIST' | translate }}</a></li>

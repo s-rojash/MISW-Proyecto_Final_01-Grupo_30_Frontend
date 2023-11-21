@@ -14,7 +14,8 @@
     "PROFILE":"Perfíl",
     "BUTTONCREATE":"Crear",
     "BUTTONLIST":"Listar",
-    "BUTTONSEARCH":"Buscar"
+    "BUTTONSEARCH":"Buscar",
+    "GROUPTEST":"Conjunto pruebas"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
