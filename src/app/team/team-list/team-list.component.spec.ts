@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TeamListComponent } from './team-list.component';
 import { TeamService } from '../team.service';
 import { ProjectService } from 'src/app/project/project.service';
@@ -49,7 +49,7 @@ describe('TeamListComponent', () => {
   let dialog: MatDialog;
   let toastr: ToastrService;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         ReactiveFormsModule,
