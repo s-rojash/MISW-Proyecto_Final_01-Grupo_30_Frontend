@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -27,6 +27,8 @@ import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.s
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { ActivatedRoute } from '@angular/router';
 import { AgendaPrueba } from '../../../app/agendapruebas/agenda-prueba';
+import { BancoPreguntas } from '../../../app/banco-preguntas/banco-preguntas';
+import { Pregunta } from '../../../app/banco-preguntas/pregunta';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -128,4 +130,24 @@ describe('ResultadosPruebasCreateComponent', () => {
     expect(agendaPruebaService.getAgendaPrueba).toHaveBeenCalled();
     expect(component.getPrueba).toHaveBeenCalled();
   });
+
+  it("should call getPrueba ", fakeAsync(() => {
+    const categoria = { id: 1, nombre: 'sojash' };
+    let bancoPreguntas: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false }];
+    let bancoPreguntas2: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false };
+    let response: Prueba = {
+      id: 1, nombre: "Test",
+      descripcion: "Prueba",
+      bancosPreguntas: bancoPreguntas
+    };
+    let responsePregunta: Pregunta[] = [{id: 1, pregunta: 'pregunta1', bancoPreguntas: bancoPreguntas2, respuestas: []}]
+
+    spyOn(bancoPreguntasService, 'getPrueba').and.returnValue(of(response));
+    spyOn(bancoPreguntasService, 'getListaPreguntasBanco').and.returnValue(of(responsePregunta));
+
+    component.getPrueba(1);
+    tick();
+    fixture.detectChanges();
+    expect(bancoPreguntasService.getListaPreguntasBanco).toHaveBeenCalled();
+  }));
 });

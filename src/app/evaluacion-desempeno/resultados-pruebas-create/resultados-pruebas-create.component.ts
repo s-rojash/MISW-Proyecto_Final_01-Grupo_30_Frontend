@@ -42,7 +42,7 @@ export class ResultadosPruebasCreateComponent implements OnInit {
           this.bancoPreguntasService.getListaPreguntasBanco(bancoPreguntas.id??0).subscribe(preguntasBanco =>{
             this.preguntas.set(bancoPreguntas.id ?? 0, preguntasBanco);
             for(let pregunta of preguntasBanco){
-              this.respuestasSeleccionadas.set(pregunta.id ?? 0, 0);
+              this.respuestasSeleccionadas[pregunta.id!] = 0;
             }
           });
         }

@@ -72,11 +72,20 @@ describe('ProjectCreateComponent', () => {
   });
 
   it('should not call createProject when form is invalid', () => {
-    const createProjectSpy = spyOn(projectService, 'createProject').and.stub();
+    const createProjectSpy = spyOn(component, 'createProject').and.stub();
 
     component.projectForm.setValue({ nombre: '', descripcion: '' });
     component.onSubmit();
 
     expect(createProjectSpy).not.toHaveBeenCalled();
+  });
+
+  it('should not call createProject when form is valid', () => {
+    const createProjectSpy = spyOn(component, 'createProject').and.stub();
+
+    component.projectForm.setValue({ nombre: 'proyecto1', descripcion: 'proyecto para IA' });
+    component.onSubmit();
+
+    expect(createProjectSpy).toHaveBeenCalled();
   });
 });
