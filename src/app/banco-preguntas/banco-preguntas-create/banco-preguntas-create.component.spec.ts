@@ -4,6 +4,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -44,7 +45,7 @@ describe('BancoPreguntasCreateComponent', () => {
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
         MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
-        MatSelectModule,
+        MatSelectModule, HttpClientTestingModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -87,7 +88,7 @@ describe('BancoPreguntasCreateComponent', () => {
     expect(component.bancoPreguntasForm.valid).toBeFalsy();
   });
 
-  it('all fields empty', () => {
+  it('should all fields empty', () => {
     component.bancoPreguntasForm.patchValue({ tipoBanco: '', categoria: '' });
     fixture.detectChanges();
     expect(component.bancoPreguntasForm.valid).toBeFalsy();
