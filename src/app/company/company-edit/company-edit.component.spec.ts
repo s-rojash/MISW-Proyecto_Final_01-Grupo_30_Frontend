@@ -16,6 +16,8 @@ import { Signupcompany } from 'src/app/signup/signupcompany';
 import { CompanyService } from '../company.service';
 
 class MockCompanyService {
+  private pass:string = 'password';
+
   getCompany(): Observable<Signupcompany> {
     return of({
       id: 1,
@@ -24,7 +26,7 @@ class MockCompanyService {
       numDocumento: 12345,
       digitoVerificacion: 6,
       email: 'test@example.com',
-      password: 'password'
+      password: this.pass
     });
   }
 
@@ -62,7 +64,7 @@ describe('CompanyEditComponent', () => {
     signupCompanyData.password,
     signupCompanyData.id
 
-    
+
   );
 
   beforeEach(async(() => {
@@ -144,5 +146,5 @@ describe('CompanyEditComponent', () => {
     expect(component.selectedtypeNIT).toBe('New Value');
   });
 
-  
+
 });
