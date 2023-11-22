@@ -151,9 +151,9 @@ describe('SignupCompanyComponent', () => {
   });
 
   it("should call registerCompany createCompany and return response success", waitForAsync(() => {
-    const signupcompany: Signupcompany = { razonSocial: "Empresa de prueba", tipoDocumento: "NIT", numDocumento: 1234,
+    const signupcompany: Signupcompany = { id:0,razonSocial: "Empresa de prueba", tipoDocumento: "NIT", numDocumento: 1234,
           digitoVerificacion: 0, email: "s.rojash@uniandes.edu.co", password: pass };
-    let response:Signupcompany = { razonSocial: "Empresa de prueba", tipoDocumento: "NIT", numDocumento: 1234,
+    let response:Signupcompany = { id:0, razonSocial: "Empresa de prueba", tipoDocumento: "NIT", numDocumento: 1234,
           digitoVerificacion: 0, email: "s.rojash@uniandes.edu.co", password: pass };
 
     spyOn(signupService, 'createCompany').and.returnValue(of(response));
@@ -165,7 +165,7 @@ describe('SignupCompanyComponent', () => {
   }));
 
   it("should call registerCompany createCompany and return response failed", waitForAsync(() => {
-    const signupcompany: Signupcompany = { razonSocial: "Empresa de prueba", tipoDocumento: "NIT", numDocumento: 1234,
+    const signupcompany: Signupcompany = { id:0,razonSocial: "Empresa de prueba", tipoDocumento: "NIT", numDocumento: 1234,
           digitoVerificacion: 0, email: "s.rojash@uniandes.edu.", password: pass };
 
     spyOn(signupService, 'createCompany').and.returnValue(throwError(() => ({ status: 404 })));

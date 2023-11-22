@@ -23,10 +23,10 @@ export class TeamCreateComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     public dialog: MatDialog,
-    private toastr: ToastrService,
-    private teamService: TeamService,
-    private projectService :ProjectService,
-    private profileService: ProfileService) { }
+    public toastr: ToastrService,
+    public teamService: TeamService,
+    public projectService :ProjectService,
+    public profileService: ProfileService) { }
 
     createTeam(teamData: any): void {
       const team: any = {

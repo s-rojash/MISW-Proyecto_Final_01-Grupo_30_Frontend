@@ -23,6 +23,8 @@ import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
 import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
+import { CompanyModule } from './company/company.module';
+import { CompanyRoutingModule } from './company/company.routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -46,6 +48,7 @@ import { ApplicationSearchRoutingModule } from './applicant-search/applicant-sea
 import { ConjuntoPruebasRoutingModule } from './conjunto-pruebas/conjunto-pruebas.routing';
 import { ConjuntoPruebasModule } from './conjunto-pruebas/conjunto-pruebas.module';
 
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
@@ -53,7 +56,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-
    ],
   imports: [
     BrowserModule,
@@ -80,6 +82,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ApplicationSearchRoutingModule,
     ConjuntoPruebasRoutingModule,
     ConjuntoPruebasModule,
+    CompanyModule,
+    CompanyRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

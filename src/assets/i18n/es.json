@@ -14,7 +14,8 @@
     "PROFILE":"Perfíl",
     "BUTTONCREATE":"Crear",
     "BUTTONLIST":"Listar",
-    "BUTTONSEARCH":"Buscar"
+    "BUTTONSEARCH":"Buscar",
+    "GROUPTEST":"Conjunto pruebas"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -64,7 +65,9 @@
     "CC":"CEDULA DE CIUDADANIA",
     "CE":"CEDULA DE EXTRANJERIA",
     "BUSINESSNAME":"Razón social",
-    "BUSINESSNAMEREQUIRED":"Razón social requerida"
+    "BUSINESSNAMEREQUIRED":"Razón social requerida",
+    "DIALOGMSJSUCCESSEDITCOMPANY":"Empresa modificada correctamente",
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Empresa no pudo ser modificada"
   },
   "PROJECT":{
     "COMPANYS":"Empresas",

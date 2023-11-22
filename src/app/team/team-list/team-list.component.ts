@@ -20,6 +20,7 @@ export class TeamListComponent implements OnInit {
   teams: Team[] = [];
   projects: Project[] = [];
   isEditing = false;
+  
 
   @ViewChild(TeamAssignComponent) teamAssignComponent!: TeamAssignComponent;
 
@@ -80,11 +81,14 @@ export class TeamListComponent implements OnInit {
           console.log("teams",teams);
         });
       } else {
-        // Si no se selecciona ningún proyecto, borra la lista de equipos
+
         this.teams = [];
       }
     }
   }
 
 
+  
+  
+  
 }

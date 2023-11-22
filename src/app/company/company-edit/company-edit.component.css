@@ -1,0 +1,27 @@
+.labeloverinput {
+    position: relative;
+    top: 0.7em;
+    z-index: 1;
+    left: 2em;
+    background-color: white;
+    padding: 0 5px;
+    color: #6750A4;
+  }
+  
+  .button-signup {
+    width: 204px;
+    height: 40px;
+    border-radius: 5px;
+    background: url(../../../assets/Images/fondogeneral.png), lightgray 50% / cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    margin-top: 24px;
+    border: 0;
+  }
+  
+  
+
+  

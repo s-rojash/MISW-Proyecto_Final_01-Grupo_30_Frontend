@@ -1,0 +1,63 @@
+<p>
+  company-edit works!
+</p>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="companyRForm" (ngSubmit)="!companyRForm.invalid && registerCompany(companyRForm.value)">
+            <div class="form-group">
+              <label for="razonSocial" class="labeloverinput">{{ 'SIGNUP.BUSINESSNAME' | translate }}</label>
+              <input formControlName="razonSocial" novalidate type="text" id="razonSocial" class="form-control" [(ngModel)]="razonSocial" style="border-color: #6750A4; height: 60px;" />
+            </div>
+
+            <!-- Lista numero identificacion -->
+            <div class="form-group">
+              <div class="card-body">
+              <select formControlName="tipoDocumento" (change)="selectChangeHandler($event)" class="form-control form-select" style="height: 60px; background-color: #E5E5E5;" ng-required="true">
+                <option value="NIT">NIT</option>
+              </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-10">
+                <div class="form-group">
+                  <label for="numDocumento" class="labeloverinput">{{ 'SIGNUP.NI' | translate }}</label>
+                  <input formControlName="numDocumento" novalidate type="text" id="numDocumento" class="form-control" [(ngModel)]="numDocumento" style="border-color: #6750A4; height: 60px; margin-bottom: 1%;" />
+                </div>
+              </div>
+            
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label for="digitoVerificacion" class="labeloverinput">{{ 'SIGNUP.DV' | translate }}</label>
+                  <input formControlName="digitoVerificacion" novalidate type="text" id="digitoVerificacion" class="form-control" [(ngModel)]="valuelastDV" style="border-color: #6750A4; height: 60px; margin-bottom: 1%;" />
+                </div>
+              </div>
+            </div>
+          
+
+            <div class="form-group">
+              <label for="email" class="labeloverinput">{{ 'SIGNUP.EMAIL' | translate }}</label>
+              <input formControlName="email" novalidate type="email" id="email" class="form-control" [(ngModel)]="email" style="border-color: #6750A4; height: 60px;" />
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="labeloverinput">{{ 'SIGNUP.PASSWORD' | translate }}</label>
+              <input formControlName="password" novalidate type="password" id="password" class="form-control" [(ngModel)]="valuePassword" style="border-color: #6750A4; height: 60px;" />
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" [disabled]="!companyRForm.valid" class="button-signup" mat-fab extended>
+                <mat-icon style="color: black;">add</mat-icon>
+                {{ 'EVALUATION.SAVE' | translate }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

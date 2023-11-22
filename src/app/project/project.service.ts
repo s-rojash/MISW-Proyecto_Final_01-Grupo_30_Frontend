@@ -15,7 +15,7 @@ export class ProjectService {
  constructor(private http: HttpClient) { }
 
  private getHttpOptions() {
-    const token = localStorage.getItem('API_TOKEN'); 
+    const token = "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1NDI2MzAsIm5iZiI6MTcwMDU0MjYzMCwiZXhwIjoxNzAyMzQyNjMwLCJpZEVtcHJlc2EiOiIxIn0.IE4n5R2-mExM-LOI3hEJ_lUIW7Vqby8RsogkQrXueTs"; 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
