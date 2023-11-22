@@ -21,7 +21,7 @@ export class EvaluacionDesempenoCreateComponent implements OnInit {
   listaPruebas!: Prueba[];
   listaCandidatos!: Candidato[];
   private routeSub: Subscription | undefined;
-  private agendaPruebasId!: number | null;
+  agendaPruebasId!: number | null;
   agendaPruebas!: AgendaPrueba;
 
   constructor(private formBuilder: FormBuilder,

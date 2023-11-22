@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -27,6 +27,9 @@ import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.s
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { AgendaPrueba } from '../agenda-prueba';
 import { ResultadoPrueba } from '../resultado-prueba';
+import { BancoPreguntas } from '../../../app/banco-preguntas/banco-preguntas';
+import { Pregunta } from 'src/app/banco-preguntas/pregunta';
+import { ActivatedRoute } from '@angular/router';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -38,9 +41,13 @@ describe('ResultadosPruebasCreateComponent', () => {
   let agendaPruebaService: AgendaPruebaService;
   let bancoPreguntasService: BancoPreguntasService;
   let toastrSpy: jasmine.SpyObj<ToastrService>;
+  let mockActivatedRoute: any;
 
   beforeEach(waitForAsync(() => {
     const spy = jasmine.createSpyObj('ToastrService', ['success']);
+    mockActivatedRoute = {
+      params: of({ 'id?': '1' }) // Provide the necessary params for testing
+    };
 
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
@@ -59,7 +66,7 @@ describe('ResultadosPruebasCreateComponent', () => {
         preventDuplicates: true,
       })],
       declarations: [ ResultadosPruebasCreateComponent, AgendaPruebasListComponent ],
-      providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
+      providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }, { provide: ActivatedRoute, useValue: mockActivatedRoute }]
     })
     .compileComponents();
   }));
@@ -107,16 +114,26 @@ describe('ResultadosPruebasCreateComponent', () => {
   });
 
   it("should call setRespuesta and return response success", () => {
-    let response: any = {idPregunta: 1, idRespuesta: 2};
-
     component.setRespuesta(2,3);
+    fixture.detectChanges();
     expect(component.respuestasSeleccionadas[2]).toEqual(3);
   });
 
-  it("should call saveResultados and return response success", () => {
-
-    component.saveResultados();
+  it("should call setRespuesta and return response failed by nulls", () => {
+    component.setRespuesta(null,null);
     fixture.detectChanges();
+    expect(component.respuestasSeleccionadas).toEqual({});
   });
 
+  it("should call ngOnInit and call the service getAgendaPrueba", () => {
+    const date = new Date('10/28/2023');
+    let response: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+
+    spyOn(agendaPruebaService ,'getAgendaPrueba').and.returnValue(of(response));
+    spyOn(component, 'getPrueba');
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(agendaPruebaService.getAgendaPrueba).toHaveBeenCalled();
+    expect(component.getPrueba).toHaveBeenCalled();
+  });
 });

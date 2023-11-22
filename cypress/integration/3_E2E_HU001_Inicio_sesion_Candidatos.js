@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 
-describe('Testing Ghost application Museums', () => {
+describe('Testing login application for applicant in ABC Jobs', () => {
 
     beforeEach(() => {
         cy.visit('http://localhost:4200');

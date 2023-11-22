@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +9,6 @@ import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Candidato } from '../candidato';
 import { Subscription } from 'rxjs';
-import { BancoPreguntas } from 'src/app/banco-preguntas/banco-preguntas';
 import { Pregunta } from 'src/app/banco-preguntas/pregunta';
 import { ResultadoPrueba } from '../resultado-prueba';
 
