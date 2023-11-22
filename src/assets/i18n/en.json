@@ -11,7 +11,10 @@
     "LANESPMENU":"Spanish",
     "LANENGMENU":"English",
     "LOGOUTMENU":"Logout",
-    "PROFILE":"Profile"
+    "PROFILE":"Profile",
+    "BUTTONCREATE":"Create",
+    "BUTTONLIST":"List",
+    "BUTTONSEARCH":"Search"
   },
   "LOGIN":{
     "TITLE":"Login",
@@ -104,6 +107,7 @@
     "COMPANYS":"Company",
     "CREATION":"Team creation",
     "NAME":"Project Name",
+    "DESCRIPTION":"Team Description",
     "ADD" :"Add",
     "SELECT_PROFILE":"select a profile",
     "TEAMQTY":"Number of resources requested",
@@ -170,21 +174,18 @@
     "SEARCH_APPLICANT":"Search",
     "INFO": "Applicant Information"
   },
-  "APPLICANT_SEARCH":{
-    "TECH_SKILL" :"Technical Skills",
-    "SOFT_SKILL" :"Soft Skills",
-    "PROFILE" :"Professional Profile",
-    "NAME" :"Applicant search",
-    "SEARCH_APPLICANT":"Search",
-    "INFO": "Applicant Information"
-  },
   "TEST_GROUP":{
     "NAME": "Name of test group",
     "NAME_REQUIRED" :"the name of the test group its necesary",
     "DESCRIPTION":" Test group description",
     "DESCRIPTION_REQUIRED" : "the description  its necesary",
     "ADD":"ADD"
-
-
-  }
+  },
+  "INTERVIEWS2":{
+   "INPUTSEARCH":"Search",
+   "LISTHCATEGORY":"Category",
+   "LISTHINTERVIEW":"Interview with",
+   "LISTHDATE":"Test Date",
+   "INTERVIEWSLIST":"Interviews list"
+ }
 }

@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -25,6 +25,10 @@ import { of } from 'rxjs';
 import { Candidato } from '../candidato';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
+import { ActivatedRoute } from '@angular/router';
+import { AgendaPrueba } from '../../../app/agendapruebas/agenda-prueba';
+import { BancoPreguntas } from '../../../app/banco-preguntas/banco-preguntas';
+import { Pregunta } from '../../../app/banco-preguntas/pregunta';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -36,9 +40,13 @@ describe('ResultadosPruebasCreateComponent', () => {
   let agendaPruebaService: AgendaPruebaService;
   let bancoPreguntasService: BancoPreguntasService;
   let toastrSpy: jasmine.SpyObj<ToastrService>;
+  let mockActivatedRoute: any;
 
   beforeEach(waitForAsync(() => {
     const spy = jasmine.createSpyObj('ToastrService', ['success']);
+    mockActivatedRoute = {
+      params: of({ 'id?': '1' }) // Provide the necessary params for testing
+    };
 
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
@@ -57,7 +65,7 @@ describe('ResultadosPruebasCreateComponent', () => {
         preventDuplicates: true,
       })],
       declarations: [ ResultadosPruebasCreateComponent, AgendaPruebasListComponent ],
-      providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
+      providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }, { provide: ActivatedRoute, useValue: mockActivatedRoute }]
     })
     .compileComponents();
   }));
@@ -111,10 +119,35 @@ describe('ResultadosPruebasCreateComponent', () => {
     expect(component.respuestasSeleccionadas[2]).toEqual(3);
   });
 
-  it("should call saveResultados and return response success", () => {
+  it("should call ngOnInit and call the service getAgendaPrueba", () => {
+    const date = new Date('10/28/2023');
+    let response: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
 
-    component.saveResultados();
+    spyOn(agendaPruebaService ,'getAgendaPrueba').and.returnValue(of(response));
+    spyOn(component, 'getPrueba');
+    component.ngOnInit();
     fixture.detectChanges();
+    expect(agendaPruebaService.getAgendaPrueba).toHaveBeenCalled();
+    expect(component.getPrueba).toHaveBeenCalled();
   });
 
+  it("should call getPrueba ", fakeAsync(() => {
+    const categoria = { id: 1, nombre: 'sojash' };
+    let bancoPreguntas: BancoPreguntas[] = [{ id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false }];
+    let bancoPreguntas2: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false };
+    let response: Prueba = {
+      id: 1, nombre: "Test",
+      descripcion: "Prueba",
+      bancosPreguntas: bancoPreguntas
+    };
+    let responsePregunta: Pregunta[] = [{id: 1, pregunta: 'pregunta1', bancoPreguntas: bancoPreguntas2, respuestas: []}]
+
+    spyOn(bancoPreguntasService, 'getPrueba').and.returnValue(of(response));
+    spyOn(bancoPreguntasService, 'getListaPreguntasBanco').and.returnValue(of(responsePregunta));
+
+    component.getPrueba(1);
+    tick();
+    fixture.detectChanges();
+    expect(bancoPreguntasService.getListaPreguntasBanco).toHaveBeenCalled();
+  }));
 });

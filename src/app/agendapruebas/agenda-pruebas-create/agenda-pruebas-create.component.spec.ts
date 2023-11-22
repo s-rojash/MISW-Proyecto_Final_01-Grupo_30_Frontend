@@ -26,6 +26,7 @@ import { Candidato } from '../candidato';
 import { BancoPreguntasService } from 'src/app/banco-preguntas/banco-preguntas.service';
 import { Prueba } from 'src/app/banco-preguntas/prueba';
 import { AgendaPrueba } from '../agenda-prueba';
+import { ActivatedRoute } from '@angular/router';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -37,9 +38,13 @@ describe('AgendaPruebasCreateComponent', () => {
   let agendaPruebaService: AgendaPruebaService;
   let bancoPreguntasService: BancoPreguntasService;
   let toastrSpy: jasmine.SpyObj<ToastrService>;
+  let mockActivatedRoute: any;
 
   beforeEach(waitForAsync(() => {
     const spy = jasmine.createSpyObj('ToastrService', ['success']);
+    mockActivatedRoute = {
+      params: of({ 'id?': '1' }) // Provide the necessary params for testing
+    };
 
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
@@ -58,7 +63,7 @@ describe('AgendaPruebasCreateComponent', () => {
         preventDuplicates: true,
       })],
       declarations: [ AgendaPruebasCreateComponent, AgendaPruebasListComponent ],
-      providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
+      providers: [AgendaPruebaService, BancoPreguntasService, { provide: ToastrService, useValue: spy }, { provide: ActivatedRoute, useValue: mockActivatedRoute }]
     })
     .compileComponents();
   }));
@@ -121,11 +126,12 @@ describe('AgendaPruebasCreateComponent', () => {
 
   it("should call createAgendaPrueba agendaPruebaForm is null", () => {
     const date = new Date('10/28/2023');
-    let agenda: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    let agenda: AgendaPrueba = { id: 0, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    component.agendaPruebasId = null;
 
     component.createAgendaPrueba(agenda);
     fixture.detectChanges();
-    expect(agenda.id).toBeNaN();
+    expect(agenda.id).toBeNull();
   });
 
   it("should call createAgendaPrueba saveListaAgendaPrueba and return response success", () => {
@@ -137,5 +143,15 @@ describe('AgendaPruebasCreateComponent', () => {
     component.createAgendaPrueba(response);
     fixture.detectChanges();
     expect(toastrSpy.success).toHaveBeenCalled();
+  });
+
+  it("should call ngOnInit and call the service getAgendaPrueba", () => {
+    const date = new Date('10/28/2023');
+    let response: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+
+    spyOn(agendaPruebaService ,'getAgendaPrueba').and.returnValue(of(response));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(agendaPruebaService.getAgendaPrueba).toHaveBeenCalled();
   });
 });
