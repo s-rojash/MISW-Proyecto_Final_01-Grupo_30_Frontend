@@ -23,8 +23,6 @@ import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
 import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
-import { EntrevistasModule } from './entrevistas/entrevistas.module';
-import { EntrevistasRoutingModule } from './entrevistas/entrevistas-routing.module';
 import { CompanyModule } from './company/company.module';
 import { CompanyRoutingModule } from './company/company.routing.module';
 
@@ -56,7 +54,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
    ],
   imports: [
@@ -84,8 +82,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ApplicationSearchRoutingModule,
     ConjuntoPruebasRoutingModule,
     ConjuntoPruebasModule,
-    EntrevistasModule,
-    EntrevistasRoutingModule,
     CompanyModule,
     CompanyRoutingModule,
     ToastrModule.forRoot({
