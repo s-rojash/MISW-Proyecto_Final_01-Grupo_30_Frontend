@@ -1,4 +1,4 @@
-import { TestBed, inject, getTestBed } from '@angular/core/testing';
+import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { ConjuntoPruebasService } from './conjunto-pruebas.service';
@@ -71,7 +71,7 @@ describe('ConjuntoPruebasService', () => {
       expect(data).toEqual(conjuntoprueba); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne(apiUrl + '/pruebas/'); // Expect a single request to this URL
+    const req = httpMock.expectOne(UrlBancoPreguntas + '/pruebas/'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush(conjuntoprueba, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
@@ -87,7 +87,7 @@ describe('ConjuntoPruebasService', () => {
       }
     });
 
-    const req = httpMock.expectOne(apiUrl + '/pruebas/'); // Expect a single request to this URL
+    const req = httpMock.expectOne(UrlBancoPreguntas + '/pruebas/'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404
