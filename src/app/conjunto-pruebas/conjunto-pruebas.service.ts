@@ -48,4 +48,24 @@ getAllBancoPreguntas(): Observable<BancoPreguntas[]> {
   return this.http.get<BancoPreguntas[]>(this.apiUrl + `/banco-preguntas/`, httpOptions)
 }
 
+
+getAllConjuntoPruebas(): Observable<Conjuntoprueba[]> {
+  const httpOptions = this.getHttpOptions();
+  console.log("httpOptions",httpOptions) 
+  console.log("apiUrl",this.apiUrl) 
+  return this.http.get<Conjuntoprueba[]>(this.apiUrl + `/pruebas/`, httpOptions)
+  .pipe(
+    tap(response => {
+      console.log('Respuesta recibida:' , response);
+
+    }),
+    catchError(error => {
+
+      console.error('Error en la petición:', error);
+      throw error;
+    })
+  );
+}
+
+
 }

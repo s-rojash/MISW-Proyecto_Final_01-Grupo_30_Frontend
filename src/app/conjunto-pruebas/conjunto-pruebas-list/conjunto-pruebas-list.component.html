@@ -1,3 +1,40 @@
-<p>
-  conjunto-pruebas-list works!
-</p>
+
+<div style="padding-bottom: 15px; padding-left: 10px; margin-left: 15px;">
+  <span><label>{{ 'PROJECT.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'TEST_GROUP.TESTGROUP' | translate }}</label></label></span>
+</div>
+
+
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-label>{{ 'TEST_GROUP.TESTGROUP' | translate }}</mat-label>
+  <input matInput placeholder="{{ 'TEST_GROUP.SELECTTESTGROUP' | translate }}" [(ngModel)]="filtro" (input)="filtrarLista()" [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayConjunto" (optionSelected)="seleccionarConjunto($event.option.value)">
+    <mat-option *ngFor="let conjuntoprueba of conjuntopruebas" [value]="conjuntoprueba">
+      {{ conjuntoprueba.nombre }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+<div class="col-md-6" style="width: 100%; z-index: 2;">
+  <div *ngIf="selectedConjunto" class="detalle-conjunto" style="display: flex;">
+    <div style="flex: 1; margin-right: 10px;">
+      <div class="card">
+        <div class="card-body">
+          <h4>{{ selectedConjunto.nombre }}</h4>
+          <p>{{ selectedConjunto.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1; margin-left: 10px;">
+      <div class="card">
+        <div class="card-body">
+          <h4>Banco de Preguntas</h4>
+          <ul>
+            <li *ngFor="let pregunta of selectedConjunto.bancoPreguntas">
+              {{ pregunta.id }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

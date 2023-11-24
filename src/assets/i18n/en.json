@@ -182,7 +182,9 @@
     "NAME_REQUIRED" :"the name of the test group its necesary",
     "DESCRIPTION":" Test group description",
     "DESCRIPTION_REQUIRED" : "the description  its necesary",
-    "ADD":"ADD"
+    "ADD":"ADD",
+    "TESTGROUP": "Test Group",
+    "SELECTTESTGROUP": "select a Test Group"
   },
   "INTERVIEWS2":{
    "INPUTSEARCH":"Search",
