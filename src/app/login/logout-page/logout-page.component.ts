@@ -18,9 +18,17 @@ export class LogoutPageComponent implements OnInit  {
   ) {
   }
   closeSession(){
+    let language : string | null = "";
+    language = localStorage.getItem("lang");
+
     localStorage.clear();
+
+    if(language != null){
+      localStorage.setItem("lang", language);
+    }
     this.router.navigate(['/login']);
   }
+
   ngOnInit() {
     this.closeSession();
   }

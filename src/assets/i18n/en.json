@@ -67,7 +67,9 @@
     "BUSINESSNAME":"Business name",
     "BUSINESSNAMEREQUIRED":"Business name required",
     "DIALOGMSJSUCCESSEDITCOMPANY":"Company modified successfully",
-    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Company could not be modified"
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Company could not be modified",
+    "DIALOGMSJSUCCESSEDITAPPLICANT":"Your information modified successfully",
+    "DIALOGMSJFAILEDEDITAPPLICANT":"Error: Your information could not be modified"
   },
   "PROJECT":{
     "COMPANYS":"Company",

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Signupapplicant } from '../../../app/signup/signupapplicant';
 import { ApplicantService } from '../applicant.service';
 import { ToastrService } from 'ngx-toastr';
-import { SignupService } from 'src/app/signup/signup.service';
-import { Login } from '../../../app/login/login';
-import { LoginService } from 'src/app/login/login.service';
 import { Applicant } from '../applicant';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogalertopappliComponent } from 'src/app/signup/dialogalertopappli/dialogalertopappli.component';
 
 @Component({
   selector: 'app-applicant-edit',
@@ -26,16 +24,19 @@ export class ApplicantEditComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private applicantService: ApplicantService,
-    private signupService: SignupService,
-    private loginService:LoginService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    public dialog: MatDialog) { }
 
   editApplicant(applicant: Applicant):void{
-    this.applicantService.updateApplicant(applicant).subscribe(applicantp=>{
-      console.info("The applicant was updated: ", applicantp);
-      this.toastr.success("Se modifico correctamente.");
-    },
-    error=>{
+    this.applicantService.updateApplicant(applicant).subscribe({
+      next: (applicantp) => {
+        console.info("The applicant was updated: ", applicantp);
+        this.toastr.success("Se modifico correctamente.");
+        this.openDialog('3');
+      },
+      error: () => {
+        this.openDialog('4');
+      }
     });
   }
 
@@ -50,7 +51,7 @@ export class ApplicantEditComponent implements OnInit {
           numDocumento: applicantp.numDocumento,
           celular: applicantp.celular,
           email: applicantp.email,
-          password: applicantp.password,
+          password: localStorage.getItem("PASS"),
           token: applicantp.token,
           expireAt: applicantp.expireAt,
           createdAt: applicantp.createdAt
@@ -64,6 +65,18 @@ export class ApplicantEditComponent implements OnInit {
 
   selectChangeHandler (event: any) {
     this.selectedtypeNIT = event.target.value;
+  }
+
+  openDialog(resultprocess: string) {
+    const dialogRef = this.dialog.open(DialogalertopappliComponent, {
+      disableClose: true
+    });
+    dialogRef.componentInstance.iddialog = resultprocess;
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    console.log("funciono");
   }
 
   ngOnInit() {

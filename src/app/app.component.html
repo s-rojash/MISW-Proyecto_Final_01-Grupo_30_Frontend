@@ -79,9 +79,9 @@
       </button>
 
       <mat-menu #menu="matMenu" class="mat-menu-panel">
-        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
+        <button mat-menu-item class="bgiconlogout" (click)="myprofile()" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
           <span style="padding-left: 30px;">
-            <a routerLink="/company/edit">{{ 'HEADER.MYPROFILEMENU' | translate }}</a>
+            <a>{{ 'HEADER.MYPROFILEMENU' | translate }}</a>
           </span>
         </button>
 
