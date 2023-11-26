@@ -37,22 +37,24 @@ export class ConjuntoPruebasListComponent implements OnInit {
     private toastr: ToastrService,
     private conjuntopruebasService :ConjuntoPruebasService) { }
 
-  ngOnInit(): void  {
-
-    this.conjuntopruebasService.getAllConjuntoPruebas().subscribe(conjuntopruebas => {
-      this.conjuntopruebas = conjuntopruebas;
-      console.log('conjunto pruebas :', this.conjuntopruebas);
-     });
-
-  //this.conjuntopruebas = [
-   //   new Conjuntoprueba(1, [{ id: 1, }, { id: 2 }], 'Conjunto de Prueba Mock 1', 'Descripción del conjunto de prueba mock 1'),
-   //   new Conjuntoprueba(2, [{ id: 1 }, { id: 2 }], 'Conjunto de Prueba Mock 2', 'Descripción del conjunto de prueba mock 2'),
-   // ];
-
-    this.originalConjuntoPruebas = [...this.conjuntopruebas];
-
-  }
-
+    ngOnInit(): void {
+      const conjuntoPruebas$ = this.conjuntopruebasService.getAllConjuntoPruebas();
+      
+      if (conjuntoPruebas$) {
+        conjuntoPruebas$.subscribe(
+          (conjuntopruebas) => {
+            this.conjuntopruebas = conjuntopruebas;
+            this.originalConjuntoPruebas = [...this.conjuntopruebas];
+          },
+          (error) => {
+            console.error('Error fetching conjunto pruebas', error);
+          }
+        );
+      } else {
+        console.error('Observable getAllConjuntoPruebas is undefined');
+      }
+    }
+  
   seleccionarConjunto(conjunto: Conjuntoprueba): void {
     console.log('Conjunto seleccionado:', conjunto);
     this.selectedConjunto = conjunto;

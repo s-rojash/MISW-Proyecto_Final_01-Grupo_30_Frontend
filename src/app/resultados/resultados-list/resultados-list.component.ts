@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from 'src/app/team/team';
 import { ResultadosService } from '../resultados.service';
-import { TeamService } from 'src/app/team/team.service';
+import { SignupService } from 'src/app/signup/signup.service';
+import { Signupapplicant } from 'src/app/signup/signupapplicant';
 
 @Component({
   selector: 'app-resultados-list',
   templateUrl: './resultados-list.component.html',
   styleUrls: ['./resultados-list.component.css']
 })
+
+
 export class ResultadosListComponent implements OnInit {
-
-
   listaEquipos!: Team[];
+  listaCandidatos!: Signupapplicant[];
+  
+  constructor(private resultadoService: ResultadosService, 
+              private applicantService:SignupService) { }
 
-  constructor(private resultadoService: ResultadosService, private teamService : TeamService) { }
 
 
-  getListaTeams(): void {
-    this.teamService.getTeams().subscribe((listaEquipos): void => {
-      this.listaEquipos = listaEquipos;
-    });
-  }
    
   ngOnInit(): void {
-    this.getListaTeams();
-  }
+    this.applicantService.getApplicant().subscribe(listaCandidatos => {
+      this.listaCandidatos = listaCandidatos;
+  });
+}
 
 }

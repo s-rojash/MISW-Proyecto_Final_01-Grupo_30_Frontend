@@ -136,4 +136,5 @@ describe('ResultadosPruebasCreateComponent', () => {
     expect(agendaPruebaService.getAgendaPrueba).toHaveBeenCalled();
     expect(component.getPrueba).toHaveBeenCalled();
   });
+  
 });

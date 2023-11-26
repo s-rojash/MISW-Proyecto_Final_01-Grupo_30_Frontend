@@ -4,7 +4,7 @@ import { ResultadosListComponent } from './resultados-list/resultados-list.compo
 
 
 const routes: Routes = [{
-  path: 'conjunto-pruebas',
+  path: 'resultados',
   children: [
    {
      path: 'get',
