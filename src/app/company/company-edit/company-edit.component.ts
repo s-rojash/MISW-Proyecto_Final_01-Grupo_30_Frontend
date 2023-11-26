@@ -18,8 +18,8 @@ export class CompanyEditComponent implements OnInit {
   email = '';
   razonSocial = '';
   numDocumento: number = 0;
-  valuelastDV: number = 0; 
-  valuePassword = '';
+  valuelastDV: number = 0;
+  valuePassword: string | null = '';
 
   constructor(private formBuilder: FormBuilder,    public dialog: MatDialog,  private companyService: CompanyService, private signupService: SignupService ) {}
 
@@ -30,14 +30,14 @@ export class CompanyEditComponent implements OnInit {
   }
 
   registerCompany(signupcompany: Signupcompany):void{
-  
+
     this.companyService.createCompany(signupcompany).subscribe(signupcompanyp=>{
       console.info("The company was created: ", signupcompanyp)
       this.companyRForm.reset();
     },
     error=>{
     });
-    
+
 
 
     this.companyService.createCompany(signupcompany).subscribe(signupcompanyp=>{
@@ -64,16 +64,16 @@ export class CompanyEditComponent implements OnInit {
          this.razonSocial = data.razonSocial;
          this.numDocumento = data.numDocumento;
          this.valuelastDV = data.digitoVerificacion;
-         this.valuePassword = data.password;
+         this.valuePassword = localStorage.getItem("PASS");
          this.companyRForm.get('tipoDocumento')?.setValue(data.tipoDocumento);
          this.companyRForm.get('id')?.setValue(data.id);
        },
        (error) => {
-   
+
        }
     );
    }
-   
+
    openDialog(resultprocess: string) {
     const dialogRef = this.dialog.open(DialogalertopcompComponent, {
       disableClose: true
@@ -89,7 +89,7 @@ export class CompanyEditComponent implements OnInit {
 
   initForm() {
     this.companyRForm = this.formBuilder.group({
-       id: [null], 
+       id: [null],
        razonSocial: [null, Validators.required],
        tipoDocumento: [null, Validators.required],
        numDocumento: [null, Validators.required],

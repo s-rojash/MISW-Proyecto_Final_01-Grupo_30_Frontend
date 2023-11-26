@@ -7,8 +7,8 @@
  //const baseUrlProyectos = 'https://ms-proyectos.azurewebsites.net';
  //const baseUrlBancoPreguntas = 'https://ms-banco-preguntas.azurewebsites.net';
 
-const baseUrl = 'http://localhost:4001';
-const baseUrlCom = 'http://localhost:4000';
+const baseUrl = 'http://localhost:4000';
+const baseUrlCom = 'http://localhost:3001';
 const baseUrlProyectos = 'http://localhost:3002';
 const baseUrlBancoPreguntas = 'http://localhost:3004';
 const baseUrlEntrevistas = 'http://localhost:3005';
