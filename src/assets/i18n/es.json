@@ -67,7 +67,9 @@
     "BUSINESSNAME":"Razón social",
     "BUSINESSNAMEREQUIRED":"Razón social requerida",
     "DIALOGMSJSUCCESSEDITCOMPANY":"Empresa modificada correctamente",
-    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Empresa no pudo ser modificada"
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Empresa no pudo ser modificada",
+    "DIALOGMSJSUCCESSEDITAPPLICANT":"Su información fue modificada correctamente",
+    "DIALOGMSJFAILEDEDITAPPLICANT":"Error: Su información no pudo ser modificada"
   },
   "PROJECT":{
     "COMPANYS":"Empresas",

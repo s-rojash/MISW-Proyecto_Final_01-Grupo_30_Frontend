@@ -25,6 +25,8 @@ import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
 import { CompanyModule } from './company/company.module';
 import { CompanyRoutingModule } from './company/company.routing.module';
+import { ApplicantModule } from './applicant/applicant.module';
+import { ApplicantRoutingModule } from './applicant/applicant.routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -88,6 +90,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     CompanyRoutingModule,
     ResultadosModule,
     ResultadosRoutingModule,
+    ApplicantModule,
+    ApplicantRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

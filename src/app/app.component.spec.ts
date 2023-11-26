@@ -160,6 +160,7 @@ describe('AppComponent', () => {
   });
 
   it('navigate to principal page', () => {
+    localStorage.setItem("API_TOKEN", "asjdshdjasjsghcuijkgfd2f1d25dfds");
     router.navigate(['/principal']);
     // Angular runs change detection asynchronously, so we need to run it manually
     fixture.detectChanges();
@@ -187,5 +188,13 @@ describe('AppComponent', () => {
     // Expectations based on the URL provided in the mock event
     expect(component.showHead).toBe(true);
     expect(component.showOptions).toBe(false);
+  });
+
+  it('should navigate to principal page without token and return to login page', () => {
+    localStorage.clear(); // Simulate no API_TOKEN
+    router.navigate(['/principal']);
+    fixture.detectChanges();
+    console.log(router.url);
+    expect(router.url).toEqual('/');
   });
 });
