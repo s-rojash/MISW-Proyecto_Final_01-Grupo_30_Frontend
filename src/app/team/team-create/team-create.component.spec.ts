@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -8,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { TeamRoutingModule } from '../team-routing.module';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import { MatIconModule } from '@angular/material/icon'; 
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule} from '@angular/material/dialog';
@@ -16,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { TeamCreateComponent } from './team-create.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { TeamService } from '../team.service';
+import { of } from 'rxjs';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -68,4 +68,10 @@ describe('TeamCreateComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  
+
+  
+  
 });

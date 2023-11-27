@@ -61,7 +61,7 @@ describe('Service: Signup', () => {
   });
 
   it('should handle createCompany successful HTTP request (status code 200)', () => {
-    const signupcompany = { razonSocial: 'Empresa de prueba', tipoDocumento: 'NIT', numDocumento: 1234, digitoVerificacion: 0,
+    const signupcompany = {id:0, razonSocial: 'Empresa de prueba', tipoDocumento: 'NIT', numDocumento: 1234, digitoVerificacion: 0,
           email: 's.rojash@uniandes.edu.co', password: pass };
 
       signupService.createCompany(signupcompany).subscribe(data => {
@@ -75,7 +75,7 @@ describe('Service: Signup', () => {
   });
 
   it('should handle createCompany failed HTTP request (status code 404)', () => {
-    const signupcompany = { razonSocial: 'Empresa de prueba', tipoDocumento: 'NIT', numDocumento: 1234, digitoVerificacion: 0,
+    const signupcompany = { id:0,razonSocial: 'Empresa de prueba', tipoDocumento: 'NIT', numDocumento: 1234, digitoVerificacion: 0,
           email: 's.rojash@uniandes.edu.co', password: pass };
 
       signupService.createCompany(signupcompany).subscribe({

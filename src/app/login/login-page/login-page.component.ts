@@ -58,6 +58,7 @@ export class LoginPageComponent implements OnInit  {
         console.info("The login was success: ", loginp);
         localStorage.setItem("API_TOKEN", loginp.token ?? "");
         localStorage.setItem("API_EMPRESA_ID", loginp.id.toString());
+        localStorage.setItem("PASS", login.password.toString());
 
         this.translate2.get('LOGIN.LOGINSUCCESS').subscribe((res: string) => {
           this.toastr.success(res);
@@ -78,6 +79,7 @@ export class LoginPageComponent implements OnInit  {
         console.info("The login was success: ", loginp);
         localStorage.setItem("API_TOKEN", loginp.token ?? "");
         localStorage.setItem("API_CANDIDATO_ID", loginp.id.toString());
+        localStorage.setItem("PASS", login.password.toString());
 
         this.translate2.get('LOGIN.LOGINSUCCESS').subscribe((res: string) => {
           this.toastr.success(res);

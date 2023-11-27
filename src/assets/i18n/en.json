@@ -14,7 +14,9 @@
     "PROFILE":"Profile",
     "BUTTONCREATE":"Create",
     "BUTTONLIST":"List",
-    "BUTTONSEARCH":"Search"
+    "BUTTONSEARCH":"Search",
+    "GROUPTEST":"Group Test",
+    "PROFILEGETERROR":"Could not get your profile information."
   },
   "LOGIN":{
     "TITLE":"Login",
@@ -64,7 +66,11 @@
     "CC":"CITIZENSHIP CARD",
     "CE":"FOREIGNER ID",
     "BUSINESSNAME":"Business name",
-    "BUSINESSNAMEREQUIRED":"Business name required"
+    "BUSINESSNAMEREQUIRED":"Business name required",
+    "DIALOGMSJSUCCESSEDITCOMPANY":"Company modified successfully",
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Company could not be modified",
+    "DIALOGMSJSUCCESSEDITAPPLICANT":"Your information modified successfully",
+    "DIALOGMSJFAILEDEDITAPPLICANT":"Error: Your information could not be modified"
   },
   "PROJECT":{
     "COMPANYS":"Company",
@@ -107,6 +113,7 @@
     "COMPANYS":"Company",
     "CREATION":"Team creation",
     "NAME":"Project Name",
+    "DESCRIPTION":"Team Description",
     "ADD" :"Add",
     "SELECT_PROFILE":"select a profile",
     "TEAMQTY":"Number of resources requested",
@@ -114,8 +121,14 @@
     "TEAMREQUIRED":"name of team required ",
     "SELECT_PROJECT":"select a project",
     "TEAMLIST" : "list of projects",
-    "SELECT_TEAM":"select a Team"
-
+    "SELECT_TEAM":"select a Team",
+    "SELECT_APPLICANT":"Select an applicant",
+    "BUTTON_ASSIGN":"Assign",
+    "PROFILE":"Profile",
+    "CANTIDAD":"Quantity",
+    "ADDTOTABLE":"Aggregate",
+    "SUCCESSASSIGNAPPLICANTS":"The applicants were assigned correctly.",
+    "ERRORDELETEAPPLICANTS":"There must be at least one applicant assigned"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Questions Bank",
@@ -157,7 +170,10 @@
     "TEST_SCHEDULE_LIST": "Test Appointments"
   },
   "PRINCIPAL":{
-    "HEADER":"Home"
+    "HEADER":"Home",
+    "DIALOGMSJSKILLAPPLICANT":"Your profile is not complete yet, you need to fill your profile information with your skills.",
+    "BUTTONSKILLS":"Assign skills",
+    "BUTTONCONTINUE":"Continue"
   },
   "APPLICANT_SEARCH":{
     "TECH_SKILL" :"Technical Skills",
@@ -167,11 +183,23 @@
     "SEARCH_APPLICANT":"Search",
     "INFO": "Applicant Information"
   },
+  "TEST_GROUP":{
+    "NAME": "Name of test group",
+    "NAME_REQUIRED" :"the name of the test group its necesary",
+    "DESCRIPTION":" Test group description",
+    "DESCRIPTION_REQUIRED" : "the description  its necesary",
+    "ADD":"ADD"
+  },
   "INTERVIEWS2":{
-    "INPUTSEARCH":"Search",
-    "LISTHCATEGORY":"Category",
-    "LISTHINTERVIEW":"Interview with",
-    "LISTHDATE":"Test Date",
-    "INTERVIEWSLIST":"List of interviews"
-  }
+   "INPUTSEARCH":"Search",
+   "LISTHCATEGORY":"Category",
+   "LISTHINTERVIEW":"Interview with",
+   "LISTHDATE":"Test Date",
+   "INTERVIEWSLIST":"Interviews list"
+ },
+ "APPLICANT_SKILLS":{
+  "HEADERLABEL":"Applicant skills",
+  "ERRORSAVESKILLS":"Skills could not be saved.",
+  "SUCCESSSAVESKILLS":"The skills were assigned correctly."
+ }
 }

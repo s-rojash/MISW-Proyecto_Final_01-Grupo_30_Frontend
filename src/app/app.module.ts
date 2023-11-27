@@ -23,8 +23,10 @@ import { ProfileModule } from './profile/profile.module';
 import { ProfileRoutingModule } from './profile/profile-routing.module';
 import { TeamModule } from './team/team.module';
 import { TeamRoutingModule } from './team/team-routing.module';
-import { EntrevistasModule } from './entrevistas/entrevistas.module';
-import { EntrevistasRoutingModule } from './entrevistas/entrevistas-routing.module';
+import { CompanyModule } from './company/company.module';
+import { CompanyRoutingModule } from './company/company.routing.module';
+import { ApplicantModule } from './applicant/applicant.module';
+import { ApplicantRoutingModule } from './applicant/applicant.routing.module';
 
 //invoca servicio de intercepcion
 import { HttpErrorInterceptorService } from './interceptors/interceptor-errors.service';
@@ -45,6 +47,9 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ApplicantSearchModule } from './applicant-search/applicant-search.module';
 import { ApplicationSearchRoutingModule } from './applicant-search/applicant-search.routing.module';
+import { ConjuntoPruebasRoutingModule } from './conjunto-pruebas/conjunto-pruebas.routing';
+import { ConjuntoPruebasModule } from './conjunto-pruebas/conjunto-pruebas.module';
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -53,7 +58,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-
    ],
   imports: [
     BrowserModule,
@@ -78,8 +82,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AgendaPruebaRoutingModule,
     ApplicantSearchModule,
     ApplicationSearchRoutingModule,
-    EntrevistasModule,
-    EntrevistasRoutingModule,
+    ConjuntoPruebasRoutingModule,
+    ConjuntoPruebasModule,
+    CompanyModule,
+    CompanyRoutingModule,
+    ApplicantModule,
+    ApplicantRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

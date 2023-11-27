@@ -4,6 +4,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,8 +21,9 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { BancoPreguntasService } from '../banco-preguntas.service';
 import { BancoPreguntas } from '../banco-preguntas';
 import { of } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../categoria';
+import { ListaPreguntasListComponent } from '../lista-preguntas/lista-preguntas-list.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -32,14 +34,18 @@ describe('BancoPreguntasCreateComponent', () => {
   fixture: ComponentFixture<BancoPreguntasCreateComponent>,
   bancoPreguntasService: BancoPreguntasService,
   toastrSpy: jasmine.SpyObj<ToastrService>;
+  let mockActivatedRoute: any;
 
   beforeEach(waitForAsync(() => {
     const spy = jasmine.createSpyObj('ToastrService', ['success']);
+    mockActivatedRoute = {
+      params: of({ 'id?': '1' }) // Provide the necessary params for testing
+    };
 
     TestBed.configureTestingModule({
       imports:[MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
         MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, BancoPreguntasRoutingModule, RouterTestingModule,
-        MatSelectModule,
+        MatSelectModule, HttpClientTestingModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
@@ -52,8 +58,8 @@ describe('BancoPreguntasCreateComponent', () => {
         positionClass: 'toast-bottom-right',
         preventDuplicates: true,
       })],
-      declarations: [ BancoPreguntasCreateComponent, BancoPreguntasListComponent ],
-      providers: [Router, BancoPreguntasService, { provide: ToastrService, useValue: spy }]
+      declarations: [ BancoPreguntasCreateComponent, BancoPreguntasListComponent, ListaPreguntasListComponent ],
+      providers: [Router, BancoPreguntasService, { provide: ToastrService, useValue: spy }, { provide: ActivatedRoute, useValue: mockActivatedRoute }]
     })
     .compileComponents();
   }));
@@ -82,7 +88,7 @@ describe('BancoPreguntasCreateComponent', () => {
     expect(component.bancoPreguntasForm.valid).toBeFalsy();
   });
 
-  it('all fields empty', () => {
+  it('should all fields empty', () => {
     component.bancoPreguntasForm.patchValue({ tipoBanco: '', categoria: '' });
     fixture.detectChanges();
     expect(component.bancoPreguntasForm.valid).toBeFalsy();
@@ -106,8 +112,8 @@ describe('BancoPreguntasCreateComponent', () => {
 
   it("should call createBancoPreguntas createBancoPreguntas and return response success", () => {
     const categoria = { id: 1, nombre: 'sojash' };
-    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria};
-    let response: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria };
+    const bancopreguntas: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected:false};
+    let response: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false };
 
     spyOn(bancoPreguntasService, 'createBancoPreguntas').and.returnValue(of(response));
 
@@ -134,5 +140,24 @@ describe('BancoPreguntasCreateComponent', () => {
     component.getListaCategorias();
     fixture.detectChanges();
     expect(component.listaCategorias).toEqual(response);
+  });
+
+  it("should call ngOnInit bancoPreguntasId is not null", () => {
+    const categoria = { id: 1, nombre: 'sojash' };
+    let response: BancoPreguntas = { id: 1, idEmpresa: 1, tipoBanco: '', categoria, selected: false };
+
+    spyOn(bancoPreguntasService ,'getBancoPreguntas').and.returnValue(of(response));
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.listaPreguntasVisible).toBe(true);
+  });
+
+  it("should call ngOnInit bancoPreguntasId is null", () => {
+    component.bancoPreguntasId = null;
+    spyOn(component ,'ngOnInit');
+    component.ngOnInit();
+
+    fixture.detectChanges();
+    expect(component.listaPreguntasVisible).toBe(false);
   });
 });

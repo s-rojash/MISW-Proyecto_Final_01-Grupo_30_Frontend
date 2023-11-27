@@ -14,7 +14,9 @@
     "PROFILE":"Perfíl",
     "BUTTONCREATE":"Crear",
     "BUTTONLIST":"Listar",
-    "BUTTONSEARCH":"Buscar"
+    "BUTTONSEARCH":"Buscar",
+    "GROUPTEST":"Conjunto pruebas",
+    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil."
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -64,7 +66,11 @@
     "CC":"CEDULA DE CIUDADANIA",
     "CE":"CEDULA DE EXTRANJERIA",
     "BUSINESSNAME":"Razón social",
-    "BUSINESSNAMEREQUIRED":"Razón social requerida"
+    "BUSINESSNAMEREQUIRED":"Razón social requerida",
+    "DIALOGMSJSUCCESSEDITCOMPANY":"Empresa modificada correctamente",
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Empresa no pudo ser modificada",
+    "DIALOGMSJSUCCESSEDITAPPLICANT":"Su información fue modificada correctamente",
+    "DIALOGMSJFAILEDEDITAPPLICANT":"Error: Su información no pudo ser modificada"
   },
   "PROJECT":{
     "COMPANYS":"Empresas",
@@ -115,7 +121,14 @@
     "TEAMREQUIRED":"nombre de equipo requerido ",
     "SELECT_PROJECT":"seleccione un proyecto",
     "TEAMLIST" : "listado de proyectos",
-    "SELECT_TEAM":"Selecciona un equipo"
+    "SELECT_TEAM":"Selecciona un equipo",
+    "SELECT_APPLICANT":"Selecciona un candidato",
+    "BUTTON_ASSIGN":"Asignar",
+    "PROFILE":"Perfil",
+    "CANTIDAD":"Cantidad",
+    "ADDTOTABLE":"Agregar",
+    "SUCCESSASSIGNAPPLICANTS":"Los candidatos fueron asignados correctamente.",
+    "ERRORDELETEAPPLICANTS":"Debe haber al menos un candidato asignado"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",
@@ -157,7 +170,10 @@
     "TEST_SCHEDULE_LIST": "Agenda de pruebas"
   },
   "PRINCIPAL":{
-    "HEADER":"Inicio"
+    "HEADER":"Inicio",
+    "DIALOGMSJSKILLAPPLICANT":"Su perfil aún no está completo, debe completar su información de perfil con sus habilidades.",
+    "BUTTONSKILLS":"Asignar habilidades",
+    "BUTTONCONTINUE":"Continuar"
   },
   "APPLICANT_SEARCH":{
     "TECH_SKILL" :"Habilidades tecnicas",
@@ -167,11 +183,23 @@
     "SEARCH_APPLICANT":"Buscar",
     "INFO": "Información del candidato"
   },
-  "INTERVIEWS2":{
+  "TEST_GROUP":{
+    "NAME": "Nombre del conjunto de pruebas",
+    "NAME_REQUIRED" :"El nombre del conjunto de pruebas es requerido",
+    "DESCRIPTION":" descripción del conjunto de pruebas",
+    "DESCRIPTION_REQUIRED" : "El conjunto de pruebas es requerido",
+    "ADD":"Adicionar"
+  },
+   "INTERVIEWS2":{
     "INPUTSEARCH":"Buscar",
     "LISTHCATEGORY":"Categoria",
     "LISTHINTERVIEW":"Entrevista con",
     "LISTHDATE":"Fecha Prueba",
     "INTERVIEWSLIST":"Listado de entrevistas"
-  }
+  },
+ "APPLICANT_SKILLS":{
+  "HEADERLABEL":"Habilidades del candidato",
+  "ERRORSAVESKILLS":"No se pudo guardar las habilidades.",
+  "SUCCESSSAVESKILLS":"Se asignaron las habilidades correctamente."
+ }
 }

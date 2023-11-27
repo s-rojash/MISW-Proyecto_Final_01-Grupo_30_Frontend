@@ -47,6 +47,15 @@
         </li>
 
         <li *ngIf="showOptions" class="nav-item dropdown">
+          <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.GROUPTEST' | translate }}</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
+            <li><a class="dropdown-item" routerLink="/conjunto-pruebas/list">{{ 'HEADER.BUTTONLIST' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/conjunto-pruebas/create">{{ 'HEADER.BUTTONCREATE' | translate }}</a></li>
+          </ul>
+        </li>
+
+
+        <li *ngIf="showOptions" class="nav-item dropdown">
           <a class="nav-link nav-link-menupri dropdown-toggle" id="navbarDropdown6" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'HEADER.ENTREVISTASMENU' | translate }}</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown6">
             <li><a class="dropdown-item" routerLink="/entrevistas/lista">{{ 'HEADER.BUTTONLIST' | translate }}</a></li>
@@ -65,15 +74,15 @@
       </ul>
 
 
-
-
       <button *ngIf="showOptions" mat-fab class="bgimagefab" [matMenuTriggerFor]="menu"
         [style.backgroundImage]="'url(' + '../assets/Images/fabcirclebuttonimg.jpg' + ')'">
       </button>
 
       <mat-menu #menu="matMenu" class="mat-menu-panel">
-        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
-          <span style="padding-left: 30px;">{{ 'HEADER.MYPROFILEMENU' | translate }}</span>
+        <button mat-menu-item class="bgiconlogout" (click)="myprofile()" [style.backgroundImage]="'url(' + '../assets/Images/myprofile.svg' + ')'">
+          <span style="padding-left: 30px;">
+            <a>{{ 'HEADER.MYPROFILEMENU' | translate }}</a>
+          </span>
         </button>
 
         <button mat-button class="bgiconlanguages" (click)="changeLang('es')" [matMenuTriggerFor]="aboveMenu" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">
@@ -89,7 +98,7 @@
         </mat-menu>
 
         <mat-divider></mat-divider>
-        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'">
+        <button mat-menu-item class="bgiconlogout" [style.backgroundImage]="'url(' + '../assets/Images/logoutIcon.svg' + ')'" (click)="logout()">
           <span style="padding-left: 30px;">{{ 'HEADER.LOGOUTMENU' | translate }}</span>
         </button>
       </mat-menu>

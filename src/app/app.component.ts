@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import { Location } from '@angular/common';
+import { ApplicantSkillsComponent } from './applicant/applicant-skills/applicant-skills.component';
+import { ApplicantService } from './applicant/applicant.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -17,14 +21,23 @@ export class AppComponent {
   ngOnInit() {
   }
 
+  ngAfterContentChecked(): void {
+    this.changeDetector.detectChanges();
+  }
+
   changeLang(pref: string){
     localStorage.setItem("lang", pref);
     this.translatelang(this.translate2);
+
+    if(this.router.url === '/applicant/skills'){
+      window.location.reload();
+    }
   }
 
   translatelang(translate: TranslateService){
     if(localStorage.getItem("lang") === null){
       translate.setDefaultLang('en');
+      localStorage.setItem("lang", "en");
     }
     else if(localStorage.getItem("lang") === 'es'){
       translate.setDefaultLang('es');
@@ -34,7 +47,21 @@ export class AppComponent {
     }
   }
 
-  constructor(private router: Router, public translate: TranslateService) {
+  myprofile(){
+    if(localStorage.getItem("API_EMPRESA_ID") != null){
+      this.router.navigate(['/company/edit']);
+    }
+    else if(localStorage.getItem("API_CANDIDATO_ID") != null){
+      this.router.navigate(['/applicant/edit']);
+    }
+  }
+
+  logout(){
+    this.router.navigate(['/logout']);
+  }
+
+  constructor(private router: Router, public translate: TranslateService,
+              private changeDetector: ChangeDetectorRef, private location: Location) {
     translate.addLangs(['en', 'es']);
     this.translatelang(translate);
     this.translate2 = translate;
@@ -59,8 +86,15 @@ export class AppComponent {
           // console.log("NU")
           this.showOptions = true;
           console.log("entro true");
+
+          if(!localStorage.getItem("API_TOKEN") && event['url'] != '/signup/company' && event['url'] != '/signup/applicant'
+            && event['url'] != '/login' && event['url'] != '/'){
+            router.navigate(['/login']);
+          }
         }
       }
     });
+
+
   }
 }
