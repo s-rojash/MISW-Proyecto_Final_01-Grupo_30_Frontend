@@ -1,0 +1,60 @@
+<div style="padding-bottom: 15px; padding-left: 10px; margin-left: 15px;">
+  <span>
+    <label>{{ 'EVALUATION.APPLICANT' | translate }} /
+      <label style="text-decoration: underline;">{{ 'APPLICANT_SKILLS.HEADERLABEL' | translate }}</label>
+    </label>
+  </span>
+</div>
+
+<div class="col-md-12" style="display: flex;align-items: center;flex-direction: column;">
+  <div style="width: 70%; z-index: 2;">
+    <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px; margin-left: 15%;">
+      <mat-card-title>{{ 'APPLICANT_SEARCH.TECH_SKILL' | translate }}</mat-card-title>
+      <mat-selection-list *ngIf="!isEnglish" [(ngModel)]="selectedOptionstehnicalModel" (ngModelChange)="onNgModelChange($event)">
+        <mat-list-option [selected]="isCheck(tech.id)" *ngFor="let tech of tehnicalskills" [value]="tech">{{ tech.habilidad }}</mat-list-option>
+      </mat-selection-list>
+      <mat-selection-list *ngIf="isEnglish" [(ngModel)]="selectedOptionstehnicalModel" (ngModelChange)="onNgModelChange($event)">
+        <mat-list-option [selected]="isCheck(tech.id)" *ngFor="let tech of tehnicalskills" [value]="tech">{{ tech.habilidad_en }}</mat-list-option>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+
+  <div style="width: 70%; z-index: 2;">
+    <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px; margin-left: 15%;">
+      <mat-card-title>{{ 'APPLICANT_SEARCH.SOFT_SKILL' | translate }}</mat-card-title>
+      <mat-selection-list *ngIf="!isEnglish" [(ngModel)]="selectedOptionssoftModel" (ngModelChange)="onNgModelChange2($event)">
+        <mat-list-option [selected]="isCheck(softab.id)" *ngFor="let softab of softability" [value]="softab">{{ softab.habilidad }}</mat-list-option>
+      </mat-selection-list>
+      <mat-selection-list *ngIf="isEnglish" [(ngModel)]="selectedOptionssoftModel" (ngModelChange)="onNgModelChange2($event)">
+        <mat-list-option [selected]="isCheck(softab.id)" *ngFor="let softab of softability" [value]="softab">{{ softab.habilidad_en }}</mat-list-option>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+
+  <div style="width: 70%; z-index: 2;">
+    <mat-card class="project-card solid-border-card" style="height: auto; margin: 5px; padding: 10px; margin-left: 15%;">
+      <mat-card-title>{{ 'APPLICANT_SEARCH.PROFILE' | translate }}</mat-card-title>
+      <mat-selection-list *ngIf="!isEnglish" #list [(ngModel)]="selectedOptionsspefificationsModel" (ngModelChange)="onNgModelChange3($event)">
+        <mat-list-option [selected]="isCheck(spefification.id)" *ngFor="let spefification of spefifications" [value]="spefification">{{ spefification.habilidad }}</mat-list-option>
+      </mat-selection-list>
+      <mat-selection-list *ngIf="isEnglish" #list [(ngModel)]="selectedOptionsspefificationsModel" (ngModelChange)="onNgModelChange3($event)">
+        <mat-list-option [selected]="isCheck(spefification.id)" *ngFor="let spefification of spefifications" [value]="spefification">{{ spefification.habilidad_en }}</mat-list-option>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+</div>
+<div>
+  <div style="text-align: center;">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      class="button-signup"
+      [disabled]="isButtonDisabled()"
+      mat-fab extended
+      (click)="saveSkills()"
+    >
+    <mat-icon style="color: black;">add</mat-icon>
+      {{ 'EVALUATION.SAVE' | translate }}
+    </button>
+  </div>
+</div>

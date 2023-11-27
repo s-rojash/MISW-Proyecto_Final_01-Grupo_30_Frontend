@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ApplicantEditComponent } from './applicant-edit/applicant-edit.component';
+import { ApplicantSkillsComponent } from './applicant-skills/applicant-skills.component';
 
 const routes: Routes = [{
   path: 'applicant',
@@ -8,6 +9,10 @@ const routes: Routes = [{
    {
      path: 'edit',
      component: ApplicantEditComponent
+   },
+   {
+    path: 'skills',
+    component: ApplicantSkillsComponent
    }
   ]
  }];
