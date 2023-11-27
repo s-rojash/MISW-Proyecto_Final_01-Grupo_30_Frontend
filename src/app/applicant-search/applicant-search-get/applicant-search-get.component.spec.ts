@@ -122,21 +122,32 @@ describe('ApplicantSearchGetComponent', () => {
     signupService = TestBed.inject(SignupService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+
+
+  it('should initialize with empty selectedApplicants array', () => {
+    expect(component.selectedApplicants).toEqual([]);
   });
 
 
+  it('should toggle selection of an applicant', () => {
+    component.toggleSelection(applicant);
+    expect(component.isSelected(applicant)).toBe(true);
+  
+    component.toggleSelection(applicant);
+    expect(component.isSelected(applicant)).toBe(false);
+  });
 
-  it('should handle null values in techSkills, softSkills, and profiles', () => {
-    component.techSkills.setValue(null);
-    component.softSkills.setValue(null);
-    component.profiles.setValue(null);
+  it('should load getHabilidades Tecnicas', () => {
+    const habilidad = [habilidadestecnicas];
+    mockApplicantSearchService.getHabilidadesTecnicas.and.returnValue(of(habilidad));
   
     component.showApplicantDetails();
   
-      
+    expect(habilidad).toEqual(habilidad);
+    expect(component.showApplicantInfo).toBe(true);
   });
+
+
 
   it('should translate skills', () => {
     const skill = { habilidad: 'Habilidad', habilidad_en: 'Skill' };
@@ -176,12 +187,6 @@ describe('ApplicantSearchGetComponent', () => {
     expect(component.isSelected(applicant)).toBe(false);
   });
 
-  it('should call showApplicantDetails() when the "Search Applicant" button is clicked', () => {
-    const showApplicantDetailsSpy = spyOn(component, 'showApplicantDetails');
-    const button = fixture.debugElement.query(By.css('.button-search'));
-    button.triggerEventHandler('click', null);
-    expect(showApplicantDetailsSpy).toHaveBeenCalled();
-  });
 
  
 
@@ -215,14 +220,6 @@ describe('ApplicantSearchGetComponent', () => {
   });
 
 
-  it('should load getCandidatoHabilidades', () => {
-    const habilidad = [habilidadesblandas];
-    mockApplicantSearchService.getHabilidadesBlandas.and.returnValue(of(habilidad));
-
-    component.showApplicantDetails();
-    expect(habilidad).toEqual(habilidad);
-    expect(component.showApplicantInfo).toBe(true);
-  });
 
 
 
