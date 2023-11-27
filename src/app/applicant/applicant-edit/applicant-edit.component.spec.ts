@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader, TranslateFakeLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';

@@ -15,7 +15,8 @@
     "BUTTONCREATE":"Crear",
     "BUTTONLIST":"Listar",
     "BUTTONSEARCH":"Buscar",
-    "GROUPTEST":"Conjunto pruebas"
+    "GROUPTEST":"Conjunto pruebas",
+    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil."
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -169,7 +170,10 @@
     "TEST_SCHEDULE_LIST": "Agenda de pruebas"
   },
   "PRINCIPAL":{
-    "HEADER":"Inicio"
+    "HEADER":"Inicio",
+    "DIALOGMSJSKILLAPPLICANT":"Su perfil aún no está completo, debe completar su información de perfil con sus habilidades.",
+    "BUTTONSKILLS":"Asignar habilidades",
+    "BUTTONCONTINUE":"Continuar"
   },
   "APPLICANT_SEARCH":{
     "TECH_SKILL" :"Habilidades tecnicas",
@@ -192,5 +196,10 @@
     "LISTHINTERVIEW":"Entrevista con",
     "LISTHDATE":"Fecha Prueba",
     "INTERVIEWSLIST":"Listado de entrevistas"
-  }
+  },
+ "APPLICANT_SKILLS":{
+  "HEADERLABEL":"Habilidades del candidato",
+  "ERRORSAVESKILLS":"No se pudo guardar las habilidades.",
+  "SUCCESSSAVESKILLS":"Se asignaron las habilidades correctamente."
+ }
 }
