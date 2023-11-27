@@ -4,6 +4,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {TranslateModule, TranslateLoader, TranslateFakeLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -41,6 +42,7 @@ describe('ApplicantSkillsComponent', () => {
       imports: [
         MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
         MatInputModule, ReactiveFormsModule, BrowserAnimationsModule, MatListModule, MatCheckboxModule, FormsModule,
+        HttpClientTestingModule,
         TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
