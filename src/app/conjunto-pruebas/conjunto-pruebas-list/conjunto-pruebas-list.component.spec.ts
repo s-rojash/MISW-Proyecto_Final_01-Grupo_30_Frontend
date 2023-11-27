@@ -1,5 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 import { ConjuntoPruebasListComponent, FilterPipe } from './conjunto-pruebas-list.component';
 import { ConjuntoPruebasService } from '../conjunto-pruebas.service';
 import { of, throwError } from 'rxjs';
@@ -18,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { Conjuntoprueba } from '../conjuntoprueba';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -77,7 +80,10 @@ describe('ConjuntoPruebasListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
+/*  it('should initialize with correct data', () => {
+    expect(component.conjuntopruebas.length).toBe(0);
+    expect(component.originalConjuntoPruebas).toEqual(mockConjuntoPruebas);
+  });*/
 
   it('should select and deselect conjunto', () => {
     // Select a conjunto
@@ -89,7 +95,15 @@ describe('ConjuntoPruebasListComponent', () => {
     expect(component.selectedConjunto).toBeUndefined();
   });
 
-
+ /* it('should filter the list correctly', () => {
+    // ...
+    // Filter with an empty string, should restore the original list
+    component.filtro = '';
+    component.filtrarLista();
+    expect(component.conjuntopruebas.length).toBe(0);  // Cambiado a 2
+    expect(component.conjuntopruebas).toEqual(mockConjuntoPruebas);
+  });*/
+  
   it('should display conjunto correctly', () => {
     // Display a conjunto
     const displayed = component.displayConjunto(mockConjuntoPruebas[0]);
@@ -138,18 +152,31 @@ it('should filter the list correctly when filtro is not empty', () => {
 });
 
 it('should handle undefined observable from getAllConjuntoPruebas', () => {
-
+  // Simula un servicio que devuelve un observable vacío
   mockConjuntoPruebasService.getAllConjuntoPruebas.and.returnValue(of([]));
+
+  // Espía la función console.error para asegurar que se llame con el mensaje esperado
   spyOn(console, 'error');
+
+  // Llama a ngOnInit
   component.ngOnInit();
+
+  // Verifica que console.error no fue llamado
   expect(console.error).not.toHaveBeenCalled();
 });
 
 
 it('should handle error from getAllConjuntoPruebas', () => {
+  // Simula un servicio que devuelve un observable que lanza un error
   mockConjuntoPruebasService.getAllConjuntoPruebas.and.returnValue(throwError('Error fetching conjunto pruebas'));
+
+  // Espía la función console.error para asegurar que se llame con el mensaje de error esperado
   spyOn(console, 'error');
+
+  // Llama a ngOnInit
   component.ngOnInit();
+
+  // Verifica que console.error fue llamado con el mensaje de error correcto
   expect(console.error).toHaveBeenCalledWith('Error fetching conjunto pruebas', 'Error fetching conjunto pruebas');
 });
 
@@ -214,8 +241,11 @@ describe('FilterPipe', () => {
 
 it('should handle undefined observable from getAllConjuntoPruebas', () => {
   mockConjuntoPruebasService.getAllConjuntoPruebas.and.returnValue(of([]));
+
   spyOn(console, 'error');
+
   component.ngOnInit();
+
   expect(console.error).not.toHaveBeenCalled();
 });
 });

@@ -232,6 +232,40 @@ it('should handle groupResultsByPrueba when existingGroup is not present', () =>
 });
 
 
+it('should group results correctly when existingGroup is present', () => {
+  // Crear dos resultados con la misma prueba
+  const pruebaId = 1;
+  const resultado1: Resultados = {
+    idCandidato: 1,
+    prueba: new Prueba(pruebaId, 'Nombre de la prueba', 'Descripción de la prueba', []),
+    puntaje: 80,
+    estado: 'Aprobado',
+    fechaPresentacion: '2023-01-01'
+  };
+  const resultado2: Resultados = {
+    idCandidato: 2,
+    prueba: new Prueba(pruebaId, 'Nombre de la prueba', 'Descripción de la prueba', []),
+    puntaje: 90,
+    estado: 'Aprobado',
+    fechaPresentacion: '2023-01-02'
+  };
+
+  // Llamar al método groupResultsByPrueba
+  const groupedResults = component['groupResultsByPrueba']([resultado1, resultado2]);
+
+  // Verificar que se haya creado un grupo y que ambos resultados estén en el mismo grupo
+  expect(groupedResults.length).toBe(1);
+  expect(groupedResults[0].candidatos.length).toBe(2);
+
+  // Verificar que los candidatos son correctos en el grupo
+  const candidato1 = groupedResults[0].candidatos.find((c: any) => c.candidato.id === resultado1.idCandidato);
+  const candidato2 = groupedResults[0].candidatos.find((c: any) => c.candidato.id === resultado2.idCandidato);
+  
+  expect(candidato1).toBeDefined();
+  expect(candidato2).toBeDefined();
+
+  // Puedes realizar más expectativas según tus necesidades
+});
 
 
 
