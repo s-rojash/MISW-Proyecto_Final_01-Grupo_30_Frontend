@@ -147,16 +147,6 @@ describe('ApplicantSearchGetComponent', () => {
     expect(component.showApplicantInfo).toBe(true);
   });
 
-
-
- /* it('should translate skills', () => {
-    const skill = { habilidad: 'Habilidad', habilidad_en: 'Skill' };
-  
-    const translation = component.getSkillTranslation(skill);
-  
-    expect('Habilidad').toBe('Habilidad'); 
-  });*/
-
   it('should extract unique applicants info', () => {
     const habilidadescandidato = [
       {
@@ -176,28 +166,8 @@ describe('ApplicantSearchGetComponent', () => {
     expect(uniqueApplicants[1].nombres).toBe('Jane');
   });
 
-  
 
 
-
- /* it('should toggle selection of an applicant', () => {
-    component.toggleSelection(applicant);
-    expect(component.isSelected(applicant)).toBe(true);
-    component.toggleSelection(applicant);
-    expect(component.isSelected(applicant)).toBe(false);
-  });*/
-
-
- 
-
-  it('should load getHabilidades TEcnicas', () => {
-    const habilidad = [habilidadestecnicas];
-    mockApplicantSearchService.getHabilidadesTecnicas.and.returnValue(of(habilidad));
-
-    component.showApplicantDetails();
-    expect(habilidad).toEqual(habilidad);//El resultado del servicio.
-    expect(component.showApplicantInfo).toBe(true);
-  });
 
 
   it('should load getHabilidades profesionales', () => {
