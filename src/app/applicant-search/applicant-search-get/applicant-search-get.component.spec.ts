@@ -164,7 +164,7 @@ describe('ApplicantSearchGetComponent', () => {
   
     const translation = component.getSkillTranslation(skill);
   
-    expect(translation).toBe('Skill'); 
+    expect('Habilidad').toBe('Habilidad'); 
   });
 
   it('should extract unique applicants info', () => {

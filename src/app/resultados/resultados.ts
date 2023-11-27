@@ -1,21 +1,24 @@
+import { Prueba } from "../banco-preguntas/prueba";
+import { Signupapplicant } from "../signup/signupapplicant";
+
 export class Resultados {
-    id: number;
-    idPrueba: number;
+    id?: number;
     idCandidato: number;
+    prueba: Prueba;
     puntaje: number;
     estado: string;
     fechaPresentacion: string; 
   
     constructor(
       id: number,
-      idPrueba: number,
+      prueba: Prueba,
       idCandidato: number,
       puntaje: number,
       estado: string,
       fechaPresentacion: string
     ) {
       this.id = id;
-      this.idPrueba = idPrueba;
+      this.prueba = prueba;
       this.idCandidato = idCandidato;
       this.puntaje = puntaje;
       this.estado = estado;

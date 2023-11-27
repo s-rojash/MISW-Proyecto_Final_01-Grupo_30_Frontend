@@ -48,7 +48,12 @@ export class ProjectCreateComponent implements OnInit {
       }
 
       
-      cancelCreation():void{this.projectForm.reset();}
+      cancelCreation(): void {
+        this.projectForm.setValue({
+          nombre: '',
+          descripcion: '',
+        });
+      }
 
   ngOnInit():void {
     this.projectForm = this.formBuilder.group({
@@ -60,10 +65,11 @@ export class ProjectCreateComponent implements OnInit {
   }
   
   onSubmit(): void {
+    console.log('Método onSubmit llamado');
     if (this.isFormValid()) {
-        this.createProject(this.projectForm.value);
+      this.createProject(this.projectForm.value);
     } else {
-       console.error("Formulario no válido. No se puede enviar.");
+      console.error('Formulario no válido. No se puede enviar.');
     }
   }
   

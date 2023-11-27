@@ -194,5 +194,12 @@
     "LISTHINTERVIEW":"Entrevista con",
     "LISTHDATE":"Fecha Prueba",
     "INTERVIEWSLIST":"Listado de entrevistas"
-  }
+  },
+  "RESULTS":{
+   "RESULT":"Resultado de pruebas",
+   "APPLICANT_TEST":"Candidatos asignados a la prueba",
+   "SCORE":"Puntaje",
+   "STATUS":"Estado",
+   "PRESENTATIONDATE":"Fecha de presentación"
+ }
 }

@@ -194,5 +194,12 @@
    "LISTHINTERVIEW":"Interview with",
    "LISTHDATE":"Test Date",
    "INTERVIEWSLIST":"Interviews list"
- }
+ },
+ "RESULTS":{
+  "RESULT":"Test Results",
+  "APPLICANT_TEST":"applicants assigned to the test",
+  "SCORE":"Score",
+  "STATUS":"Status",
+  "PRESENTATIONDATE":"Presentation  Date"
+}
 }

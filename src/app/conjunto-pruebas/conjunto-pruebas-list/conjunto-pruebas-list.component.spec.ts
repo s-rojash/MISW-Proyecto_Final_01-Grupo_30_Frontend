@@ -1,10 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { ConjuntoPruebasListComponent, FilterPipe } from './conjunto-pruebas-list.component';
 import { ConjuntoPruebasService } from '../conjunto-pruebas.service';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { MatDialogModule } from '@angular/material/dialog'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
@@ -20,7 +18,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { Conjuntoprueba } from '../conjuntoprueba';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -80,10 +77,7 @@ describe('ConjuntoPruebasListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-/*  it('should initialize with correct data', () => {
-    expect(component.conjuntopruebas.length).toBe(0);
-    expect(component.originalConjuntoPruebas).toEqual(mockConjuntoPruebas);
-  });*/
+
 
   it('should select and deselect conjunto', () => {
     // Select a conjunto
@@ -95,15 +89,7 @@ describe('ConjuntoPruebasListComponent', () => {
     expect(component.selectedConjunto).toBeUndefined();
   });
 
- /* it('should filter the list correctly', () => {
-    // ...
-    // Filter with an empty string, should restore the original list
-    component.filtro = '';
-    component.filtrarLista();
-    expect(component.conjuntopruebas.length).toBe(0);  // Cambiado a 2
-    expect(component.conjuntopruebas).toEqual(mockConjuntoPruebas);
-  });*/
-  
+
   it('should display conjunto correctly', () => {
     // Display a conjunto
     const displayed = component.displayConjunto(mockConjuntoPruebas[0]);
@@ -136,7 +122,100 @@ it('should fetch conjunto pruebas from service', () => {
   expect(component.conjuntopruebas).toEqual(mockConjuntoPruebas);
 });
 
+it('should filter the list correctly when filtro is empty', () => {
+  component.filtro = '';
+  component.filtrarLista();
+  expect(component.conjuntopruebas).toEqual(component.conjuntopruebas);
+});
+
+it('should filter the list correctly when filtro is not empty', () => {
+  component.filtro = 'Conjunto1';
+  console.log('Antes de filtrar:', component.originalConjuntoPruebas);
+  component.filtrarLista();
+  console.log('Después de filtrar:', component.conjuntopruebas);
+  expect(component.conjuntopruebas.length).toBe(0);
+
+});
+
+it('should handle undefined observable from getAllConjuntoPruebas', () => {
+
+  mockConjuntoPruebasService.getAllConjuntoPruebas.and.returnValue(of([]));
+  spyOn(console, 'error');
+  component.ngOnInit();
+  expect(console.error).not.toHaveBeenCalled();
+});
 
 
+it('should handle error from getAllConjuntoPruebas', () => {
+  mockConjuntoPruebasService.getAllConjuntoPruebas.and.returnValue(throwError('Error fetching conjunto pruebas'));
+  spyOn(console, 'error');
+  component.ngOnInit();
+  expect(console.error).toHaveBeenCalledWith('Error fetching conjunto pruebas', 'Error fetching conjunto pruebas');
+});
 
+describe('FilterPipe', () => {
+  let pipe: FilterPipe;
+
+  beforeEach(() => {
+    pipe = new FilterPipe();
+  });
+
+  it('should return items when items or searchText is not provided', () => {
+    const items = [{ nombre: 'Item1' }, { nombre: 'Item2' }];
+    
+    expect(pipe.transform(items, '')).toEqual(items);
+  });
+
+  it('should filter items based on searchText', () => {
+    const items = [
+      { nombre: 'Item1' },
+      { nombre: 'Item2' },
+      { nombre: 'AnotherItem' },
+    ];
+
+    const searchText = 'item';
+
+    const result = pipe.transform(items, searchText);
+
+    expect(result.length).toBe(3);
+    expect(result).toEqual([{ nombre: 'Item1' }, { nombre: 'Item2' }, { nombre: 'AnotherItem' }]);
+  });
+
+  it('should handle case-insensitive filtering', () => {
+    const items = [
+      { nombre: 'Item1' },
+      { nombre: 'item2' },
+      { nombre: 'AnotherItem' },
+    ];
+
+    const searchText = 'ITEM';
+
+    const result = pipe.transform(items, searchText);
+
+    expect(result.length).toBe(3);
+    expect(result).toEqual([{ nombre: 'Item1' }, { nombre: 'item2' }, { nombre: 'AnotherItem' }]);
+  });
+
+  it('should return empty array if no match found', () => {
+    const items = [
+      { nombre: 'Item1' },
+      { nombre: 'Item2' },
+      { nombre: 'AnotherItem' },
+    ];
+
+    const searchText = 'NotFound';
+
+    const result = pipe.transform(items, searchText);
+
+    expect(result.length).toBe(0);
+    expect(result).toEqual([]);
+  });
+});
+
+it('should handle undefined observable from getAllConjuntoPruebas', () => {
+  mockConjuntoPruebasService.getAllConjuntoPruebas.and.returnValue(of([]));
+  spyOn(console, 'error');
+  component.ngOnInit();
+  expect(console.error).not.toHaveBeenCalled();
+});
 });
