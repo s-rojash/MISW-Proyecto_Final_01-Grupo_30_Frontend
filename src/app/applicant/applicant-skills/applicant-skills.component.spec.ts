@@ -32,8 +32,11 @@ describe('ApplicantSkillsComponent', () => {
   let translate: jasmine.SpyObj<TranslateService>;
   let pass2 = '12345';
   let applicantService: ApplicantService;
+  let toastrSpy: jasmine.SpyObj<ToastrService>;
 
   beforeEach(waitForAsync(() => {
+    const spy = jasmine.createSpyObj('ToastrService', ['success']);
+
     TestBed.configureTestingModule({
       imports: [
         MatDialogModule, HttpClientModule, MatCardModule, MatFormFieldModule, MatButtonModule, MatIconModule,
@@ -53,7 +56,7 @@ describe('ApplicantSkillsComponent', () => {
         }),
       ],
       declarations: [ ApplicantSkillsComponent ],
-      providers: [ToastrService, ApplicantService, TranslateService]
+      providers: [ToastrService, ApplicantService, TranslateService, { provide: ToastrService, useValue: spy }]
     })
     .compileComponents();
   }));
@@ -62,6 +65,7 @@ describe('ApplicantSkillsComponent', () => {
     fixture = TestBed.createComponent(ApplicantSkillsComponent);
     component = fixture.componentInstance;
     applicantService = TestBed.inject(ApplicantService);
+    toastrSpy = TestBed.inject(ToastrService) as jasmine.SpyObj<ToastrService>;
     fixture.detectChanges();
   });
 
@@ -128,5 +132,11 @@ describe('ApplicantSkillsComponent', () => {
     component.getApplicant();
     fixture.detectChanges();
     expect(component.applicant).toBe(response);
+  }));
+
+  it("should call saveSkills and return response success", waitForAsync(() => {
+    component.saveSkills();
+    fixture.detectChanges();
+    expect(toastrSpy.success).toHaveBeenCalled();
   }));
 });
