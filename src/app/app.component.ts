@@ -1,6 +1,10 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import { Location } from '@angular/common';
+import { ApplicantSkillsComponent } from './applicant/applicant-skills/applicant-skills.component';
+import { ApplicantService } from './applicant/applicant.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +28,10 @@ export class AppComponent {
   changeLang(pref: string){
     localStorage.setItem("lang", pref);
     this.translatelang(this.translate2);
+
+    if(this.router.url === '/applicant/skills'){
+      window.location.reload();
+    }
   }
 
   translatelang(translate: TranslateService){
@@ -53,7 +61,7 @@ export class AppComponent {
   }
 
   constructor(private router: Router, public translate: TranslateService,
-              private changeDetector: ChangeDetectorRef) {
+              private changeDetector: ChangeDetectorRef, private location: Location) {
     translate.addLangs(['en', 'es']);
     this.translatelang(translate);
     this.translate2 = translate;
