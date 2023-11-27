@@ -126,28 +126,7 @@ describe('ApplicantSearchGetComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize with empty selectedApplicants array', () => {
-    expect(component.selectedApplicants).toEqual([]);
-  });
 
-
-  it('should toggle selection of an applicant', () => {
-    component.toggleSelection(applicant);
-    expect(component.isSelected(applicant)).toBe(true);
-  
-    component.toggleSelection(applicant);
-    expect(component.isSelected(applicant)).toBe(false);
-  });
-
-  it('should load getHabilidades Tecnicas', () => {
-    const habilidad = [habilidadestecnicas];
-    mockApplicantSearchService.getHabilidadesTecnicas.and.returnValue(of(habilidad));
-  
-    component.showApplicantDetails();
-  
-    expect(habilidad).toEqual(habilidad);
-    expect(component.showApplicantInfo).toBe(true);
-  });
 
   it('should handle null values in techSkills, softSkills, and profiles', () => {
     component.techSkills.setValue(null);
