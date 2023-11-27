@@ -139,4 +139,34 @@ describe('ApplicantSkillsComponent', () => {
     fixture.detectChanges();
     expect(toastrSpy.success).toHaveBeenCalled();
   }));
+
+  it("should call getSkills getSoftSkills and return response success", waitForAsync(() => {
+    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Tecnicas', habilidad: 'SQL', habilidad_en: 'SQL'}];
+
+    spyOn(applicantService, 'getSoftSkills').and.returnValue(of(response));
+
+    component.getSkills();
+    fixture.detectChanges();
+    expect(component.softability.length).toBe(1);
+  }));
+
+  it("should call getSkills getTechnicalSkills and return response success", waitForAsync(() => {
+    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Tecnicas', habilidad: 'SQL', habilidad_en: 'SQL'}];
+
+    spyOn(applicantService, 'getTechnicalSkills').and.returnValue(of(response));
+
+    component.getSkills();
+    fixture.detectChanges();
+    expect(component.tehnicalskills.length).toBe(1);
+  }));
+
+  it("should call getSkills getProfessionalSkills and return response success", waitForAsync(() => {
+    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Tecnicas', habilidad: 'SQL', habilidad_en: 'SQL'}];
+
+    spyOn(applicantService, 'getProfessionalSkills').and.returnValue(of(response));
+
+    component.getSkills();
+    fixture.detectChanges();
+    expect(component.spefifications.length).toBe(1);
+  }));
 });
