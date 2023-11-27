@@ -141,7 +141,7 @@ describe('ApplicantSkillsComponent', () => {
   }));
 
   it("should call getSkills getSoftSkills and return response success", waitForAsync(() => {
-    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Tecnicas', habilidad: 'SQL', habilidad_en: 'SQL'}];
+    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Blandas', habilidad: 'SQL', habilidad_en: 'SQL'}];
 
     spyOn(applicantService, 'getSoftSkills').and.returnValue(of(response));
 
@@ -161,7 +161,7 @@ describe('ApplicantSkillsComponent', () => {
   }));
 
   it("should call getSkills getProfessionalSkills and return response success", waitForAsync(() => {
-    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Tecnicas', habilidad: 'SQL', habilidad_en: 'SQL'}];
+    const response: Applicantskills[] = [{id: 1, tipoHabilidad: 'Profesionales', habilidad: 'ingles', habilidad_en: 'english'}];
 
     spyOn(applicantService, 'getProfessionalSkills').and.returnValue(of(response));
 
