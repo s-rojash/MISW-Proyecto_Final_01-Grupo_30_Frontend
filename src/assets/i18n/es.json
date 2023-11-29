@@ -16,7 +16,8 @@
     "BUTTONLIST":"Listar",
     "BUTTONSEARCH":"Buscar",
     "GROUPTEST":"Conjunto pruebas",
-    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil."
+    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil.",
+    "RESULTTEST":"Resultado Pruebas."
   },
   "LOGIN":{
     "TITLE":"Ingreso",

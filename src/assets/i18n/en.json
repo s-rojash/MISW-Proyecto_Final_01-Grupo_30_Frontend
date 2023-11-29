@@ -16,7 +16,8 @@
     "BUTTONLIST":"List",
     "BUTTONSEARCH":"Search",
     "GROUPTEST":"Group Test",
-    "PROFILEGETERROR":"Could not get your profile information."
+    "PROFILEGETERROR":"Could not get your profile information.",
+    "RESULTTEST":"Result test"
   },
   "LOGIN":{
     "TITLE":"Login",
