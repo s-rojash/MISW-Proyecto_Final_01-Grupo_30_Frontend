@@ -5,9 +5,11 @@ import { environment } from 'src/environments/environment';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { AgendaPruebaService } from './agenda-prueba.service';
 import { Candidato } from './candidato';
+import { AgendaPrueba } from './agenda-prueba';
+import { Prueba } from '../banco-preguntas/prueba';
 
 describe('Service: AgendaPrueba', () => {
-  let apiUrlEntrevistas: string = environment.baseUrlEntrevistas;
+  let apiUrlEntrevistas: string = environment.baseUrlBancoPreguntas;
   let UrlCandidatos: string = environment.baseUrl;
   let httpMock: HttpTestingController;
   let agendaPruebaService: AgendaPruebaService;
@@ -34,13 +36,14 @@ describe('Service: AgendaPrueba', () => {
 
   it('should handle getListaAgendaPrueba successful HTTP request (status code 200)', () => {
     const date = new Date('10/28/2023');
-    const agendapruebas = [{ id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' }];
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    const agendapruebas: AgendaPrueba[] = [{ id: 1, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date }];
 
     agendaPruebaService.getListaAgendaPrueba().subscribe(data => {
       expect(data).toEqual(agendapruebas); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne(apiUrlEntrevistas + '/agendar-pruebas/'); // Expect a single request to this URL
+    const req = httpMock.expectOne(apiUrlEntrevistas + '/pruebas-candidato/'); // Expect a single request to this URL
     expect(req.request.method).toBe('GET'); // Assert that the request method is GET
 
     req.flush(agendapruebas, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
@@ -54,7 +57,7 @@ describe('Service: AgendaPrueba', () => {
       }
     });
 
-    const req = httpMock.expectOne(apiUrlEntrevistas + '/agendar-pruebas/'); // Expect a single request to this URL
+    const req = httpMock.expectOne(apiUrlEntrevistas + '/pruebas-candidato/'); // Expect a single request to this URL
     expect(req.request.method).toBe('GET'); // Assert that the request method is GET
 
     req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404
@@ -62,13 +65,14 @@ describe('Service: AgendaPrueba', () => {
 
   it('should handle getAgendaPrueba successful HTTP request (status code 200)', () => {
     const date = new Date('10/28/2023');
-    const agendaprueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    const agendaprueba: AgendaPrueba = { id: 1, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date };
 
     agendaPruebaService.getAgendaPrueba(1).subscribe(data => {
       expect(data).toEqual(agendaprueba); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne(apiUrlEntrevistas + '/agendar-pruebas/1'); // Expect a single request to this URL
+    const req = httpMock.expectOne(apiUrlEntrevistas + '/pruebas-candidato/1'); // Expect a single request to this URL
     expect(req.request.method).toBe('GET'); // Assert that the request method is GET
 
     req.flush(agendaprueba, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
@@ -82,7 +86,7 @@ describe('Service: AgendaPrueba', () => {
       }
     });
 
-    const req = httpMock.expectOne(apiUrlEntrevistas + '/agendar-pruebas/1'); // Expect a single request to this URL
+    const req = httpMock.expectOne(apiUrlEntrevistas + '/pruebas-candidato/1'); // Expect a single request to this URL
     expect(req.request.method).toBe('GET'); // Assert that the request method is GET
 
     req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404
@@ -90,13 +94,14 @@ describe('Service: AgendaPrueba', () => {
 
   it('should handle saveListaAgendaPrueba successful HTTP request (status code 200)', () => {
     const date = new Date('10/28/2023');
-    const agendaprueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    const agendaprueba: AgendaPrueba = { id: 1, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date };
 
     agendaPruebaService.saveListaAgendaPrueba(agendaprueba).subscribe(data => {
       expect(data).toEqual(agendaprueba); // Assert that the response data matches the expected data
     });
 
-    const req = httpMock.expectOne(apiUrlEntrevistas + '/agendar-pruebas/'); // Expect a single request to this URL
+    const req = httpMock.expectOne(apiUrlEntrevistas + '/pruebas-candidato/'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush(agendaprueba, { status: 200, statusText: 'OK' }); // Simulate a successful HTTP response with the mockResponse data and 200 status code
@@ -104,7 +109,8 @@ describe('Service: AgendaPrueba', () => {
 
   it('should handle saveListaAgendaPrueba failed HTTP request (status code 404)', () => {
     const date = new Date('10/28/2023');
-    const agendaprueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    const agendaprueba: AgendaPrueba = { id: 1, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date };
 
     agendaPruebaService.saveListaAgendaPrueba(agendaprueba).subscribe({
       next:() => fail('The request should have failed with 404 error'),
@@ -113,7 +119,7 @@ describe('Service: AgendaPrueba', () => {
       }
     });
 
-    const req = httpMock.expectOne(apiUrlEntrevistas + '/agendar-pruebas/'); // Expect a single request to this URL
+    const req = httpMock.expectOne(apiUrlEntrevistas + '/pruebas-candidato/'); // Expect a single request to this URL
     expect(req.request.method).toBe('POST'); // Assert that the request method is GET
 
     req.flush('Not Found', { status: 404, statusText: 'Not Found' }); // Simulate a failed HTTP response with status code 404

@@ -33,14 +33,16 @@ export class AgendaPruebasCreateComponent implements OnInit {
     private router: Router) { }
 
     createAgendaPrueba(agendaPrueba: AgendaPrueba):void{
-      agendaPrueba.estado = "Agendada";
+      agendaPrueba.estado = "Pendiente";
       if (this.agendaPruebasId !== undefined && this.agendaPruebaForm !== null){
         agendaPrueba.id = this.agendaPruebasId!;
       }
+      console.log(agendaPrueba);
       console.log("Guardando");
       this.agendaPruebaService.saveListaAgendaPrueba(agendaPrueba).subscribe(response=>{
         this.toastr.success("Confirmation", "Test schedule created");
       });
+      this.router.navigate(['/agenda-pruebas/get']);
     }
     getListaPruebas(): void {
       this.bancoPreguntasService.getListaPruebas().subscribe((listaPruebas) => {
@@ -61,9 +63,11 @@ export class AgendaPruebasCreateComponent implements OnInit {
           this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas) =>{
             this.agendaPruebas = agendaPruebas;
             this.agendaPruebaForm = this.formBuilder.group({
-              idPrueba: [agendaPruebas.idPrueba, [Validators.required, Validators.minLength(2)]],
-              idCandidato: [agendaPruebas.idCandidato, [Validators.required, Validators.minLength(2)]],
-              fecha: [agendaPruebas.fecha, [Validators.required]],
+              idCandidato: [agendaPruebas.idCandidato, [Validators.required]],
+              prueba: this.formBuilder.group({
+                id: [agendaPruebas.prueba.id, [Validators.required]]
+              }),
+              fechaPresentacion: [agendaPruebas.fechaPresentacion, [Validators.required]],
             });
           })
         }
@@ -72,9 +76,11 @@ export class AgendaPruebasCreateComponent implements OnInit {
       this.getListaPruebas();
       this.getListaCandidatos();
       this.agendaPruebaForm = this.formBuilder.group({
-        idPrueba: ["", [Validators.required]],
         idCandidato: ["", [Validators.required]],
-        fecha: ["", [Validators.required]],
+        prueba: this.formBuilder.group({
+          id: ["", [Validators.required]]
+        }),
+        fechaPresentacion: ["", [Validators.required]],
       });
     }
 

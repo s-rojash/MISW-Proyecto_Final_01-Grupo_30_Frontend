@@ -201,5 +201,9 @@
   "HEADERLABEL":"Habilidades del candidato",
   "ERRORSAVESKILLS":"No se pudo guardar las habilidades.",
   "SUCCESSSAVESKILLS":"Se asignaron las habilidades correctamente."
+ },
+ "TEST":{
+  "QUESTION":"Preguntas",
+  "ENDTEST":"Finalizar prueba"
  }
 }

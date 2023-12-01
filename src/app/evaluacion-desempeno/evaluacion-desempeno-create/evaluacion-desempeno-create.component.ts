@@ -61,9 +61,9 @@ export class EvaluacionDesempenoCreateComponent implements OnInit {
           this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas: AgendaPrueba) =>{
             this.agendaPruebas = agendaPruebas;
             this.agendaPruebaForm = this.formBuilder.group({
-              idPrueba: [agendaPruebas.idPrueba, [Validators.required, Validators.minLength(2)]],
+              idPrueba: [agendaPruebas.prueba.id, [Validators.required, Validators.minLength(2)]],
               idCandidato: [agendaPruebas.idCandidato, [Validators.required, Validators.minLength(2)]],
-              fecha: [agendaPruebas.fecha, [Validators.required]],
+              fecha: [agendaPruebas.fechaPresentacion, [Validators.required]],
             });
           })
         }
