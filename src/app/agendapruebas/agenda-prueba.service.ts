@@ -11,22 +11,22 @@ import { ResultadoPrueba } from './resultado-prueba';
 })
 
 export class AgendaPruebaService {
-  private apiUrl: string = environment.baseUrlEntrevistas;
+  private apiUrl: string = environment.baseUrlBancoPreguntas;
   private apiUrlCandidatos: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
   getListaAgendaPrueba(): Observable<AgendaPrueba[]> {
-    return this.http.get<AgendaPrueba[]>(this.apiUrl + "/agendar-pruebas/");
+    return this.http.get<AgendaPrueba[]>(this.apiUrl + "/pruebas-candidato/");
   }
 
   getAgendaPrueba(idAgendaPrueba: number): Observable<AgendaPrueba> {
-    return this.http.get<AgendaPrueba>(this.apiUrl + "/agendar-pruebas/" + idAgendaPrueba);
+    return this.http.get<AgendaPrueba>(this.apiUrl + "/pruebas-candidato/" + idAgendaPrueba);
   }
 
   saveListaAgendaPrueba(agendaPrueba: AgendaPrueba): Observable<AgendaPrueba> {
 
-    return this.http.post<AgendaPrueba>(this.apiUrl + `/agendar-pruebas/`, agendaPrueba);
+    return this.http.post<AgendaPrueba>(this.apiUrl + `/pruebas-candidato/`, agendaPrueba);
   }
 
   getListaCandidatos(): Observable<Candidato[]> {

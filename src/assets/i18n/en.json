@@ -201,5 +201,9 @@
   "HEADERLABEL":"Applicant skills",
   "ERRORSAVESKILLS":"Skills could not be saved.",
   "SUCCESSSAVESKILLS":"The skills were assigned correctly."
+ },
+ "TEST":{
+  "QUESTION":"Questions",
+  "ENDTEST":"Finish test"
  }
 }

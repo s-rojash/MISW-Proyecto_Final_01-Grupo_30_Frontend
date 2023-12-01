@@ -1,27 +1,25 @@
+import { Prueba } from "../banco-preguntas/prueba";
 
 export class AgendaPrueba {
   id: number;
-  idEmpresa: number;
   idCandidato: number;
-  idPrueba: number;
-  fecha: Date;
-  puntos!: number;
+  prueba: Prueba;
+  puntaje!: number;
   estado: string;
+  fechaPresentacion: Date;
 
     constructor(id: number,
-      idEmpresa: number,
       idCandidato: number,
-      idPrueba: number,
-      fecha: Date,
-      puntos: number,
-      estado: string
+      prueba: Prueba,
+      puntaje: number,
+      estado: string,
+      fechaPresentacion: Date,
     ) {
       this.id = id;
-      this.idEmpresa = idEmpresa;
       this.idCandidato = idCandidato;
-      this.idPrueba = idPrueba;
-      this.fecha = fecha;
-      this.puntos = puntos;
+      this.prueba = prueba;
+      this.puntaje = puntaje;
       this.estado = estado;
+      this.fechaPresentacion = fechaPresentacion;
     }
    }

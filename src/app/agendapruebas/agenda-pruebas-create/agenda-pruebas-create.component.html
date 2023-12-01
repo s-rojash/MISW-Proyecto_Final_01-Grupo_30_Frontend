@@ -8,22 +8,24 @@
       <div>
         <div>
           <div class="form-group mx-sm-3 mb-2" >
-            <label for="idPrueba" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</label>
-            <select
-              required
-              id="idPrueba"
-              class="form-control"
-              formControlName="idPrueba"
-            >
-            <option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
-              {{prueba.nombre}}
-            </option>
-            </select>
-            <div
-              class="alert alert-danger alert-dismissible fade show"
-              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
-            >
-              {{ 'INTERVIEWS.TEST_SCHEDULE_TEST_REQUIRED' | translate }}
+            <div formGroupName="prueba">
+              <label for="id" class="labeloverinput">{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</label>
+              <select
+                required
+                id="id"
+                class="form-control"
+                formControlName="id"
+              >
+              <option *ngFor="let prueba of listaPruebas" [value]="prueba.id">
+                {{prueba.nombre}}
+              </option>
+              </select>
+              <div
+                class="alert alert-danger alert-dismissible fade show"
+                *ngIf="agendaPruebaForm.get('prueba.id')!.hasError('required') && agendaPruebaForm.get('prueba.id')!.touched"
+              >
+                {{ 'INTERVIEWS.TEST_SCHEDULE_TEST_REQUIRED' | translate }}
+              </div>
             </div>
           </div>
         </div>
@@ -42,7 +44,7 @@
             </select>
             <div
               class="alert alert-danger alert-dismissible fade show"
-              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
+              *ngIf="agendaPruebaForm.get('idCandidato')!.hasError('required') && agendaPruebaForm.get('idCandidato')!.touched"
             >
               {{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE_REQUIRED' | translate }}
             </div>
@@ -55,9 +57,9 @@
             <input
               required
               type="text"
-              id="tipoBanco"
+              id="fechaPresentacion"
               class="form-control"
-              formControlName="fecha"
+              formControlName="fechaPresentacion"
               matInput
               [matDatepicker]="picker"
             />
@@ -67,7 +69,7 @@
           </mat-form-field>
             <div
               class="alert alert-danger alert-dismissible fade show"
-              *ngIf="agendaPruebaForm.get('idPrueba')!.hasError('required') && agendaPruebaForm.get('idPrueba')!.touched"
+              *ngIf="agendaPruebaForm.get('fechaPresentacion')!.hasError('required') && agendaPruebaForm.get('fechaPresentacion')!.touched"
             >
               {{ 'INTERVIEWS.TEST_SCHEDULE_DATE_REQUIRED' | translate }}
             </div>

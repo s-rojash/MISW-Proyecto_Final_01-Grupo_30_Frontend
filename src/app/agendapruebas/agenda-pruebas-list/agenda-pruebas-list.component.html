@@ -16,8 +16,8 @@
           </thead>
           <tbody>
             <tr *ngFor="let agendaPrueba of listaAgendaPruebas">
-              <td>{{ agendaPrueba.fecha }}</td>
-              <td>{{ agendaPrueba.idPrueba }}</td>
+              <td>{{ agendaPrueba.fechaPresentacion }}</td>
+              <td>{{ agendaPrueba.prueba.id }}</td>
               <td>{{ agendaPrueba.idCandidato }}</td>
               <td><a href="/agenda-pruebas/save/{{ agendaPrueba.id }}"><mat-icon>edit</mat-icon></a></td>
               <td><a href="/agenda-pruebas/resultados-create/{{ agendaPrueba.id }}"><mat-icon>assessment</mat-icon></a></td>
