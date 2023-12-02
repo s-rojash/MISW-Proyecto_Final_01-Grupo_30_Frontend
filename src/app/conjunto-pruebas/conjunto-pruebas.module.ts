@@ -15,7 +15,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ConjuntoPruebasCreateComponent } from './conjunto-pruebas-create/conjunto-pruebas-create.component';
+import { ConjuntoPruebasListComponent, FilterPipe } from './conjunto-pruebas-list/conjunto-pruebas-list.component';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -23,11 +25,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    ConjuntoPruebasCreateComponent
+    ConjuntoPruebasCreateComponent, ConjuntoPruebasListComponent,FilterPipe
   ],
   imports: [
     CommonModule,
-   
+    MatAutocompleteModule,
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
@@ -49,7 +51,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     })
   ],
   exports:[
-    ConjuntoPruebasCreateComponent
+    ConjuntoPruebasCreateComponent,ConjuntoPruebasListComponent,FilterPipe
   ]
 })
 export class ConjuntoPruebasModule { }

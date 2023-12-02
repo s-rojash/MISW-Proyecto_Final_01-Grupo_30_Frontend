@@ -20,7 +20,7 @@ import { ResultadoPrueba } from '../resultado-prueba';
 export class ResultadosPruebasCreateComponent implements OnInit {
 
   private routeSub: Subscription | undefined;
-  private agendaPruebasId!: number | null;
+   agendaPruebasId!: number | null;
   agendaPruebas!: AgendaPrueba;
   prueba!: Prueba;
   candidato!: Candidato;

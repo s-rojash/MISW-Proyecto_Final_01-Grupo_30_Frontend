@@ -188,7 +188,9 @@
     "NAME_REQUIRED" :"El nombre del conjunto de pruebas es requerido",
     "DESCRIPTION":" descripción del conjunto de pruebas",
     "DESCRIPTION_REQUIRED" : "El conjunto de pruebas es requerido",
-    "ADD":"Adicionar"
+    "ADD":"Adicionar",
+    "TESTGROUP": "Conjunto de pruebas ",
+    "SELECTTESTGROUP": "selecciona un conjunto de pruebas"
   },
    "INTERVIEWS2":{
     "INPUTSEARCH":"Buscar",

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ConjuntoPruebasCreateComponent } from './conjunto-pruebas-create/conjunto-pruebas-create.component';
+import { ConjuntoPruebasListComponent } from './conjunto-pruebas-list/conjunto-pruebas-list.component';
 
 
 const routes: Routes = [{
@@ -9,7 +10,12 @@ const routes: Routes = [{
   {
     path: 'create',
     component: ConjuntoPruebasCreateComponent
+  },
+  {
+    path: 'list',
+    component: ConjuntoPruebasListComponent
   }
+
  ]
 }];
 
