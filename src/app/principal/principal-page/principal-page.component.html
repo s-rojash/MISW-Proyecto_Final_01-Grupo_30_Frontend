@@ -1,5 +1,13 @@
 <h1>{{ 'PRINCIPAL.HEADER' | translate }}</h1>
 <div class="d-flex align-items-center">
-<div class="principalContainer">
-</div>
+  <div class="principalContainer" *ngIf="isCandidato">
+    <div class="card" *ngFor="let prueba of pruebascandidato">
+      <mat-card  style="height: auto; margin: 1px;  background-color:#FEF7FF" routerLink="/test/take/{{prueba.id}}">
+        <mat-card-header style="cursor: pointer;">
+          <mat-card-title>{{ prueba.prueba.nombre }}</mat-card-title>
+          <mat-card-subtitle>{{ prueba.prueba.descripcion }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
 </div>

@@ -4,7 +4,8 @@ import { ApplicantService } from '../applicant.service';
 import { ToastrService } from 'ngx-toastr';
 import { Applicant } from '../applicant';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogalertopappliComponent } from 'src/app/signup/dialogalertopappli/dialogalertopappli.component';
+import { DialogalertopappliComponent } from '../../signup/dialogalertopappli/dialogalertopappli.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-applicant-edit',
@@ -21,17 +22,20 @@ export class ApplicantEditComponent implements OnInit {
   valuelastNI = '';
   valuePhone = '';
   valuePassword = '';
+  translate2!: TranslateService;
 
   constructor(private formBuilder: FormBuilder,
     private applicantService: ApplicantService,
     private toastr: ToastrService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    public translate: TranslateService) {
+      this.translate2 = translate;
+    }
 
   editApplicant(applicant: Applicant):void{
     this.applicantService.updateApplicant(applicant).subscribe({
       next: (applicantp) => {
         console.info("The applicant was updated: ", applicantp);
-        this.toastr.success("Se modifico correctamente.");
         this.openDialog('3');
       },
       error: () => {
@@ -58,7 +62,9 @@ export class ApplicantEditComponent implements OnInit {
         });
       },
       error: () => {
-        this.toastr.error("No se pudo obtener su informacion de perfil.");
+        this.translate2.get('HEADER.PROFILEGETERROR').subscribe((res: string) => {
+          this.toastr.error(res);
+        });
       }
     });
   }

@@ -73,7 +73,7 @@ export class ResultadosPruebasCreateComponent implements OnInit {
           this.agendaPruebaService.getAgendaPrueba(this.agendaPruebasId).subscribe((agendaPruebas) =>{
             this.agendaPruebas = agendaPruebas;
             if (agendaPruebas) {
-              this.getPrueba(agendaPruebas.idPrueba);
+              this.getPrueba(agendaPruebas.prueba.id);
               this.getCandidato(agendaPruebas.idCandidato);
             }
           })

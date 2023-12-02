@@ -15,7 +15,8 @@
     "BUTTONCREATE":"Create",
     "BUTTONLIST":"List",
     "BUTTONSEARCH":"Search",
-    "GROUPTEST":"Group Test"
+    "GROUPTEST":"Group Test",
+    "PROFILEGETERROR":"Could not get your profile information."
   },
   "LOGIN":{
     "TITLE":"Login",
@@ -169,7 +170,10 @@
     "TEST_SCHEDULE_LIST": "Test Appointments"
   },
   "PRINCIPAL":{
-    "HEADER":"Home"
+    "HEADER":"Home",
+    "DIALOGMSJSKILLAPPLICANT":"Your profile is not complete yet, you need to fill your profile information with your skills.",
+    "BUTTONSKILLS":"Assign skills",
+    "BUTTONCONTINUE":"Continue"
   },
   "APPLICANT_SEARCH":{
     "TECH_SKILL" :"Technical Skills",
@@ -194,5 +198,14 @@
    "LISTHINTERVIEW":"Interview with",
    "LISTHDATE":"Test Date",
    "INTERVIEWSLIST":"Interviews list"
+ },
+ "APPLICANT_SKILLS":{
+  "HEADERLABEL":"Applicant skills",
+  "ERRORSAVESKILLS":"Skills could not be saved.",
+  "SUCCESSSAVESKILLS":"The skills were assigned correctly."
+ },
+ "TEST":{
+  "QUESTION":"Questions",
+  "ENDTEST":"Finish test"
  }
 }

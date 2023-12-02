@@ -5,16 +5,20 @@ import { RouterModule } from '@angular/router';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogapplicantskillsComponent } from './dialogapplicantskills/dialogapplicantskills.component';
+import { MatCardModule } from '@angular/material/card';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations:[PrincipalPageComponent],
   imports: [
     CommonModule,
     RouterModule,
+    MatDialogModule,
+    MatCardModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -23,6 +27,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     })
   ],
-  exports:[PrincipalPageComponent]
+  declarations:[PrincipalPageComponent, DialogapplicantskillsComponent],
+  exports:[PrincipalPageComponent, DialogapplicantskillsComponent]
 })
 export class PrincipalModule { }

@@ -12,6 +12,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ApplicantEditComponent } from './applicant-edit/applicant-edit.component';
+import { ApplicantSkillsComponent } from './applicant-skills/applicant-skills.component';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -29,6 +32,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     CommonModule,
     MatIconModule,
     FormsModule,
+    MatListModule,
+    MatCheckboxModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -37,7 +42,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
   ],
-  declarations: [ApplicantEditComponent],
-  exports: [ApplicantEditComponent]
+  declarations: [ApplicantEditComponent, ApplicantSkillsComponent],
+  exports: [ApplicantEditComponent, ApplicantSkillsComponent]
 })
 export class ApplicantModule { }

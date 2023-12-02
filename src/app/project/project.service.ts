@@ -15,7 +15,7 @@ export class ProjectService {
  constructor(private http: HttpClient) { }
 
  private getHttpOptions() {
-    const token = "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDA1NDI2MzAsIm5iZiI6MTcwMDU0MjYzMCwiZXhwIjoxNzAyMzQyNjMwLCJpZEVtcHJlc2EiOiIxIn0.IE4n5R2-mExM-LOI3hEJ_lUIW7Vqby8RsogkQrXueTs"; 
+    const token = localStorage.getItem("API_TOKEN");
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -34,17 +34,17 @@ export class ProjectService {
 getProjects(): Observable<Project[]> {
     const httpOptions = this.getHttpOptions();
 
-    console.log('Making GET request to:', this.apiUrl); 
+    console.log('Making GET request to:', this.apiUrl);
 
     return this.http.get<Project[]>(this.apiUrl, httpOptions)
       .pipe(
         tap(response => {
-          console.log('Response Data:', response); 
+          console.log('Response Data:', response);
                 })
       );
 }
 
-  
+
  projectCreated() {
       this.projectCreatedSource.next(true);
  }
@@ -53,6 +53,6 @@ getProjects(): Observable<Project[]> {
 
     const httpOptions = this.getHttpOptions();
     return this.http.post<Project>(this.apiUrl, project, httpOptions);
-  
+
  }
 }

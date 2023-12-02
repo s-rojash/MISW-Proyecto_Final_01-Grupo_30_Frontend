@@ -117,7 +117,8 @@ describe('EvaluacionDesempenoCreateComponent', () => {
 
   it("should call createAgendaPrueba agendaPruebaForm is null", () => {
     const date = new Date('10/28/2023');
-    let agenda: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    let agenda: AgendaPrueba = { id: 0, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date };
     component.agendaPruebasId = null;
 
     component.createAgendaPrueba(agenda);
@@ -127,7 +128,8 @@ describe('EvaluacionDesempenoCreateComponent', () => {
 
   it("should call createAgendaPrueba saveListaAgendaPrueba and return response success", () => {
     const date = new Date('10/28/2023');
-    let response: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    let response: AgendaPrueba = { id: 0, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date };
 
     spyOn(agendaPruebaService, 'saveListaAgendaPrueba').and.returnValue(of(response));
 
@@ -138,7 +140,8 @@ describe('EvaluacionDesempenoCreateComponent', () => {
 
   it("should call ngOnInit and call the service getAgendaPrueba", () => {
     const date = new Date('10/28/2023');
-    let response: AgendaPrueba = { id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' };
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    let response: AgendaPrueba = { id: 0, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date };
 
     spyOn(agendaPruebaService ,'getAgendaPrueba').and.returnValue(of(response));
     component.ngOnInit();

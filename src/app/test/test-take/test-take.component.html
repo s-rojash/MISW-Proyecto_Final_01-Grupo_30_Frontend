@@ -1,0 +1,66 @@
+<div *ngFor="let bancoPreguntas of listaBancosPreguntas; let i = index;" class="row">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{bancoPreguntas.categoria.nombre}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="white-box">
+                <h5>{{ 'TEST.QUESTION' | translate }}</h5>
+                <ul class="lista-categorias">
+                  <li style="cursor: pointer;" *ngFor="let seleccion of listaSeleccion[i]; let j = index" [id]="seleccion.id" (click)="seleccionarPregunta(j, i, seleccion.id, seleccion.pregunta)" [class.categoria-disabled]="idPreguntaContestada.match('\\b' + seleccion.id.toString() + '\\b')" [class.categoria-active]="idPreguntaSeleccionada === seleccion.id.toString()">
+                    {{"Pregunta" + listaSpreguntas[i][j]}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-9" *ngIf="idaccordion === i && !idPreguntaContestada.match('\\b' + idPreguntaSeleccionada.toString() + '\\b')">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{preguntaSeleccionada}}</h5>
+              <div class="card-text">
+                <mat-radio-group style="display: flex; flex-direction: column;">
+                  <div *ngFor="let respuestas of listaRespuestas">
+                    <mat-radio-button [value]="respuestas" (change)="radioChange($event)" *ngIf="respuestas.estado" class="example-margin">{{ respuestas.respuesta }}</mat-radio-button>
+                  </div>
+                </mat-radio-group>
+                <br>
+                <div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    class="button-signup"
+                    [disabled]="isButtonDisabled()"
+                    (click)="saveResponse()"
+                  >
+                    {{ 'EVALUATION.SAVE' | translate }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div style="margin-top: 15px;text-align: center;display: block;" class="row">
+  <button
+    type="submit"
+    class="btn btn-primary"
+    class="button-signup"
+    [disabled]="isButtonEndDisabled()"
+    (click)="saveEndTest()"
+  >
+    {{ 'TEST.ENDTEST' | translate }}
+  </button>
+</div>

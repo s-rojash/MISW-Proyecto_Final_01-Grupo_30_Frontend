@@ -1,5 +1,11 @@
 <div class="col-md-12 center-container" style="z-index: 2;">
-  <mat-card style="height: 105vh;align-items: center;">
+  <div style="position: fixed;margin-right: 80%;z-index: 4;" align="left">
+    <button mat-fab extended class="col-md-3 btn btn-primary" class="button-signup" routerLink="/applicant/skills">
+      <mat-icon style="color: black;">add</mat-icon>
+      {{ 'PRINCIPAL.BUTTONSKILLS' | translate }}
+    </button>
+  </div>
+  <mat-card style="height: 75vh;align-items: center;">
     <mat-card-header>
       <span mat-card-subtitle><label>{{ 'LOGIN.APPLICANTSELECT' | translate }}</label></span>
     </mat-card-header>
@@ -142,42 +148,6 @@
           >
             {{ 'SIGNUP.PASSWORDREQUIRED' | translate }}
           </div>
-        </div>
-
-        <!--Lista habilidades-->
-        <div class="form-group mx-sm-3 mb-2">
-          <select class="form-control form-select" style="height: 60px;background-color: #E5E5E5;">
-            <option value="0" selected>
-              Example
-            </option>
-            <option value="1">
-              Example 2
-            </option>
-          </select>
-        </div>
-
-        <!--Lista habilidades-->
-        <div class="form-group mx-sm-3 mb-2">
-          <select class="form-control form-select" style="height: 60px;background-color: #E5E5E5;">
-            <option value="0" selected>
-              Example
-            </option>
-            <option value="1">
-              Example 2
-            </option>
-          </select>
-        </div>
-
-        <!--Lista habilidades-->
-        <div class="form-group mx-sm-3 mb-2">
-          <select class="form-control form-select" style="height: 60px;background-color: #E5E5E5;">
-            <option value="0" selected>
-              Example
-            </option>
-            <option value="1">
-              Example 2
-            </option>
-          </select>
         </div>
 
         <div style="text-align: center;">
