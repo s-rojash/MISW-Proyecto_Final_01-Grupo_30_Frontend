@@ -15,6 +15,7 @@ export class ResultadosService {
 
 constructor(private http: HttpClient) { }
 
+
 private getHttpOptions() {
   const token = localStorage.getItem('API_TOKEN');
   const headers = new HttpHeaders({
@@ -23,27 +24,12 @@ private getHttpOptions() {
   return { headers };
 }
 
+getAllResults(): Observable<Resultados[]> {
 
-
-
-
-getResults(): Observable<Resultados[]> {
+  const url = `${this.apiUrl}/pruebas-candidato/`;
+  console.log("url",url)
   const httpOptions = this.getHttpOptions();
-
-  const mockResponse = [
-    {
-      "id": 1,
-      "idPrueba": 1,
-      "idCandidato": 1,
-      "puntaje": 80,
-      "estado": "Presentado",
-      "fechaPresentacion": "2023-11-23"
-    }
-  ];
-   // Devolver un observable que emita la respuesta mock
-   return of(mockResponse);
+  return this.http.get<Resultados[]>(url, httpOptions);
 }
-
-
 
 }

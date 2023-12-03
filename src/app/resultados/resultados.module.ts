@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule} from '@angular/material/dialog';
 import { ResultadosListComponent } from './resultados-list/resultados-list.component';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -30,6 +30,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatInputModule,
     FormsModule,
     MatDialogModule,
+    MatExpansionModule,
     NgIf,
     TranslateModule.forRoot({
       loader: {

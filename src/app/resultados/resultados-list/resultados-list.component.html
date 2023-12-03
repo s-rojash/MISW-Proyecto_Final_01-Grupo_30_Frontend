@@ -1,12 +1,57 @@
-<p>
- Resultados
-</p>
+<div style="padding-bottom: 15px; padding-left: 10px;margin-left: 15px;">
+  <span><label>{{ 'PROJECT.COMPANYS' | translate }} / <label style="text-decoration: underline;">{{ 'RESULTS.RESULT' | translate }}</label></label></span>
+</div>
 
+<div class="col-md-6" style="width: 100%; z-index: 2;">
+  <mat-card style="height: auto; margin: 5px; padding: 10px;">
+  
+    
+  <h5>{{ 'RESULTS.RESULT' | translate }}</h5>
 
-<p>
-  Candidatos
- </p>
+  <div class="card">
+    <div class="card-body">
+      <div *ngFor="let group of resultadosConCandidatos" (click)="mostrarCandidatosDeLaPrueba(group)">
+        <mat-card class="project-card solid-border-card">
+          <mat-card-header>
+            <mat-card-title>{{ group.prueba.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{ group.prueba.descripcion }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 
-<mat-card>
-  <mat-card-content>Simple card</mat-card-content>
+ <!-- Agregamos una sección para mostrar los candidatos -->
+  
+ <div *ngIf="pruebaSeleccionada">
+  <div class="card">
+    <div class="card-body">
+      <h5>{{ 'RESULTS.APPLICANT_TEST' | translate }}</h5>
+      <div *ngFor="let group of resultadosConCandidatos">
+        <div *ngFor="let result of group.candidatos">
+          <div class="card">
+            <div class="card-body">
+              <mat-card class="result-card project-card solid-border-card">
+                <mat-card-header>
+                  <mat-card-title>
+                    <span class="bold-text">{{ result.candidato.nombre }} {{ result.candidato.apellidos }}</span>
+                  </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <span class="bold-text">{{ 'RESULTS.SCORE' | translate }}</span>: <span
+                    class="normal-text">{{ result.puntaje }}</span><br>
+                  <span class="bold-text">{{ 'RESULTS.STATUS' | translate }}</span>: <span
+                    class="normal-text">{{ result.estado }}</span><br>
+                  <span class="bold-text">{{ 'RESULTS.PRESENTATIONDATE' | translate }}</span>: <span
+                    class="normal-text">{{ result.fechaPresentacion }}</span><br>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </mat-card>
+</div>

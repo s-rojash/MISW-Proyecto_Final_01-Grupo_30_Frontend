@@ -16,7 +16,8 @@
     "BUTTONLIST":"Listar",
     "BUTTONSEARCH":"Buscar",
     "GROUPTEST":"Conjunto pruebas",
-    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil."
+    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil.",
+    "RESULTTEST":"Resultado Pruebas."
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -199,13 +200,22 @@
     "LISTHDATE":"Fecha Prueba",
     "INTERVIEWSLIST":"Listado de entrevistas"
   },
+
+  "RESULTS":{
+   "RESULT":"Resultado de pruebas",
+   "APPLICANT_TEST":"Candidatos asignados a la prueba",
+   "SCORE":"Puntaje",
+   "STATUS":"Estado",
+   "PRESENTATIONDATE":"Fecha de presentación"
+  },
  "APPLICANT_SKILLS":{
   "HEADERLABEL":"Habilidades del candidato",
   "ERRORSAVESKILLS":"No se pudo guardar las habilidades.",
   "SUCCESSSAVESKILLS":"Se asignaron las habilidades correctamente."
- },
+   },
  "TEST":{
   "QUESTION":"Preguntas",
   "ENDTEST":"Finalizar prueba"
  }
 }
+

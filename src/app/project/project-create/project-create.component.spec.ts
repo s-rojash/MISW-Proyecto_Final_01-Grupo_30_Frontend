@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProjectModule } from '../project.module';
 import { HttpTestingController,HttpClientTestingModule } from '@angular/common/http/testing';
 import { environment } from 'src/environments/environment';
+import { Project } from '../project';
 
 
 
@@ -88,4 +89,45 @@ describe('ProjectCreateComponent', () => {
 
     expect(createProjectSpy).toHaveBeenCalled();
   });
+
+  it('should call createProject when form is valid', () => {
+    const createProjectSpy = spyOn(component, 'createProject').and.stub();
+  
+    component.projectForm.setValue({ nombre: 'proyecto1', descripcion: 'proyecto para IA' });
+    component.onSubmit();
+  
+    expect(createProjectSpy).toHaveBeenCalled();
+  });
+  
+ 
+
+
+  
+  it('should initialize the projectForm in ngOnInit', () => {
+    component.ngOnInit();
+    expect(component.projectForm.value).toEqual({ nombre: '', descripcion: '' });
+  });
+  
+  it('should reset the form in cancelCreation', () => {
+    component.projectForm.setValue({ nombre: 'proyecto1', descripcion: 'proyecto para IA' });
+    component.cancelCreation();
+    expect(component.projectForm.value).toEqual({ nombre: '', descripcion: '' });
+  });
+  
+  it('should call createProject when form is valid', () => {
+    const createProjectSpy = spyOn(component, 'createProject').and.stub();
+  
+    const projectData = {
+      nombre: 'nombre',
+      descripcion: 'descripcion'
+    };
+  
+    component.projectForm.setValue(projectData);
+    component.onSubmit();
+  
+    expect(createProjectSpy).toHaveBeenCalled();
+  });
+  
+ 
+
 });

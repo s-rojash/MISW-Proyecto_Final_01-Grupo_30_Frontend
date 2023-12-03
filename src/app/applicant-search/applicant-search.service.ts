@@ -37,13 +37,13 @@ getHabilidadesBlandas(): Observable<Habilidades[]> {
 
   getHabilidadesTecnicas(): Observable<Habilidades[]> {
     const httpOptions = this.getHttpOptions();
-    return this.http.get<Habilidades[]>(this.apiUrl + `/habilidades/tipo-habilidad/tecnicas`, httpOptions)
+    return this.http.get<Habilidades[]>(this.apiUrl + `/habilidades/tipo-habilidad/Tecnicas`, httpOptions)
   }
 
   
   getHabilidadesProfesionales(): Observable<Habilidades[]> {
     const httpOptions = this.getHttpOptions();
-    return this.http.get<Habilidades[]>(this.apiUrl + `/habilidades/tipo-habilidad/profesional`, httpOptions)
+    return this.http.get<Habilidades[]>(this.apiUrl + `/habilidades/tipo-habilidad/Profesionales`, httpOptions)
   }
 
 
