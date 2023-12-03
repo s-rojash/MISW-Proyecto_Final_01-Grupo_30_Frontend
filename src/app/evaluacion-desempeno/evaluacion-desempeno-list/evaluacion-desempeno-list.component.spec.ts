@@ -17,6 +17,7 @@ import { CategoriasListComponent } from '../../banco-preguntas/categorias-list/c
 import { AgendaPruebaService } from 'src/app/agendapruebas/agenda-prueba.service';
 import { of } from 'rxjs';
 import { AgendaPrueba } from 'src/app/agendapruebas/agenda-prueba';
+import { Prueba } from 'src/app/banco-preguntas/prueba';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -62,8 +63,8 @@ describe('EvaluacionDesempenoListComponent', () => {
 
   it("should call getListaPreguntas getListaAgendaPrueba and return response success", () => {
     const date = new Date('10/28/2023');
-
-    let response: AgendaPrueba[] = [{ id: 1, idEmpresa: 1, idCandidato: 1, idPrueba: 1, fecha: date, puntos: 5, estado: 'pendiente' }];
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    let response: AgendaPrueba[] = [{ id: 0, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date }];
 
     spyOn(agendaPruebaService, 'getListaAgendaPrueba').and.returnValue(of(response));
 

@@ -82,6 +82,7 @@ describe('AppComponent', () => {
   it('test spanish button', () => {
     component.showHead = true;
     component.showOptions = true;
+    component.showMenu = true;
     fixture.detectChanges();
 
     let element = fixture.nativeElement.querySelector('.bgimagefab');
@@ -98,6 +99,7 @@ describe('AppComponent', () => {
   it('test english button', () => {
     component.showHead = true;
     component.showOptions = true;
+    component.showMenu = true;
     fixture.detectChanges();
 
     let element = fixture.nativeElement.querySelector('.bgimagefab');

@@ -20,6 +20,8 @@ import { CandidatoHabilidades } from '../candidato-habilidades';
 import { Applicantskills } from '../../../app/applicant/applicantskills';
 import { Signupapplicant } from '../../../app/signup/signupapplicant';
 import { DialogapplicantskillsComponent } from '../dialogapplicantskills/dialogapplicantskills.component';
+import { Pruebacandidato } from 'src/app/test/pruebacandidato';
+import { Prueba } from 'src/app/banco-preguntas/prueba';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -58,6 +60,7 @@ describe('PrincipalPageComponent', () => {
     fixture = TestBed.createComponent(PrincipalPageComponent);
     component = fixture.componentInstance;
     principalService = TestBed.inject(PrincipalService);
+    localStorage.clear();
     fixture.detectChanges();
   });
 
@@ -86,5 +89,31 @@ describe('PrincipalPageComponent', () => {
     component.getApplicantSkills();
     fixture.detectChanges();
     expect(component.applicantSkills.length).toBe(0);
+  }));
+
+  it("should call ngoninit not null isCandidato true", waitForAsync(() => {
+    localStorage.clear();
+    localStorage.setItem("API_CANDIDATO_ID", "1");
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.isCandidato).toBe(true);
+  }));
+
+  it("should call ngoninit null isCandidato false", () => {
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.isCandidato).toBe(false);
+  });
+
+  it("should call getPruebasCandidato getPruebasCandidato and return response success", waitForAsync(() => {
+    const date = new Date('10/28/2023');
+    const prueba: Prueba = {id: 1, nombre: 'Prueba', descripcion: 'prueba des', bancosPreguntas: []};
+    const response: Pruebacandidato[] = [{ id: 0, idCandidato: 1, prueba: prueba, puntaje: 0, estado: 'Pendiente', fechaPresentacion: date }];
+
+    spyOn(principalService, 'getPruebasCandidato').and.returnValue(of(response));
+
+    component.getPruebasCandidato();
+    fixture.detectChanges();
+    expect(component.pruebascandidato.length).toBe(1);
   }));
 });

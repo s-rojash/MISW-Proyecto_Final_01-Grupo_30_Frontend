@@ -3,6 +3,7 @@ import { PrincipalService } from '../principal.service';
 import { CandidatoHabilidades } from '../candidato-habilidades';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogapplicantskillsComponent } from '../dialogapplicantskills/dialogapplicantskills.component';
+import { Pruebacandidato } from '../../test/pruebacandidato';
 
 @Component({
   selector: 'app-principal-page',
@@ -12,6 +13,8 @@ import { DialogapplicantskillsComponent } from '../dialogapplicantskills/dialoga
 export class PrincipalPageComponent implements OnInit {
 
   applicantSkills : Array<CandidatoHabilidades> = [];
+  isCandidato:boolean = false;
+  pruebascandidato: Array<Pruebacandidato> = [];
 
   constructor(private principalService: PrincipalService,
               public dialog: MatDialog) {
@@ -28,6 +31,12 @@ export class PrincipalPageComponent implements OnInit {
     });
   }
 
+  getPruebasCandidato():void{
+    this.principalService.getPruebasCandidato().subscribe((pruebasCandidatop)=> {
+      this.pruebascandidato = pruebasCandidatop;
+    });
+  }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogapplicantskillsComponent);
 
@@ -40,6 +49,8 @@ export class PrincipalPageComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem("API_CANDIDATO_ID") != null){
       this.getApplicantSkills();
+      this.isCandidato = true;
+      this.getPruebasCandidato();
     }
   }
 

@@ -51,7 +51,8 @@ import { ConjuntoPruebasRoutingModule } from './conjunto-pruebas/conjunto-prueba
 import { ConjuntoPruebasModule } from './conjunto-pruebas/conjunto-pruebas.module';
 import { ResultadosModule } from './resultados/resultados.module';
 import { ResultadosRoutingModule } from './resultados/resultados.routing';
-
+import { TestRoutingModule } from './test/test-routing.module';
+import { TestModule } from './test/test.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -92,6 +93,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ResultadosRoutingModule,
     ApplicantModule,
     ApplicantRoutingModule,
+    TestModule,
+    TestRoutingModule,
     ToastrModule.forRoot({
         timeOut: 10000,
       positionClass: 'toast-bottom-right',

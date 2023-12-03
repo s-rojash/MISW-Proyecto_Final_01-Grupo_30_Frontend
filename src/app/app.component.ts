@@ -16,6 +16,7 @@ export class AppComponent {
   title = 'frontabc-front';
   showHead: boolean = false;
   showOptions: boolean = false;
+  showMenu: boolean = false;
   translate2!: TranslateService;
 
   ngOnInit() {
@@ -72,6 +73,7 @@ export class AppComponent {
         console.log(event['url'].toString());
         if (event['url'] == '/login' || event['url'] == '/') {
           this.showHead = false;
+          this.showMenu = false;
           console.log("entro false");
         } else {
           // console.log("NU")
@@ -81,15 +83,22 @@ export class AppComponent {
 
         if (event['url'] == '/signup/company' || event['url'] == '/signup/applicant' || event['url'] == '/signup') {
           this.showOptions = false;
+          this.showMenu = false;
           console.log("entro false");
         } else {
           // console.log("NU")
           this.showOptions = true;
+          this.showMenu = true;
           console.log("entro true");
 
           if(!localStorage.getItem("API_TOKEN") && event['url'] != '/signup/company' && event['url'] != '/signup/applicant'
             && event['url'] != '/login' && event['url'] != '/'){
             router.navigate(['/login']);
+          }
+
+          if(localStorage.getItem("API_CANDIDATO_ID") != null){
+            this.showOptions = false;
+            this.showMenu = true;
           }
         }
       }
