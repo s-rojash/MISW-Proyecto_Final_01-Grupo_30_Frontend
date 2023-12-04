@@ -15,10 +15,10 @@
               </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let agendaPrueba of listaAgendaPruebas">
+            <tr *ngFor="let agendaPrueba of listaAgendaPruebas; let i = index;">
               <td>{{ agendaPrueba.fechaPresentacion }}</td>
-              <td>{{ agendaPrueba.prueba.id }}</td>
-              <td>{{ agendaPrueba.idCandidato }}</td>
+              <td>{{ agendaPrueba.prueba.nombre }}</td>
+              <td>{{ listacandidatos[i].nombres + ' ' + listacandidatos[i].apellidos }}</td>
               <td><a href="/agenda-pruebas/save/{{ agendaPrueba.id }}"><mat-icon>edit</mat-icon></a></td>
               <td><a href="/agenda-pruebas/resultados-create/{{ agendaPrueba.id }}"><mat-icon>assessment</mat-icon></a></td>
             </tr>

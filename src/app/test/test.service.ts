@@ -43,6 +43,6 @@ export class TestService {
 
   saveEndTest(pruebacandidatoEnd:PruebacandidatoEnd){
     const httpOptions = this.getHttpOptions();
-    this.http.post<PruebacandidatoEnd>(this.apiUrlPresentarPrueba + "finalizar", pruebacandidatoEnd, httpOptions );
+    this.http.post<PruebacandidatoEnd>(this.apiUrlPresentarPrueba + "finalizar", pruebacandidatoEnd );
   }
 }

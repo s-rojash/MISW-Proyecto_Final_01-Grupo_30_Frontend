@@ -18,6 +18,7 @@ import { ConjuntoPruebasCreateComponent } from './conjunto-pruebas-create/conjun
 import { ConjuntoPruebasListComponent, FilterPipe } from './conjunto-pruebas-list/conjunto-pruebas-list.component';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ConjuntoPruebasEditComponent } from './conjunto-pruebas-edit/conjunto-pruebas-edit.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    ConjuntoPruebasCreateComponent, ConjuntoPruebasListComponent,FilterPipe
+    ConjuntoPruebasCreateComponent, ConjuntoPruebasListComponent, ConjuntoPruebasEditComponent, FilterPipe
   ],
   imports: [
     CommonModule,
@@ -51,7 +52,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     })
   ],
   exports:[
-    ConjuntoPruebasCreateComponent,ConjuntoPruebasListComponent,FilterPipe
+    ConjuntoPruebasCreateComponent,ConjuntoPruebasListComponent,ConjuntoPruebasEditComponent,FilterPipe
   ]
 })
 export class ConjuntoPruebasModule { }

@@ -18,9 +18,14 @@
   <div *ngIf="selectedConjunto" class="detalle-conjunto" style="display: flex;">
     <div style="flex: 1; margin-right: 10px;">
       <div class="card">
-        <div class="card-body">
-          <h4>{{ selectedConjunto.nombre }}</h4>
-          <p>{{ selectedConjunto.descripcion }}</p>
+        <div class="card-body" style="display: flex;">
+          <div>
+            <h4>{{ selectedConjunto.nombre }}</h4>
+            <p>{{ selectedConjunto.descripcion }}</p>
+          </div>
+          <button mat-icon-button style="margin-left: 50px;" (click)="goToEditPage()">
+            <mat-icon>edit</mat-icon>
+          </button>
         </div>
       </div>
     </div>
@@ -29,8 +34,8 @@
         <div class="card-body">
           <h4>Banco de Preguntas</h4>
           <ul>
-            <li *ngFor="let pregunta of selectedConjunto.bancoPreguntas">
-              {{ pregunta.id }}
+            <li *ngFor="let banco of selectedConjunto.bancosPreguntas">
+              {{ banco.tipoBanco }}
             </li>
           </ul>
         </div>

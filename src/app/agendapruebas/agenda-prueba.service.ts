@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AgendaPrueba } from './agenda-prueba';
 import { Candidato } from './candidato';
 import { ResultadoPrueba } from './resultado-prueba';
+import { Signupapplicant } from '../signup/signupapplicant';
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +34,8 @@ export class AgendaPruebaService {
     return this.http.get<Candidato[]>(this.apiUrlCandidatos + "/candidatos/");
   }
 
-  getCandidato(idCandidato: number): Observable<Candidato> {
-    return this.http.get<Candidato>(this.apiUrlCandidatos + "/candidatos/" + idCandidato);
+  getCandidato(idCandidato: number): Observable<Signupapplicant> {
+    return this.http.get<Signupapplicant>(this.apiUrlCandidatos + "/candidatos/" + idCandidato);
   }
 
   saveResultadoPrueba(resultadoPrueba: ResultadoPrueba){

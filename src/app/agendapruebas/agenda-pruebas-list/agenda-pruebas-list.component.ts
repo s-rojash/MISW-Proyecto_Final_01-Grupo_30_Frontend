@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { AgendaPrueba } from '../agenda-prueba';
 import { AgendaPruebaService } from '../agenda-prueba.service';
+import { Signupapplicant } from 'src/app/signup/signupapplicant';
 
 @Component({
   selector: 'app-agenda-pruebas-list',
@@ -11,13 +12,24 @@ import { AgendaPruebaService } from '../agenda-prueba.service';
 })
 export class AgendaPruebasListComponent implements OnInit {
 
-  listaAgendaPruebas!: AgendaPrueba[];
-  constructor(private agendaPruebaService: AgendaPruebaService, private router: Router, private toastr: ToastrService ) { }
+  listaAgendaPruebas: AgendaPrueba[] = [];
+  listacandidatos: Signupapplicant[] = [];
+  index = 0;
+  constructor(private agendaPruebaService: AgendaPruebaService,
+
+    private router: Router,
+    private toastr: ToastrService ) { }
 
 
   getListaPreguntas(): void {
     this.agendaPruebaService.getListaAgendaPrueba().subscribe((listaAgendaPruebas): void => {
-      this.listaAgendaPruebas = listaAgendaPruebas;
+      for(let agenda of listaAgendaPruebas){
+        this.agendaPruebaService.getCandidato(agenda.idCandidato).subscribe((candidatop): void => {
+          this.listaAgendaPruebas.push(agenda);
+          this.listacandidatos.push(candidatop);
+          console.log(this.listacandidatos);
+        });
+      }
     });
   }
 

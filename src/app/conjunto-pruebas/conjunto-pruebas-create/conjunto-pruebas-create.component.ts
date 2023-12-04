@@ -25,18 +25,18 @@ export class ConjuntoPruebasCreateComponent implements OnInit {
     ) { }
 
     createConjuntoPruebas (conjuntopruebas: Conjuntoprueba):void{
-      
+
       const selectedPreguntas = this.listaBancopreguntas
-      .filter((pregunta) => pregunta.selected)
-      .map((pregunta) => ({ id: pregunta.id }))
-      .filter((obj): obj is { id: number } => obj.id !== null);
+      .filter((pregunta) => pregunta.selected);
+      //.map((pregunta) => ({ id: pregunta.id }));
+      //.filter((obj): obj is { id: number } => obj.id !== null);
 
 
       const conjuntoprueba: Conjuntoprueba = {
         id: null,
         nombre: this.conjuntoPruebasForm.get('nombre')!.value,
         descripcion: this.conjuntoPruebasForm.get('descripcion')!.value,
-        bancoPreguntas: selectedPreguntas,
+        bancosPreguntas: selectedPreguntas
       };
 
 
@@ -45,12 +45,12 @@ export class ConjuntoPruebasCreateComponent implements OnInit {
 
       this.conjuntopruebasService.createConjuntoPruebas(conjuntoprueba).subscribe(response=>{
         this.toastr.success("Confirmation", "Test Group created");
-    
+
        this.conjuntoPruebasForm.reset();
          });
     }
 
-  
+
     selectBancoPregunta(bancoPregunta: BancoPreguntas): void {
       console.log(bancoPregunta);
       bancoPregunta.selected = !bancoPregunta.selected;
@@ -59,20 +59,20 @@ export class ConjuntoPruebasCreateComponent implements OnInit {
         bancopregunta: bancoPregunta
       });
     }
-    
+
 
   ngOnInit():void  {
     this.conjuntoPruebasForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]],
       descripcion: ["", [Validators.required]],
-      bancopregunta: [null, [Validators.required]]  
+      bancopregunta: [null, [Validators.required]]
     });
-  
+
     this.conjuntopruebasService.getAllBancoPreguntas().subscribe(listaBancopreguntas => {
       this.listaBancopreguntas = listaBancopreguntas;
       console.log("listaBancopreguntas",  this.listaBancopreguntas );
     });
-    
+
 
   }
 

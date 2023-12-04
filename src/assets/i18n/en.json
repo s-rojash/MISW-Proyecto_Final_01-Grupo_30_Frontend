@@ -17,7 +17,8 @@
     "BUTTONSEARCH":"Search",
     "GROUPTEST":"Group Test",
     "PROFILEGETERROR":"Could not get your profile information.",
-    "RESULTTEST":"Result test"
+    "RESULTTEST":"Result test",
+    "RESULTS":"Results"
   },
   "LOGIN":{
     "TITLE":"Login",
@@ -191,7 +192,9 @@
     "DESCRIPTION_REQUIRED" : "the description  its necesary",
     "ADD":"ADD",
     "TESTGROUP": "Test Group",
-    "SELECTTESTGROUP": "select a Test Group"
+    "SELECTTESTGROUP": "select a Test Group",
+    "EDITGROUP":"Test group modified with success",
+    "TESTGROUPGETERROR":"Test group could not be found"
   },
   "INTERVIEWS2":{
    "INPUTSEARCH":"Search",
@@ -218,5 +221,4 @@
   "QUESTION":"Questions",
   "ENDTEST":"Finish test"
  }
-
 }

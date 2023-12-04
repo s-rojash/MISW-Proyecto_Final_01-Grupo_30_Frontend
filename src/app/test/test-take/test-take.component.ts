@@ -84,6 +84,7 @@ export class TestTakeComponent implements OnInit {
     this.testService.saveRespuesta(presentarPrueba).subscribe(presentarPruebap => {
       console.info("La presentacion de la prueba fue creada: ", presentarPruebap);
       this.firstvalue = true;
+      this.selectedValue = null;
       this.listaSeleccion.length = 0;
       this.getsavedTest(presentarPruebap.idPrueba);
 
@@ -99,11 +100,16 @@ export class TestTakeComponent implements OnInit {
   getsavedTest(idPrueba: number){
     this.testService.getSavedRespuestas(idPrueba).subscribe({
       next: (respuestasGuardadas) => {
+        this.idPreguntaContestada = "";
 
         for(let respuestaGuardada of respuestasGuardadas){
           if(respuestaGuardada.idPruebaCandidato == this.idPruebaCandidato){
-            this.idPreguntaContestada = this.idPreguntaContestada + ", " + respuestaGuardada.idPregunta;
-            console.log("entro al if de idPreguntaContestada");
+            if(this.idPreguntaContestada === ""){
+              this.idPreguntaContestada = "" + respuestaGuardada.idPregunta;
+            }
+            else{
+              this.idPreguntaContestada = this.idPreguntaContestada + "," + respuestaGuardada.idPregunta;
+            }
           }
         }
 
@@ -152,11 +158,27 @@ export class TestTakeComponent implements OnInit {
   }
 
   isButtonEndDisabled():boolean{
-    if(this.listaSeleccion.length + 1 != this.idPreguntaContestada.split(",").length - 1){
-      return true;
+    console.log(this.listaSeleccion.length);
+    console.log(this.idPreguntaContestada.split(",").length);
+    console.log(this.idPreguntaContestada);
+    let numerocomas = 0;
+    if(this.idPreguntaContestada != ""){
+      if(this.listaSeleccion.length === 1){
+        numerocomas = this.idPreguntaContestada.split(",").length;
+      }
+      else{
+        numerocomas = this.idPreguntaContestada.split(",").length - 1;
+      }
+
+      if(this.listaSeleccion.length != numerocomas){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
     else{
-      return false;
+      return true;
     }
   }
 
