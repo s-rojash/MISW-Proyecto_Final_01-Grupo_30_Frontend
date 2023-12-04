@@ -28,26 +28,32 @@ export class ProjectCreateComponent implements OnInit {
     private projectService: ProjectService) { }
 
 
-
   
- 
-
-    createProject(project: Project):void{
-      this.projectService.createProject(project).subscribe(author=>{
-            console.info("The project was created: ", project)
-            this.projectService.projectCreated();  
-            this.toastr.success("Confirmation", "Project created")
-              this.projectForm.reset();
-             
-      });
-      }
+    createProject(project: Project): void {
+      this.projectService.createProject(project).subscribe(
+        (createdProject: Project) => {
+          console.info("The project was created: ", createdProject);
+          this.projectService.projectCreated();
+          this.toastr.success("Confirmation", "Project created");
+          this.projectForm.reset();
+        },
+        (error) => {
+          console.error("Error creating the project: ", error);
+        }
+      );
+    }
       
       isFormValid(): boolean {
         return this.projectForm.valid;
       }
 
       
-      cancelCreation():void{this.projectForm.reset();}
+      cancelCreation(): void {
+        this.projectForm.setValue({
+          nombre: '',
+          descripcion: '',
+        });
+      }
 
   ngOnInit():void {
     this.projectForm = this.formBuilder.group({
@@ -59,10 +65,11 @@ export class ProjectCreateComponent implements OnInit {
   }
   
   onSubmit(): void {
+    console.log('Método onSubmit llamado');
     if (this.isFormValid()) {
-        this.createProject(this.projectForm.value);
+      this.createProject(this.projectForm.value);
     } else {
-       console.error("Formulario no válido. No se puede enviar.");
+      console.error('Formulario no válido. No se puede enviar.');
     }
   }
   

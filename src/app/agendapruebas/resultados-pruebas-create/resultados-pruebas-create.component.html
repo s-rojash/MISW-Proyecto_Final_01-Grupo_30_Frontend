@@ -1,0 +1,68 @@
+<div>
+  <span><label><a class="breadcumb-link" href="/agenda-pruebas/get">{{ 'INTERVIEWS.TEST_SCHEDULE' | translate }}</a> / <label class="breadcumb-active">
+    {{ 'INTERVIEWS.TEST_SCHEDULE_SAVE' | translate }}</label></label></span>
+</div>
+<div class="row">
+<div class="col-md-6">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle>Prueba a aplicar</mat-card-subtitle>
+      <mat-card-title>{{ prueba?.nombre }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ prueba?.descripcion }}</p>
+      <p>
+        <mat-icon>event</mat-icon>  {{ agendaPruebas?.fechaPresentacion }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="col-md-6">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle>Candidato</mat-card-subtitle>
+      <mat-card-title>{{ candidato?.nombres }} {{ candidato?.apellidos }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-icon>badge</mat-icon>  {{ candidato?.numDocumento }}
+        <mat-icon>mail</mat-icon>  {{ candidato?.email }}
+        <mat-icon>phone_iphone</mat-icon>  {{ candidato?.celular }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <mat-card *ngFor="let bancoPruebas of prueba?.bancosPreguntas">
+      <mat-card-header>
+        <mat-card-title>{{ bancoPruebas.tipoBanco }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-card *ngFor="let pregunta of preguntas.get(bancoPruebas.id ?? 0)">
+          <mat-card-header>
+            <mat-card-subtitle>{{ pregunta.pregunta }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li *ngFor="let respuesta of pregunta.respuestas" class="lista-respuestas">
+                <input
+                  type="radio"
+                  [value]="respuesta.id"
+                  id="p_{{pregunta.id}}_r_{{respuesta.id}}"
+                  name="p_{{pregunta.id}}"
+                  (click)="setRespuesta(pregunta.id, respuesta.id)"
+                  >
+                <label for="p_{{pregunta.id}}_r_{{respuesta.id}}">{{ respuesta.respuesta }}</label>
+              </li>
+            </ul>
+          </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+        <mat-card-footer>
+          <button type="button" class="btn btn-success pull-right" (click)="saveResultados()">Save</button>
+        </mat-card-footer>
+      </mat-card>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ 'QUESTIONS_BANK.QUESTIONS_LIST_TITLE' | translate }}</h5>
+        <div class="card-text">
+          <button
+          type="button"
+          class="btn btn-primary"
+          (click)="agregarPregunta()"
+        >
+          <mat-icon>add</mat-icon>
+          {{ 'QUESTIONS_BANK.QUESTIONS_LIST_ADD_QUESTION' | translate }}
+        </button>
+        <table class="table">
+            <caption>{{ 'QUESTIONS_BANK.QUESTIONS_LIST_TITLE' | translate }}</caption>
+            <thead>
+              <tr>
+                <th>{{ 'QUESTIONS_BANK.QUESTIONS_LIST_ID' | translate }}</th>
+                <th>{{ 'QUESTIONS_BANK.QUESTIONS_LIST_QUESTION' | translate }}</th>
+                <th></th>
+                <th>Respuestas</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pregunta of listaPreguntasBanco">
+              <td>{{ pregunta.id }}</td>
+              <td>{{ pregunta.pregunta }}</td>
+              <td><a href="/banco-preguntas/create/{{ pregunta.id }}"><mat-icon>edit</mat-icon></a></td>
+              <td>
+                <a (click)="agregarRespuesta(pregunta)" class="boton-agregar-pregunta"><mat-icon>add</mat-icon></a>
+                <ul>
+                  <li *ngFor="let respuesta of pregunta.respuestas" class="lista-respuestas" [class]="respuesta.estado!=='true'? 'estado-inactivo': ''">
+                    <label [class]="respuesta.estado!=='true'? 'label-puntaje-inactivo': 'label-puntaje'" title="{{ 'QUESTIONS_BANK.RESPONSES_POINTS' | translate }}">{{respuesta.puntos}}</label> {{respuesta.respuesta}} <a (click)="modificarRespuesta(pregunta, respuesta)"><mat-icon>edit</mat-icon></a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

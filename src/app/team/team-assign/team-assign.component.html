@@ -1,0 +1,71 @@
+<h5>Candidato</h5>
+
+<div class="card">
+  <div style="display: flex;width: 100%;">
+    <div class="borde" style="height: 58px; padding: 20px; width: 50%;margin-left: 15px; ">
+      <mat-select [(ngModel)]="selectedApplicant" placeholder="{{ 'TEAM.SELECT_APPLICANT' | translate }}">
+        <mat-option *ngFor="let applicant of applicants" [value]="applicant">
+          {{applicant.nombres}}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div style="width: 50%;">
+      <button
+      type="submit"
+      class="btn btn-primary"
+      class="button-signup"
+      mat-fab extended
+      (click)="addApplicantToTable()"
+      >
+      <mat-icon style="color: black;">add</mat-icon>
+      {{ 'TEAM.ADDTOTABLE' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div style="width: 100%;margin-top: 10px;">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" aria-describedby="">
+
+      <ng-container matColumnDef="idCandidato" hidden>
+        <th mat-header-cell *matHeaderCellDef hidden> No. </th>
+        <td mat-cell *matCellDef="let element" hidden> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Candidato">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.candidato}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Especialidad">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.especialidad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Boton">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-mini-fab (click)="deleteRecord(element)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <div *ngIf="validatelenght" style="width: 100%;margin-top: 10px;text-align: center;">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      class="button-signup"
+      (click)="assignApplicants()"
+      >
+      {{ 'TEAM.BUTTON_ASSIGN' | translate }}
+      </button>
+  </div>
+</div>

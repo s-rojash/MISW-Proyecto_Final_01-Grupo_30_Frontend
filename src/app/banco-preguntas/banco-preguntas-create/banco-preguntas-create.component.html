@@ -1,14 +1,30 @@
-
-
-<div style="padding-bottom: 15px;padding-left: 10px;">
-  <span><label>{{ 'QUESTIONS_BANK.QUESTIONS_BANK' | translate }} / <label style="text-decoration: underline;">{{ 'QUESTIONS_BANK.ADD' | translate }}</label></label></span>
+<div>
+  <span><label><a class="breadcumb-link" href="/banco-preguntas/get">{{ 'QUESTIONS_BANK.QUESTIONS_BANK' | translate }}</a> / <label class="breadcumb-active">{{ 'QUESTIONS_BANK.ADD' | translate }}</label></label></span>
 </div>
-<div class="col-md-6" style="width: 50%; z-index: 2;">
+<div class="col-md-12">
   <mat-card class="solid-border-card">
     <form [formGroup]="bancoPreguntasForm" (ngSubmit)="!bancoPreguntasForm.invalid && createBancoPreguntas(bancoPreguntasForm.value)">
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <div style="flex: 1; margin-right: 10px;">
-          <!-- nombre -->
+      <div>
+        <div>
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="categoria" class="labeloverinput">{{ 'QUESTIONS_BANK.CATEGORIA' | translate }}</label>
+            <select
+              required
+              id="categoria"
+              class="form-control"
+              formControlName="categoria"
+            >
+            <option *ngFor="let categoria of listaCategorias" [ngValue]="categoria">
+              {{categoria?.nombre}}
+            </option>
+            </select>
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="bancoPreguntasForm.get('categoria')!.hasError('required') && bancoPreguntasForm.get('categoria')!.touched"
+            >
+              {{ 'QUESTIONS_BANK.CATEGORIA_REQUIRED' | translate }}
+            </div>
+          </div>
           <div class="form-group mx-sm-3 mb-2" >
             <label for="tipoBanco" class="labeloverinput">{{ 'QUESTIONS_BANK.TIPO_BANCO' | translate }}</label>
             <input
@@ -16,37 +32,14 @@
               type="text"
               id="tipoBanco"
               class="form-control"
-              style="border-color: #6750A4;height: 60px; border-width: 3px;"
               formControlName="tipoBanco"
               placeholder="{{ 'QUESTIONS_BANK.TIPO_BANCO' | translate}}"
-
             />
-            <div style="position: fixed; z-index: 2;"
+            <div
               class="alert alert-danger alert-dismissible fade show"
               *ngIf="bancoPreguntasForm.get('tipoBanco')!.hasError('required') && bancoPreguntasForm.get('tipoBanco')!.touched"
             >
               {{ 'QUESTIONS_BANK.TIPO_BANCO_REQUIRED' | translate }}
-            </div>
-          </div>
-          <div class="form-group mx-sm-3 mb-2" >
-            <label for="categoria" class="labeloverinput">{{ 'QUESTIONS_BANK.CATEGORIA' | translate }}</label>
-            <select
-              required
-              id="categoria"
-              class="form-control"
-              style="border-color: #6750A4;height: 60px; border-width: 3px;"
-              formControlName="categoria"
-
-            >
-            <option *ngFor="let categoria of listaCategorias" [ngValue]="categoria">
-              {{categoria?.nombre}}
-            </option>
-            </select>
-            <div style="position: fixed; z-index: 2;"
-              class="alert alert-danger alert-dismissible fade show"
-              *ngIf="bancoPreguntasForm.get('categoria')!.hasError('required') && bancoPreguntasForm.get('categoria')!.touched"
-            >
-              {{ 'QUESTIONS_BANK.CATEGORIA_REQUIRED' | translate }}
             </div>
           </div>
         </div>
@@ -57,7 +50,7 @@
             class="btn btn-primary"
             [disabled]="!bancoPreguntasForm.valid"
           >
-            <mat-icon style="color: black;">add</mat-icon>
+            <mat-icon>add</mat-icon>
             {{ 'QUESTIONS_BANK.ADD' | translate }}
           </button>
         </div>
@@ -65,4 +58,9 @@
     </form>
   </mat-card>
 
+</div>
+<div class="col-md-12">
+  <mat-card class="solid-border-card">
+    <app-lista-preguntas-list [bancoPreguntas]="bancoPreguntas" *ngIf="listaPreguntasVisible"></app-lista-preguntas-list>
+  </mat-card>
 </div>

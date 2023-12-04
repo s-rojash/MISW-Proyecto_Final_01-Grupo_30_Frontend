@@ -4,6 +4,7 @@ import { TestBed, async, inject } from '@angular/core/testing';
 import { ProfileService } from './profile.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 describe('Service: Profile', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({

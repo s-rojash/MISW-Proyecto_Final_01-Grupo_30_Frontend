@@ -12,6 +12,10 @@ const routes: Routes = [{
     component: BancoPreguntasListComponent
   },
   {
+    path: 'create',
+    component: BancoPreguntasCreateComponent
+  },
+  {
     path: 'create/:id?',
     component: BancoPreguntasCreateComponent
   },

@@ -10,7 +10,15 @@
     "MYPROFILEMENU":"Mi Perfil",
     "LANESPMENU":"Español",
     "LANENGMENU":"Ingles",
-    "LOGOUTMENU":"Salir"
+    "LOGOUTMENU":"Salir",
+    "PROFILE":"Perfíl",
+    "BUTTONCREATE":"Crear",
+    "BUTTONLIST":"Listar",
+    "BUTTONSEARCH":"Buscar",
+    "GROUPTEST":"Conjunto pruebas",
+    "PROFILEGETERROR":"No se pudo obtener su informacion de perfil.",
+    "RESULTTEST":"Resultado Pruebas.",
+    "RESULTS":"Resultados"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -60,7 +68,11 @@
     "CC":"CEDULA DE CIUDADANIA",
     "CE":"CEDULA DE EXTRANJERIA",
     "BUSINESSNAME":"Razón social",
-    "BUSINESSNAMEREQUIRED":"Razón social requerida"
+    "BUSINESSNAMEREQUIRED":"Razón social requerida",
+    "DIALOGMSJSUCCESSEDITCOMPANY":"Empresa modificada correctamente",
+    "DIALOGMSJFAILEDEDITCOMPANY":"Error: Empresa no pudo ser modificada",
+    "DIALOGMSJSUCCESSEDITAPPLICANT":"Su información fue modificada correctamente",
+    "DIALOGMSJFAILEDEDITAPPLICANT":"Error: Su información no pudo ser modificada"
   },
   "PROJECT":{
     "COMPANYS":"Empresas",
@@ -75,6 +87,8 @@
   "EVALUATION":{
     "HEADER":"Programación de evaluación",
     "HEADER2":"Agendar Prueba",
+    "HEADERLIST":"Listado de pruebas",
+    "HEADERLIST2":"Pruebas",
     "SAVE":"Guardar",
     "SELECTOPTION":"Seleccione un candidato",
     "SELECTOPTIONCATEGORY":"Seleccione una categoría",
@@ -85,7 +99,17 @@
     "TECHNICALTEST":"Prueba Técnica",
     "PSYCHOLOGICALTEST":"Prueba Psicológica",
     "INVALIDAPPLICANT":"Se debe seleccionar al menos un candidato.",
-    "INVALIDBANK":"Se debe seleccionar un banco de preguntas."
+    "INVALIDBANK":"Se debe seleccionar un banco de preguntas.",
+    "BUTTONADD":"Agendar Prueba",
+    "ERRORLOADLISTAPPLICANTS":"No se pudieron cargar los candidatos.",
+    "ERRORLOADLISTTESTS":"No se pudieron cargar las pruebas.",
+    "SUCCESSSCHEDULE":"La prueba se agendo con éxito.",
+    "SCHEDULEFAILED":"Se produjo un error durante el agendamiento.",
+    "ERRORGETAPPLICANT":"El candidato no fue encontrado.",
+    "HEADERAPPLICANT":"Candidato",
+    "HEADERSCORE":"Puntaje",
+    "HEADERDATE":"Fecha prueba técnica",
+    "HEADERSTATUS":"Estado"
   },
   "TEAM":{
     "COMPANYS":"Empresas",
@@ -96,16 +120,104 @@
     "SELECT_PROFILE":"Seleccione un perfil",
     "TEAMQTY":"Numero de recursos solicitados",
     "TEAMQTYREQUIRED":"Numero de recursos solicitados es unn valor requerido",
-    "TEAMREQUIRED":"nombre de equipo requerido "
+    "TEAMREQUIRED":"nombre de equipo requerido ",
+    "SELECT_PROJECT":"seleccione un proyecto",
+    "TEAMLIST" : "listado de proyectos",
+    "SELECT_TEAM":"Selecciona un equipo",
+    "SELECT_APPLICANT":"Selecciona un candidato",
+    "BUTTON_ASSIGN":"Asignar",
+    "PROFILE":"Perfil",
+    "CANTIDAD":"Cantidad",
+    "ADDTOTABLE":"Agregar",
+    "SUCCESSASSIGNAPPLICANTS":"Los candidatos fueron asignados correctamente.",
+    "ERRORDELETEAPPLICANTS":"Debe haber al menos un candidato asignado"
   },
   "QUESTIONS_BANK":{
     "QUESTIONS_BANK" :"Banco de preguntas",
     "QUESTIONS_BANK_LIST" :"Listado de bancos de preguntas",
-    "ADD" :"Crear",
+    "ADD" :"Guardar banco de preguntas",
     "TIPO_BANCO" :"Tipo de banco de preguntas",
     "TIPO_BANCO_REQUIRED" :"El tipo de banco de preguntas es obligatorio",
     "CATEGORIAS_LIST" :"Categorias",
     "CATEGORIA" :"Categoria",
-    "CATEGORIA_REQUIRED" :"La categoría es obligatoria"
-  }
+    "CATEGORIA_REQUIRED" :"La categoría es obligatoria",
+    "QUESTIONS_LIST_TITLE": "Preguntas del banco",
+    "QUESTIONS_LIST_ID": "ID",
+    "QUESTIONS_LIST_QUESTION": "Pregunta",
+    "QUESTIONS_LIST_QUESTION_REQUIRED": "El texto de la pregunta es obligatorio",
+    "QUESTIONS_LIST_ADD_QUESTION": "Agregar Pregunta",
+    "QUESTIONS_SAVE_TITLE": "Guardar Pregunta",
+    "QUESTIONS_SAVE_QUESTION": "Pregunta",
+    "QUESTIONS_SAVE_QUESTION_SAVE": "Guardar Pregunta",
+    "QUESTIONS_SAVE_QUESTION_CANCEL": "Cancelar",
+    "RESPONSES_RESPONSE": "Respuesta",
+    "RESPONSES_POINTS": "Puntos",
+    "RESPONSES_STATUS": "Estado",
+    "RESPONSES_SAVE_TITLE": "Guardar respuesta",
+    "RESPONSES_RESPONSE_REQUIRED": "El texto de la respuesta es obligatorio",
+    "RESPONSES_POINTS_REQUIRED": "El puntaje de la respuesta es obligatorio",
+    "RESPONSES_STATUS_ACTIVE": "Inactivo/Activo"
+  },
+  "INTERVIEWS":{
+    "TEST_SCHEDULE": "Agenda de pruebas",
+    "TEST_SCHEDULE_ADD": "Agregar agenda de prueba",
+    "TEST_SCHEDULE_MODIFY": "Modificar agenda de prueba",
+    "TEST_SCHEDULE_SAVE": "Guardar agenda",
+    "TEST_SCHEDULE_TEST": "Prueba a aplicar",
+    "TEST_SCHEDULE_TEST_REQUIRED": "La prueba a aplicar es obligatoria",
+    "TEST_SCHEDULE_CANDIDATE": "Candidato",
+    "TEST_SCHEDULE_CANDIDATE_REQUIRED": "El candidato es obligatorio",
+    "TEST_SCHEDULE_DATE": "Fecha",
+    "TEST_SCHEDULE_DATE_REQUIRED": "La fecha es obligatoria",
+    "TEST_SCHEDULE_LIST": "Agenda de pruebas"
+  },
+  "PRINCIPAL":{
+    "HEADER":"Inicio",
+    "DIALOGMSJSKILLAPPLICANT":"Su perfil aún no está completo, debe completar su información de perfil con sus habilidades.",
+    "BUTTONSKILLS":"Asignar habilidades",
+    "BUTTONCONTINUE":"Continuar"
+  },
+  "APPLICANT_SEARCH":{
+    "TECH_SKILL" :"Habilidades tecnicas",
+    "SOFT_SKILL" :"Habilidades blandas",
+    "PROFILE" :"Perfil profesional",
+    "NAME" :"Busqueda de candidato",
+    "SEARCH_APPLICANT":"Buscar",
+    "INFO": "Información del candidato"
+  },
+  "TEST_GROUP":{
+    "NAME": "Nombre del conjunto de pruebas",
+    "NAME_REQUIRED" :"El nombre del conjunto de pruebas es requerido",
+    "DESCRIPTION":" descripción del conjunto de pruebas",
+    "DESCRIPTION_REQUIRED" : "El conjunto de pruebas es requerido",
+    "ADD":"Adicionar",
+    "TESTGROUP": "Conjunto de pruebas ",
+    "SELECTTESTGROUP": "selecciona un conjunto de pruebas",
+    "EDITGROUP":"Conjunto de prueba modificado con exito",
+    "TESTGROUPGETERROR":"Conjunto de prueba no pudo ser encontrado"
+  },
+   "INTERVIEWS2":{
+    "INPUTSEARCH":"Buscar",
+    "LISTHCATEGORY":"Categoria",
+    "LISTHINTERVIEW":"Entrevista con",
+    "LISTHDATE":"Fecha Prueba",
+    "INTERVIEWSLIST":"Listado de entrevistas"
+  },
+
+  "RESULTS":{
+   "RESULT":"Resultado de pruebas",
+   "APPLICANT_TEST":"Candidatos asignados a la prueba",
+   "SCORE":"Puntaje",
+   "STATUS":"Estado",
+   "PRESENTATIONDATE":"Fecha de presentación"
+  },
+ "APPLICANT_SKILLS":{
+  "HEADERLABEL":"Habilidades del candidato",
+  "ERRORSAVESKILLS":"No se pudo guardar las habilidades.",
+  "SUCCESSSAVESKILLS":"Se asignaron las habilidades correctamente."
+   },
+ "TEST":{
+  "QUESTION":"Preguntas",
+  "ENDTEST":"Finalizar prueba"
+ }
 }

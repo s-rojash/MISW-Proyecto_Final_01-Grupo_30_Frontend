@@ -1,13 +1,13 @@
 export class Project {
-  idEmpresa: number;
+  idEmpresa: number | undefined ;
   nombre: string;
   descripcion: string;
   editable: boolean = false;
-  id: number | undefined;
-
-  constructor(idEmpresa: number, nombre: string, descripcion: string) {
-    this.idEmpresa = idEmpresa;
-    this.nombre = nombre;
-    this.descripcion = descripcion;
+  id: number ;
+ 
+  constructor( id:number,nombre: string, descripcion: string) {
+     this.id = id; 
+     this.nombre = nombre;
+     this.descripcion = descripcion;
   }
-}
+ }

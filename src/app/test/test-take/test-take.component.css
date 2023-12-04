@@ -1,0 +1,47 @@
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+.categoria-active {
+  background-color: #E8DEF8;
+}
+
+.categoria-disabled{
+  pointer-events:none;
+  opacity:0.6;
+}
+
+ul.lista-categorias{
+  background-color: #F7F2FA;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border-radius: 12px;
+}
+
+ul.lista-categorias li{
+  border-radius: 12px;
+  padding: 8px;
+  margin: 4px;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+.button-signup{
+  width: 204px;
+  height: 40px;
+  border-radius: 5px;
+  background: url(../../../assets/Images/fondogeneral.png), lightgray 50% / cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: #FFF;
+}

@@ -7,7 +7,7 @@
             <label class="p-2 loginlogo1">ABC</label>
             <label class="p-2 loginlogo2">{{ 'LOGIN.LOGOJOBS' | translate }}</label>
           </div>
-          <img mat-card-image src="../../../assets/Images/fondogeneral.png" style="height: 90vh;">
+          <img mat-card-image src="../../../assets/Images/fondogeneral.png" style="height: 90vh;" alt="fondo">
         </mat-card>
       </div>
 
@@ -98,7 +98,7 @@
             </form>
           </mat-card-content>
           <mat-card-footer style="margin-left: 105px;">
-            <a mat-card-subtitle routerLink="/exhibitions/create">{{ 'LOGIN.FORGOTPASS' | translate }}</a>
+            <a mat-card-subtitle routerLink="/login">{{ 'LOGIN.FORGOTPASS' | translate }}</a>
           </mat-card-footer>
           <mat-card-footer style="margin-left: 35%;margin-top: auto;">
             <button mat-button extended class="bgiconlanguages" (click)="changeLang('es')" [style.backgroundImage]="'url(' + '../assets/Images/espanol.png' + ')'">

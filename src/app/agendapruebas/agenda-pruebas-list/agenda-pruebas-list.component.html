@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> <a href="/agenda-pruebas/save" class="btn btn-primary float-end">{{ 'INTERVIEWS.TEST_SCHEDULE_ADD' | translate }}</a></h5>
+        <div class="card-text">
+          <table class="table">
+            <caption>{{ 'INTERVIEWS.TEST_SCHEDULE_LIST' | translate }}</caption>
+            <thead>
+              <tr>
+                <th>{{ 'INTERVIEWS.TEST_SCHEDULE_DATE' | translate }}</th>
+                <th>{{ 'INTERVIEWS.TEST_SCHEDULE_TEST' | translate }}</th>
+                <th>{{ 'INTERVIEWS.TEST_SCHEDULE_CANDIDATE' | translate }}</th>
+                <th colspan="2"></th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let agendaPrueba of listaAgendaPruebas; let i = index;">
+              <td>{{ agendaPrueba.fechaPresentacion }}</td>
+              <td>{{ agendaPrueba.prueba.nombre }}</td>
+              <td>{{ listacandidatos[i].nombres + ' ' + listacandidatos[i].apellidos }}</td>
+              <td><a href="/agenda-pruebas/save/{{ agendaPrueba.id }}"><mat-icon>edit</mat-icon></a></td>
+              <td><a href="/agenda-pruebas/resultados-create/{{ agendaPrueba.id }}"><mat-icon>assessment</mat-icon></a></td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
