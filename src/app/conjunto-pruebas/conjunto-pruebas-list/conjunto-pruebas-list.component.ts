@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Conjuntoprueba  } from '../conjuntoprueba';
 import { ConjuntoPruebasService } from '../conjunto-pruebas.service';
 import { Pipe, PipeTransform } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Pipe({
   name: 'filter',
@@ -26,20 +27,21 @@ export class FilterPipe implements PipeTransform {
   styleUrls: ['./conjunto-pruebas-list.component.css'],
 })
 export class ConjuntoPruebasListComponent implements OnInit {
-  originalConjuntoPruebas: Conjuntoprueba[] = []; 
+  originalConjuntoPruebas: Conjuntoprueba[] = [];
   conjuntopruebas: Conjuntoprueba[] = [];
-  conjuntopruebasMock: Conjuntoprueba[] = []; 
+  conjuntopruebasMock: Conjuntoprueba[] = [];
   filtro: string = '';
   selectedConjunto: Conjuntoprueba | undefined;
 
   constructor(private formBuilder: FormBuilder,
     public dialog: MatDialog,
     private toastr: ToastrService,
-    private conjuntopruebasService :ConjuntoPruebasService) { }
+    private conjuntopruebasService :ConjuntoPruebasService,
+    private router: Router) { }
 
     ngOnInit(): void {
       const conjuntoPruebas$ = this.conjuntopruebasService.getAllConjuntoPruebas();
-      
+
       if (conjuntoPruebas$) {
         conjuntoPruebas$.subscribe(
           (conjuntopruebas) => {
@@ -54,18 +56,24 @@ export class ConjuntoPruebasListComponent implements OnInit {
         console.error('Observable getAllConjuntoPruebas is undefined');
       }
     }
-  
+
   seleccionarConjunto(conjunto: Conjuntoprueba): void {
     console.log('Conjunto seleccionado:', conjunto);
     this.selectedConjunto = conjunto;
   }
-  
+
   deseleccionarConjunto(): void {
     this.selectedConjunto = undefined;
   }
 
   displayConjunto(conjunto: Conjuntoprueba): string {
     return conjunto ? conjunto.nombre : '';
+  }
+
+  goToEditPage(){
+    if(this.selectedConjunto != undefined){
+      this.router.navigate(["/conjunto-pruebas/edit/" + this.selectedConjunto.id]);
+    }
   }
 
 filtrarLista() {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ConjuntoPruebasCreateComponent } from './conjunto-pruebas-create/conjunto-pruebas-create.component';
 import { ConjuntoPruebasListComponent } from './conjunto-pruebas-list/conjunto-pruebas-list.component';
+import { ConjuntoPruebasEditComponent } from './conjunto-pruebas-edit/conjunto-pruebas-edit.component';
 
 
 const routes: Routes = [{
@@ -14,8 +15,11 @@ const routes: Routes = [{
   {
     path: 'list',
     component: ConjuntoPruebasListComponent
-  }
-
+  },
+  {
+    path: 'edit/:id',
+    component: ConjuntoPruebasEditComponent
+  },
  ]
 }];
 

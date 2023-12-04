@@ -1,0 +1,87 @@
+
+<div class="col-md-12">
+  <mat-card class="solid-border-card">
+    <form [formGroup]="conjuntoPruebasForm" (ngSubmit)="!conjuntoPruebasForm.invalid && editConjuntoPruebas(conjuntoPruebasForm.value)">
+      <div>
+        <div>
+          <!-- nombre -->
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="nombre" class="labeloverinput">{{ 'TEST_GROUP.NAME' | translate }}</label>
+            <input
+              required
+              type="text"
+              id="nombre"
+              class="form-control"
+              formControlName="nombre"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="conjuntoPruebasForm.get('nombre')!.hasError('required') && conjuntoPruebasForm.get('nombre')!.touched"
+            >
+              {{ 'TEST_GROUP.NAME_REQUIRED' | translate }}
+            </div>
+          </div>
+
+           <!-- Descripción -->
+          <div class="form-group mx-sm-3 mb-2" >
+            <label for="descripción conjunto" class="labeloverinput">{{ 'TEST_GROUP.DESCRIPTION' | translate }}</label>
+            <input
+              required
+              type="text"
+              id="descripcion"
+              class="form-control"
+              formControlName="descripcion"
+            />
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              *ngIf="conjuntoPruebasForm.get('descripcion')!.hasError('required') && conjuntoPruebasForm.get('descripcion')!.touched"
+            >
+              {{ 'TEST_GROUP.DESCRIPTION_REQUIRED' | translate }}
+            </div>
+          </div>
+
+
+          <label for="bancopregunta" >{{ 'QUESTIONS_BANK.QUESTIONS_BANK' | translate }}</label>
+
+
+          <div class="card-container"  style="height: auto; margin: 10px; ">
+            <div class="card" *ngFor="let bancopregunta of listaBancopreguntas">
+              <mat-card style="height: auto; margin: 1px;  background-color:#FEF7FF"  (click)="selectBancoPregunta(bancopregunta)">
+                <mat-card-header>
+                <mat-card-title>{{ bancopregunta.tipoBanco }}</mat-card-title>
+                <mat-card-subtitle>{{ bancopregunta.categoria.nombre }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-icon class="check-icon" *ngIf="bancopregunta.selected">check</mat-icon>
+
+            </mat-card>
+          </div>
+
+
+          <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="conjuntoPruebasForm.get('bancopregunta')!.hasError('required') && conjuntoPruebasForm.get('bancopregunta')!.touched"
+            >
+            {{ 'QUESTIONS_BANK.CATEGORIA_REQUIRED' | translate }}
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!conjuntoPruebasForm.valid"
+          >
+            <mat-icon>add</mat-icon>
+            {{ 'TEST_GROUP.ADD' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+
+</div>
+

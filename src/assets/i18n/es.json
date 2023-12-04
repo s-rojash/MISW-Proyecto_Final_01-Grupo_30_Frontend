@@ -17,7 +17,8 @@
     "BUTTONSEARCH":"Buscar",
     "GROUPTEST":"Conjunto pruebas",
     "PROFILEGETERROR":"No se pudo obtener su informacion de perfil.",
-    "RESULTTEST":"Resultado Pruebas."
+    "RESULTTEST":"Resultado Pruebas.",
+    "RESULTS":"Resultados"
   },
   "LOGIN":{
     "TITLE":"Ingreso",
@@ -191,7 +192,9 @@
     "DESCRIPTION_REQUIRED" : "El conjunto de pruebas es requerido",
     "ADD":"Adicionar",
     "TESTGROUP": "Conjunto de pruebas ",
-    "SELECTTESTGROUP": "selecciona un conjunto de pruebas"
+    "SELECTTESTGROUP": "selecciona un conjunto de pruebas",
+    "EDITGROUP":"Conjunto de prueba modificado con exito",
+    "TESTGROUPGETERROR":"Conjunto de prueba no pudo ser encontrado"
   },
    "INTERVIEWS2":{
     "INPUTSEARCH":"Buscar",
@@ -218,4 +221,3 @@
   "ENDTEST":"Finalizar prueba"
  }
 }
-

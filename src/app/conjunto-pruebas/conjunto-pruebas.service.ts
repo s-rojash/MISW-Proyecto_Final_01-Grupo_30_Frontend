@@ -51,8 +51,8 @@ getAllBancoPreguntas(): Observable<BancoPreguntas[]> {
 
 getAllConjuntoPruebas(): Observable<Conjuntoprueba[]> {
   const httpOptions = this.getHttpOptions();
-  console.log("httpOptions",httpOptions) 
-  console.log("apiUrl",this.apiUrl) 
+  console.log("httpOptions",httpOptions)
+  console.log("apiUrl",this.apiUrl)
   return this.http.get<Conjuntoprueba[]>(this.apiUrl + `/pruebas/`, httpOptions)
   .pipe(
     tap(response => {
@@ -67,5 +67,19 @@ getAllConjuntoPruebas(): Observable<Conjuntoprueba[]> {
   );
 }
 
+getConjuntoPruebasById(idConjunto: number): Observable<Conjuntoprueba>{
+  return this.http.get<Conjuntoprueba>(this.apiUrl + `/pruebas/` + idConjunto)
+  .pipe(
+    tap(response => {
+      console.log('Respuesta recibida:' , response);
+
+    }),
+    catchError(error => {
+
+      console.error('Error en la petición:', error);
+      throw error;
+    })
+  );
+}
 
 }
